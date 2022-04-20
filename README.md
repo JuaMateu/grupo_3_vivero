@@ -1,12 +1,14 @@
 # grupo_3_vivero
-Una pagina de E-commerce destinada a la venta de plantas
 
-1 descripcion de la oferta de los productos:
-Somos un E-commerce destinado a la venta de plantas y productos para su cuidado. Nos enfocamos en brindar el mejor servicio a nuestros clientes. Nuestro staff esta compuesto por : // 
+Proyecto integrador: Vivero Susi
+====
 
+Nuestra mision:
+---
+En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los espacios interiores de la vida contemporánea, fusionando la naturaleza con el diseño a través de objetos y accesorios. Apuntamos a un publico de adultos citadinos, mayormente mujeres, parejas o familias que disfrutan de la botanica, la decoración y el diseño.
 
+Nuestro Staff:
+---
+**Juan M. Mateu Arroyo**: Nacido en el 88, trabaja en administración de empresas. Estudió gastronomía, es amante de la tecnología. Como hobbie practica deportes y disfruta de videojuegos en sus ratos libres
 
-2 a que publico apunta
-
-3 una descripcion de los integrantes
 
