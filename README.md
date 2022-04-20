@@ -10,6 +10,7 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 ### Nuestro Staff:
 
 **Juan M. Mateu Arroyo**: Nacido en el 88, trabaja en administración de empresas. Estudió gastronomía, es amante de la tecnología. Como hobbie practica deportes y disfruta de videojuegos en sus ratos libres
+**Franco Daniel Nazziconi**: Nacido en 2002, trabaja en una fabrica industrial de pinturas. Estudió para tripulante de cabina. En su tiempo libre realiza deporte,cuida del jardin y juega videojuegos. 
 
 
 
