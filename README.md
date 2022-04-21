@@ -22,8 +22,8 @@ falta agregar a Irving y Pato
 
 
 ### Referencias:
-    1. https://potit.com.ar/: Compartimos tanto público objetivo como oferta de productos. Web responsive con buena estética. 
-    2. https://plantasomos.com/: Destaca por tener diseño muy cuidado y diferente al resto de las tiendas de viveros. Interesante funcionalidad donde al ingresar al sitio aparece un popup que te invita a registrarte.
-    3. https://www.ecologiaverde.com/: Muy buena funcionalidad donde destacan algun argunmento del articulo (ej: "nuevo", "destacado", "mas visto", etc)
-    4. https://www.viveroelbambu.com.ar/: Buscando estilos de pagina, encontre este y pude destacar que tiene un diseño milimalista con tonos en blanco y verde. Muy agradable.
-    5. https://tienda.viveromario.com.ar/:  Lo tomamos como referencia por ser lider en el mercado, tiene una seccion interesante sobre el cuidado de las plantas, tiene un logo interesante
+1. https://potit.com.ar/: Compartimos tanto público objetivo como oferta de productos. Web responsive con buena estética. 
+2. https://plantasomos.com/: Destaca por tener diseño muy cuidado y diferente al resto de las tiendas de viveros. Interesante funcionalidad donde al ingresar al sitio aparece un popup que te invita a registrarte.
+3. https://www.ecologiaverde.com/: Muy buena funcionalidad donde destacan algun argunmento del articulo (ej: "nuevo", "destacado", "mas visto", etc)
+4. https://www.viveroelbambu.com.ar/: Buscando estilos de pagina, encontre este y pude destacar que tiene un diseño milimalista con tonos en blanco y verde. Muy agradable.
+5. https://tienda.viveromario.com.ar/:  Lo tomamos como referencia por ser lider en el mercado, tiene una seccion interesante sobre el cuidado de las plantas, tiene un logo interesante
