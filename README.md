@@ -10,7 +10,7 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 
 - [Franco Daniel Nazziconi](https://github.com/Franconzz/): Nacido en 2002, trabaja en una fabrica industrial de pinturas. Estudió para tripulante de cabina. En su tiempo libre realiza deporte,cuida del jardin y juega videojuegos. 
 
--[Irving Orlando Ayala Iturbe](https://github.com/ioai2610): Nacido en el 96, profesor de física y matemáticas independiente. Candidato a maestría en ciencias fisicomatemáticas. Estudió licenciatura en física y matemáticas. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y los viajes.
+- [Irving Orlando Ayala Iturbe](https://github.com/ioai2610): Nacido en el 96, profesor de física y matemáticas independiente. Candidato a maestría en ciencias fisicomatemáticas. Estudió licenciatura en física y matemáticas. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y los viajes.
 <!---
 falta agregar a Irving y Pato
 --->
