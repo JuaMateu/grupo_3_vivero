@@ -22,3 +22,5 @@ falta agregar a Irving y Pato
 - [VIVERO EL BAMBÚ](https://www.viveroelbambu.com.ar/): Buscando estilos de pagina, encontre este y pude destacar que tiene un diseño milimalista con tonos en blanco y verde. Muy agradable.
 - [VIVERO MARIO](https://tienda.viveromario.com.ar/):  Lo tomamos como referencia por ser lider en el mercado, tiene una seccion interesante sobre el cuidado de las plantas, tiene un logo interesante.
 - [NADDEOS](https://naddeos.com/): En esta pagina los elementos aparecen con un estilo particular, se ve un poco sobreexplotado pero podría quedar bien en algunos elementos.
+- [LIVELY ROOT](https://www.livelyroot.com): El diseño, el arreglo de los elementos en la página, las entradas con calificaciones de clientes, paleta de colores y las fotos de redes sociales anexadas. 
+- [LA FLEURAISON](https://lafleuraison.ca): La paleta de colores también además de contar con la opción de cambiar el idioma y la sección de la ubicación en el mapa.
