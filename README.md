@@ -12,7 +12,7 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 
 - [Irving Orlando Ayala Iturbe](https://github.com/ioai2610): Nacido en el 96, profesor de física y matemáticas independiente. Candidato a maestría en ciencias fisicomatemáticas. Estudió licenciatura en física y matemáticas. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y los viajes.
 <!---
-falta agregar a Irving y Pato
+falta agregar a Pato que ya no está con nosotros :c
 --->
 
 ### Referencias:
