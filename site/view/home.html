@@ -7,24 +7,30 @@
     <title>PlantaSusi</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" /> <!-- incluimos css -->
+    <script src="https://kit.fontawesome.com/38e8c58940.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <nav>
+        
+        <nav class="main-nav">
             <div class="burger-menu">
                 <i class="background-blue color-white border-radius-15 padding-10 fa-solid fa-bars"></i>
             </div>
-            <ul class="top-left-nav">
+            <div class="img">
+                <a href='#'><img src="img/Logo-1.png" class="logo" alt="logo del E-commmerce"></a>
+            </div>
+            <ul class="right-ul">
+                <li><a href='search.html'><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href='login.html'><i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <li><a href='carrito.html'><i class="fa-solid fa-basket-shopping"></i></a></li>
+            </ul>
+        </nav>
+        <nav class="nav-options">
+            <ul class="left-ul">
                 <li><a href='tienda.html'>Tienda</a></li>
                 <li><a href='ofertas.html'>Ofertas</a></li>
                 <li><a href='cuidados.html'>Cuidados</a></li>
                 <li><a href='sobreNosotros.html'>Sobre Nosotros</a></li>
-            </ul>
-            <div class="img"><a href='#'><img src="img/Logo-1.png" alt="logo del E-commmerce"></a></div>
-            <ul class="top-right-nav">
-                <li><a href='search.html'><i class="fa-regular fa-id-card"></i></a></li>
-                <li><a href='login.html'><i class="fa-solid fa-right-to-bracket"></i></a></li>
-                <li><a href='carrito.html'><i class="fa-solid fa-basket-shopping"></i></a></li>
             </ul>
         </nav>
     </header>

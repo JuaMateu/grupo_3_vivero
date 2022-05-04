@@ -1,11 +1,24 @@
 * {
     box-sizing: border-box;
 }
-
-img {
-    width: 50%;
+.main-nav ul{
+    list-style: none;
 }
-
-top-left-nav {
+.main-nav a{
+    text-decoration: none;
+}
+.main-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    width: 40vw;
+}
+.right-ul {
+    display: flex;
+    justify-content: space-around;
+}
+.nav-options {
     display: none;
 }
