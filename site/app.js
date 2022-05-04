@@ -16,6 +16,7 @@ const homeHtml = 'home.html'
 
 // Define the static file path
 app.use(express.static(__dirname +'/public/'));
+// app.use(express.static(__dirname +'/view/'));
 
 app.get(httpRaiz, (req, res) => {
     res.sendFile(path.join(views, homeHtml))
