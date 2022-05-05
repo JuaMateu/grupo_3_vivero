@@ -1,24 +1,44 @@
 * {
     box-sizing: border-box;
 }
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    border: 1px black solid;
+}
 .main-nav ul{
     list-style: none;
 }
 .main-nav a{
     text-decoration: none;
 }
-.main-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.main-nav i {
+    color: black;
 }
-.logo{
+.div-logo {
+    align-self: center;
+}
+.logo {
     width: 40vw;
 }
 .right-ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
+}
+.right-ul li {
+    margin: 5px;
 }
 .nav-options {
     display: none;
+}
+.burger-menu{
+    display: block;
+    margin: 5vw 2vh;
+}
+.burger-menu i{
+    align-items: center;
+}
+.elem1 {
+    justify-content: flex-start;
 }
