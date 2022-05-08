@@ -11,28 +11,79 @@
 </head>
 <body>
     <header>
-        
+        <!-- main nav dentro del header -->
         <nav class="main-nav">
+            <!-- burguer menu para mobile -->
             <div class="burger-menu">
-                <i class="background-blue color-white border-radius-15 padding-10 fa-solid fa-bars"></i>
+                <label for="nav-troggler"><i class="icon" id="burger"></i></label>
             </div>
-            <div class="img">
-                <a href='#'><img src="img/Logo-1.png" class="logo" alt="logo del E-commmerce"></a>
+            <input type="checkbox" id="nav-troggler" class="nav-toggler">
+            <!-- menu de navegacion, solo desktop -->
+            <nav class="section-menu">
+                <ul>
+                    <li><a class="nav-item" href='tienda.html'>Tienda</a></li>
+                    <li><a class="nav-item" href='ofertas.html'>Ofertas</a></li>
+                    <li><a class="nav-item" href='cuidados.html'>Cuidados</a></li>
+                    <li><a class="nav-item" href='sobreNosotros.html'>Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+            <!-- Logo, tiene que ser el link a home-->
+            <div class="logo">
+                <a href="home.html"><img id='logo-principal' src="img/Logo-2.svg" alt="logo del E-commmerce"></a>
             </div>
-            <ul class="right-ul">
-                <li><a href='search.html'><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href='login.html'><i class="fa-solid fa-right-to-bracket"></i></a></li>
-                <li><a href='carrito.html'><i class="fa-solid fa-basket-shopping"></i></a></li>
-            </ul>
-        </nav>
-        <nav class="nav-options">
-            <ul class="left-ul">
-                <li><a href='tienda.html'>Tienda</a></li>
-                <li><a href='ofertas.html'>Ofertas</a></li>
-                <li><a href='cuidados.html'>Cuidados</a></li>
-                <li><a href='sobreNosotros.html'>Sobre Nosotros</a></li>
+            <!-- iconos de navegacion -->
+            <ul class="icon-menu">
+                <li><a href='search.html'><i class="icon" id="search"></i></a></li>
+                <li><a href='login.html'><i class="icon" id="user"></i></a></li>
+                <li><a href='carrito.html'><i class="icon" id="cart"></i></a></li>
             </ul>
         </nav>
     </header>
+
+
+
+
+    <!-- aca arranca el footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <nav class="footer-nav">
+                    <h3 class="footer-title">Info</h3>
+                    <ul>
+                        <li class="no-list-style"><a class="footer-link" href='tienda.html'>Tienda</a></li>
+                        <li class="no-list-style"><a class="footer-link" href='ofertas.html'>Ofertas</a></li>
+                        <li class="no-list-style"><a class="footer-link" href='cuidados.html'>Cuidados</a></li>
+                        <li class="no-list-style"><a class="footer-link" href='sobreNosotros.html'>Sobre Nosotros</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col">
+                    <div class="footer-contacto">
+                        <h3 class="footer-title">Contacto</h3>
+                        <ul>
+                            <li><i class="icon" id="whatsapp"></i>+54 15 5884 1543</li>
+                            <li>plantasusi@susi.com.ar</li>
+                            <li>Calle falsa 123</li>
+                        </ul>
+                    </div>
+                    <div class="footer-seguinos">
+                        <h3 class="footer-title">Seguinos</h3>
+                        <div class="social-icons">
+                            <a href="http://pinterest.com"><i class="icon-social" id="pinterest"></i></a>
+                            <a href="http://facebook.com"></a><i class="icon-social" id="facebook"></i></a>
+                            <a href="http://instagram.com"></a><i class="icon-social" id="instagram"></i></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- info legal -->
+            <div>
+                <ul class="legal-info">
+                    <li>© 2021 Plantasusi SA</li>
+                    <li>Términos de uso</li>
+                    <li>Póliticas de privacidad</li>
+                </ul>
+            </div>
+        </div>
+   </footer>
 </body>
 </html>

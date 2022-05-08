@@ -1,24 +1,186 @@
+/* aca podemos guardar variables que se reutilcen en el css */
+:root{
+    --primary-green: #014934;
+    --secondary-light-green: rgb(230, 240, 231)
+}
+/* importa fuentes poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+/* reglas generales */
 * {
     box-sizing: border-box;
-}
-.main-nav ul{
-    list-style: none;
-}
-.main-nav a{
+    padding: 0;
+    margin: 0;
     text-decoration: none;
 }
-.main-nav{
+
+/* el header queda fijo */
+header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    border-bottom: solid var(--primary-green) 2px;
+}
+
+/* footer con posicion absoluta pegado abajo */
+footer {
+    position:absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-family: 'Poppins';
+    font-weight: bold;
+    background-color: var(--primary-green);
+    color: var(--secondary-light-green);
+    font-size: 0.9rem;
+}
+
+
+/* no se porque tengo que especificar esto para que los links no aparezcan azules */
+.footer-link {
+    color: var(--secondary-light-green);
+    line-height: 1.8rem;
+}
+/* saca el punteado de los datos de contacto*/
+.footer-contacto ul li {
+    list-style: none;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+/* especifica tamaño de los titulos del footer */
+.footer-title {
+    font-size: 1.4rem;
+    padding-bottom: 0.7rem;
+}
+/* display flex en linea para el footer */
+.footer-main {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+.footer-seguinos {
+    margin-top: 1rem;
+}
+/* .social-icons {
+    display: flex;
+    justify-content: flex-start;
+} */
+.social-icons i{
+    margin:  0 1.5rem 0 0;
+}
+.legal-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    font-weight: normal;
+    font-size: 0.5rem;
+}
+
+/*una seccion nav adentro del header 
+ asi podemos darle un margen en resoluciones mas grandes  */
+.main-nav {
+    display: flex; 
     justify-content: space-around;
     align-items: center;
+    height: 5rem;
 }
-.logo{
-    width: 40vw;
+/* le agregegue padding al burguer menu para que ocupe lo mismo que
+los 3 iconos de la derecha y quede todo centrado */
+.burger-menu {
+    padding: 0 2rem;
 }
-.right-ul {
-    display: flex;
-    justify-content: space-around;
+.nav-toggler {
+    display:none;
 }
-.nav-options {
+
+.icon-menu li {
+    display: inline-table;
+    list-style: none;
+    margin: 0.2rem;
+}
+.section-menu {
     display: none;
+}
+
+/* clase icon para agregarle a los iconos locales  */
+.icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem 1.2rem;
+    fill: var(--primary-green);
+}
+.icon-social {
+    display: inline-block;
+    cursor: pointer;
+    background-size: 1.6rem 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.no-list-style {
+list-style: none;
+}
+
+/* Comencé a probar la parte de desktop */
+@media (min-width: 769px) {
+    /* desaparece burguer menu y aparecen los links de navegacion */
+    .burger-menu {
+        display: none;
+    }
+    .section-menu{
+        display:table;
+    }
+    /* logo a la izquierda con flexbox */
+    .logo{
+        order: -1;
+    }
+    .main-nav{
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    .section-menu ul li{
+        display: inline;
+        list-style: none;
+        padding: auto;
+    }
+    
+    .nav-item{
+        font-family: 'Poppins';
+        font-weight: bold;
+        color: #014934;
+    }
+}
+
+/* Lista de ids para iconos locales */
+#logo-principal {
+    max-width: 8rem;
+}
+#search {
+    background-image: url(../img/icons/icon-search.svg);
+}
+#user {
+    background-image: url(../img/icons/icon-user.svg);
+}
+#cart {
+    background-image: url(../img/icons/icon-cart.svg);
+}
+#burger {
+    background-image: url(../img/icons/icon-hamburger.svg);
+}
+#pinterest {
+    background-image: url(../img/icons/icon-pinterest3.svg);
+
+}
+#facebook {
+    background-image: url(../img/icons/icon-fb3.svg);
+}
+#instagram {
+    background-image: url(../img/icons/icon-instagram3.svg);
+}
+#whatsapp {
+    background-image: url(../img/icons/icon-whatsapp.svg);
 }
