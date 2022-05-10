@@ -1,7 +1,8 @@
 /* aca podemos guardar variables que se reutilcen en el css */
 :root{
     --primary-green: #014934;
-    --secondary-light-green: rgb(230, 240, 231)
+    --secondary-light-green: rgb(230, 240, 231);
+    --fuentePrimaria: 'Poppins'
 }
 /* importa fuentes poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
@@ -12,6 +13,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* el header queda fijo */
@@ -183,4 +185,61 @@ list-style: none;
 }
 #whatsapp {
     background-image: url(../img/icons/icon-whatsapp.svg);
+}
+
+
+/* Sección de pagina del login */
+
+/* Texto principal */
+.login-text{
+    font-family: var(--fuentePrimaria);
+    color: #014934;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 100px;
+}
+/* Pregunta de la creacion de cuenta */
+.have-account{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    color: #014934;
+}
+.mk-account-link{
+    text-decoration-line: underline;
+    font-weight: 700;
+    color: #014934;
+}
+/* Formulario de login */
+.form-login{
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.inside-form-login{
+    margin-bottom: 20px;
+}
+.inside-form-login label{
+    display: block;
+    margin: 6px 0px;
+}
+.login-control{
+    width: 100%;
+    padding: 9px;
+    border: #014934 solid 1px;
+}
+/* Boton de login */
+.boton-login{
+    background-color: #014934;
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 3px;
+}
+/* link de "olvidaste tu password" */
+.password-forgotten-link{
+    padding: 20px;
+    text-decoration-line: underline;
+    font-weight: 700;
+    color: #014934;
 }
