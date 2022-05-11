@@ -2,6 +2,7 @@
 :root{
     --primary-green: #014934;
     --secondary-light-green: rgb(230, 240, 231);
+    --third-light-green: #b2e2ba;
     --fuentePrimaria: 'Poppins'
 }
 /* importa fuentes poppins */
@@ -190,6 +191,8 @@ list-style: none;
 
 /* Sección de pagina del login */
 
+/* version mobile */
+
 /* Texto principal */
 .login-text{
     font-family: var(--fuentePrimaria);
@@ -205,6 +208,7 @@ list-style: none;
     margin-top: 10px;
     color: #014934;
 }
+/* decoracion de los link */
 .mk-account-link{
     text-decoration-line: underline;
     font-weight: 700;
@@ -215,13 +219,20 @@ list-style: none;
     padding: 10px 20px;
     margin-top: 10px;
 }
+/* Color del texto de label */
+.form-login label{
+    color: var(--primary-green);
+}
+/* div con cada label e input */
 .inside-form-login{
     margin-bottom: 20px;
 }
+/* solo los label de cada div */
 .inside-form-login label{
     display: block;
     margin: 6px 0px;
 }
+/* los cuadros de dialogo para ingresar datos */
 .login-control{
     width: 100%;
     padding: 9px;
@@ -242,4 +253,8 @@ list-style: none;
     text-decoration-line: underline;
     font-weight: 700;
     color: #014934;
+}
+/* Color de los placeholder de los cuadros de dialogo */
+::placeholder{
+    color: var(--third-light-green);
 }
