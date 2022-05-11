@@ -1,7 +1,7 @@
 /* aca podemos guardar variables que se reutilcen en el css */
 :root{
-    --primary-green: #014934;
-    --secondary-light-green: rgb(230, 240, 231)
+    --primary-green: rgba(1, 73, 52, 1);
+    --secondary-light-green: rgba(230, 240, 231, 1)
 }
 /* importa fuentes poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
@@ -14,29 +14,99 @@
     text-decoration: none;
 }
 
+body{
+    font-family: "poppins", sans-serif;
+    height: 100%;
+}
+
 /* el header queda fijo */
 header {
-    position: fixed;
+    /* position: fixed; */
     left: 0px;
     top: 0px;
     width: 100%;
     border-bottom: solid var(--primary-green) 2px;
 }
+main {
+    width: 90%;
+    margin: auto;
+    background-color: antiquewhite;
+}
 
 /* footer con posicion absoluta pegado abajo */
 footer {
-    position:absolute;
-    left: 0px;
+    /* position:absolute; */
+    /* left: 0px;
     bottom: 0px;
-    width: 100%;
-    font-family: 'Poppins';
+    width: 100%; */
     font-weight: bold;
     background-color: var(--primary-green);
     color: var(--secondary-light-green);
     font-size: 0.9rem;
 }
+article {
+    margin-bottom: 10px;
+    padding: 15px;
+}
 
 
+.flex-row{
+    display: flex;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+div.img img {
+    width: 100%;
+}
+
+/*una seccion nav adentro del header 
+ asi podemos darle un margen en resoluciones mas grandes  */
+.main-nav {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+}
+/* le agregegue padding al burguer menu para que ocupe lo mismo que
+los 3 iconos de la derecha y quede todo centrado */
+.burger-menu {
+    padding: 0 2rem;
+}
+.nav-toggler {
+    display:none;
+}
+
+.icon-menu li {
+    display: inline-table;
+    margin: 0.2rem;
+}
+.section-menu {
+    display: none;
+}
+
+/* clase icon para agregarle a los iconos locales  */
+.icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem 1.2rem;
+    fill: var(--primary-green);
+}
+.icon-social {
+    display: inline-block;
+    cursor: pointer;
+    background-size: 1.6rem 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.no-list-style {
+list-style: none;
+}
 /* no se porque tengo que especificar esto para que los links no aparezcan azules */
 .footer-link {
     color: var(--secondary-light-green);
@@ -44,7 +114,6 @@ footer {
 }
 /* saca el punteado de los datos de contacto*/
 .footer-contacto ul li {
-    list-style: none;
     font-weight: normal;
     font-size: 0.8rem;
 }
@@ -78,52 +147,6 @@ footer {
     font-size: 0.5rem;
 }
 
-/*una seccion nav adentro del header 
- asi podemos darle un margen en resoluciones mas grandes  */
-.main-nav {
-    display: flex; 
-    justify-content: space-around;
-    align-items: center;
-    height: 5rem;
-}
-/* le agregegue padding al burguer menu para que ocupe lo mismo que
-los 3 iconos de la derecha y quede todo centrado */
-.burger-menu {
-    padding: 0 2rem;
-}
-.nav-toggler {
-    display:none;
-}
-
-.icon-menu li {
-    display: inline-table;
-    list-style: none;
-    margin: 0.2rem;
-}
-.section-menu {
-    display: none;
-}
-
-/* clase icon para agregarle a los iconos locales  */
-.icon {
-    display: inline-block;
-    cursor: pointer;
-    width: 1.2rem;
-    height: 1.2rem;
-    background-size: 1.2rem 1.2rem;
-    fill: var(--primary-green);
-}
-.icon-social {
-    display: inline-block;
-    cursor: pointer;
-    background-size: 1.6rem 1.6rem;
-    width: 1.6rem;
-    height: 1.6rem;
-}
-.no-list-style {
-list-style: none;
-}
-
 /* Comencé a probar la parte de desktop */
 @media (min-width: 769px) {
     /* desaparece burguer menu y aparecen los links de navegacion */
@@ -144,7 +167,6 @@ list-style: none;
     
     .section-menu ul li{
         display: inline;
-        list-style: none;
         padding: auto;
     }
     
