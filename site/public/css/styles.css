@@ -217,7 +217,7 @@ list-style: none;
 
 /* Texto principal */
 .login-text{
-    font-family: var(--fuentePrimaria);
+    font-family: "Poppins";
     color: #014934;
     font-weight: 700;
     text-align: center;
