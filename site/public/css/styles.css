@@ -33,7 +33,7 @@ header {
 main {
     width: 90%;
     margin: auto;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 }
 
 /* footer con posicion absoluta pegado abajo */
@@ -50,6 +50,7 @@ footer {
 article {
     margin-bottom: 10px;
     padding: 15px;
+    background-color: rgba(148, 241, 151, 0.22);
 }
 
 
@@ -61,6 +62,8 @@ article {
     display: flex;
     flex-direction: column;
 }
+
+
 
 div.img img {
     width: 100%;
@@ -90,6 +93,9 @@ los 3 iconos de la derecha y quede todo centrado */
 .section-menu {
     display: none;
 }
+/*          MAIN          */
+
+
 
 /* clase icon para agregarle a los iconos locales  */
 .icon {
@@ -268,7 +274,30 @@ list-style: none;
     border-radius: 20px;
     font-weight: 700;
     padding: 3px;
+    border: 0;
+    transition: all 0.5s;
 }
+.boton-login:hover {
+    background-color:darkorange;
+}
+
+.mas-vendidos article {
+    position: relative;
+}
+
+.Button-Agregar-Carrito {
+    position: absolute;
+    bottom: 15px;
+    background-color: #014934;
+    color: white;
+    width: 80%;
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 3px;
+    border: 0;
+    transition: all 0.5s;
+}
+
 /* link de "olvidaste tu password" */
 .password-forgotten-link{
     padding: 20px;
