@@ -18,15 +18,16 @@
             <!-- burguer menu para mobile -->
             <div class="burger-menu">
                 <label for="nav-troggler"><i class="icon" id="burger"></i></label>
+                <input type="checkbox" id="nav-troggler" class="nav-toggler">
             </div>
-            <input type="checkbox" id="nav-troggler" class="nav-toggler">
+
             <!-- menu de navegacion, solo desktop -->
             <nav class="section-menu">
                 <ul>
-                    <li><a class="nav-item no-list-style" href='shop'>Tienda</a></li>
-                    <li><a class="nav-item no-list-style" href='shop'>Ofertas</a></li>
-                    <li><a class="nav-item no-list-style" href='care'>Cuidados</a></li>
-                    <li><a class="nav-item no-list-style" href='about'>Sobre Nosotros</a></li>
+                    <li><a class="nav-item" href='shop'>Tienda</a></li>
+                    <li><a class="nav-item" href='shop'>Ofertas</a></li>
+                    <li><a class="nav-item" href='care'>Cuidados</a></li>
+                    <li><a class="nav-item" href='about'>Sobre Nosotros</a></li>
                 </ul>
             </nav>
             <!-- Logo, tiene que ser el link a home-->
@@ -35,9 +36,9 @@
             </div>
             <!-- iconos de navegacion -->
             <ul class="icon-menu">
-                <li class="no-list-style"><a href='shop'><i class="icon" id="search"></i></a></li>
-                <li class="no-list-style"><a href='login'><i class="icon" id="user"></i></a></li>
-                <li class="no-list-style"><a href='productCart'><i class="icon" id="cart"></i></a></li>
+                <li><a href='shop'><i class="icon" id="search"></i></a></li>
+                <li><a href='login'><i class="icon" id="user"></i></a></li>
+                <li><a href='productCart'><i class="icon" id="cart"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -47,8 +48,9 @@
 
     -->
     <main>
-        <section class="flex-column hero-conteiner">
-            <div class="big-hero" >
+        <!-- seccion de destacados -->
+        <section class="flex-column">
+            <div>
                 <article>
                     <div class="img">
                         <img src="img\portadas\portada-otoñopsd.png" alt="portada de seleccion otoño">
@@ -73,6 +75,7 @@
                 </article>
             </div>
         </section>
+        <!-- seccion mas vendidos -->
         <h2>Mas vendidos</h2>
         <section class="flex-row mas-vendidos">
             <article>
@@ -115,19 +118,19 @@
                 <nav class="footer-nav">
                     <h3 class="footer-title">Info</h3>
                     <ul>
-                        <li class="no-list-style"><a class="footer-link" href='shop'>Tienda</a></li>
-                        <li class="no-list-style"><a class="footer-link" href='shop'>Ofertas</a></li>
-                        <li class="no-list-style"><a class="footer-link" href='care'>Cuidados</a></li>
-                        <li class="no-list-style"><a class="footer-link" href='about'>Sobre Nosotros</a></li>
+                        <li><a class="footer-link" href='shop'>Tienda</a></li>
+                        <li><a class="footer-link" href='shop'>Ofertas</a></li>
+                        <li><a class="footer-link" href='care'>Cuidados</a></li>
+                        <li><a class="footer-link" href='about'>Sobre Nosotros</a></li>
                     </ul>
                 </nav>
                 <nav class="footer-col">
                     <div class="footer-contacto">
                         <h3 class="footer-title">Contacto</h3>
                         <ul>
-                            <li class="no-list-style"><i class="icon" id="whatsapp"></i>+54 15 5884 1543</li>
-                            <li class="no-list-style">plantasusi@susi.com.ar</li>
-                            <li class="no-list-style">Calle falsa 123</li>
+                            <li><i class="icon" id="whatsapp"></i>+54 15 5884 1543</li>
+                            <li>plantasusi@susi.com.ar</li>
+                            <li>Calle falsa 123</li>
                         </ul>
                     </div>
                     <div class="footer-seguinos">
@@ -143,9 +146,9 @@
             <!-- info legal -->
             <div>
                 <ul class="legal-info">
-                    <li class="no-list-style">© 2021 Plantasusi SA</li>
-                    <li class="no-list-style">Términos de uso</li>
-                    <li class="no-list-style">Póliticas de privacidad</li>
+                    <li>© 2021 Plantasusi SA</li>
+                    <li>Términos de uso</li>
+                    <li>Póliticas de privacidad</li>
                 </ul>
             </div>
         </div>

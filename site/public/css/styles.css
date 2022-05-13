@@ -22,55 +22,17 @@ body{
     height: 100%;
 }
 
-/* el header queda fijo */
+/*            HEADER             */
 header {
-    /* position: fixed; */
+    position: fixed;
+    background-color: white;
     left: 0px;
     top: 0px;
     width: 100%;
     border-bottom: solid var(--primary-green) 2px;
+    list-style: none;
 }
-main {
-    width: 90%;
-    margin: auto;
-    /* background-color: antiquewhite; */
-}
-
-/* footer con posicion absoluta pegado abajo */
-footer {
-    /* position:absolute; */
-    /* left: 0px;
-    bottom: 0px;
-    width: 100%; */
-    font-weight: bold;
-    background-color: var(--primary-green);
-    color: var(--secondary-light-green);
-    font-size: 0.9rem;
-}
-article {
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: rgba(148, 241, 151, 0.22);
-}
-
-
-.flex-row{
-    display: flex;
-}
-
-.flex-column{
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-div.img img {
-    width: 100%;
-}
-
-/*una seccion nav adentro del header 
- asi podemos darle un margen en resoluciones mas grandes  */
+/* nav adentro del header (asi podemos darle un margen en resoluciones mas grandes)  */
 .main-nav {
     display: flex; 
     justify-content: space-around;
@@ -85,27 +47,37 @@ los 3 iconos de la derecha y quede todo centrado */
 .nav-toggler {
     display:none;
 }
-
-.icon-menu li {
-    display: inline-table;
-    margin: 0.2rem;
-}
+/* Menu navegacion oculto para mobile */
 .section-menu {
     display: none;
 }
-/*          MAIN          */
 
+.icon-menu li {
+    display: inline;
+    margin: 0.25rem;
+}
 
-
-/* clase icon para agregarle a los iconos locales  */
 .icon {
     display: inline-block;
     cursor: pointer;
     width: 1.2rem;
     height: 1.2rem;
     background-size: 1.2rem 1.2rem;
-    fill: var(--primary-green);
 }
+
+
+/*       FOOTER        */
+
+footer {
+    width: 100%;
+    font-weight: bold;
+    background-color: var(--primary-green);
+    color: var(--secondary-light-green);
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+/* clase icon para agregarle a los iconos locales  */
 .icon-social {
     display: inline-block;
     cursor: pointer;
@@ -113,9 +85,7 @@ los 3 iconos de la derecha y quede todo centrado */
     width: 1.6rem;
     height: 1.6rem;
 }
-.no-list-style {
-list-style: none;
-}
+
 /* no se porque tengo que especificar esto para que los links no aparezcan azules */
 .footer-link {
     color: var(--secondary-light-green);
@@ -141,13 +111,11 @@ list-style: none;
 .footer-seguinos {
     margin-top: 1rem;
 }
-/* .social-icons {
-    display: flex;
-    justify-content: flex-start;
-} */
+
 .social-icons i{
     margin:  0 1.5rem 0 0;
 }
+
 .legal-info {
     display: flex;
     justify-content: space-around;
@@ -155,6 +123,34 @@ list-style: none;
     font-weight: normal;
     font-size: 0.5rem;
 }
+/*       MAIN           */
+/* se le agrega margin top para darle espacio al header */
+main {
+    width: 90%;
+    margin: 6rem auto 2rem;
+    color: var(--primary-green);
+}
+
+article {
+    margin-bottom: 10px;
+    padding: 15px 25px 10px;
+    background-color: rgba(214, 255, 216, 0.322);
+    border-radius: 10px;
+}
+div.img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* 'Libreria' - clases genericas */
+.flex-row{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Comencé a probar la parte de desktop */
 @media (min-width: 769px) {
@@ -223,8 +219,8 @@ list-style: none;
 
 /* Texto principal */
 .login-text{
-    font-family: var(--fuentePrimaria);
-    color: #014934;
+    /* font-family: var(--fuentePrimaria); */
+    /* color: #014934; */
     font-weight: 700;
     text-align: center;
     margin-top: 100px;
