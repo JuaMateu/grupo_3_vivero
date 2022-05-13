@@ -1,13 +1,13 @@
 
 ## Retrospectivas
 
-### primer sprint
+### Primer sprint
 
 Concluído el Primer sprint realizamos una retrospectiva sobre el trabajo realzado y la dinamica del grupo. Para esto utilizamos el metodo Starfish
 
 ## Retrospectiva Starfish:
 
--  Comenzar a hacer: :fire:
+-  :fire: Comenzar a hacer: 
     decidimos ponernos de acuerdo para tener una reunion semanal para estar mas coordinados
 
 - :muscle: Hacer más: 
