@@ -24,3 +24,8 @@ falta agregar a Pato que ya no está con nosotros :c
 - [NADDEOS](https://naddeos.com/): En esta pagina los elementos aparecen con un estilo particular, se ve un poco sobreexplotado pero podría quedar bien en algunos elementos.
 - [LIVELY ROOT](https://www.livelyroot.com): El diseño, el arreglo de los elementos en la página, las entradas con calificaciones de clientes, paleta de colores y las fotos de redes sociales anexadas. 
 - [LA FLEURAISON](https://lafleuraison.ca): La paleta de colores también además de contar con la opción de cambiar el idioma y la sección de la ubicación en el mapa.
+
+### Planificacion y organizacion
+
+Utilizamos un tablero kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
+Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyecto-integrador-grupo-3)

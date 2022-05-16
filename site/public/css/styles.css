@@ -22,13 +22,34 @@ body{
     height: 100%;
 }
 
-/* el header queda fijo */
+/*            HEADER             */
 header {
-    /* position: fixed; */
+    position: fixed;
+    background-color: white;
     left: 0px;
     top: 0px;
     width: 100%;
     border-bottom: solid var(--primary-green) 2px;
+    list-style: none;
+}
+/* nav adentro del header (asi podemos darle un margen en resoluciones mas grandes)  */
+.main-nav {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+}
+/* le agregegue padding al burguer menu para que ocupe lo mismo que
+los 3 iconos de la derecha y quede todo centrado */
+.burger-menu {
+    padding: 0 2rem;
+}
+.nav-toggler {
+    display:none;
+}
+/* Menu navegacion oculto para mobile */
+.section-menu {
+    display: none;
 }
 main {
     width: 90%;
@@ -36,16 +57,29 @@ main {
     /* background-color: antiquewhite; */
 }
 
-/* footer con posicion absoluta pegado abajo */
+.icon-menu li {
+    display: inline;
+    margin: 0.25rem;
+}
+
+.icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem 1.2rem;
+}
+
+
+/*       FOOTER        */
+
 footer {
-    /* position:absolute; */
-    /* left: 0px;
-    bottom: 0px;
-    width: 100%; */
+    width: 100%;
     font-weight: bold;
     background-color: var(--primary-green);
     color: var(--secondary-light-green);
     font-size: 0.9rem;
+    list-style: none;
 }
 article {
     margin-bottom: 10px;
@@ -53,6 +87,14 @@ article {
     background-color: rgba(148, 241, 151, 0.22);
 }
 
+/* clase icon para agregarle a los iconos locales  */
+.icon-social {
+    display: inline-block;
+    cursor: pointer;
+    background-size: 1.6rem 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+}
 
 .flex-row{
     display: flex;
@@ -141,13 +183,11 @@ list-style: none;
 .footer-seguinos {
     margin-top: 1rem;
 }
-/* .social-icons {
-    display: flex;
-    justify-content: flex-start;
-} */
+
 .social-icons i{
     margin:  0 1.5rem 0 0;
 }
+
 .legal-info {
     display: flex;
     justify-content: space-around;
@@ -223,8 +263,8 @@ list-style: none;
 
 /* Texto principal */
 .login-text{
-    font-family: "Poppins";
-    color: #014934;
+    /* font-family: var(--fuentePrimaria); */
+    /* color: #014934; */
     font-weight: 700;
     text-align: center;
     margin-top: 20px;
