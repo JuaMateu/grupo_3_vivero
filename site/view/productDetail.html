@@ -33,7 +33,7 @@
 
             <!-- menu de navegacion, solo desktop -->
             <nav class="section-menu">
-                <ul>
+                <ul class="section-menu__list">
                     <li><a class="nav-item no-list-style" href='home'>Tienda</a></li>
                     <li><a class="nav-item no-list-style" href='home'>Ofertas</a></li>
                     <li><a class="nav-item no-list-style" href='productDetail'>Cuidados</a></li>
@@ -89,47 +89,54 @@
         </section>
 
                 <!-- seccion mas vendidos -->
-                <h2>Mas vendidos</h2>
+                <h2 class="center-text">Mas vendidos</h2>
                 <section class="flex-row mas-vendidos">
                     
                     <article class="plant-Card">
-                        <div class="img">
-                            <img src="img\plantas\Aglaonema.png" alt="portada de seleccion otoño">
-                        </div>
-                        <h4>Aglaonema africana</h4>
-                        <p>$2500</p>
-                        <button class="Button-Agregar-Carrito">Agregar al Carrito</button>
+                        <a href="productDetail">
+                            <div class="img plant-Card__img">
+                                <img src="img\plantas\Aglaonema.png" alt="portada de seleccion otoño">
+                                <div class="plant-Card__background"></div>
+                            </div>
+                            <h4>Aglaonema africana</h4>
+                            <p class="subtitle">$2500</p>
+                        </a>
+                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
                     </article>
         
                     <article class="plant-Card">
-                        <div class="img">
-                            <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                        </div>
-                        <h4>Potus verde</h4>
-                        <p>$2300</p>
-                        <button class="Button-Agregar-Carrito">Agregar al Carrito</button>
+                        <a href="productDetail">
+                            <div class="img plant-Card__img">
+                                <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
+                                <div class="plant-Card__background"></div>
+                            </div>
+                            <h4>Potus verde</h4>
+                            <p>$2300</p>
+                        </a>
+                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
                     </article>
         
-                    <!-- <article class="plant-Card">
-                        <div class="img">
+                    <article class="plant-Card plant-Card--desktop">
+                        <div class="img plant-Card__img">
                             <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
+                            <div class="plant-Card__background"></div>
                         </div>
                         <h4>Potus verde</h4>
                         <p>$2300</p>
-                        <button class="Button-Agregar-Carrito">Agregar al Carrito</button>
+                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
                     </article>
         
-                    <article class="plant-Card">
-                        <div class="img">
+                    <article class="plant-Card plant-Card--desktop">
+                        <div class="img plant-Card__img">
                             <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
+                            <div class="plant-Card__background"></div>
                         </div>
                         <h4>Potus verde</h4>
                         <p>$2300</p>
-                        <button class="Button-Agregar-Carrito">Agregar al Carrito</button>
-                    </article> -->
+                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
+                    </article>
         
                 </section>
-
     </main>
 
 

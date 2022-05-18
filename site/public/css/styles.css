@@ -85,6 +85,9 @@ header {
     display: none;
 }
 
+
+
+
 /*una seccion nav adentro del header 
  asi podemos darle un margen en resoluciones mas grandes  */
  .main-nav {
@@ -647,8 +650,17 @@ div .img-cart{
         display: none;
     }
     .section-menu{
-        display:table;
+        display:flex;
     }
+    .section-menu__list{
+        display: flex;
+    }
+
+    .section-menu li{
+        list-style: none;
+        padding: 1rem 1.5rem;
+    }
+
     /* logo a la izquierda con flexbox */
     .logo{
         order: -1;
@@ -658,10 +670,6 @@ div .img-cart{
         margin: 0 auto;
     }
     
-    .section-menu ul li{
-        display: inline;
-        padding: auto;
-    }
     
     .nav-item{
         font-family: 'Poppins';
