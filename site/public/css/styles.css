@@ -154,14 +154,16 @@ main {
 }
 
 .banner article {
-    padding: 15px 0px;
+    padding: 2rem 0px 1rem 0;
+    border-bottom: 1px solid;
 }
 
 .banner-article1__img{
-    height: 60vh;
+    height: clamp(50vh , 50vh, 80vh );
 }
 .banner-article1__img img{
-
+    object-fit: cover;
+    height: 100%;
 }
 .banner-article1__footer{
     display: flex;
