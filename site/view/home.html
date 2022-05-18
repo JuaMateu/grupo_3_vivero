@@ -49,36 +49,47 @@
     -->
     <main>
         <!-- seccion de destacados -->
-        <section class="flex-column">
-            <div>
-                <article>
-                    <div class="img">
-                        <img src="img\portadas\portada-otoñopsd.png" alt="portada de seleccion otoño">
+        <section class="banner">
+        
+            <article class="banner-article1">
+                <a class="banner-article1__link" href="#">
+                    <div class="banner-article1__img">
+                        <img src="img\portadas\otoño.jpg" alt="portada de seleccion otoño">
                     </div>
-                    <H5>20% OFF</H5>
-                    <h4>Seleccion de Otoño</h4>
-                    <button class="boton-login">Comprar ahora</button>
-                </article>
-                <article>
+                    <div class="banner-article1__footer">
+                        <p class="banner__sub-title">20% OFF en nuestras plantas de interior</p>
+                        <h4>Mira nuestra seleccion de plantas!</h4>
+                        <button class="boton-login boton-login">Comprar ahora</button>
+                    </div>
+                </a>
+            </article>
+
+            <article class="banner-article2">
+                <a href="#">
                     <div class="img">
                         <img src="img\portadas\gomero.jpg" alt="portada de seleccion otoño">
                     </div>
-                    <H5>20% OFF</H5>
+                    <p class="banner__sub-title">20% OFF</p>
                     <h4>Gomero veteado</h4>
-                </article>
-                <article>
+                </a>
+            </article>
+
+            <article class="banner-article3">
+                <a href="#">
                     <div class="img">
                         <img src="img\portadas\herramientas.png" alt="portada de seleccion otoño">
                     </div>
-                    <H5>30% OFF</H5>
+                    <p class="banner__sub-title">30% OFF</p>
                     <h4>Herramientas</h4>
-                </article>
-            </div>
+                </a>
+            </article>
+
         </section>
         <!-- seccion mas vendidos -->
         <h2>Mas vendidos</h2>
         <section class="flex-row mas-vendidos">
-            <article>
+            
+            <article class="plant-Card">
                 <div class="img">
                     <img src="img\plantas\Aglaonema.png" alt="portada de seleccion otoño">
                 </div>
@@ -86,7 +97,8 @@
                 <h4>Aglaonema africana</h4>
                 <button class="Button-Agregar-Carrito">Agregar al Carrito</button>
             </article>
-            <article>
+
+            <article class="plant-Card">
                 <div class="img">
                     <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
                 </div>
