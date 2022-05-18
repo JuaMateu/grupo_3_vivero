@@ -66,19 +66,16 @@ los 3 iconos de la derecha y quede todo centrado */
 .section-menu {
     display: none;
 }
-main {
+/* main {
     width: 90%;
     margin: auto;
-    /* background-color: antiquewhite; */
-}
+     background-color: antiquewhite; /
+} */
 
 .icon-menu li {
     display: inline;
     margin: 0.25rem;
 }
-
-
-
 
 /*       FOOTER        */
 
@@ -96,7 +93,6 @@ footer li {
 article {
     margin-bottom: 10px;
     padding: 15px;
-    background-color: rgba(148, 241, 151, 0.22);
 }
 
 /* clase icon para agregarle a los iconos locales  */
@@ -230,13 +226,14 @@ main {
     border-bottom: 1px solid;
 }
 
-.banner-article1__img{
+/* .banner-article1__img{
     height: clamp(50vh , 50vh, 80vh );
 }
 .banner-article1__img img{
     object-fit: cover;
     height: 100%;
-}
+} */
+
 .banner-article1__footer{
     display: flex;
     flex-direction: column;
@@ -402,9 +399,9 @@ main {
     background-color:darkorange;
 }
 
-.mas-vendidos{
-    /* flex-wrap: wrap; */
-}
+/* .mas-vendidos{
+     flex-wrap: wrap 
+} */
 .plant-Card {
     position: relative;
 }
