@@ -11,20 +11,33 @@
 </head>
 <body>
     <header>
-        <!-- main nav dentro del header -->
+        <!--
+            main nav dentro del header
+        -->
         <nav class="main-nav">
             <!-- burguer menu para mobile -->
             <div class="burger-menu">
                 <label for="nav-troggler"><i class="icon" id="burger"></i></label>
+                <input type="checkbox" id="nav-troggler" class="nav-toggler">
+                <div class="burger-menu__shadow">
+                    <nav class="burger-menu__links">
+                        <ul>
+                            <li><a class="nav-item no-list-style" href='home'>Tienda</a></li>
+                            <li><a class="nav-item no-list-style" href='home'>Ofertas</a></li>
+                            <li><a class="nav-item no-list-style" href='productDetail'>Cuidados</a></li>
+                            <li><a class="nav-item no-list-style" href='home'>Sobre Nosotros</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <input type="checkbox" id="nav-troggler" class="nav-toggler">
+
             <!-- menu de navegacion, solo desktop -->
             <nav class="section-menu">
                 <ul>
-                    <li><a class="nav-item no-list-style" href='shop'>Tienda</a></li>
-                    <li><a class="nav-item no-list-style" href='shop'>Ofertas</a></li>
-                    <li><a class="nav-item no-list-style" href='care'>Cuidados</a></li>
-                    <li><a class="nav-item no-list-style" href='about'>Sobre Nosotros</a></li>
+                    <li><a class="nav-item no-list-style" href='home'>Tienda</a></li>
+                    <li><a class="nav-item no-list-style" href='home'>Ofertas</a></li>
+                    <li><a class="nav-item no-list-style" href='productDetail'>Cuidados</a></li>
+                    <li><a class="nav-item no-list-style" href='home'>Sobre Nosotros</a></li>
                 </ul>
             </nav>
             <!-- Logo, tiene que ser el link a home-->
@@ -33,9 +46,9 @@
             </div>
             <!-- iconos de navegacion -->
             <ul class="icon-menu">
-                <li class="no-list-style"><a href='shop'><i class="icon" id="search"></i></a></li>
-                <li class="no-list-style"><a href='login'><i class="icon" id="user"></i></a></li>
-                <li class="no-list-style"><a href='productCart'><i class="icon" id="cart"></i></a></li>
+                <li><a href='shop'><i class="icon" id="search"></i></a></li>
+                <li><a href='login'><i class="icon" id="user"></i></a></li>
+                <li><a href='productCart'><i class="icon" id="cart"></i></a></li>
             </ul>
         </nav>
     </header>

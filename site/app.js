@@ -34,6 +34,9 @@ app.use(express.static(__dirname +'/public/'));
 app.get(httpRaiz, (req, res) => {
     res.sendFile(path.join(views, homeHtml))
 })
+app.post(httpHome, (req, res) => {
+    res.sendFile(path.join(views, homeHtml))
+})
 app.get(httpHome, (req, res) => {
     res.sendFile(path.join(views, homeHtml))
 })

@@ -7,6 +7,7 @@
     --primary-green-soft:rgba(1, 73, 52, .8);
     --secondary-light-green: rgba(230, 240, 231,1);
     --third-light-green: rgba(178, 226, 186, 1);
+    --third-light-green-soft: rgba(178, 226, 186, 0.6);
     --fuentePrimaria: 'Poppins'
 }
 
@@ -52,29 +53,62 @@ header {
     height: 5rem;
     max-width: 75rem;
 }
-
-/* le agregegue padding al burguer menu para que ocupe lo mismo que
-los 3 iconos de la derecha y quede todo centrado */
-.burger-menu {
-    padding: 0 2rem;
-}
+/* BURGER */
 .nav-toggler {
     display:none;
+}
+.burger-menu__shadow {
+    display: none;
+}
+.nav-toggler:checked ~ div {
+    position: absolute;
+    display: block;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--third-light-green-soft);
+}
+.burger-menu__links {
+    background-color: #014934;
+}
+.burger-menu__shadow a{
+    color: #ffffff;
+}
+.burger-menu__shadow li{
+    text-align: center;
+    list-style: none;
+    padding: 1rem 0;
 }
 /* links ocultos en mobile */
 .section-menu {
     display: none;
 }
+
+/*una seccion nav adentro del header 
+ asi podemos darle un margen en resoluciones mas grandes  */
+ .main-nav {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+}
+/* le agregegue padding al burguer menu para que ocupe lo mismo que
+los 3 iconos de la derecha y quede todo centrado */
+.burger-menu {
+    padding: 0 2rem;
+}
+
+.icon-menu li {
+    display: inline-table;
+    margin: 0.2rem;
+}
+
 /* main {
     width: 90%;
     margin: auto;
      background-color: antiquewhite; /
 } */
-
-.icon-menu li {
-    display: inline;
-    margin: 0.25rem;
-}
 
 /*       FOOTER        */
 
@@ -109,30 +143,8 @@ div.img img {
     width: 100%;
 }
 
-/*una seccion nav adentro del header 
- asi podemos darle un margen en resoluciones mas grandes  */
-.main-nav {
-    display: flex; 
-    justify-content: space-around;
-    align-items: center;
-    height: 5rem;
-}
-/* le agregegue padding al burguer menu para que ocupe lo mismo que
-los 3 iconos de la derecha y quede todo centrado */
-.burger-menu {
-    padding: 0 2rem;
-}
-.nav-toggler {
-    display:none;
-}
 
-.icon-menu li {
-    display: inline-table;
-    margin: 0.2rem;
-}
-.section-menu {
-    display: none;
-}
+
 /*          MAIN          */
 
 
@@ -354,6 +366,11 @@ main {
     width: 100%;
     padding: 9px;
     border: #014934 solid 1px;
+}
+
+.Pass-recovery {
+    display: flex;
+    flex-direction: column;
 }
 /* Boton de login */
 .boton-login{
