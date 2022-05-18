@@ -329,19 +329,20 @@ main {
     background-color:darkorange;
 }
 
+.mas-vendidos{
+    /* flex-wrap: wrap; */
+}
 .plant-Card {
     position: relative;
 }
 
 .Button-Agregar-Carrito {
-    position: absolute;
     bottom: 15px;
     background-color: #014934;
     color: white;
-    width: 80%;
-    border-radius: 20px;
-    font-weight: 700;
-    padding: 3px;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
     border: 0;
     transition: all 0.5s;
 }
