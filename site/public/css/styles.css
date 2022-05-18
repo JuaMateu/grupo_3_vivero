@@ -267,6 +267,9 @@ main {
 /* =============
     Componentes
  =============== */
+.center-text {
+    text-align: center;
+}
 
 .icon {
     display: inline-block;
