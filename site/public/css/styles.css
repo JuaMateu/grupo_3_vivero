@@ -267,7 +267,7 @@ list-style: none;
     /* color: #014934; */
     font-weight: 700;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 90px;
 }
 /* Pregunta de la creacion de cuenta */
 .have-account{
@@ -352,4 +352,30 @@ list-style: none;
 /* Color de los placeholder de los cuadros de dialogo */
 ::placeholder{
     color: var(--third-light-green);
+}
+
+/* Carrito de compras */
+.article-cart{
+    margin-top: 85px;
+    max-height: 80px;
+    display: flex;
+}
+div .img-cart{
+    max-width: 25%;
+}
+.img-cart img{
+    max-width: 100%;
+    max-height: 100%;
+    border: rgb(173, 173, 173) solid 1px;
+}
+.article-cart-description{
+    border: blue solid 1px;
+    width: 100%;
+}
+.article-cart-description p{
+    text-align: center;
+}
+.price-cart{
+    display: flex;
+    justify-content: space-between;
 }
