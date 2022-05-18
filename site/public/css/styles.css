@@ -19,21 +19,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    font-family: "poppins", sans-serif;
+}
+
 img {
     width: 100%;
-    height: 100%;
-    object-fit: cover
+    /* height: 100%; */
+    /* object-fit: cover */
 } 
 
 /* =========
     LAYOUT 
 ===========*/
 
-
-
-body{
-    font-family: "poppins", sans-serif;
-}
 
 /* HEADER */
 header {
@@ -92,17 +91,8 @@ footer li {
 }
 article {
     margin-bottom: 10px;
-    padding: 15px;
 }
 
-/* clase icon para agregarle a los iconos locales  */
-.icon-social {
-    display: inline-block;
-    cursor: pointer;
-    background-size: 1.6rem 1.6rem;
-    width: 1.6rem;
-    height: 1.6rem;
-}
 
 .flex-row{
     display: flex;
@@ -166,7 +156,7 @@ los 3 iconos de la derecha y quede todo centrado */
 .no-list-style {
 list-style: none;
 }
-/* no se porque tengo que especificar esto para que los links no aparezcan azules */
+/* para que los links no aparezcan azules */
 .footer-link {
     color: var(--secondary-light-green);
     line-height: 1.8rem;
@@ -222,17 +212,17 @@ main {
 }
 
 .banner article {
-    padding: 2rem 0px 1rem 0;
+    padding: 1rem 0px 1rem 0;
     border-bottom: 1px solid;
 }
 
-/* .banner-article1__img{
+.banner-article1__img{
     height: clamp(50vh , 50vh, 80vh );
 }
 .banner-article1__img img{
     object-fit: cover;
     height: 100%;
-} */
+}
 
 .banner-article1__footer{
     display: flex;
@@ -260,35 +250,7 @@ main {
 }
 
 
-/* Comencé a probar la parte de desktop */
-@media (min-width: 769px) {
-    /* desaparece burguer menu y aparecen los links de navegacion */
-    .burger-menu {
-        display: none;
-    }
-    .section-menu{
-        display:table;
-    }
-    /* logo a la izquierda con flexbox */
-    .logo{
-        order: -1;
-    }
-    .main-nav{
-        max-width: 1300px;
-        margin: 0 auto;
-    }
-    
-    .section-menu ul li{
-        display: inline;
-        padding: auto;
-    }
-    
-    .nav-item{
-        font-family: 'Poppins';
-        font-weight: bold;
-        color: #014934;
-    }
-}
+
 
 /* =============
     Componentes
@@ -300,6 +262,15 @@ main {
     width: 1.2rem;
     height: 1.2rem;
     background-size: 1.2rem 1.2rem;
+}
+
+/* iconos de redes sociales - footer  */
+.icon-social {
+    display: inline-block;
+    cursor: pointer;
+    background-size: 1.6rem 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 #logo-principal {
@@ -404,17 +375,33 @@ main {
 } */
 .plant-Card {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem;
+}
+.plant-Card a {
+    color: #014934;
+}
+.plant-Card p {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+    border-bottom: 1px solid var(--primary-green);
+}
+
+.plant-Card h4 {
+    font-size: 0.8rem;
+    margin: .3rem 0;
 }
 
 .Button-Agregar-Carrito {
-    bottom: 15px;
-    background-color: #014934;
-    color: white;
-    border-radius: 5px;
-    font-weight: 600;
-    padding: 0.3rem 1rem;
+    background-color: var(--primary-green);
     border: 0;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.3rem 1rem;
     transition: all 0.5s;
+    margin: .3rem 0;
 }
 
 /* link de "olvidaste tu password" */
@@ -568,13 +555,13 @@ div .img-cart{
     font-weight: 600;
 }
 
-.conter {
+.counter {
     display: flex;
 }
 
-.conter__input {
+.counter__input {
     height:2.2rem;
-    width: 6rem;
+    width: 3rem;
     text-align: center;
     font-size: 1.3rem;
     border:2px solid #ddd;
@@ -583,12 +570,10 @@ div .img-cart{
     outline: none;
 }
 
-.conter__minus, .conter__plus{
+.counter__minus, .counter__plus{
     cursor:pointer;
     height:2.2rem;
     width: 2rem;
-    /* background:#f2f2f2; */
-    /* border-radius:4px; */
     border:2px solid #ddd;
     display: inline-block;
     vertical-align: middle;
@@ -601,7 +586,7 @@ div .img-cart{
     background-color: var(--third-light-green);
     color: var(--primary-green);
     font-weight: normal;
-    padding: .3rem 2.7rem;
+    padding: .3rem 2rem;
     transition: all 0.5s;
     border: 0px;
 }
@@ -612,4 +597,37 @@ div .img-cart{
     font-weight: bold;
     padding: .3rem 2.7rem;
     border: 0px;
+}
+
+/*=================
+     MEDIA QUERIES
+================= */
+
+@media (min-width: 769px) {
+    /* desaparece burguer menu y aparecen los links de navegacion */
+    .burger-menu {
+        display: none;
+    }
+    .section-menu{
+        display:table;
+    }
+    /* logo a la izquierda con flexbox */
+    .logo{
+        order: -1;
+    }
+    .main-nav{
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    .section-menu ul li{
+        display: inline;
+        padding: auto;
+    }
+    
+    .nav-item{
+        font-family: 'Poppins';
+        font-weight: bold;
+        color: #014934;
+    }
 }
