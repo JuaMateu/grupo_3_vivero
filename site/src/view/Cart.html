@@ -48,95 +48,64 @@
             <ul class="icon-menu">
                 <li><a href='shop'><i class="icon" id="search"></i></a></li>
                 <li><a href='login'><i class="icon" id="user"></i></a></li>
-                <li><a href='productCart'><i class="icon" id="cart"></i></a></li>
+                <li><a href='Cart'><i class="icon" id="cart"></i></a></li>
             </ul>
         </nav>
     </header>
     <!-- Aca va el cuerpo la pagina -->
     <main>
-
-        <section class="flex-column">
-
-            <div class="prod-detail">
-                <figure class="prod-detail__slide">
-                    <img src="img/plantas/Gomero1.jpg" alt="gomero">
-                    <a href="#" class="prod-detail__prev">&#10094;</a>
-                    <a href="#" class="prod-detail__next">&#10095;</a>
-                </figure>
-                <h2>Gomero Variegata</h2>
-                <div class="flex-row">
-                    <p class="prod-detail__price">$ 4800 <span>$ 4500</span></p>
-                    <button class="prod-detail__button">Comprar</button>
+        <div class="title-cart">
+            <div>Comprar</div>
+            <p>$999.99</p>
+        </div>
+        <div class="article-cart">
+            <div class="img-cart">
+                <img src="img/plantas/potus1.png" alt="Potus">
+            </div>
+            <div class="article-cart-description">
+                <div class="item-name-cart">Potus</div>
+                <div class="price-cart">
+                    <div>$800</div>
+                    <div>
+                        <input class="input-cart-qnty" type="number" value="1" min="1" max="10">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
                 </div>
             </div>
-
-            <div class="prod-desc">
-                <p> <span>Descripción:</span>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at libero augue. Nam in consectetur massa. Aenean ut purus sit amet felis pharetra </p>
-                <p> <span>Nivel de cuidados:</span> Requiere un poco de atencion</p>
-                <p> <span>ideal para:</span> interior</p>
+        </div>
+        <div class="article-cart">
+            <div class="img-cart">
+                <img src="img/plantas/Aglaonema.png" alt="Aglaonema">
             </div>
-            <div class="flex-row">
-                <div class="counter">
-                    <span class="counter__minus">-</span>
-                    <input class="counter__input" type="text" value="1"/>
-                    <span class="counter__plus">+</span>
+            <div class="article-cart-description">
+                <div class="item-name-cart">Aglaonema</div>
+                <div class="price-cart">
+                    <div>$800</div>
+                    <div>
+                        <input class="input-cart-qnty" type="number" value="1" min="1" max="10">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
                 </div>
-                <!-- <div>
-                    <input class="counter__input" type="number" value="1" min="1" max="10">
-                </div> -->
-                <button class="prod-detail__button--carrito">Agrega al carrito</button>
             </div>
-        </section>
-
-                <!-- seccion mas vendidos -->
-                <h2 class="center-text">Mas vendidos</h2>
-                <section class="flex-row mas-vendidos">
-                    
-                    <article class="plant-Card">
-                        <a href="productDetail">
-                            <div class="img plant-Card__img">
-                                <img src="img\plantas\Aglaonema.png" alt="portada de seleccion otoño">
-                                <div class="plant-Card__background"></div>
-                            </div>
-                            <h4>Aglaonema africana</h4>
-                            <p class="subtitle">$2500</p>
-                        </a>
-                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-                    </article>
-        
-                    <article class="plant-Card">
-                        <a href="productDetail">
-                            <div class="img plant-Card__img">
-                                <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                                <div class="plant-Card__background"></div>
-                            </div>
-                            <h4>Potus verde</h4>
-                            <p>$2300</p>
-                        </a>
-                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-                    </article>
-        
-                    <article class="plant-Card plant-Card--desktop">
-                        <div class="img plant-Card__img">
-                            <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                            <div class="plant-Card__background"></div>
-                        </div>
-                        <h4>Potus verde</h4>
-                        <p>$2300</p>
-                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-                    </article>
-        
-                    <article class="plant-Card plant-Card--desktop">
-                        <div class="img plant-Card__img">
-                            <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                            <div class="plant-Card__background"></div>
-                        </div>
-                        <h4>Potus verde</h4>
-                        <p>$2300</p>
-                        <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-                    </article>
-        
-                </section>
+        </div>
+        <div class="article-cart">
+            <div class="img-cart">
+                <img src="img/plantas/portulacaria afra.png" alt="Portulacaria Afra">
+            </div>
+            <div class="article-cart-description">
+                <div class="item-name-cart">Portulacaria</div>
+                <div class="price-cart">
+                    <div>$800</div>
+                    <div>
+                        <input class="input-cart-qnty" type="number" value="1" min="1" max="10">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title-cart">
+            <p>Proceder al pago</p>
+        </div>
     </main>
 
 

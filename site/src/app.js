@@ -11,20 +11,20 @@ const public = path.join(__dirname, '/public/')
 // http routes
 const httpRaiz = '/'
 const httpHome = '/home'
-const httpLogin = '/login'
-const httpCart = '/productCart'
-const httpProductDetail = '/productDetail'
-const httpRegister = '/Register'
 const httpShop = '/shop'
+const httpCart = '/Cart'
+const httpProductDetail = '/productDetail'
+const httpLogin = '/login'
+const httpRegister = '/Register'
 const httpUserRecovery = '/userRecovery'
 // html
 const homeHtml = 'home.html'
-const LoginHtml = 'login.html'
-const productCartHtml = 'productCart.html'
-const productDetailHtml = 'productDetail.html'
-const RegisterHtml = 'Register.html'
 const shopHtml = 'shop.html'
-const userRecoveryHtml = 'userRecovery.html'
+const LoginHtml = 'users/login.html'
+const RegisterHtml = 'users/Register.html'
+const productCartHtml = 'Cart.html'
+const productDetailHtml = 'products/productDetail.html'
+const userRecoveryHtml = 'users/userRecovery.html'
 
 
 // Define the static file path
