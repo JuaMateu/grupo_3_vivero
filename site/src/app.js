@@ -7,7 +7,7 @@ const port = 3000
 // views
 const views = path.join(__dirname, 'view/')
 // public
-const public = path.join(__dirname, 'public/')
+const public = path.join(__dirname, '/public/')
 // http routes
 const httpRaiz = '/'
 const httpHome = '/home'
@@ -28,8 +28,8 @@ const userRecoveryHtml = 'userRecovery.html'
 
 
 // Define the static file path
-app.use(express.static(__dirname +'/public/'));
-// app.use(express.static(__dirname +'/view/'));
+app.use(express.static(path.join(__dirname , '..' , 'public')));
+
 
 app.get(httpRaiz, (req, res) => {
     res.sendFile(path.join(views, homeHtml))
