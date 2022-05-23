@@ -515,7 +515,13 @@ div .img-cart{
 }
 .input-cart-qnty{
     width: 30%;   
+    text-align: center;
 }
+.trash-button{
+    border: none;
+    background-color: white;
+}
+
 
 /* ================
     ProductDetail 
