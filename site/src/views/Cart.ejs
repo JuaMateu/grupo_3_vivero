@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head') %>
+    </head>
+<body>
+    <%- include('./partials/header') %>
+    <!-- Aca va el cuerpo la pagina -->
+    <main>
+        <div class="title-cart">
+            <div>Comprar</div>
+            <p>$999.99</p>
+        </div>
+        <div class="article-cart">
+            <div class="img-cart">
+                <img src="img/plantas/potus1.png" alt="Potus">
+            </div>
+            <div class="article-cart-description">
+                <div class="item-name-cart">Potus</div>
+                <div class="price-cart">
+                    <div>$800</div>
+                    <div>
+                        <input class="input-cart-qnty" type="number" value="1" min="1" max="10">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-cart">
+            <div class="img-cart">
+                <img src="img/plantas/Aglaonema.png" alt="Aglaonema">
+            </div>
+            <div class="article-cart-description">
+                <div class="item-name-cart">Aglaonema</div>
+                <div class="price-cart">
+                    <div>$800</div>
+                    <div>
+                        <input class="input-cart-qnty" type="number" value="1" min="1" max="10">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-cart">
+            <div class="img-cart">
+                <img src="img/plantas/portulacaria afra.png" alt="Portulacaria Afra">
+            </div>
+            <div class="article-cart-description">
+                <div class="item-name-cart">Portulacaria</div>
+                <div class="price-cart">
+                    <div>$800</div>
+                    <div>
+                        <input class="input-cart-qnty" type="number" value="1" min="1" max="10">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title-cart">
+            <p>Proceder al pago</p>
+        </div>
+    </main>
+
+
+
+
+    <!-- aca arranca el footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html>
