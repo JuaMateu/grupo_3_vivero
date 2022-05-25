@@ -17,6 +17,6 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 ## Lunes 23 de mayo
 
 ### Grupal: 
-- Que hicimos: ACtualizamos estructura de archivos y implementamos template engines para el footer, header y head.
+- Que hicimos: Actualizamos estructura de archivos y implementamos template engines para el footer, header y head.
 - problemas: tuvimos algunos problemas de merge y problemas de rooteos por el cambio de estructura.
 - Que vamos a hacer: hay que resolver los pendientes del sprint 2 y seguir modularizando el codigo (templates para bloques comunes de la pagina)
