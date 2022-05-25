@@ -20,3 +20,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Que hicimos: Actualizamos estructura de archivos y implementamos template engines para el footer, header y head.
 - problemas: tuvimos algunos problemas de merge y problemas de rooteos por el cambio de estructura.
 - Que vamos a hacer: hay que resolver los pendientes del sprint 2 y seguir modularizando el codigo (templates para bloques comunes de la pagina)
+
+## Martes 24 de mayo
+### Juan Mateu:
+- Que hice: organicé un poco el CSS, apliqué nomeclatura BEM a algunas partes del codigo.
+- problemas: lleva mucho trabajo, me quedaron partes sin terminar
+- Que voy a hacer: terminar la tarea y luego pasar a los siguientes entregables
