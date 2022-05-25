@@ -1,3 +1,7 @@
+/*=========
+    GLOBAL 
+==========*/
+
 /* importa fuentes poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 
@@ -11,7 +15,6 @@
     --fuentePrimaria: 'Poppins'
 }
 
-/* GLOBAL */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -30,9 +33,46 @@ img {
     /* object-fit: cover */
 } 
 
+
+/* clase icon para agregarle a los iconos locales  */
+.icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem 1.2rem;
+    fill: var(--primary-green);
+}
+
+article {
+    margin-bottom: 10px;
+}
+
+/* =========
+1.2 Fonts 
+===========*/
+
+.footer__title {
+    font-size: 1.4rem;
+    padding-bottom: 0.7rem;
+    margin-top: 1rem;
+}
+
+.footer__link {
+    color: var(--secondary-light-green);
+    line-height: 1.8rem;
+    font-weight: normal;
+}
+
+.footer__contacto {
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+
 /* =========
     LAYOUT 
-===========*/
+    =======*/
 
 
 /* HEADER */
@@ -45,7 +85,6 @@ header {
     border-bottom: solid var(--primary-green) 2px;
     z-index: 9;
 }
-/* barra de navegacion */
 .main-nav {
     display: flex; 
     justify-content: space-around;
@@ -53,14 +92,14 @@ header {
     height: 5rem;
     max-width: 75rem;
 }
-/* BURGER */
-.nav-toggler {
+/* Burger menu */
+.burger-menu {
+    padding: 0 2rem;
+}
+.burger-menu__nav-toggler {
     display:none;
 }
-.burger-menu__shadow {
-    display: none;
-}
-.nav-toggler:checked ~ div {
+.burger-menu__nav-toggler:checked ~ div {
     position: absolute;
     display: block;
     top: 5rem;
@@ -68,6 +107,9 @@ header {
     width: 100%;
     height: 100vh;
     background-color: var(--third-light-green-soft);
+}
+.burger-menu__shadow {
+    display: none;
 }
 .burger-menu__links {
     background-color: #014934;
@@ -85,37 +127,23 @@ header {
     display: none;
 }
 
-
-
-
-/*una seccion nav adentro del header 
- asi podemos darle un margen en resoluciones mas grandes  */
- .main-nav {
-    display: flex; 
-    justify-content: space-around;
-    align-items: center;
-    height: 5rem;
-}
-/* le agregegue padding al burguer menu para que ocupe lo mismo que
-los 3 iconos de la derecha y quede todo centrado */
-.burger-menu {
-    padding: 0 2rem;
-}
-
 .icon-menu li {
     display: inline-table;
     margin: 0.2rem;
 }
 
-/* main {
-    width: 90%;
-    margin: auto;
-     background-color: antiquewhite; /
-} */
+/*       MAIN        */
+main {
+    margin: 6rem  0.9rem;
+    color: var(--primary-green);
+    min-height: 50vh;
+}
 
 /*       FOOTER        */
 
-footer {
+
+.footer {
+    position: relative;
     width: 100%;
     font-weight: bold;
     background-color: var(--primary-green);
@@ -123,85 +151,16 @@ footer {
     font-size: 0.9rem;
 }
 
-footer li {
-    list-style: none;
-}
-article {
-    margin-bottom: 10px;
-}
 
-
-.flex-row{
-    display: flex;
-}
-
-.flex-column{
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-div.img img {
-    width: 100%;
-}
-
-
-
-/*          MAIN          */
-
-
-
-/* clase icon para agregarle a los iconos locales  */
-.icon {
-    display: inline-block;
-    cursor: pointer;
-    width: 1.2rem;
-    height: 1.2rem;
-    background-size: 1.2rem 1.2rem;
-    fill: var(--primary-green);
-}
-.icon-social {
-    display: inline-block;
-    cursor: pointer;
-    background-size: 1.6rem 1.6rem;
-    width: 1.6rem;
-    height: 1.6rem;
-}
-.no-list-style {
-list-style: none;
-}
-/* para que los links no aparezcan azules */
-.footer-link {
-    color: var(--secondary-light-green);
-    line-height: 1.8rem;
-}
-/* saca el punteado de los datos de contacto*/
-.footer-contacto li {
-    font-weight: normal;
-    font-size: 0.8rem;
-}
-/* especifica tamaño de los titulos del footer */
-.footer-title {
-    font-size: 1.4rem;
-    padding-bottom: 0.7rem;
-}
 /* display flex en linea para el footer */
-.footer-main {
+.footer__nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 1rem;
-}
-.footer-seguinos {
-    margin-top: 1rem;
 }
 
-.social-icons i{
-    margin:  0 1.5rem 0 0;
-}
 
-.legal-info {
+.footer__legal-info {
     display: flex;
     justify-content: space-around;
     padding: 2rem 0;
@@ -209,11 +168,8 @@ list-style: none;
     font-size: 0.5rem;
 }
 
-/* se le agrega margin top para darle espacio al header */
-main {
-    margin: 6rem  0.9rem;
-    color: var(--primary-green);
-}
+
+
 
 /*       HOME           */
 
@@ -252,80 +208,8 @@ main {
     font-size: 0.85rem;
     margin: 0.2rem 0 .5rem;
 }
-
-
-
-/* 'Libreria' - clases genericas */
-.flex-row{
-    display: flex;
-}
-.flex-column{
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-
-/* =============
-    Componentes
- =============== */
-.center-text {
-    text-align: center;
-}
-
-.icon {
-    display: inline-block;
-    cursor: pointer;
-    width: 1.2rem;
-    height: 1.2rem;
-    background-size: 1.2rem 1.2rem;
-}
-
-/* iconos de redes sociales - footer  */
-.icon-social {
-    display: inline-block;
-    cursor: pointer;
-    background-size: 1.6rem 1.6rem;
-    width: 1.6rem;
-    height: 1.6rem;
-}
-
-#logo-principal {
-    max-width: 8rem;
-}
-#search {
-    background-image: url(../img/icons/icon-search.svg);
-}
-#user {
-    background-image: url(../img/icons/icon-user.svg);
-}
-#cart {
-    background-image: url(../img/icons/icon-cart.svg);
-}
-#burger {
-    background-image: url(../img/icons/icon-hamburger.svg);
-}
-#pinterest {
-    background-image: url(../img/icons/icon-pinterest3.svg);
-
-}
-#facebook {
-    background-image: url(../img/icons/icon-fb3.svg);
-}
-#instagram {
-    background-image: url(../img/icons/icon-instagram3.svg);
-}
-#whatsapp {
-    background-image: url(../img/icons/icon-whatsapp.svg);
-}
-
-
-
-
 /* Sección de pagina del login */
 
-/* version mobile */
 
 /* Texto principal */
 .login-text{
@@ -393,9 +277,7 @@ main {
     background-color:darkorange;
 }
 
-/* .mas-vendidos{
-     flex-wrap: wrap 
-} */
+
 .plant-Card {
     position: relative;
     display: flex;
@@ -645,6 +527,79 @@ div .img-cart{
     padding: .3rem 2.7rem;
     border: 0px;
 }
+
+
+/*==========
+   LIBRERY
+===========*/
+.flex-row{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.no-list-style {
+    list-style: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* =============
+    Componentes
+ =============== */
+.icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem 1.2rem;
+}
+
+/* iconos de redes sociales - footer  */
+.icon--footer {
+    background-size: 1.6rem 1.6rem;
+    margin:  0 1.5rem 0 0;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+/* ICONOS LOCALES  */
+#logo-principal {
+    max-width: 8rem;
+}
+#search {
+    background-image: url(../img/icons/icon-search.svg);
+}
+#user {
+    background-image: url(../img/icons/icon-user.svg);
+}
+#cart {
+    background-image: url(../img/icons/icon-cart.svg);
+}
+#burger {
+    background-image: url(../img/icons/icon-hamburger.svg);
+}
+#pinterest {
+    background-image: url(../img/icons/icon-pinterest3.svg);
+
+}
+#facebook {
+    background-image: url(../img/icons/icon-fb3.svg);
+}
+#instagram {
+    background-image: url(../img/icons/icon-instagram3.svg);
+}
+#whatsapp {
+    background-image: url(../img/icons/icon-whatsapp.svg);
+}
+
+
+
+
 
 /*=================
      MEDIA QUERIES
