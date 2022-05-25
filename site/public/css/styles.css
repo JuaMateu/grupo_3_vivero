@@ -1,6 +1,31 @@
-/*=========
-    GLOBAL 
-==========*/
+
+/*================
+  1*0  table content 
+=================*/
+/*
+
+    1-1 GLOBAL
+
+    1-2 FONTS
+
+    1-3 LAYOUT
+        1-3.a HEADER
+        1-3.b FOOTER
+        1-3.c HOME
+        1-3.d login
+        1-3.e password recovery
+        1-3.f Product Detail
+
+        1-4 LIBRERY
+    1-5 Components
+
+    1-6 MEDIA QUERIES
+    
+
+*/
+/*==============
+  1-1  GLOBAL 
+=================*/
 
 /* importa fuentes poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
@@ -25,6 +50,13 @@
 
 body{
     font-family: "poppins", sans-serif;
+}
+
+main {
+    margin: 6rem  auto;
+    max-width: 90%;
+    color: var(--primary-green);
+    min-height: 50vh;
 }
 
 img {
@@ -69,13 +101,18 @@ article {
     font-size: 0.8rem;
 }
 
+.banner a{
+    color: #014934;
+}
+
+
 
 /* =========
-    LAYOUT 
+   1.3 LAYOUT 
     =======*/
 
 
-/* HEADER */
+/* 1-3.a HEADER */
 header {
     position: fixed;
     background-color: white;
@@ -85,13 +122,18 @@ header {
     border-bottom: solid var(--primary-green) 2px;
     z-index: 9;
 }
-.main-nav {
+.header {
     display: flex; 
     justify-content: space-around;
     align-items: center;
     height: 5rem;
     max-width: 75rem;
 }
+
+.header__logo{
+    max-width: 8rem;
+}
+
 /* Burger menu */
 .burger-menu {
     padding: 0 2rem;
@@ -111,9 +153,7 @@ header {
 .burger-menu__shadow {
     display: none;
 }
-.burger-menu__links {
-    background-color: #014934;
-}
+
 .burger-menu__shadow a{
     color: #ffffff;
 }
@@ -132,14 +172,7 @@ header {
     margin: 0.2rem;
 }
 
-/*       MAIN        */
-main {
-    margin: 6rem  0.9rem;
-    color: var(--primary-green);
-    min-height: 50vh;
-}
-
-/*       FOOTER        */
+/*  1-3.b     FOOTER        */
 
 
 .footer {
@@ -171,16 +204,14 @@ main {
 
 
 
-/*       HOME           */
+/*   1-3.c    HOME           */
 
 .banner {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.banner a{
-    color: #014934;
-}
+
 
 .banner article {
     padding: 1rem 0px 1rem 0;
@@ -208,7 +239,8 @@ main {
     font-size: 0.85rem;
     margin: 0.2rem 0 .5rem;
 }
-/* Sección de pagina del login */
+
+/*        1-3.d login        */
 
 
 /* Texto principal */
@@ -278,54 +310,7 @@ main {
 }
 
 
-.plant-Card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0.5rem;
-}
-
-.plant-Card__img {
-    position: relative;
-}
-.plant-Card__background {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background-color: var(--third-light-green-soft);
-    z-index: -1;
-    border-radius: 70% 0 70% 0;
-}
-
-.plant-Card a {
-    color: #014934;
-}
-.plant-Card p {
-    font-size: 0.8rem;
-    margin: 0.2rem 0;
-    border-bottom: 1px solid var(--primary-green);
-}
-
-.plant-Card h4 {
-    font-size: 0.8rem;
-    margin: .3rem 0;
-}
-
-.plant-Card--desktop {
-    display: none;
-}
-
-.Button-Agregar-Carrito {
-    background-color: var(--primary-green);
-    border: 0;
-    color: white;
-    font-size: 0.7rem;
-    padding: 0.3rem 1rem;
-    transition: all 0.5s;
-    margin: .3rem 0;
-}
+/*   1-3.d password recovery */
 
 /* link de "olvidaste tu password" */
 .password-forgotten{
@@ -341,6 +326,10 @@ main {
 ::placeholder{
     color: var(--third-light-green);
 }
+
+/*   1-3.e register */
+
+/*   1-3.f Cart */
 
 /* Carrito de compras */
 
@@ -406,7 +395,7 @@ div .img-cart{
 
 
 /* ================
-    ProductDetail 
+       1-3.f ProductDetail 
 ==================*/
 
 .prod-detail {
@@ -530,7 +519,7 @@ div .img-cart{
 
 
 /*==========
-   LIBRERY
+   1-4 LIBRERY
 ===========*/
 .flex-row{
     display: flex;
@@ -549,7 +538,7 @@ div .img-cart{
 }
 
 /* =============
-    Componentes
+  1-5  Componentes
  =============== */
 .icon {
     display: inline-block;
@@ -567,10 +556,57 @@ div .img-cart{
     height: 1.6rem;
 }
 
-/* ICONOS LOCALES  */
-#logo-principal {
-    max-width: 8rem;
+.plant-Card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem;
 }
+
+.plant-Card__img {
+    position: relative;
+}
+.plant-Card__background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--third-light-green-soft);
+    z-index: -1;
+    border-radius: 70% 0 70% 0;
+}
+
+.plant-Card a {
+    color: #014934;
+}
+.plant-Card p {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+    border-bottom: 1px solid var(--primary-green);
+}
+
+.plant-Card h4 {
+    font-size: 0.8rem;
+    margin: .3rem 0;
+}
+
+.plant-Card--desktop {
+    display: none;
+}
+
+.Button-Agregar-Carrito {
+    background-color: var(--primary-green);
+    border: 0;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.3rem 1rem;
+    transition: all 0.5s;
+    margin: .3rem 0;
+}
+
+/* ICONOS LOCALES  */
+
 #search {
     background-image: url(../img/icons/icon-search.svg);
 }
@@ -602,7 +638,7 @@ div .img-cart{
 
 
 /*=================
-     MEDIA QUERIES
+    1-6 MEDIA QUERIES
 ================= */
 
 @media (min-width: 769px) {
@@ -623,14 +659,14 @@ div .img-cart{
     }
 
     /* logo a la izquierda con flexbox */
-    .logo{
+    .header__logo{
         order: -1;
+        max-width: 10rem;
     }
-    .main-nav{
+    .header{
         max-width: 1300px;
         margin: 0 auto;
     }
-    
     
     .nav-item{
         font-family: 'Poppins';
