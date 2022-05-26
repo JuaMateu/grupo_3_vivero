@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Head menos title -->
         <%- include('./partials/head') %>
         <title>PlantaSusi</title>
     </head>
@@ -11,102 +12,49 @@
     <!-- main -->
     <main class="main">
         <!-- seccion de destacados -->
-        <section class="banner">
+        <section class="banner-section">
         
-            <article class="banner-article1">
-                <a class="banner-article1__link" href="#">
-                    <div class="banner-article1__img banner__img">
+            <article class="banner banner1">
+                <a class="link--primarycolor flex-column banner__link" href="#">
+                    <div class="banner__img banner__img--big">
                         <img src="img\portadas\plantas-interior.png" alt="portada de seleccion otoño">
                     </div>
-                    <div class="banner-article1__footer">
-                        <p class="banner__sub-title">20% OFF en nuestras plantas de interior</p>
-                        <h4>Mira nuestra seleccion de plantas!</h4>
-                        <button class="prod-detail__button--carrito">Comprar ahora</button>
-                    </div>
+                    <p class="banner__sub-title">20% OFF en nuestras plantas de interior</p>
+                    <h3 class="banner__title">Mira nuestra seleccion de plantas!</h3>
+                    <button class="btn btn--right">Comprar ahora</button>
                 </a>
             </article>
 
-            <article class="banner-article2">
-                <a href="/products/productDetail">
-                    <div class="img banner__img">
+            <article class="banner banner2">
+                <a class="link--primarycolor" href="/products/productDetail" >
+                    <div class="banner__img ">
                         <img src="img\portadas\gomero.jpg" alt="portada de seleccion otoño">
                     </div>
-                    <p class="banner__sub-title">30% OFF en gomero</p>
-                    <h4>Gomero veteado en oferta!</h4>
+                    <div banner__footer>
+                        <p class="banner__sub-title">30% OFF en gomero</p>
+                        <h3 class="banner__title">Gomero veteado en oferta!</h3>
+                    </div>
                 </a>
             </article>
 
-            <article class="banner-article2">
-                <a href="/products/productDetail">
-                    <div class="img banner__img">
+            <article class="banner banner3">
+                <a class="link--primarycolor" href="/products/productDetail" >
+                    <div class="banner__img">
                         <img src="img\portadas\herramientas.png" alt="portada de seleccion otoño">
                     </div>
                     <p class="banner__sub-title">20% OFF en accesorios para cuidar tus plantas</p>
-                    <h4>Herramientas de jardineria</h4>
+                    <h3 class="banner__title">Herramientas de jardineria</h3>
                 </a>
             </article>
 
         </section>
+
         <!-- seccion mas vendidos -->
-        <h2 class="center-text">Mas vendidos</h2>
-        <section class="flex-row mas-vendidos">
-            
-            <article class="plant-Card">
-                <a href="/products/productDetail">
-                    <div class="img plant-Card__img">
-                        <img src="img\plantas\Aglaonema.png" alt="portada de seleccion otoño">
-                        <div class="plant-Card__background"></div>
-                    </div>
-                    <h4>Aglaonema africana</h4>
-                    <p class="subtitle">$2500</p>
-                </a>
-                <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-            </article>
-
-            <article class="plant-Card">
-                <a href="/products/productDetail">
-                    <div class="img plant-Card__img">
-                        <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                        <div class="plant-Card__background"></div>
-                    </div>
-                    <h4>Potus verde</h4>
-                    <p>$2300</p>
-                </a>
-                <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-            </article>
-
-            <article class="plant-Card plant-Card--desktop">
-                <div class="img plant-Card__img">
-                    <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                    <div class="plant-Card__background"></div>
-                </div>
-                <h4>Potus verde</h4>
-                <p>$2300</p>
-                <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-            </article>
-
-            <article class="plant-Card plant-Card--desktop">
-                <div class="img plant-Card__img">
-                    <img src="img\plantas\potus1.png" alt="portada de seleccion otoño">
-                    <div class="plant-Card__background"></div>
-                </div>
-                <h4>Potus verde</h4>
-                <p>$2300</p>
-                <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
-            </article>
-
-        </section>
-
+        <%- include('./partials/bestSells') %>
 
     </main>
 
-    <!-- 
-        
-        
-        aca arranca el footer 
-    
-    
-    -->
+    <!--    footer   -->
     <%- include('./partials/footer') %>
 </body>
 </html>
