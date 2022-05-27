@@ -8,6 +8,7 @@ const port = 3000
 const mainRoutes = require('./routes/mainRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const productsRoutes = require('./routes/productsRoutes');
+const administratorRoutes = require('./routes/administratorRoutes');
 
 
 
@@ -29,6 +30,7 @@ app.listen(port, () => {
 app.use("/", mainRoutes);
 app.use('/users/', usersRoutes);
 app.use('/products/', productsRoutes);
+app.use('/administrator/',administratorRoutes);
 
 // app.use(httpHome, mainRoutes);
 
