@@ -331,6 +331,7 @@ header {
 .shop__header {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .shop__title {
@@ -345,6 +346,8 @@ header {
     background-color: var(--third-light-green);
     border: 0px;
     width: 140px;
+    color: var(--primary-green);
+    font-weight: 600;
     
 }
 .shop__filter, .shop__sort {
