@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head') %>
+    </head>
+<body>
+    <%- include('./partials/header') %>
+    <!-- Aca va el cuerpo la pagina -->
+    <main>
+        <div class="shop">
+            <section class="shop__header">
+                <h1 class="shop__title">Nuestras Plantas</h1>
+                <div class="flex-row space-around">
+                    <label class="shop__btn" for="filters">Filtrar</label>
+                    <input class="display-none filter__nav-toggler" type="checkbox" id="filters">
+                    <div class="shop__filter">
+                        <ul>
+                            <li class="no-list-style">Categoría</li>
+                            <li class="no-list-style">Tamaño</li>
+                            <li class="no-list-style">Por iluminación</li>
+                            <li class="no-list-style">Por Humedad</li>
+                            <li class="no-list-style">nivel de Ciudados</li>
+                            <li class="no-list-style">pet friendly</li>
+                        </ul>
+                    </div>
+                    <label class="shop__btn" for="sort">Ordenar</label>
+                    <input class="display-none nav-toggler" type="checkbox" id="filters">
+                    <div class="shop__sort">
+                        <ul>
+                            <li class="no-list-style">Precio</li>
+                            <li class="no-list-style">Nombre</li>
+                            <li class="no-list-style">En oferta</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <%- include('./partials/bestSells') %>
+                <%- include('./partials/bestSells') %>
+                <%- include('./partials/bestSells') %>
+                
+            </section>
+        </div>
+        </div>
+    
+    </main>
+
+
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+</body>
+</html>
