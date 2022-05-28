@@ -50,12 +50,16 @@
 }
 
 body{
+    position: relative;
+    min-height: 100vh;
     font-family: "poppins", sans-serif;
+    padding-bottom: 20rem;
 }
 
 main {
     margin: 6rem  auto;
-    max-width: clamp(80%, 90%, 1300px);
+    max-width: 1300px;
+    width: 90%;
     color: var(--primary-green);
     min-height: 50vh;
 }
@@ -181,7 +185,9 @@ header {
 
 
 .footer {
-    position: relative;
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
     width: 100%;
     font-weight: bold;
     background-color: var(--primary-green);
@@ -464,6 +470,9 @@ div .img-cart{
     display: flex;
     flex-direction: column;
 }
+.auto-flex {
+    flex: 1 1 auto;
+}
 .space-around {
     justify-content: space-around;
 }
@@ -537,12 +546,13 @@ div .img-cart{
     border-radius: 5px;
 }
 .boton-login{
+    font-size: 1rem;
     background-color: #014934;
     color: white;
     width: 100%;
     border-radius: 20px;
     font-weight: 700;
-    padding: 3px;
+    padding: 0.15rem;
     border: 0;
     transition: all 0.5s;
 }
@@ -651,7 +661,10 @@ div .img-cart{
 
 @media (min-width: 769px) {
     html {
-        font-size: 1.2rem;
+        font-size: 18px;
+    }
+    .media-flex-row {
+        flex-direction: row;
     }
     /* desaparece burguer menu y aparecen los links de navegacion */
     .burger-menu {
