@@ -742,3 +742,16 @@ div .img-cart{
         margin-right: 2rem;
     }
 }
+
+/* =============
+  Administrator
+ =============== */
+
+.form-admin{
+    margin-top: 50px;
+    border: 1px red solid;
+    display: block;
+}
+.label-admin{
+    margin: 5px 0;
+}

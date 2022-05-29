@@ -6,12 +6,34 @@
     <title>Herramientas de Administrador</title>
 </head>
 <body>
+    <!-- Head menos title -->
     <%- include('../partials/header') %>
-    <!-- Aca va el cuerpo la pagina -->
-    <h1 class="login-text">Bienvenido Administrador</h1>
-    <h3 class="">¿Qué desea hacer?</h3>
-    
-    <!-- aca arranca el footer -->
-    <%- include('../partials/footer') %>
+
+    <h1>Bienvenido Administrador</h1>
+
+    <div class="form-admin">
+        <form action="home" method="post">
+            <div class="label-admin">
+                <label for="product-text">Ingresa el nombre del producto a adicionar al inventario</label>
+                <input type="text" id="product-text" placeholder="Ingresa el nombre del producto" minlength="4" maxlength="20">
+            </div>
+            <div class="label-admin">
+                <label for="product-description">Ingresa la descripcion del producto</label>
+                <textarea name="product-description" id="product-description" cols="25" rows="4" placeholder="Ingresa la descripcion del articulo"></textarea>
+            </div>
+            <div class="label-admin">
+                <label for="product-image">Selecciona la imagen para el producto</label>
+                <input type="file" id="product-image" accept="/image*">
+            </div>
+            <div class="label-admin">
+                <label for="product-price">Ingresa el precio del producto a adicionar al inventario</label>
+                <input type="number" id="product-price" min="500" max="100000" value="500" step=100>
+            </div>
+            <div class="button-admin">
+                <input type="reset" value="Limpiar formulario">
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>
