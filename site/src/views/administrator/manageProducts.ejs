@@ -36,8 +36,20 @@
         <div class="control-form-admin">
             <form action="" method="post" class="form-admin">
                 <div class="label-admin">
-                    <label for="product-text">Ingresa el nombre del producto a adicionar al inventario</label>
+                    <label for="product-text">Ingresa el nombre del producto</label>
                     <input type="text" id="product-text" placeholder="Ingresa el nombre del producto" minlength="4" maxlength="20">
+                </div>
+                <div class="label-admin">
+                    <label for="product-clasf">Ingresa la categoría</label>
+                    <input type="text" id="product-clasf" placeholder="Ingresa la categoría del producto" minlength="4" maxlength="20" required>
+                </div>
+                <div class="label-admin">
+                    <label for="product-color">Ingresa el color del producto</label>
+                    <input type="text" id="product-color" placeholder="Ingresa el color del producto" minlength="4" maxlength="20">
+                </div>
+                <div class="label-admin">
+                    <label for="product-care">Selecciona el cuidado del producto</label>
+                    <input type="text" id="product-care" placeholder="Ingresa el cuidado del producto" minlength="4" maxlength="20">
                 </div>
                 <div class="label-admin">
                     <label for="product-description">Ingresa la descripcion del producto</label>
@@ -57,13 +69,13 @@
                 </div>
                 <div class="buttons-form-admin">
                     <div class="button-admin">
-                        <input type="reset" value="Limpiar formulario">
+                        <input class="boton-login" type="reset" value="Limpiar formulario">
                     </div>
                     <div class="button-admin">
-                        <input type="submit" value="Agregar">
+                        <input class="boton-login" type="submit" value="Agregar">
                     </div>
                     <div class="button-admin">
-                        <input type="submit" value="Editar">
+                        <input class="boton-login" type="submit" value="Editar">
                     </div>
                 </div>
             </form>

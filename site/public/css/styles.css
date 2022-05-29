@@ -749,7 +749,19 @@ div .img-cart{
 /*      TOPBAR      */
 .header-admin{
     width: 90vw;
-    margin-left: 90%;
+    margin-left: 10%;
+}
+.menu-admin{
+    display: none;
+}
+.user-admin{
+    display: flex;
+    align-items: center;
+}
+.user-admin img{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
 }
 
 @media (min-width: 769px) {
@@ -761,14 +773,8 @@ div .img-cart{
         display: flex;
         justify-content: space-between;
     }
-    .user-admin{
-        display: flex;
-        align-items: center;
-    }
-    .user-admin img{
-        height: 30px;
-        width: 30px;
-        border-radius: 30px;
+    .menu-admin{
+        display: initial;
     }
     .menu-admin i{
         margin: 8px;
@@ -778,18 +784,48 @@ div .img-cart{
 /*      SIDEBAR      */
 .sidebar-admin{
     width: 10vw;
+    background-color: var(--primary-green-soft);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-
-
+.sidebar-admin span{
+    display: none;
+}
+.sidebar-items-admin{
+    display: block;
+    padding-left: 0%;
+}
+.sidebar-admin i{
+    color: white;
+}
+.sidebar-admin a:hover{
+    background-color: var(--highlight-Orange);
+}
+@media (max-width:370px){
+    .sidebar-items-admin{
+        padding: 20px 10px;
+    }
+}
+@media (min-width:371px){
+    .sidebar-items-admin{
+        padding: 20px 15px;
+    }
+}
+@media (min-width:485px){
+    .sidebar-items-admin{
+        padding: 20px;
+    }
+}
 @media (min-width: 769px) {
     .sidebar-admin{
         text-align: center;
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 25%;
-        height: 100%;
-        background-color: var(--primary-green-soft);
+        
+    }
+    .sidebar-admin span{
+        display: initial;
     }
     .sidebar-admin h3{
         font-size: x-large;
@@ -805,9 +841,6 @@ div .img-cart{
     .sidebar-admin i{
         padding: 10px;
     }
-    .sidebar-admin a:hover{
-        background-color: var(--highlight-Orange);
-    }
     .sidebar-admin a:active{
         background-color: var(--highlight-Orange);
         border-radius: 30px 0 0 30px;
@@ -815,6 +848,11 @@ div .img-cart{
 }
 
 /*      PAGE CONTENT      */
+.page-content-admin{
+    width: 90vw;
+    margin-left: 10%;
+}
+
 @media (min-width: 769px) {
     .page-content-admin{
         margin-top: 50px;
