@@ -3,36 +3,68 @@
 <head>
     <!-- Head menos title -->
     <%- include('../partials/head') %>
-    <title>Herramientas de Administrador</title>
+    <title>Administrator Menu</title>
 </head>
 <body>
-    <!-- Head menos title -->
-    <%- include('../partials/header') %>
+    
+    <!-- Sidebar -->
+    <div class="sidebar-admin">
+        <h3 class="sidebar-menu"><i class="/public/img/portadas/logo-2.svg"></i>PlantaSusi</h3>
+        <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-users-gear"></i>Usuarios</a>
+        <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-box-archive"></i>Productos</a>
+        <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-chart-simple"></i>Estadisticas</a>
+    </div>
 
-    <h1>Bienvenido Administrador</h1>
+    <!-- Top-bar -->
+    <header>
+        <div class="menu-admin">
+            <i class="fa-solid fa-bars"></i></i>Menu
+        </div>
 
-    <div class="form-admin">
-        <form action="home" method="post">
-            <div class="label-admin">
-                <label for="product-text">Ingresa el nombre del producto a adicionar al inventario</label>
-                <input type="text" id="product-text" placeholder="Ingresa el nombre del producto" minlength="4" maxlength="20">
-            </div>
-            <div class="label-admin">
-                <label for="product-description">Ingresa la descripcion del producto</label>
-                <textarea name="product-description" id="product-description" cols="25" rows="4" placeholder="Ingresa la descripcion del articulo"></textarea>
-            </div>
-            <div class="label-admin">
-                <label for="product-image">Selecciona la imagen para el producto</label>
-                <input type="file" id="product-image" accept="/image*">
-            </div>
-            <div class="label-admin">
-                <label for="product-price">Ingresa el precio del producto a adicionar al inventario</label>
-                <input type="number" id="product-price" min="500" max="100000" value="500" step=100>
-            </div>
-            <div class="button-admin">
-                <input type="reset" value="Limpiar formulario">
-            </div>
-        </form>
+        <div class="user-admin">
+            <img src="/img/otros/user.png" alt="" height="20px" width="20px">
+        </div>
+    </header>
+    <!-- Page content -->
+    <div class="page-content-admin">
+        <h1>Bienvenido Administrador</h1>
+        <h3>Agregar o editar articulos</h3>
+
+        <div class="control-form-admin">
+            <form action="" method="post" class="form-admin">
+                <div class="label-admin">
+                    <label for="product-text">Ingresa el nombre del producto a adicionar al inventario</label>
+                    <input type="text" id="product-text" placeholder="Ingresa el nombre del producto" minlength="4" maxlength="20">
+                </div>
+                <div class="label-admin">
+                    <label for="product-description">Ingresa la descripcion del producto</label>
+                    <textarea class="textarea-admin" name="product-description" id="product-description" cols="25" rows="4" placeholder="Ingresa la descripcion del articulo"></textarea>
+                </div>
+                <div class="label-admin">
+                    <label for="product-image">Selecciona la imagen para el producto</label>
+                    <input type="file" id="product-image" accept="/image*">
+                </div>
+                <div class="label-admin">
+                    <label for="product-price">Ingresa el precio del producto a adicionar al inventario</label>
+                    <input type="number" id="product-price" min="500" max="100000" value="500" step=100>
+                </div>
+                <div class="label-admin">
+                    <label for="product-size">Ingresa el tamaño del articulo en cm</label>
+                    <input type="number" id="product-size" min="50" max="100" value="50">
+                </div>
+                <div class="buttons-form-admin">
+                    <div class="button-admin">
+                        <input type="reset" value="Limpiar formulario">
+                    </div>
+                    <div class="button-admin">
+                        <input type="submit" value="Agregar">
+                    </div>
+                    <div class="button-admin">
+                        <input type="submit" value="Editar">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
 </body>
