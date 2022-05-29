@@ -6,17 +6,16 @@
     <title>Administrator Menu</title>
 </head>
 <body>
-    
+    <%- include('../partials/header') %>
     <!-- Sidebar -->
     <div class="sidebar-admin">
-        <h3 class="sidebar-menu"><i class="icon" id="logo-2"></i><span>PlantaSusi</span></h3>
         <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
         <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-box-archive"></i><span>Productos</span></a>
         <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-chart-simple"></i><span>Estadisticas</span></a>
     </div>
 
     <!-- Top-bar -->
-    <header class="header-admin">
+    <!-- <header class="header-admin">
         <div class="menu-admin">
             <i class="fa-solid fa-bars"></i><span>Menu</span></i>
         </div>
@@ -27,45 +26,53 @@
                 <h5>Admin name</h5>
             </div>
         </div>
-    </header>
+    </header> -->
     <!-- Page content -->
     <div class="page-content-admin">
         <h1>Bienvenido Administrador</h1>
-        <h3>Agregar o editar articulos</h3>
+        <h3>Agregá o editá articulos</h3>
 
         <div class="control-form-admin">
             <form action="" method="post" class="form-admin">
                 <div class="label-admin">
-                    <label for="product-text">Ingresa el nombre del producto</label>
-                    <input type="text" id="product-text" placeholder="Ingresa el nombre del producto" minlength="4" maxlength="20">
+                    <label for="product-text">Ingresá el nombre del producto</label>
+                    <input name="name" type="text" id="product-text" placeholder="Ingresá el nombre del producto" minlength="4" maxlength="20">
                 </div>
                 <div class="label-admin">
-                    <label for="product-clasf">Ingresa la categoría</label>
-                    <input type="text" id="product-clasf" placeholder="Ingresa la categoría del producto" minlength="4" maxlength="20" required>
+                    <label for="product-clasf">Ingresá la categoría</label>
+                    <select name="clasf" id="product-clasf">
+                        <option value="categoria1">Categoria 1</option>
+                        <option value="categoria2">Categoria 2</option>
+                        <option value="categoria3">Categoria 3</option>
+                    </select>
                 </div>
                 <div class="label-admin">
-                    <label for="product-color">Ingresa el color del producto</label>
-                    <input type="text" id="product-color" placeholder="Ingresa el color del producto" minlength="4" maxlength="20">
+                    <label for="product-color">Ingresá el color del producto</label>
+                    <input name="color" type="text" id="product-color" placeholder="Ingresá el color del producto" minlength="4" maxlength="20">
                 </div>
                 <div class="label-admin">
-                    <label for="product-care">Selecciona el cuidado del producto</label>
-                    <input type="text" id="product-care" placeholder="Ingresa el cuidado del producto" minlength="4" maxlength="20">
+                    <label for="product-care">Seleccioná el cuidado del producto</label>
+                    <select name="care" id="product-care">
+                        <option value="basic">Básico</option>
+                        <option value="intermediate">Intermedio</option>
+                        <option value="expert">Experto</option>
+                    </select>
                 </div>
                 <div class="label-admin">
-                    <label for="product-description">Ingresa la descripcion del producto</label>
-                    <textarea class="textarea-admin" name="product-description" id="product-description" cols="25" rows="4" placeholder="Ingresa la descripcion del articulo"></textarea>
+                    <label for="product-description">Ingresá la descripción del producto</label>
+                    <textarea class="textarea-admin" name="description" id="product-description" cols="25" rows="4" placeholder="Ingresá la descripción del articulo"></textarea>
                 </div>
                 <div class="label-admin">
-                    <label for="product-image">Selecciona la imagen para el producto</label>
-                    <input type="file" id="product-image" accept="/image*">
+                    <label for="product-image">Seleccioná la imagen para el producto</label>
+                    <input name="image" type="file" id="product-image" accept="/image*">
                 </div>
                 <div class="label-admin">
-                    <label for="product-price">Ingresa el precio del producto a adicionar al inventario</label>
-                    <input type="number" id="product-price" min="500" max="100000" value="500" step=100>
+                    <label for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
+                    <input name="price" type="number" id="product-price" min="500" max="100000" value="500" step=100>
                 </div>
                 <div class="label-admin">
-                    <label for="product-size">Ingresa el tamaño del articulo en cm</label>
-                    <input type="number" id="product-size" min="50" max="100" value="50">
+                    <label for="product-size">Ingresá el tamaño del articulo en cm</label>
+                    <input name="size" type="number" id="product-size" min="50" max="100" value="50">
                 </div>
                 <div class="buttons-form-admin">
                     <div class="button-admin">
