@@ -822,12 +822,12 @@ div .img-cart{
 
 /*      SIDEBAR      */
 .sidebar-admin{
-    width: 10vw;
+    width: 3rem;
     background-color: var(--primary-green-soft);
     height: 100%;
     position: fixed;
-    top: 0;
     left: 0;
+    display: block;
 }
 .sidebar-admin span{
     display: none;
@@ -838,29 +838,15 @@ div .img-cart{
 }
 .sidebar-admin i{
     color: white;
+    padding: 16px;
 }
 .sidebar-admin a:hover{
     background-color: var(--highlight-Orange);
 }
-@media (max-width:370px){
-    .sidebar-items-admin{
-        padding: 20px 10px;
-    }
-}
-@media (min-width:371px){
-    .sidebar-items-admin{
-        padding: 20px 15px;
-    }
-}
-@media (min-width:485px){
-    .sidebar-items-admin{
-        padding: 20px;
-    }
-}
 @media (min-width: 769px) {
     .sidebar-admin{
         text-align: center;
-        width: 25%;
+        width: 10rem;
         
     }
     .sidebar-admin span{
@@ -888,31 +874,29 @@ div .img-cart{
 
 /*      PAGE CONTENT      */
 .page-content-admin{
-    width: 90vw;
-    margin-left: 10%;
+    width: calc(100%-3rem);
+    margin-left: 3rem;
+    margin-top: 80px;
+    text-align: center;
+}
+.form-admin{
+    display: block;
+}
+.form-admin div{
+    margin: 25px 0;
+}
+.label-admin label{
+    display: block;
 }
 
 @media (min-width: 769px) {
     .page-content-admin{
-        margin-top: 50px;
-        margin-left: 25%;
+        margin-top: 90px;
+        margin-left: 10rem;
         text-align: center;
-    }
-    .form-admin{
-        border: 1px red solid;
-        display: block;
-    }
-    .label-admin{
-        /* display: block; */
-    }
-    .label-admin label{
-        display: block;
     }
     .textarea-admin{
         resize: none;
-    }
-    .form-admin div{
-        margin: 25px 0;
     }
     .buttons-form-admin{
         display: flex;
