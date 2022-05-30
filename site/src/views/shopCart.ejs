@@ -6,7 +6,7 @@
 <body>
     <%- include('./partials/header') %>
     <!-- Aca va el cuerpo la pagina -->
-    <main>
+    <main class="main-shopCart">
         <div class="title-cart">
             <div>Comprar</div>
             <p>$999.99</p>
@@ -56,8 +56,9 @@
                 </div>
             </div>
         </div>
-        <div class="title-cart">
-            <p>Proceder al pago</p>
+        <div class="buttons-shop-cart">
+            <input type="submit" name="back-to-shop" value="Volver a la tienda" class="boton-login" />
+            <input type="submit" name="payment" value="Proceder al pago" class="boton-login" />
         </div>
     </main>
 
