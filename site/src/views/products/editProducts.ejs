@@ -3,41 +3,23 @@
 <head>
     <!-- Head menos title -->
     <%- include('../partials/head') %>
-    <title>Administrator Menu</title>
+    <title>Editar Productos</title>
 </head>
 <body>
-    <div class="bkg-admin">
+    <div>
     <%- include('../partials/header') %>
     <!-- Sidebar -->
-    <div class="sidebar-admin">
-        <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
-        <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-box-archive"></i><span>Productos</span></a>
-        <a href="#" class="sidebar-items-admin"><i class="fa-solid fa-chart-simple"></i><span>Estadisticas</span></a>
-    </div>
-
-    <!-- Top-bar -->
-    <!-- <header class="header-admin">
-        <div class="menu-admin">
-            <i class="fa-solid fa-bars"></i><span>Menu</span></i>
-        </div>
-
-        <div class="user-admin">
-            <img src="/img/otros/user.png" alt="" height="20px" width="20px">
-            <div>
-                <h5>Admin name</h5>
-            </div>
-        </div>
-    </header> -->
+    <%- include('../partials/sidebarAdmin') %>
     <!-- Page content -->
     <div class="page-content-admin">
         <h1>Bienvenido Administrador</h1>
-        <h3>Agregá o editá articulos</h3>
+        <h3>Editá o eliminá los articulos de la base de datos</h3>
 
         <div class="control-form-admin">
             <form action="" method="post" class="form-admin">
                 <div class="label-admin">
-                    <label for="product-text">Ingresá el nombre del producto</label>
-                    <input name="name" type="text" id="product-text" placeholder="Ingresá el nombre del producto" minlength="4" maxlength="20">
+                    <label for="product-text">Ingresá el ID del producto</label>
+                    <input name="name" type="text" id="product-text" placeholder="Ingresá el ID del producto" minlength="4" maxlength="20">
                 </div>
                 <div class="label-admin">
                     <label for="product-clasf">Ingresá la categoría</label>
@@ -60,7 +42,7 @@
                     </select>
                 </div>
                 <div class="label-admin">
-                    <label for="product-description">Ingresá la descripción del producto</label>
+                    <label for="product-description">Ingresá la descripción del producto a editar</label>
                     <textarea class="textarea-admin" name="description" id="product-description" cols="25" rows="4" placeholder="Ingresá la descripción del articulo"></textarea>
                 </div>
                 <div class="label-admin">
@@ -68,11 +50,11 @@
                     <input name="image" type="file" id="product-image" accept="/image*">
                 </div>
                 <div class="label-admin">
-                    <label for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
+                    <label for="product-price">Ingresá el precio del producto a editar al inventario</label>
                     <input name="price" type="number" id="product-price" min="500" max="100000" value="500" step=100>
                 </div>
                 <div class="label-admin">
-                    <label for="product-size">Ingresá el tamaño del articulo en cm</label>
+                    <label for="product-size">Ingresá el tamaño a editar del articulo en cm</label>
                     <input name="size" type="number" id="product-size" min="50" max="100" value="50">
                 </div>
                 <div class="buttons-form-admin">
@@ -80,10 +62,10 @@
                         <input class="boton-login" type="reset" value="Limpiar formulario">
                     </div>
                     <div class="button-admin">
-                        <input class="boton-login" type="submit" value="Agregar">
+                        <input class="boton-login" type="submit" value="Editar">
                     </div>
                     <div class="button-admin">
-                        <input class="boton-login" type="submit" value="Editar">
+                        <input class="boton-login" type="submit" value="Eliminar">
                     </div>
                 </div>
             </form>
