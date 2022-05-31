@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Head menos title -->
+        <%- include('./partials/head') %>
+        <title>Pagina no encontrada</title>
+    </head>
+<body class="no-padding">
+    <%- include('./partials/header') %>
+    <main>
+        <div class="error-menu">
+            <h1>Ups! <br>
+                Parece que la pagina no existe</h1>
+            <h3>Volvé a alguna de nuestras secciones:</h3>
+            <ul>
+                <li class="no-list-style">
+                    <a class="error-menu__link" href="/"> HOME </a>
+                </li>
+                <li class="no-list-style">
+                    <a class="error-menu__link" href="/shop">Shop</a>
+                </li>
+                <li class="no-list-style">
+                    <a class="error-menu__link" href="/users/login">Login</a>
+                </li>
+            </ul>
+            <div class="error-menu__img-conteiner">
+                <img src="img\otros\background-login.png" alt="suculentas">
+            </div>
+        </div>
+
+    </main>
+
+</body>

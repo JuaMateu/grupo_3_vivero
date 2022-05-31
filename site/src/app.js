@@ -32,41 +32,5 @@ app.use('/products/', productsRoutes);
 
 
 app.use((req,res,next)=>{
-    res.status(404).render("¡Ups, te equivocaste de página!")
+    res.status(404).render("error404")
 });
-// app.use(httpHome, mainRoutes);
-
-
-
-// app.get(httpCart, (req, res) => {
-//     res.sendFile(path.join(views, productCartHtml))
-// })
-// app.get(httpProductDetail, (req, res) => {
-//     res.sendFile(path.join(views, productDetailHtml))
-// })
-// app.get(httpRegister, (req, res) => {
-//     res.sendFile(path.join(views, RegisterHtml))
-// })
-
-// app.get(httpUserRecovery, (req, res) => {
-//     res.sendFile(path.join(views, userRecoveryHtml))
-// })
-
-
-
-// app.get(httpRaiz, (req, res) => {
-//     res.sendfile(path.join(views, homeHtml))
-// })
-// app.get(httpHome, (req, res) => {
-//     res.sendFile(path.join(views, homeHtml))
-// })
-// app.post(httpHome, (req, res) => {
-//     res.sendFile(path.join(views, homeHtml))
-// })
-// app.get(httpLogin, (req, res) => {
-//     res.sendFile(path.join(views, LoginHtml))
-// })
-
-// app.get(httpShop, (req, res) => {
-//     res.sendFile(path.join(views, shopHtml))
-// })
