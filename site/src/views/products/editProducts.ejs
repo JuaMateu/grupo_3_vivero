@@ -6,71 +6,67 @@
     <title>Editar Productos</title>
 </head>
 <body>
-    <div>
     <%- include('../partials/header') %>
     <!-- Sidebar -->
     <%- include('../partials/sidebarAdmin') %>
     <!-- Page content -->
-    <div class="page-content-admin">
+    <div class="admin">
         <h1>Bienvenido Administrador</h1>
         <h3>Editá o eliminá los articulos de la base de datos</h3>
-
-        <div class="control-form-admin">
-            <form action="" method="post" class="form-admin">
-                <div class="label-admin">
-                    <label for="product-text">Ingresá el ID del producto</label>
-                    <input name="name" type="text" id="product-text" placeholder="Ingresá el ID del producto" minlength="4" maxlength="20">
+        <form action="" method="post" class="admin__form">
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-text">Ingresá el ID del producto</label>
+                <input class="admin__input" name="name" type="text" id="product-text" placeholder="Ingresá el ID del producto" minlength="4" maxlength="20">
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-clasf">Ingresá la categoría</label>
+                <select name="clasf" id="product-clasf">
+                    <option value="categoria1">Categoria 1</option>
+                    <option value="categoria2">Categoria 2</option>
+                    <option value="categoria3">Categoria 3</option>
+                </select>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-color">Ingresá el color del producto</label>
+                <input class="admin__input" name="color" type="text" id="product-color" placeholder="Ingresá el color del producto" minlength="4" maxlength="20">
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-care">Seleccioná el cuidado del producto</label>
+                <select name="care" id="product-care">
+                    <option value="basic">Básico</option>
+                    <option value="intermediate">Intermedio</option>
+                    <option value="expert">Experto</option>
+                </select>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-description">Ingresá la descripción del producto a editar</label>
+                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" placeholder="Ingresá la descripción del articulo"></textarea>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-image">Seleccioná la imagen para el producto</label>
+                <input class="admin__input" name="image" type="file" id="product-image" accept="/image*">
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-price">Ingresá el precio del producto a editar al inventario</label>
+                <input class="admin__input" name="price" type="number" id="product-price" min="500" max="100000" value="500" step=100>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-size">Ingresá el tamaño a editar del articulo en cm</label>
+                <input class="admin__input" name="size" type="number" id="product-size" min="50" max="100" value="50">
+            </div>
+            <div class="admin__buttons">
+                <div>
+                    <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
                 </div>
-                <div class="label-admin">
-                    <label for="product-clasf">Ingresá la categoría</label>
-                    <select name="clasf" id="product-clasf">
-                        <option value="categoria1">Categoria 1</option>
-                        <option value="categoria2">Categoria 2</option>
-                        <option value="categoria3">Categoria 3</option>
-                    </select>
+                <div>
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Editar">
                 </div>
-                <div class="label-admin">
-                    <label for="product-color">Ingresá el color del producto</label>
-                    <input name="color" type="text" id="product-color" placeholder="Ingresá el color del producto" minlength="4" maxlength="20">
+                <div>
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar">
                 </div>
-                <div class="label-admin">
-                    <label for="product-care">Seleccioná el cuidado del producto</label>
-                    <select name="care" id="product-care">
-                        <option value="basic">Básico</option>
-                        <option value="intermediate">Intermedio</option>
-                        <option value="expert">Experto</option>
-                    </select>
-                </div>
-                <div class="label-admin">
-                    <label for="product-description">Ingresá la descripción del producto a editar</label>
-                    <textarea class="textarea-admin" name="description" id="product-description" cols="25" rows="4" placeholder="Ingresá la descripción del articulo"></textarea>
-                </div>
-                <div class="label-admin">
-                    <label for="product-image">Seleccioná la imagen para el producto</label>
-                    <input name="image" type="file" id="product-image" accept="/image*">
-                </div>
-                <div class="label-admin">
-                    <label for="product-price">Ingresá el precio del producto a editar al inventario</label>
-                    <input name="price" type="number" id="product-price" min="500" max="100000" value="500" step=100>
-                </div>
-                <div class="label-admin">
-                    <label for="product-size">Ingresá el tamaño a editar del articulo en cm</label>
-                    <input name="size" type="number" id="product-size" min="50" max="100" value="50">
-                </div>
-                <div class="buttons-form-admin">
-                    <div class="button-admin">
-                        <input class="btnStyle2" type="reset" value="Limpiar formulario">
-                    </div>
-                    <div class="button-admin">
-                        <input class="btnStyle2" type="submit" value="Editar">
-                    </div>
-                    <div class="button-admin">
-                        <input class="btnStyle2" type="submit" value="Eliminar">
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-</div>
+
 </body>
 </html>
