@@ -12,10 +12,13 @@
         1-3.a HEADER
         1-3.b FOOTER
         1-3.c HOME
-        1-3.d login
-        1-3.e password recovery
-        1-3.f Product Detail
-        1-3.g Administrator
+        1-3.d LOGIN AND REGISTER
+        1-3.e PASSWORD RECOVERY
+        1-3.f CART
+        1-3.g SHOP 
+        1-3.h PRODUCT DETAIL
+        1-3.i ADMINISTRATOR
+        1-3.j ERROR PAGE 
 
         1-4 LIBRERY
 
@@ -246,86 +249,127 @@ header {
     align-self: flex-end;
 }
 
-/*        1-3.d login        */
+/*        1-3.d LOGIN AND REGISTER      */
 
-/* Texto principal */
-.login-text{
-    /* font-family: var(--fuentePrimaria); */
-    /* color: #014934; */
+.users__title{
     font-weight: 700;
     text-align: center;
     margin-top: 90px;
 }
-/* Pregunta de la creacion de cuenta */
-.have-account{
+.users__subtitle{
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
     color: #014934;
 }
-/* decoracion de los link */
-.mk-account-link{
+.users__link{
     text-decoration-line: underline;
     font-weight: 700;
     color: #014934;
 }
 
 /* Formulario de login */
-.form-login{
+.users__form{
     padding: 10px 20px;
     margin-top: 10px;
 }
-/* Color del texto de label */
-.form-login label{
-    color: var(--primary-green);
-}
-/* div con cada label e input */
-.inside-form-login{
+.users__form--item{
     margin-bottom: 20px;
 }
-/* solo los label de cada div */
-.inside-form-login label{
+.users__form--label{
     display: block;
     margin: 6px 0px;
 }
-/* los cuadros de dialogo para ingresar datos */
-.login-control{
+.users__form--input{
     width: 100%;
     padding: 9px;
     border: #014934 solid 1px;
 }
 
-.Pass-recovery {
+.userRecovery__title {
     display: flex;
     flex-direction: column;
 }
 
-/* Boton de login */
+/*   1-3.e PASSWORD RECOVERY */
 
-
-
-/*   1-3.d password recovery */
-
-/* link de "olvidaste tu password" */
-.password-forgotten{
+.users__forgotten{
     margin-bottom: 15px;
 }
-.password-forgotten-link{
+.users__forgotten-link{
     padding: 20px;
     text-decoration-line: underline;
     font-weight: 700;
     color: #014934;
 }
-/* Color de los placeholder de los cuadros de dialogo */
 ::placeholder{
     color: var(--third-light-green);
 }
 
-/*   1-3.e register */
+/*   1-3.f CART */
+.cart__title{
+    margin-top: 85px;
+    display: flex;
+    justify-content: space-around;
+    border: black solid 1px;
+    padding: 15px;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: var(--primary-green);
+    color: white;
+}
+.cart__totalPrice{
+    margin: auto 0;
+    font-size: medium;
+    font-weight: normal;
+}
+.cart__product{
+    margin: 10px 0;
+    max-height: 80px;
+    display: flex;
+}
+.cart__productImageContainer{
+    max-width: 10%;
+}
+.cart__productImage{
+    width: 100%;
+    height: 100%;
+    border: rgb(173, 173, 173) solid 1px;
+    object-fit: cover;
+}
+.cart__productDescription{
+    width: 100%;
+    text-align: right;
+}
+.cart__productName{
+    color: gray;
+    text-align: center;
+    height: 30px;
+    font-size: large;
+}
+.cart__productPrice{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    height: 50px;
+    color: var(--primary-green);
+}
+.cart__productPrice i{
+    color: black;
+}
+.cart__quantityButton{
+    width: 30%;   
+    text-align: center;
+}
+.cart__buttons{
+    display: block;
+}
+.cart__btn{
+    margin: 10px;
+}
 
-/*   1-3.f Cart */
-
-/*   1-3.g shop */
+/*   1-3.g SHOP */
 
 .shop {
     display: flex;
@@ -357,77 +401,7 @@ header {
     display: none;
 }
 
-
-
-/* Carrito de compras */
-
-.title-cart{
-    margin-top: 85px;
-    display: flex;
-    justify-content: space-around;
-    border: black solid 1px;
-    padding: 15px;
-    font-size: x-large;
-    font-weight: bold;
-    background-color: var(--primary-green);
-    color: white;
-}
-.title-cart p{
-    margin: auto 0;
-    font-size: medium;
-    font-weight: normal;
-}
-.article-cart{
-    margin: 10px 0;
-    max-height: 80px;
-    display: flex;
-}
-div .img-cart{
-    max-width: 25%;
-}
-.img-cart img{
-    width: 100%;
-    height: 100%;
-    border: rgb(173, 173, 173) solid 1px;
-    object-fit: cover;
-}
-.article-cart-description{
-    width: 100%;
-    text-align: right;
-}
-.item-name-cart{
-    color: gray;
-    text-align: center;
-    height: 30px;
-    font-size: large;
-}
-.price-cart{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: bold;
-    height: 50px;
-    color: var(--primary-green);
-}
-.price-cart i{
-    color: black;
-}
-.input-cart-qnty{
-    width: 30%;   
-    text-align: center;
-}
-.trash-button{
-    border: none;
-    background-color: white;
-}
-.buttons-shop-cart{
-    display: block;
-}
-.buttons-shop-cart input{
-    margin: 10px;
-}
-
-/* = 1-3.f ProductDetail */
+/* = 1-3.h PRODUCT DETAIL */
 
 .product-section {
     display: flex;
@@ -499,7 +473,7 @@ div .img-cart{
    min-height: 20rem;
 }
 
-/* 1-3.g Administrator */
+/* 1-3.i ADMINISTRATOR */
 
 /*      TOPBAR      */
 .header-admin{
@@ -570,7 +544,7 @@ div .img-cart{
     width: 12rem;
 }
 
-/* 1-3.i error page */
+/* 1-3.j ERROR PAGE */
 
 .error-menu {
     display: flex;
@@ -694,7 +668,7 @@ div .img-cart{
     background-color: var(--highlight-Orange);
     border-radius: 5px;
 }
-.boton-login{
+.btnStyle2{
     font-size: 1rem;
     background-color: #014934;
     color: white;
@@ -705,7 +679,7 @@ div .img-cart{
     border: 0;
     transition: all 0.5s;
 }
-.boton-login:hover {
+.btnStyle2:hover {
     background-color:darkorange;
 }
 
@@ -891,21 +865,22 @@ div .img-cart{
         margin-right: 2rem;
     }
     /* Shop Cart */
-    .main-shopCart{
+    .cart{
+        margin: auto;
         max-width: 690px;
     }
-    .article-cart{
+    .cart__product{
         max-height: 180px;
     }
-    .img-cart img{
+    cart__productImage{
         max-height: 160px;
         max-width: 150px;
     }
-    .buttons-shop-cart{
+    .cart__buttons{
         display: flex;
         justify-content: space-around;
     }
-    .buttons-shop-cart input{
+    .cart__btn{
         width: 13rem;
     }
     /* Admin */

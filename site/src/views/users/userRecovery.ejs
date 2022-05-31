@@ -10,30 +10,30 @@
     <main>
         <section class="flex-column media-flex-row">
             <div class="auto-flex">
-                <div class="Pass-recovery">
+                <div class="userRecovery__title">
                     <!-- Aqui va el texto principal de la pagina -->
-                    <h1 class="login-text">Recuperá tu contraseña</h1>
+                    <h1 class="users__title">Recuperá tu contraseña</h1>
                     <!-- Seccion de pregunta de sign up -->
-                    <div class="have-account">
-                        <a href="/users/login" class="mk-account-link">Volver al login</a>
+                    <div class="users__subtitle">
+                        <a href="/users/login" class="users__link">Volver al login</a>
                     </div>
                 </div>
             </div>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de login -->
-                <form action="home" method="post" class="form-login">
+                <form action="home" method="post" class="users__form">
                     <!-- Ingresar el correo electrónico -->
-                    <div class="inside-form-login">
-                        <label for="email"> Correo electrónico</label>
-                        <input class="login-control" type="email" placeholder="Ingresá tu correo" required>
+                    <div class="users__form--item">
+                        <label class="users__form--label" for="email"> Correo electrónico</label>
+                        <input class="users__form--input" type="email" placeholder="Ingresá tu correo" required>
                     </div>
                     <!-- Boton de iniciar sesion -->
-                    <input type="submit" value="Recuperar password" class="boton-login">
+                    <input type="submit" value="Recuperar password" class="btnStyle2">
                 </form>
                 <!-- usé un div aqui en el link para espaciarlo con el footer -->
-                <div class="password-forgotten">
+                <div class="users__forgotten">
                     <!-- link de "olvidaste tu contraseña" -->
-                    <a href="/users/register" class="password-forgotten-link">Creá una cuenta</a>
+                    <a href="/users/register" class="users__forgotten-link">Creá una cuenta</a>
                 </div>
             </div>
         
