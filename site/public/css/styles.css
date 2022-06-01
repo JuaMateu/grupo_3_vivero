@@ -477,12 +477,18 @@ header {
 
 /*      SIDEBAR      */
 .admin__sidebar{
-    width: 3rem;
-    background-color: var(--primary-green-soft);
-    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    bottom: 0;
     position: fixed;
     left: 0;
-    display: block;
+    background-color: var(--primary-green-soft);
+    border-radius: 20px 20px 0 0;
+
+}
+.admin_sidebar__nav{
+    display: none;
 }
 .admin__span{
     display: none;
@@ -500,8 +506,8 @@ header {
 }
 /*      PAGE CONTENT      */
 .admin{
-    width: calc(100%-3rem);
-    margin-left: 3rem;
+    /* width: calc(100%-3rem); */
+    /* margin-left: 3rem; */
     margin-top: 80px;
     text-align: center;
 }
@@ -879,9 +885,34 @@ header {
     }
     /* ADMINISTRATOR */
     /* Admin sidebar */
-    .admin__sidebar{
-        text-align: center;
+    .admin__sidebar {
+        position: fixed;
         width: 10rem;
+        height: 100%;
+        left: 0;
+        top: 90px;
+        border-radius: 0;
+        display: block;
+        text-align: center;
+        background-color: var(--primary-green-soft);
+    }
+    .admin_sidebar__nav{
+        display: inline;
+    }
+    .admin_sidebar__nav>li {
+        text-align: left;
+        margin: 0.2rem 2.1rem;
+        border: 1px #ffffff solid;
+        padding: 2px 1rem;
+        border-radius: 4px;
+        transition: all 0.2s;
+    }
+    .admin_sidebar__nav>li:active {
+        background-color: var(--highlight-Orange);
+    }
+
+    .admin-sidebar__link{
+        color: #ffffff;
     }
     .admin__span{
         display: initial;
@@ -901,6 +932,7 @@ header {
         background-color: var(--highlight-Orange);
         border-radius: 30px 0 0 30px;
     }
+    
     /* Admin Page Content */
     .admin{
         margin-top: 90px;
