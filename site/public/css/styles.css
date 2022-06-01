@@ -303,7 +303,7 @@ header {
     color: #014934;
 }
 ::placeholder{
-    color: var(--third-light-green);
+    color: var(--primary-green-soft);
 }
 
 /*   1-3.f CART */
@@ -550,13 +550,50 @@ header {
 }
 /* PRODUCT LIST */
 
-.admin__itemList{
+/* .admin__itemList{
     border: red 1px solid;
 }
 .admin__itemImg{
     max-width: 50px;
     max-height: 50px;
+} */
+.table-conteiner{
+    overflow-x:auto;
 }
+th, td {
+    border-bottom: 1px solid #000;
+}
+.table, th, td {
+    border: 1px solid;
+  }
+  th {
+    background-color: var(--primary-green-soft);
+    color: white;
+  }
+  tr {
+      max-height: 2rem;
+  }
+  tr:nth-child(even) {
+      background-color: var(--third-light-green-soft);}
+  tr:hover {
+      background-color: var(--third-light-green-soft);
+    }
+    .table-btn {
+        color: #014934;
+    }
+
+  .list-table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  .list-table__img-conteiner {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 auto;
+    }
+
 
 /* 1-3.j ERROR PAGE */
 

@@ -21,11 +21,42 @@
         <h3>Estos son los artículos de la base de datos</h3>
 
         <!-- CSS A PARTIR DE LINEA 531 EN STYLES -->
-        <div class="admin__itemList">
+        <!-- <div class="admin__itemList">
             <img src="/img/plantas/Aglaonema.png" alt="Aglaonema" class="admin__itemImg">
             <span class="admin__itemName">Aglaonema</span>
             <span class="admin__itemStock">Stock</span>
-        </div>
+        </div> -->
+        <div class="table-conteiner">
+        <table class="list-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>imagen</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <%  for(i = 0; i < 50; i++) { %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><div class="list-table__img-conteiner"><img src="/img/plantas/aglaonema.png" alt="aglaonema"></div></td>
+                        <td>Algaonema</td>
+                        <td>Floral</td>
+                        <td>20</td>
+                        <td>
+                            <a href="/products/editproducts?id=<%= i %>" class="table-btn" >
+                                <span>Editar<i class="fa-solid fa-pencil-alt"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
     </div>
         <!-- CSS A PARTIR DE LINEA 531 EN STYLES -->
 </body>
