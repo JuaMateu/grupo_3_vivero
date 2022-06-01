@@ -511,6 +511,20 @@ header {
     margin-top: 80px;
     text-align: center;
 }
+.admin__nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--third-light-green-soft);
+}
+.admin__nav li {
+    flex: 1 0 auto;
+    border: 1px solid #014934;
+    padding: 0 auto;
+}
+.admin__nav a {
+    color: #014934;
+    width: 100%;
+}
 .admin__form{
     display: block;
 }
@@ -924,6 +938,9 @@ header {
         text-decoration: none;
         display: block;
         font-weight: bold;
+    }
+    .admin__nav{
+        display: none
     }
     .admin__sidebar i{
         padding: 10px;
