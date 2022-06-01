@@ -32,3 +32,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Que hice: Segui organizando el CSS, apliqué CSS Grid a los banners del HOME, hice template para secciones repetidas como mas vendidos, terminé version desktop de home y de detalle de producto
 - problemas: sin problemas
 - Que voy a hacer: quiero terminar las versiones desktop y revisar paginas faltantes para despues seguir con los nuevos entregables
+
+## Miercoles 1 de Junio
+### Juan Mateu:
+- Que hice: agregué links para poder navegar en la pagina de ABM de productos y maqueté una tabla para listar productos.
+- problemas: falta entender como ajustar el tamaño de las columnas y la tabla
+- Que voy a hacer: terminar de dar estilo a los formularios de ABM
