@@ -16,6 +16,9 @@ const productsRoutes = require('./routes/productsRoutes');
 app.use(express.static(path.join(__dirname, "..", "public")))
 // method override para post
 app.use(methodOverride ("_method"))
+// seteo para copturar informacion formulario post en forma de objeto literal
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
 // determina la direccion de views adentro de la carpeta src
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views');

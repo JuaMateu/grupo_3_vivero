@@ -3,11 +3,26 @@ const router = express.Router();
 
 const productsController = require('../controllers/productController');
 
-router.get('/productDetail', productsController.detail);
-router.get('/listProducts',productsController.list);
-router.get('/addProducts',productsController.add);
-router.get('/editProducts',productsController.edit);
-router.post('/addProducts',productsController.add);
-router.post('/editProducts',productsController.edit);
+
+// renderiza vista de productos para clientes
+router.get('/shop',productsController.shop);
+
+//* CRUD de productos *//
+// listar productos
+router.get('/',productsController.list);
+// mostrar detalle de producto
+router.get('/detail/:id', productsController.detail);
+
+//formulario de crear producto
+router.get('/create',productsController.addForm);
+//acion de crear producto
+router.post('/create',productsController.create);
+
+//formulario de editar o borrar producto
+router.get('/:id/edit',productsController.edit);
+//accion de editar producto
+router.put('/:id',productsController.edit);
+//accion de borrar producto
+router.delete('/:id',productsController.delete);
 
 module.exports = router;

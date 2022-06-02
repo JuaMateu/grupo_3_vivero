@@ -12,11 +12,7 @@
 
     <!-- Page content -->
     <div class="admin">
-        <ul class="admin__nav">
-            <li class="no-list-style"><a href="/products/listProducts" class="admin-sidebar__link">Listar</a></li>
-            <li class="no-list-style"><a href="/products/addProducts" class="admin-sidebar__link">Agregar</a></li>
-            <li class="no-list-style"><a href="/products/editProducts" class="admin-sidebar__link">Editar</a></li>
-        </ul>
+        <%- include('../partials/productsNav') %>
         <h1>Administrar Productos</h1>
         <h3>Estos son los artículos de la base de datos</h3>
 
@@ -35,25 +31,27 @@
                     <th>Nombre</th>
                     <th>Categoría</th>
                     <th>Stock</th>
+                    <th>precio</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 
-                    <%  for(i = 0; i < 50; i++) { %>
+                    <%  products.forEach( prod => { %>
                     <tr>
-                        <td><%= i+1 %></td>
-                        <td><div class="list-table__img-conteiner"><img src="/img/plantas/aglaonema.png" alt="aglaonema"></div></td>
-                        <td>Algaonema</td>
-                        <td>Floral</td>
-                        <td>20</td>
+                        <td><%= prod.id %></td>
+                        <td><div class="list-table__img-conteiner"><img src= <%= prod.img %> alt="aglaonema"></div></td>
+                        <td><%= prod.name %></td>
+                        <td><%= prod.type %></td>
+                        <td><%= prod.stock %></td>
+                        <td><%= prod.price %></td>
                         <td>
-                            <a href="/products/editproducts?id=<%= i %>" class="table-btn" >
+                            <a href="/products/editproducts/<%= prod.id %>" class="table-btn" >
                                 <span>Editar<i class="fa-solid fa-pencil-alt"></i></span>
                             </a>
                         </td>
                     </tr>
-                    <% } %>
+                    <% } ) %>
             </tbody>
         </table>
     </div>
