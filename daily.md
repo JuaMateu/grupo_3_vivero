@@ -38,3 +38,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Que hice: agregué links para poder navegar en la pagina de ABM de productos y maqueté una tabla para listar productos.
 - problemas: falta entender como ajustar el tamaño de las columnas y la tabla
 - Que voy a hacer: terminar de dar estilo a los formularios de ABM
+
+## Jueves 2 de junio
+### Juan Mateu:
+- Que hice: correcciones en el router sprint, agrege json de datos de productos, terminé el metodo de crear producto que imprime en un archivo json con formato legible
+- problemas: hay que chequer si los datos son correctos
+- Que voy a hacer: seguir con el metodo de editar y eliminar productos
