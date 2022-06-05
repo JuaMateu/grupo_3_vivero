@@ -19,10 +19,10 @@ router.get('/create',productsController.addForm);
 router.post('/create',productsController.create);
 
 //formulario de editar o borrar producto
-router.get('/:id/edit',productsController.edit);
+router.get('/edit/:idProduct',productsController.editForm);
 //accion de editar producto
-router.put('/:id',productsController.edit);
+router.put('/edit/:idProduct',productsController.edit);
 //accion de borrar producto
-router.delete('/:id',productsController.delete);
+router.delete('/delete/:idProduct',productsController.delete);
 
 module.exports = router;

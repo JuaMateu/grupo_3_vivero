@@ -12,49 +12,60 @@
     <!-- Page content -->
     <div class="admin">
         <%- include('../partials/productsNav') %>
+        
         <h1>Administrar Productos</h1>
-        <h3>Editá o eliminá los articulos de la base de datos</h3>
-        <form action="" method="post" class="admin__form">
+        <h3>Agregá los articulos a la base de datos</h3>
+        <form action="/products/edit/<%- editProduct.id %>?_method=PUT" method="post" class="admin__form">
             <div class="admin__form--item">
-                <label class="admin__label" for="product-text">Ingresá el ID del producto</label>
-                <input class="admin__input" name="name" type="text" id="product-text" placeholder="Ingresá el ID del producto" minlength="4" maxlength="20">
+                <label class="admin__label" for="product-text">Ingresá el nombre del producto</label>
+                <input class="admin__input" name="name" type="text" id="product-text" required value="<%- editProduct.name %>" minlength="4" maxlength="20">
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-clasf">Ingresá la categoría</label>
-                <select name="clasf" id="product-clasf">
-                    <option value="categoria1">Categoria 1</option>
-                    <option value="categoria2">Categoria 2</option>
-                    <option value="categoria3">Categoria 3</option>
+                <select name="clasf" id="product-clasf" value="<%- editProduct.clasf %>" required>
+                    <option value="Planta Floral">Planta Floral</option>
+                    <option value="Aromatica">Aromatica</option>
+                    <option value="frutal">frutal</option>
+                    <option value="categoria3">Arbusto</option>
+                    <option value="Arbusto">Suculenta</option>
                 </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-color">Ingresá el color del producto</label>
-                <input class="admin__input" name="color" type="text" id="product-color" placeholder="Ingresá el color del producto" minlength="4" maxlength="20">
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-care">Seleccioná el cuidado del producto</label>
-                <select name="care" id="product-care">
-                    <option value="basic">Básico</option>
-                    <option value="intermediate">Intermedio</option>
-                    <option value="expert">Experto</option>
+                <select name="careLevel" id="product-care" value="<%- editProduct.careLevel %>" required>
+                    <option value="Básico">Básico</option>
+                    <option value="Intermedio">Intermedio</option>
+                    <option value="Experto">Experto</option>
                 </select>
             </div>
             <div class="admin__form--item">
-                <label class="admin__label" for="product-description">Ingresá la descripción del producto a editar</label>
-                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" placeholder="Ingresá la descripción del articulo"></textarea>
+                <label class="admin__label" for="product-description">Ingresá la descripción del producto</label>
+                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" maxlength="100" value="<%- editProduct.description %>"></textarea>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="stock">Stock inicial del producto</label>
+                <input class="admin__input" name="stock" type="number" id="stock" value="0" min="0" max="1000" value="<%- editProduct.stock %>" required >
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
+                <input class="admin__input" name="price" type="number" id="product-price" min="500" required max="100000" value="<%- editProduct.price %>" step=100>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="label">Seleccionar una etiqueta para el producto</label>
+                <select name="label" id="label" value="<%- editProduct.label %>" required>
+                    <option value="none">None</option>
+                    <option value="Oferta">Oferta</option>
+                    <option value="Mas vendida">Mas vendida</option>
+                </select>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-image">Seleccioná la imagen para el producto</label>
-                <input class="admin__input" name="image" type="file" id="product-image" accept="/image*">
+                <input class="admin__input" value="<%- editProduct.img %>" name="img" type="text" id="product-image" accept="/image*">
             </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-price">Ingresá el precio del producto a editar al inventario</label>
-                <input class="admin__input" name="price" type="number" id="product-price" min="500" max="100000" value="500" step=100>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-size">Ingresá el tamaño a editar del articulo en cm</label>
+            <!-- <div class="admin__form--item">
+                <label class="admin__label" for="product-size">Ingresá el tamaño del articulo en cm</label>
                 <input class="admin__input" name="size" type="number" id="product-size" min="50" max="100" value="50">
-            </div>
+            </div> -->
             <div class="admin__buttons">
                 <div>
                     <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
@@ -62,9 +73,11 @@
                 <div>
                     <input class="admin__buttons--input btnStyle2" type="submit" value="Editar">
                 </div>
-                <div>
-                    <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar">
-                </div>
+            </div>
+        </form>
+        <form action="/products/delete/<%- editProduct.id %>?_method=DELETE">
+            <div>
+                <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar">
             </div>
         </form>
     </div>
