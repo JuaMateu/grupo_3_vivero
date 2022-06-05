@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head menos title -->
+    <%- include('../partials/head') %>
+    <title>Listado de Usuarios</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <!-- Sidebar -->
+    <%- include('../partials/sidebarAdmin') %>
+
+    <!-- Page content -->
+    <div class="admin">
+        <%- include('../partials/productsNav') %>
+        <h1>Administrar Usuarios</h1>
+        <h3>Estos son los usuarios de la base de datos</h3>
+
+        <!-- CSS A PARTIR DE LINEA 531 EN STYLES -->
+        <!-- <div class="admin__itemList">
+            <img src="/img/plantas/Aglaonema.png" alt="Aglaonema" class="admin__itemImg">
+            <span class="admin__itemName">Aglaonema</span>
+            <span class="admin__itemStock">Stock</span>
+        </div> -->
+        <div class="table-conteiner">
+        <table class="list-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>imagen</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <%  users.forEach( user => { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><div class="list-table__img-conteiner"><img src= <%= user.img %> alt="user"></div></td>
+                        <td><%= user.firstName %></td>
+                        <td><%= user.lastName %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.mobile %></td>
+                        <td>
+                            <a href="/products/edit/<%= user.id-1 %>" class="table-btn" >
+                                <span>Editar<i class="fa-solid fa-pencil-alt"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <% } ) %>
+            </tbody>
+        </table>
+    </div>
+    </div>
+        <!-- CSS A PARTIR DE LINEA 531 EN STYLES -->
+</body>
+</html>

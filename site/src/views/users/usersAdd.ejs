@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head menos title -->
+    <%- include('../partials/head') %>
+    <title>Agregar Usuarios</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <!-- Sidebar -->
+    <%- include('../partials/sidebarAdmin') %>
+
+    <!-- Page content -->
+    <div class="admin">
+        <%- include('../partials/productsNav') %>
+        
+        <h1>Administrar Usuarios</h1>
+        <h3>Agregá los usuarios a la base de datos</h3>
+        <form action="/users/create" method="post" class="admin__form">
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-text">Ingresá el nombre del usuario</label>
+                <input class="admin__input" name="firstName" type="text" id="product-text" required placeholder="Ingresá el nombre del producto" minlength="4" maxlength="20">
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-clasf">Ingresá la categoría</label>
+                <select name="type" id="product-clasf" required>
+                    <option value="Planta Floral">Planta Floral</option>
+                    <option value="Aromatica">Aromatica</option>
+                    <option value="Frutal">frutal</option>
+                    <option value="Arbusto">Arbusto</option>
+                    <option value="Suculenta">Suculenta</option>
+                </select>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-care">Seleccioná el cuidado del producto</label>
+                <select name="careLevel" id="product-care" required>
+                    <option value="Básico">Básico</option>
+                    <option value="Intermedio">Intermedio</option>
+                    <option value="Experto">Experto</option>
+                </select>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-description">Ingresá la descripción del producto</label>
+                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" maxlength="100" placeholder="Ingresá la descripción del articulo"></textarea>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="stock">Stock inicial del producto</label>
+                <input class="admin__input" name="stock" type="number" id="stock" value="0" min="0" max="1000" required >
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
+                <input class="admin__input" name="price" type="number" id="product-price" min="500" required max="100000" value="500" step=100>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="label">Seleccionar una etiqueta para el producto</label>
+                <select name="label" id="label" required>
+                    <option value="none">None</option>
+                    <option value="Oferta">Oferta</option>
+                    <option value="Mas vendida">Mas vendida</option>
+                </select>
+            </div>
+            <div class="admin__form--item">
+                <label class="admin__label" for="product-image">Seleccioná la imagen para el producto</label>
+                <input class="admin__input" value="/img/plantas/aglaonema.png" name="img" type="text" id="product-image" accept="/image*">
+            </div>
+            <!-- <div class="admin__form--item">
+                <label class="admin__label" for="product-size">Ingresá el tamaño del articulo en cm</label>
+                <input class="admin__input" name="size" type="number" id="product-size" min="50" max="100" value="50">
+            </div> -->
+            <div class="admin__buttons">
+                <div>
+                    <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
+                </div>
+                <div>
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Agregar">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

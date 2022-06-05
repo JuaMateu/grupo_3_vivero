@@ -399,9 +399,9 @@
     "type": "Planta Floral",
     "careLevel": "Básico",
     "description": "",
-    "stock": "0",
-    "price": "500",
-    "label": "none",
+    "stock": "4",
+    "price": "5000",
+    "label": "Oferta",
     "img": "/img/plantas/aglaonema.png",
     "sells": 0
   }
