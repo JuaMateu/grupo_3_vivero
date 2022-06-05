@@ -25,7 +25,7 @@ const controller = {
         let newProduct = {};
         newProduct.id = products.length+1;
         newProduct.name = req.body.name
-        newProduct.type = req.body.clasf
+        newProduct.type = req.body.type
         newProduct.careLevel = req.body.careLevel
         newProduct.description = req.body.description
         newProduct.stock = req.body.stock
@@ -55,9 +55,15 @@ const controller = {
         let idProduct = req.params.idProduct;
        
         let editProduct = products[idProduct];
-
+        
+        /* let index = products.findIndex(product => {
+            if (product.name == editProduct.name) {
+                return true;
+            }
+        }); */
+    
         editProduct.name = req.body.name
-        editProduct.type = req.body.clasf
+        editProduct.type = req.body.type
         editProduct.careLevel = req.body.careLevel
         editProduct.description = req.body.description
         editProduct.stock = req.body.stock
@@ -66,22 +72,24 @@ const controller = {
         editProduct.img = req.body.img
         editProduct.sells = 0
 
+        products[idProduct-1] = editProduct;
 
-    
-
+        let productsExport = JSON.stringify(products, null, 2);
+        fs.writeFileSync(productsFilePath, productsExport,'utf-8');
+        
         res.redirect("/products/");
     },
     delete:(req,res)=> {
 
-        let idProduct = req.params.id;
+        let idProduct = req.params.idProduct;
         products = products.filter(product => {
             return product.id != idProduct
         });
 
         let productsExport = JSON.stringify(products, null, 2);
-        fs.writeFileSync(productsFilePath, productsExport);
+        fs.writeFileSync(productsFilePath, productsExport,'utf-8');
         
-        res.redirect("/products/listProducts");
+        res.redirect("/products/");
     }
     
 }

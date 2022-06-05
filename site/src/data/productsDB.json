@@ -383,8 +383,9 @@
   },
   {
     "id": 33,
-    "name": "prueba",
+    "name": "Homero Simpson",
     "type": "Planta Floral",
+    "careLevel": "Básico",
     "description": "",
     "stock": "0",
     "price": "500",
@@ -394,8 +395,9 @@
   },
   {
     "id": 34,
-    "name": "prueba",
+    "name": "Bart Simpson",
     "type": "Planta Floral",
+    "careLevel": "Básico",
     "description": "",
     "stock": "0",
     "price": "500",
