@@ -11,6 +11,15 @@ router.get('/userRecovery', usersController.userRecovery);
 // listado de los usuarios
 router.get('/',usersController.list);
 
+// formulario de agregar usuario
 router.get('/create',usersController.addForm);
+// accion de agregar al usuario
+router.post('/create',usersController.create);
+
+// formulario de edicion de usuario
+router.get('/edit/:idUser',usersController.editForm);
+
+//accion de borrar usuario
+router.delete('/delete/:idUser',usersController.delete);
 
 module.exports = router;

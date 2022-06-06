@@ -1,62 +1,74 @@
 [
-    {
-        "id" : 1,
-        "firstName" : "Joaquin",
-        "lastName" : "Phoenix",
-        "email" : "joaquinP@digitalhouse.com",
-        "img" : "/img/otros/user.png",
-        "mobile" : 1234567890,
-        "address" : "Avenida siempre viva #60",
-        "birth" : "06/05/1988",
-        "orders": 0,
-        "cart" : 0
-    },
-    {
-        "id" : 2,
-        "firstName" : "Tom",
-        "lastName" : "Cruise",
-        "email" : "tomC@digitalhouse.com",
-        "img" : "/img/otros/user.png",
-        "mobile" : 1234567890,
-        "address" : "Avenida siempre viva #60",
-        "birth" : "26/11/1970",
-        "orders": 1,
-        "cart" : 0
-    },
-    {
-        "id" : 3,
-        "firstName" : "Elliot",
-        "lastName" : "Page",
-        "email" : "elliotP@digitalhouse.com",
-        "img" : "/img/otros/user.png",
-        "mobile" : 1234567890,
-        "address" : "Avenida siempre viva #60",
-        "birth" : "09/03/1998",
-        "orders": 6,
-        "cart" : 0
-    },
-    {
-        "id" : 4,
-        "firstName" : "Eva",
-        "lastName" : "Longoria",
-        "email" : "evaL@digitalhouse.com",
-        "img" : "/img/otros/user.png",
-        "mobile" : 1234567890,
-        "address" : "Avenida siempre viva #60",
-        "birth" : "15/07/1978",
-        "orders": 10,
-        "cart" : 0
-    },
-    {
-        "id" : 5,
-        "firstName" : "Emma",
-        "lastName" : "Watson",
-        "email" : "emmaW@digitalhouse.com",
-        "img" : "/img/otros/user.png",
-        "mobile" : 1234567890,
-        "address" : "Avenida siempre viva #60",
-        "birth" : "22/09/1990",
-        "orders": 4,
-        "cart" : 5
-    }
+  {
+    "id": 1,
+    "firstName": "Joaquin",
+    "lastName": "Phoenix",
+    "email": "joaquinP@digitalhouse.com",
+    "img": "/img/otros/user.png",
+    "mobile": 1234567890,
+    "address": "Avenida siempre viva #60",
+    "birth": "1988-05-06",
+    "orders": 0,
+    "cart": 0
+  },
+  {
+    "id": 2,
+    "firstName": "Tom",
+    "lastName": "Cruise",
+    "email": "tomC@digitalhouse.com",
+    "img": "/img/otros/user.png",
+    "mobile": 1234567890,
+    "address": "Avenida siempre viva #60",
+    "birth": "1970-11-26",
+    "orders": 1,
+    "cart": 0
+  },
+  {
+    "id": 3,
+    "firstName": "Elliot",
+    "lastName": "Page",
+    "email": "elliotP@digitalhouse.com",
+    "img": "/img/otros/user.png",
+    "mobile": 1234567890,
+    "address": "Avenida siempre viva #60",
+    "birth": "1998-09-03",
+    "orders": 6,
+    "cart": 0
+  },
+  {
+    "id": 4,
+    "firstName": "Eva",
+    "lastName": "Longoria",
+    "email": "evaL@digitalhouse.com",
+    "img": "/img/otros/user.png",
+    "mobile": 1234567890,
+    "address": "Avenida siempre viva #60",
+    "birth": "1978-07-15",
+    "orders": 10,
+    "cart": 0
+  },
+  {
+    "id": 5,
+    "firstName": "Emma",
+    "lastName": "Watson",
+    "email": "emmaW@digitalhouse.com",
+    "img": "/img/otros/user.png",
+    "mobile": 1234567890,
+    "address": "Avenida siempre viva #60",
+    "birth": "1990-09-22",
+    "orders": 4,
+    "cart": 5
+  },
+  {
+    "id": 6,
+    "firstName": "Orlando",
+    "lastName": "Ayala",
+    "email": "fdhadh@Gfas.com",
+    "mobile": "5473547426",
+    "address": "hsbwtrwbuwr",
+    "birth": "2022-06-07",
+    "img": "/img/otros/user.png",
+    "orders": 0,
+    "cart": 0
+  }
 ]
