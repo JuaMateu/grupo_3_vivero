@@ -395,13 +395,25 @@
   },
   {
     "id": 34,
-    "name": "Bart Simpson",
+    "name": "El Barto Simpson",
     "type": "Planta Floral",
     "careLevel": "Básico",
-    "description": "",
-    "stock": "4",
-    "price": "5000",
-    "label": "Oferta",
+    "description": "strhwrs",
+    "stock": "3",
+    "price": "2400",
+    "label": "none",
+    "img": "/img/plantas/aglaonema.png",
+    "sells": 0
+  },
+  {
+    "id": 35,
+    "name": "Lisa Simpson",
+    "type": "Arbusto",
+    "careLevel": "Básico",
+    "description": "strhwrs",
+    "stock": "55",
+    "price": "5500",
+    "label": "none",
     "img": "/img/plantas/aglaonema.png",
     "sells": 0
   }

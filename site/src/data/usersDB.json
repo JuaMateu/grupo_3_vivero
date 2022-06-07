@@ -58,17 +58,5 @@
     "birth": "1990-09-22",
     "orders": 4,
     "cart": 5
-  },
-  {
-    "id": 6,
-    "firstName": "Orlando",
-    "lastName": "Ayala",
-    "email": "fdhadh@Gfas.com",
-    "mobile": "5473547426",
-    "address": "hsbwtrwbuwr",
-    "birth": "2022-06-07",
-    "img": "/img/otros/user.png",
-    "orders": 0,
-    "cart": 0
   }
 ]

@@ -6,21 +6,27 @@ var products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     shop: (req, res) => {
+        // READ
         res.render("products/shop", { products })
     },
     list: (req, res) => {
+        // READ
         res.render("products/listProducts", { products });
     },
 
     detail: (req, res) => {
+        // READ
         res.render("products/productDetail", { products });
     },
 
     addForm:(req,res)=> {
+        // READ
+        // accion necesaria para ver el formulario
         res.render("products/addProducts");
     },
 
     create:(req,res)=> {
+        // CREATE
         // recibir formulario crear producto
         let newProduct = {};
         newProduct.id = products.length+1;
@@ -45,23 +51,21 @@ const controller = {
     },
     
     editForm:(req,res)=> {
+        // READ
+        // solicitamos el id de los parametros
         let idProduct = req.params.idProduct;
-
+        // asginamos el id al elemento del array correspondiente
         let editProduct = products[idProduct];
-        
+        // renderizamos la vista con el elemento correpondiente
         res.render('../views/products/editProducts.ejs',{editProduct:editProduct});
     },
     edit: (req,res) => {
+        // UPDATE
+        // solicitamos el id de los parametros
         let idProduct = req.params.idProduct;
-       
-        let editProduct = products[idProduct];
-        
-        /* let index = products.findIndex(product => {
-            if (product.name == editProduct.name) {
-                return true;
-            }
-        }); */
-    
+        // para ajustar el indice recorrido, restamos 1 y situarnos en el elemento correcto
+        let editProduct = products[idProduct-1];
+        // editamos el producto entrante
         editProduct.name = req.body.name
         editProduct.type = req.body.type
         editProduct.careLevel = req.body.careLevel
@@ -71,24 +75,23 @@ const controller = {
         editProduct.label = req.body.label
         editProduct.img = req.body.img
         editProduct.sells = 0
-
-        products[idProduct-1] = editProduct;
-
+        // sobreescribimos el JSON
         let productsExport = JSON.stringify(products, null, 2);
         fs.writeFileSync(productsFilePath, productsExport,'utf-8');
-        
+        // redirigimos a la lista de productos
         res.redirect("/products/");
     },
     delete:(req,res)=> {
-
+        // DELETE
+        // solcitamos el id y con filter, pedimos devolver todos los elementos cuyo id sea distinto al entrante
         let idProduct = req.params.idProduct;
         products = products.filter(product => {
             return product.id != idProduct
         });
-
+        // sobreescribimos el JSON
         let productsExport = JSON.stringify(products, null, 2);
         fs.writeFileSync(productsFilePath, productsExport,'utf-8');
-        
+        // redirigimos a la lista de productos
         res.redirect("/products/");
     }
     

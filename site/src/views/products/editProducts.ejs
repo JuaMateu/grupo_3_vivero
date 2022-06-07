@@ -15,52 +15,55 @@
         
         <h1>Administrar Productos</h1>
         <h3>Agregá los articulos a la base de datos</h3>
-        <form action="/products/edit/<%- editProduct.id %>?_method=PUT" method="post" class="admin__form">
+        <form action="/products/edit/<%= editProduct.id %>?_method=PUT" method="post" class="admin__form">
             <div class="admin__form--item">
                 <label class="admin__label" for="product-text">Ingresá el nombre del producto</label>
-                <input class="admin__input" name="name" type="text" id="product-text" required value="<%- editProduct.name %>" minlength="4" maxlength="20">
+                <input class="admin__input" name="name" type="text" id="product-text" required value="<%= editProduct.name %>" minlength="4" maxlength="20">
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-clasf">Ingresá la categoría</label>
-                <select name="type" id="product-clasf" value="<%- editProduct.clasf %>" required>
+                <select name="type" id="product-clasf" required>
                     <option value="Planta Floral">Planta Floral</option>
                     <option value="Aromatica">Aromatica</option>
-                    <option value="frutal">frutal</option>
-                    <option value="categoria3">Arbusto</option>
-                    <option value="Arbusto">Suculenta</option>
+                    <option value="Frutal">Frutal</option>
+                    <option value="Arbusto">Arbusto</option>
+                    <option value="Suculenta">Suculenta</option>
+                    <!-- <option value="<%= editProduct.type%>" selected><%= editProduct.type%></option> -->
                 </select>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-care">Seleccioná el cuidado del producto</label>
-                <select name="careLevel" id="product-care" value="<%- editProduct.careLevel %>" required>
+                <select name="careLevel" id="product-care" required>
                     <option value="Básico">Básico</option>
                     <option value="Intermedio">Intermedio</option>
                     <option value="Experto">Experto</option>
+                    <!-- <option value="<%= editProduct.careLevel %>" selected><%= editProduct.careLevel %></option> -->
                 </select>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-description">Ingresá la descripción del producto</label>
-                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" maxlength="100" value="<%- editProduct.description %>"></textarea>
+                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" maxlength="100"><%= editProduct.description %></textarea>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="stock">Stock inicial del producto</label>
-                <input class="admin__input" name="stock" type="number" id="stock" value="0" min="0" max="1000" value="<%- editProduct.stock %>" required >
+                <input class="admin__input" name="stock" type="number" id="stock" value="<%= editProduct.stock %>" min="0" max="1000" value="<%= editProduct.stock %>" required >
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
-                <input class="admin__input" name="price" type="number" id="product-price" min="500" required max="100000" value="<%- editProduct.price %>" step=100>
+                <input class="admin__input" name="price" type="number" id="product-price" min="500" required max="100000" value="<%= editProduct.price %>" step=100>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="label">Seleccionar una etiqueta para el producto</label>
-                <select name="label" id="label" value="<%- editProduct.label %>" required>
+                <select name="label" id="label" required>
                     <option value="none">None</option>
                     <option value="Oferta">Oferta</option>
                     <option value="Mas vendida">Mas vendida</option>
+                    <!-- <option value="<%= editProduct.label %>" selected><%= editProduct.label %></option> -->
                 </select>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="product-image">Seleccioná la imagen para el producto</label>
-                <input class="admin__input" value="<%- editProduct.img %>" name="img" type="text" id="product-image" accept="/image*">
+                <input class="admin__input" value="<%= editProduct.img %>" name="img" type="text" id="product-image" accept="/image*">
             </div>
             <!-- <div class="admin__form--item">
                 <label class="admin__label" for="product-size">Ingresá el tamaño del articulo en cm</label>
@@ -75,7 +78,7 @@
                 </div>
             </div>
         </form>
-        <form action="/products/delete/<%- editProduct.id %>?_method=DELETE" method="post">
+        <form action="/products/delete/<%= editProduct.id %>?_method=DELETE" method="post">
             <div>
                 <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar">
             </div>
