@@ -13,21 +13,21 @@
 
             <div class="prod-detail">
                 <figure class="prod-detail__slide">
-                    <img src="/img/plantas/Gomero1.jpg" alt="gomero">
+                    <img src="<%= product.img %>" alt="<%= product.name %>">
                     <a href="#" class="prod-detail__prev">&#10094;</a>
                     <a href="#" class="prod-detail__next">&#10095;</a>
                 </figure>
-                <h2>Gomero Variegata</h2>
+                <h2><%= product.name %></h2>
                 <div class="flex-row">
-                    <p class="prod-detail__price">$ 4800 <span>$ 4500</span></p>
+                    <p class="prod-detail__price">$ <%= product.price - product.price * product.discount / 100 %> <span>$ <%= product.price %></span></p>
                     <button class="btn--comprar">Comprar</button>
                 </div>
             </div>
 
             <div class="prod-desc">
-                <p> <span class="bold">Descripción:</span>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at libero augue. Nam in consectetur massa. Aenean ut purus sit amet felis pharetra </p>
-                <p> <span class="bold">Nivel de cuidados:</span> Requiere un poco de atencion</p>
-                <p> <span class="bold">ideal para:</span> interior</p>
+                <p> <span class="bold">Descripción:</span>  <%= product.description %> </p>
+                <p> <span class="bold">Nivel de cuidados:</span> <%= product.careLevel %></p>
+                <p> <span class="bold">Categoría:</span> <%= product.type %></p>
                 <div class="flex-row">
                     <div class="counter">
                         <span class="counter__minus">-</span>

@@ -16,7 +16,8 @@ const controller = {
 
     detail: (req, res) => {
         // READ
-        res.render("products/productDetail", { products });
+        let  [ selectedProduct ]  = products.filter(prod => {return prod.id == req.params.id});
+        res.render("products/productDetail", { product : selectedProduct });
     },
 
     addForm:(req,res)=> {
@@ -28,17 +29,18 @@ const controller = {
     create:(req,res)=> {
         // CREATE
         // recibir formulario crear producto
-        let newProduct = {};
-        newProduct.id = products.length+1;
-        newProduct.name = req.body.name
-        newProduct.type = req.body.type
-        newProduct.careLevel = req.body.careLevel
-        newProduct.description = req.body.description
-        newProduct.stock = req.body.stock
-        newProduct.price = req.body.price
-        newProduct.label = req.body.label
-        newProduct.img = req.file.filename
-        newProduct.sells = 0
+        let newProduct = {
+            id: products.length+1,
+            name: req.body.name,
+            type: req.body.type,
+            careLevel: req.body.careLevel,
+            description: req.body.description,
+            stock: req.body.stock,
+            price: req.body.price,
+            label: req.body.label,
+            img: "/img/plantas/" + req.file.filename,
+            sells: 0
+        }
 
         // agregar el producto al array
         products.push(newProduct);
@@ -73,7 +75,10 @@ const controller = {
         editProduct.stock = req.body.stock
         editProduct.price = req.body.price
         editProduct.label = req.body.label
-        editProduct.img = req.body.img
+        //validar si cargaron imagen y cambiarla si no no hacer nada
+        if (req.file) {
+            editProduct.img = "/img/plantas/" + req.file.filename
+        }
         editProduct.sells = 0
         // sobreescribimos el JSON
         let productsExport = JSON.stringify(products, null, 2);
