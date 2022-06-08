@@ -416,5 +416,16 @@
     "label": "none",
     "img": "/img/plantas/aglaonema.png",
     "sells": 0
+  },
+  {
+    "id": 36,
+    "name": "PAPAPAP",
+    "type": "Planta Floral",
+    "careLevel": "Básico",
+    "description": "234",
+    "stock": "10",
+    "price": "500",
+    "label": "none",
+    "sells": 0
   }
 ]
