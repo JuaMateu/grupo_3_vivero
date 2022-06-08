@@ -86,3 +86,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Arreglé el controler de edit para productos y usuarios además de agregar imágenes a la BD
 - Problemas: Encontrar imágenes en formato PNG de las plantas y una imagen adecuada
 - ¿Qué voy a hacer?: Instalar Multer y adecuar los formularios para que se implemente correctamente esta herramienta
+
+## Miércoles 08 de Junio
+### Orlando Ayala:
+- ¿Qué hice?: Instalé Multer y lo implementé en el script del proyecto
+- Problemas: La imagen se guarda pero no lo recibe la BD
+- ¿Qué voy a hacer?: Investigar sobre cómo arreglar esto y continuar con la búsqueda de imágenes además de adecuar las demás vistas del proyecto
