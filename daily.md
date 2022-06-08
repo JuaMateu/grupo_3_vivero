@@ -80,3 +80,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Agregué la DB de users, funcionalidades de agregar y eliminar usuarios y el ruteo respectivo
 - Problemas: El problema de la edición persiste
 - ¿Qué voy a hacer?: Arreglar la edición y agregar imágenes de productos del DB
+
+## Martes 07 de Junio
+### Orlando Ayala:
+- ¿Qué hice?: Arreglé el controler de edit para productos y usuarios además de agregar imágenes a la BD
+- Problemas: Encontrar imágenes en formato PNG de las plantas y una imagen adecuada
+- ¿Qué voy a hacer?: Instalar Multer y adecuar los formularios para que se implemente correctamente esta herramienta

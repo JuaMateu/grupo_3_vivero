@@ -20,7 +20,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Oferta",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/bromelia.png",
     "sells": 0
   },
   {
@@ -32,7 +32,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Oferta",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/abedul.png",
     "sells": 0
   },
   {
@@ -68,19 +68,19 @@
     "stock": 20,
     "price": 3000,
     "label": "Oferta",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/anturio.png",
     "sells": 0
   },
   {
     "id": 7,
-    "name": "Aspidrista",
+    "name": "Aspidistra",
     "type": "Planta Floral",
     "careLevel": "Básico",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "stock": 20,
     "price": 3000,
     "label": "Oferta",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/aspidistra.png",
     "sells": 0
   },
   {
@@ -104,7 +104,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Oferta",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/campanilla.png",
     "sells": 0
   },
   {
@@ -116,7 +116,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Oferta",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/tulipanes.png",
     "sells": 0
   },
   {
@@ -140,7 +140,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/tillandsia.png",
     "sells": 0
   },
   {
@@ -152,7 +152,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/sauco.png",
     "sells": 0
   },
   {
@@ -164,7 +164,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/salvia.jpg",
     "sells": 0
   },
   {
@@ -176,7 +176,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/romero.jpg",
     "sells": 0
   },
   {
@@ -188,7 +188,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/plumbago.jpg",
     "sells": 0
   },
   {
@@ -200,7 +200,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/petunia.png",
     "sells": 0
   },
   {
@@ -224,7 +224,7 @@
     "stock": 20,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "img": "/img/plantas/nopal.png",
     "sells": 0
   },
   {
