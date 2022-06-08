@@ -37,7 +37,7 @@ const controller = {
         newProduct.stock = req.body.stock
         newProduct.price = req.body.price
         newProduct.label = req.body.label
-        newProduct.img = req.body.img
+        newProduct.img = req.file.filename
         newProduct.sells = 0
 
         // agregar el producto al array

@@ -419,13 +419,14 @@
   },
   {
     "id": 36,
-    "name": "PAPAPAP",
+    "name": "ACDC",
     "type": "Planta Floral",
     "careLevel": "Básico",
-    "description": "234",
-    "stock": "10",
+    "description": "",
+    "stock": "0",
     "price": "500",
     "label": "none",
+    "img": "planta-1654721814200.jpg",
     "sells": 0
   }
 ]
