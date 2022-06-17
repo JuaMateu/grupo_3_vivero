@@ -33,7 +33,7 @@ const controller = {
         // buscamos el maximo id en la base de datos
         let newId = 1
         if (products.length != 0) {
-            
+           
             const ids = products.map(prod => {
             return prod.id;
             });
@@ -68,9 +68,9 @@ const controller = {
     editForm:(req,res)=> {
         // READ
         // solicitamos el id de los parametros
-        let idProduct = req.params.idProduct;
+        let idProduct = req.params.id;
         // asginamos el id al elemento del array correspondiente
-        let editProduct = products[idProduct];
+        let  [ editProduct ]  = products.filter(prod => {return prod.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
         res.render('../views/products/editProducts.ejs',{editProduct:editProduct});
     },

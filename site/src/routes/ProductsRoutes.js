@@ -32,7 +32,7 @@ router.get('/create',productsController.addForm);
 router.post('/create', uploadProduct.single('img'),productsController.create);
 
 //formulario de editar o borrar producto
-router.get('/edit/:idProduct',productsController.editForm);
+router.get('/edit/:id',productsController.editForm);
 //accion de editar producto
 router.put('/edit/:idProduct', uploadProduct.single('img'), productsController.edit);
 //accion de borrar producto
