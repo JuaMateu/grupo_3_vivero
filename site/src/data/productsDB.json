@@ -453,7 +453,7 @@
     "sells": 0
   },
   {
-    "id": 36,
+    "id": 40,
     "name": "ACDC",
     "type": "Planta Floral",
     "careLevel": "Básico",
@@ -476,6 +476,30 @@
     "price": "5000",
     "label": "none",
     "img": "/img/plantas/planta-1654730447683.jpg",
+    "sells": 0
+  },
+  {
+    "id": 38,
+    "name": "planta nueva",
+    "type": "Planta Floral",
+    "careLevel": "Básico",
+    "description": "una descp",
+    "stock": "0",
+    "price": "500",
+    "label": "Oferta",
+    "img": "/img/plantas/planta-1655445016924.png",
+    "sells": 0
+  },
+  {
+    "id": 41,
+    "name": "nueva planti",
+    "type": "Planta Floral",
+    "careLevel": "Básico",
+    "description": "nada",
+    "stock": "0",
+    "price": "500",
+    "label": "none",
+    "img": "/img/plantas/planta-1655445053927.png",
     "sells": 0
   }
 ]

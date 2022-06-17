@@ -1,3 +1,4 @@
+const e = require('express');
 const fs = require('fs');
 const path = require('path');
 
@@ -29,8 +30,20 @@ const controller = {
     create:(req,res)=> {
         // CREATE
         // recibir formulario crear producto
+        // buscamos el maximo id en la base de datos
+        let newId = 1
+        if (products.length != 0) {
+            
+            const ids = products.map(prod => {
+            return prod.id;
+            });
+            console.log(ids); // 👉️ [ array de id de productos]
+            newId = Math.max(...ids)+1;
+            console.log(newId)
+        }
+
         let newProduct = {
-            id: products.length+1,
+            id: newId,
             name: req.body.name,
             type: req.body.type,
             careLevel: req.body.careLevel,
