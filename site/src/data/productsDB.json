@@ -249,14 +249,14 @@
   {
     "id": 20,
     "name": "Melisa",
-    "type": "Planta Floral",
+    "type": "Aromatica",
     "careLevel": "Básico",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "stock": 20,
+    "description": "La Melisa es una planta aromatica con propiedades similares a la Menta.",
+    "stock": "20",
     "discount": 10,
-    "price": 3000,
-    "label": "Mas Vendida",
-    "img": "/img/plantas/aglaonema.png",
+    "price": "2500",
+    "label": "none",
+    "img": "/img/plantas/planta-1655446946997.png",
     "sells": 0
   },
   {

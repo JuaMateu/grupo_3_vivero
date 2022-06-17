@@ -67,20 +67,18 @@ const controller = {
     
     editForm:(req,res)=> {
         // READ
-        // solicitamos el id de los parametros
-        let idProduct = req.params.id;
-        // asginamos el id al elemento del array correspondiente
+        // recibimos el id del producto a editar
+        // filtramos el producto con el id indicado
+        // usamos destructuring para obtener el objeto relativo al producto
         let  [ editProduct ]  = products.filter(prod => {return prod.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
         res.render('../views/products/editProducts.ejs',{editProduct:editProduct});
     },
     edit: (req,res) => {
         // UPDATE
-        // solicitamos el id de los parametros
-        let idProduct = req.params.idProduct;
-        // para ajustar el indice recorrido, restamos 1 y situarnos en el elemento correcto
-        let editProduct = products[idProduct-1];
-        // editamos el producto entrante
+        // Obtenemos el producto a editar segun el id recibido
+        let  [ editProduct ]  = products.filter(prod => {return prod.id == req.params.id});
+        // editamos el producto con los datos entrantes
         editProduct.name = req.body.name
         editProduct.type = req.body.type
         editProduct.careLevel = req.body.careLevel
@@ -88,7 +86,7 @@ const controller = {
         editProduct.stock = req.body.stock
         editProduct.price = req.body.price
         editProduct.label = req.body.label
-        //validar si cargaron imagen y cambiarla si no no hacer nada
+        //validar si cargaron imagen y cambiarla, si no no hacer nada
         if (req.file) {
             editProduct.img = "/img/plantas/" + req.file.filename
         }
@@ -97,14 +95,13 @@ const controller = {
         let productsExport = JSON.stringify(products, null, 2);
         fs.writeFileSync(productsFilePath, productsExport,'utf-8');
         // redirigimos a la lista de productos
-        res.redirect("/products/");
+        res.redirect("/products/edit/"+ req.params.id);
     },
     delete:(req,res)=> {
         // DELETE
         // solcitamos el id y con filter, pedimos devolver todos los elementos cuyo id sea distinto al entrante
-        let idProduct = req.params.idProduct;
         products = products.filter(product => {
-            return product.id != idProduct
+            return product.id != req.params.id
         });
         // sobreescribimos el JSON
         let productsExport = JSON.stringify(products, null, 2);
