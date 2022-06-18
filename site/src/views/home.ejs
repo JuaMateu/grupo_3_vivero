@@ -50,8 +50,14 @@
         </section>
 
         <!-- seccion mas vendidos -->
+        
         <h1 class="center-text">Mas vendidos</h2>
-        <%- include('./partials/bestSells') %>
+        <section class="flex-row">
+                <% products.forEach(prod => { %>
+                    <%- include('./partials/PlantCard.ejs', { data : prod }) %>
+                <% }); %> 
+        </section>
+        <!--  include('./partials/bestSells' {products})  -->
 
     </main>
 
