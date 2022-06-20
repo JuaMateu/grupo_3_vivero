@@ -50,3 +50,24 @@ Concluído el Segundo sprint realizamos una retrospectiva sobre el trabajo realz
 - enfocarnos en resolver los requerimientos minimos viables y despues mejorarlo para no perder tiempo
 - tener reuniones periodicas
 - comenzar el trabajo desde el primer día para mantener la calidad del proyecto
+
+## Tercer sprint - 19 de Junio 2022
+
+Concluído el tercer sprint realizamos una retrospectiva sobre el trabajo realzado y la dinamica del grupo. <br>
+
+## 3° Retrospectiva:
+
+1. ¿Qué problemas tuvimos?: 
+- Aprender a implementar los métodos que aprendimos a lo largo de la cursada en el proyecto.
+- La búsqueda de imágenes que necesitamos en nuestro proyecto en un formato específico para que esté a la par con la estética del mismo
+- El uso correcto de las funciones de controladores en el proyecto
+
+2. ¿Qué hicimos bien?
+- Mantener una comunicación constante para cubrir los posibles hoyos que teníamos al leer el código escrito por el otro
+- Implementamos la metodología BEM y comentamos más el código esrito 
+- Los entregables se mantuvieron como la prioridad número uno y al haberlos terminado nos dedicamos a mejorar la estetización de la página así como darnos la posiblidad de agregar contenido extra que pensamos se adaptaría mejor a la estructura del proyecto.
+
+3. ¿Qué podemos mejorar?
+- Con el anexo del nuevo compañero Bruno, podremos mejorar nuestro tiempo de entrega del proyecto así como mejorar las funcionalidades más rápido, estetización, entre otras cosas
+- Investigar distintas fuentes de información y compartiéndolas con el equipo para que nos sirva como material extra al momento de solucionar un problema presente en el proyecto
+- Definiendo un horario específico para que cada quién pueda programar sin pisar al otro y/o implementando la creación de nuevas ramas en Git.
