@@ -1,21 +1,19 @@
 # Vivero Susi - Grupo 3
 Curso de Desarrollo Web Full Stack de Digital House - Proyecto Integrador - Grupo 3
 
-### Nuestra mision:
+## Nuestra Misión 🌻
 En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los espacios interiores de la vida contemporánea, fusionando la naturaleza con el diseño a través de objetos y accesorios. Apuntamos a un publico de adultos citadinos, mayormente mujeres, parejas o familias que disfrutan de la botanica, la decoración y el diseño.
 
-### Nuestro Staff:
+## Acerca de Nosotros 🤜🤛
+* **Bruno Secchiari** (https://github.com/BrunoSecchiari): Nacidos en el '95, trabaja como software developer. Su lenguage de programacion por exelencia al dia de hoy es Python, pero tiene la intención de incluir HTML, CSS y JavaScript en ese mismo podio.
 
-- [Juan M. Mateu Arroyo](https://github.com/JuaMateu/): Nacido en el 88, trabaja en administración de empresas. Estudió gastronomía, es amante de la tecnología. Como hobbie practica deportes y disfruta de videojuegos en sus ratos libres.
+* **Franco Daniel Nazziconi** (https://github.com/Franconzz/): Nacido en el '02, trabaja en una fabrica industrial de pinturas. Estudió para tripulante de cabina. En su tiempo libre realiza deporte, cuida del jardin y juega videojuegos.
 
-- [Franco Daniel Nazziconi](https://github.com/Franconzz/): Nacido en 2002, trabaja en una fabrica industrial de pinturas. Estudió para tripulante de cabina. En su tiempo libre realiza deporte,cuida del jardin y juega videojuegos. 
+* **Irving Orlando Ayala Iturbe** (https://github.com/ioai2610): Nacido en el '96, profesor de física y matemáticas independiente. Candidato a maestría en ciencias fisicomatemáticas. Estudió licenciatura en física y matemáticas. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y viajar.
 
-- [Irving Orlando Ayala Iturbe](https://github.com/ioai2610): Nacido en el 96, profesor de física y matemáticas independiente. Candidato a maestría en ciencias fisicomatemáticas. Estudió licenciatura en física y matemáticas. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y los viajes.
-<!---
-falta agregar a Pato que ya no está con nosotros :c
---->
+* **Juan M. Mateu Arroyo** (https://github.com/JuaMateu/): Nacido en el '88, trabaja en administración de empresas. Estudió gastronomía, es amante de la tecnología. Como hobbie practica deportes y disfruta de videojuegos en sus ratos libres.
 
-### Referencias:
+## Referencias 🎨
 - [PÖTIT](https://potit.com.ar/): Compartimos tanto público objetivo como oferta de productos. Web responsive con buena estética. 
 - [PLANTA SOMOS](https://plantasomos.com/): Destaca por tener diseño muy cuidado y diferente al resto de las tiendas de viveros. Interesante funcionalidad donde al ingresar al sitio aparece un popup que te invita a registrarte.
 - [ECOLOGÍA VERDE](https://www.ecologiaverde.com/): Muy buena funcionalidad donde destacan algun argunmento del articulo (ej: "nuevo", "destacado", "mas visto", etc)
@@ -25,7 +23,6 @@ falta agregar a Pato que ya no está con nosotros :c
 - [LIVELY ROOT](https://www.livelyroot.com): El diseño, el arreglo de los elementos en la página, las entradas con calificaciones de clientes, paleta de colores y las fotos de redes sociales anexadas. 
 - [LA FLEURAISON](https://lafleuraison.ca): La paleta de colores también además de contar con la opción de cambiar el idioma y la sección de la ubicación en el mapa.
 
-### Planificacion y organizacion
-
+## Planificacion y Organizacion 📌
 Utilizamos un tablero kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
 Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyecto-integrador-grupo-3)
