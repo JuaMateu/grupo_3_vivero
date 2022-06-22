@@ -1,11 +1,11 @@
 <article class="plant-Card">
-    <a class="link--primarycolor" href="/products/detail/1">
-        <div class="img plant-Card__img">
-            <img src="img/plantas/Aglaonema.png" alt="portada de seleccion otoño">
+    <a class="link--primarycolor" href="/products/detail/<%= data.id %>">
+        <div class="img plant-Card__img-conteiner">
+            <img class="plant-card__img"  src= <%= data.img %>  alt=<%= data.name %>>
             <div class="plant-Card__background"></div>
         </div>
-        <h4>Aglaonema africana</h4>
-        <p class="subtitle">$2500</p>
+        <h4><%= data.name %></h4>
+        <p class="subtitle">$<%= data.price %></p>
     </a>
     <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
 </article>

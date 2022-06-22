@@ -39,11 +39,10 @@
                     </div>
                 </div> -->
             </section>
-            <section>
-                <%- include('../partials/bestSells') %>
-                <%- include('../partials/bestSells') %>
-                <%- include('../partials/bestSells') %>
-                
+            <section class="shop-wrapper">
+                <% products.forEach(prod => { %>
+                    <%- include('../partials/PlantCard.ejs', { data : prod }) %>
+                    <% }); %> 
             </section>
         </div>
         </div>
