@@ -1,5 +1,5 @@
-# Vivero Susi - Grupo 3
-*Proyecto integrador del curso de desarrollo web full stack de Digital House - Grupo 3*
+## Vivero Susi - Grupo 3
+*Curso de Desarrollo Web Full Stack de Digital House - Proyecto Integrador - Grupo 3*
 
 ### Nuestra mision:
 En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los espacios interiores de la vida contemporánea, fusionando la naturaleza con el diseño a través de objetos y accesorios. Apuntamos a un publico de adultos citadinos, mayormente mujeres, parejas o familias que disfrutan de la botanica, la decoración y el diseño.
