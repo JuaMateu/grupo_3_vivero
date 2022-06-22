@@ -5,13 +5,11 @@ Curso de Desarrollo Web Full Stack de Digital House - Proyecto Integrador - Grup
 En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los espacios interiores de la vida contemporánea, fusionando la naturaleza con el diseño a través de objetos y accesorios. Apuntamos a un publico de adultos citadinos, mayormente mujeres, parejas o familias que disfrutan de la botanica, la decoración y el diseño.
 
 ## Acerca de Nosotros 🤜🤛
-* **Bruno Secchiari** (https://github.com/BrunoSecchiari): Nacidos en el '95, trabaja como software developer. Su lenguage de programacion por exelencia al dia de hoy es Python, pero tiene la intención de incluir HTML, CSS y JavaScript en ese mismo podio.
+* **Bruno Secchiari** (https://github.com/BrunoSecchiari): Nacidos en el '95, estudió Licenciatura en Economia en la Facultad de Ciencias Economicas y actualmente trabaja como Software Developer. Su lenguage de programacion por exelencia al dia de hoy es Python, pero tiene la intención de incluir HTML, CSS y JavaScript en ese mismo podio.
 
-* **Franco Daniel Nazziconi** (https://github.com/Franconzz/): Nacido en el '02, trabaja en una fabrica industrial de pinturas. Estudió para tripulante de cabina. En su tiempo libre realiza deporte, cuida del jardin y juega videojuegos.
+* **Irving Orlando Ayala Iturbe** (https://github.com/ioai2610): Nacido en el '96, estudió Licenciatura en Física y Matemática, es candidato paraa una Maestría en Ciencias Fisiomatemáticas y actualmente se desempeña como profesor de Física y Matemática de forma independiente. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y viajar.
 
-* **Irving Orlando Ayala Iturbe** (https://github.com/ioai2610): Nacido en el '96, profesor de física y matemáticas independiente. Candidato a maestría en ciencias fisicomatemáticas. Estudió licenciatura en física y matemáticas. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y viajar.
-
-* **Juan M. Mateu Arroyo** (https://github.com/JuaMateu/): Nacido en el '88, trabaja en administración de empresas. Estudió gastronomía, es amante de la tecnología. Como hobbie practica deportes y disfruta de videojuegos en sus ratos libres.
+* **Juan M. Mateu Arroyo** (https://github.com/JuaMateu/): Nacido en el '88, estudió Gastronomia y actualmente trabaja en Administración de Empresas. Amante de la tecnología, que en su tiempo libre practica deporte y disfruta de videojuegos.
 
 ## Referencias 🎨
 - [PÖTIT](https://potit.com.ar/): Compartimos tanto público objetivo como oferta de productos. Web responsive con buena estética. 
