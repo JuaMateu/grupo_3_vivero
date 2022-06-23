@@ -21,5 +21,5 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 - [VIVERO MARIO](https://tienda.viveromario.com.ar/):  Lo tomamos como referencia por ser lider en el mercado, tiene una seccion interesante sobre el cuidado de las plantas, tiene un logo interesante.
 
 ### Planificacion y Organizacion 📌
-Utilizamos un tablero kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
+Utilizamos un tablero Kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
 Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyecto-integrador-grupo-3)
