@@ -8,7 +8,7 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 
 * **Irving Orlando Ayala Iturbe** (https://github.com/ioai2610): Nacido en el '96, estudió Licenciatura en Física y Matemática, es candidato paraa una Maestría en Ciencias Fisiomatemáticas y actualmente se desempeña como profesor de Física y Matemática de forma independiente. En su tiempo libre le gusta cocinar, jugar videojuegos, aprender idiomas y viajar.
 
-* **Juan M. Mateu Arroyo** (https://github.com/JuaMateu/): Nacido en el '88, estudió Gastronomia y actualmente trabaja en Administración de Empresas. Amante de la tecnología, que en su tiempo libre practica deporte y disfruta de videojuegos.
+* **Juan M. Mateu Arroyo** (https://github.com/JuaMateu/): Nacido en el '88, estudió Gastronomia y actualmente trabaja dentro del area de Administración de Empresas. Amante de la tecnología, que en su tiempo libre practica deporte y disfruta de videojuegos.
 
 ### Referencias 🎨
 - [ECOLOGÍA VERDE](https://www.ecologiaverde.com/): Muy buena funcionalidad donde destacan algun argunmento del articulo (ej: "nuevo", "destacado", "mas visto", etc.)
