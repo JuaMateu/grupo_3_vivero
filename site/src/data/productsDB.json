@@ -178,7 +178,7 @@
     "discount": 10,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/salvia.jpg",
+    "img": "/img/plantas/salvia.png",
     "sells": 0
   },
   {
@@ -191,7 +191,7 @@
     "discount": 10,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/romero.jpg",
+    "img": "/img/plantas/romero.png",
     "sells": 0
   },
   {
@@ -204,7 +204,7 @@
     "discount": 10,
     "price": 3000,
     "label": "Mas Vendida",
-    "img": "/img/plantas/plumbago.jpg",
+    "img": "/img/plantas/plumbago.png",
     "sells": 0
   },
   {
@@ -453,19 +453,6 @@
     "sells": 0
   },
   {
-    "id": 40,
-    "name": "ACDC",
-    "type": "Planta Floral",
-    "careLevel": "Básico",
-    "description": "",
-    "stock": "0",
-    "discount": 10,
-    "price": "500",
-    "label": "none",
-    "img": "/img/plantas/planta-1654721814200.jpg",
-    "sells": 0
-  },
-  {
     "id": 37,
     "name": "plantita feliz",
     "type": "Planta Floral",
@@ -475,7 +462,7 @@
     "discount": 10,
     "price": "5000",
     "label": "none",
-    "img": "/img/plantas/planta-1654730447683.jpg",
+    "img": "/img/plantas/planta-1654730447683.png",
     "sells": 0
   },
   {
