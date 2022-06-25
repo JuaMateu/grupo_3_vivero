@@ -53,9 +53,9 @@
         
         <h1 class="center-text">Mas vendidos</h2>
         <section class="most-selled">
-                <% products.forEach(prod => { %>
-                    <%- include('./partials/PlantCard.ejs', { data : prod }) %>
-                <% }); %> 
+            <% for (i = 0 ; i < 4 ; i++) { %>
+                    <%- include('./partials/PlantCard.ejs', { data : products[i] }) %>
+                <% }; %> 
         </section>
         <!--  include('./partials/bestSells' {products})  -->
 

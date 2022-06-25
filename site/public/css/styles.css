@@ -777,8 +777,17 @@ th, td {
 
 /* plant card  */
 .plant-Card {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    margin: 0 .5rem;
+    margin: 0 0.1rem;
+    padding: 0.5rem;
+    transition: all 2s;
+}
+.plant-Card:hover {
+    border: 1px solid rgba(0, 74, 53, 0.473);
+    border-radius: 7px;
+    box-shadow: 7px 7px 9px 1px #014934;
 }
 .plant-card__img {
     object-position: bottom;
@@ -792,10 +801,11 @@ th, td {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50%;
+    height: 60%;
     background-color: var(--third-light-green-soft);
+    opacity: 0.4;
     z-index: -1;
-    border-radius: 70% 0 70% 0;
+    border-radius: 90% 0 60% 0;
 }
 
 .plant-Card p {
@@ -809,9 +819,6 @@ th, td {
     margin: .3rem 0;
 }
 
-.plant-Card--desktop {
-    display: none;
-}
 
 .most-selled {
     display: grid;
@@ -922,12 +929,8 @@ th, td {
         height: 250px;
     }
 
-    .plant-Card--desktop {
-        display: block;
-    }
     .plant-Card__img-conteiner {
         height: 15rem ;
-        object-position: bottom;
     }
     .most-selled {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -944,6 +947,7 @@ th, td {
         flex-direction: column;
         flex: 1 0 auto;
         margin-right: 2rem;
+        max-width: 50%;
     }
     /* Shop  */
     .shop-wrapper {

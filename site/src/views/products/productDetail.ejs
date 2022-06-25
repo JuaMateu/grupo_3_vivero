@@ -41,7 +41,11 @@
 
         <!-- seccion mas vendidos -->
         <h1 class="center-text">Mas vendidos</h2>
-        <%- include('../partials/bestSells') %>
+            <section class="most-selled">
+                <% for (i = 0 ; i < 4 ; i++) { %>
+                        <%- include('../partials/PlantCard.ejs', { data : products[i] }) %>
+                    <% }; %> 
+            </section>
     </main>
     <!-- aca arranca el footer -->
     <%- include('../partials/footer') %>

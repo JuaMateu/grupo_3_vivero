@@ -98,3 +98,10 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Actualicé la retro para el 4to sprint
 - Problemas: N/A
 - ¿Qué voy a hacer?: Comenzar a trabajar con la implementación el quinto sprint
+
+
+## Sabado 25 de Junio
+### Orlando Ayala:
+- ¿Qué hice?: Mejoré la estetica de las cartas de productos y arregle algunos problemas con las imagnes
+- Problemas: N/A
+- ¿Qué voy a hacer?: voy a empezar la vista de panel de usuario

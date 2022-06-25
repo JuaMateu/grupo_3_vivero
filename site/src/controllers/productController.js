@@ -17,7 +17,7 @@ const controller = {
     detail: (req, res) => {
         // READ
         let  [ selectedProduct ]  = products.filter(prod => {return prod.id == req.params.id});
-        res.render("products/productDetail", { product : selectedProduct });
+        res.render("products/productDetail", { product : selectedProduct, products });
     },
 
     addForm:(req,res)=> {
