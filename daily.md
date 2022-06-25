@@ -92,3 +92,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Instalé Multer y lo implementé en el script del proyecto
 - Problemas: La imagen se guarda pero no lo recibe la BD
 - ¿Qué voy a hacer?: Investigar sobre cómo arreglar esto y continuar con la búsqueda de imágenes además de adecuar las demás vistas del proyecto
+
+## Lunes 20 de Junio
+### Orlando Ayala:
+- ¿Qué hice?: Actualicé la retro para el 4to sprint
+- Problemas: N/A
+- ¿Qué voy a hacer?: Comenzar a trabajar con la implementación el quinto sprint
