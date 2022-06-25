@@ -63,7 +63,7 @@ body{
 
 main {
     margin: 6rem  auto;
-    max-width: 1300px;
+    max-width: 1100px;
     width: 90%;
     color: var(--primary-green);
     min-height: 50vh;
@@ -780,6 +780,9 @@ th, td {
     position: relative;
     margin: 0 .5rem;
 }
+.plant-card__img {
+    object-position: bottom;
+}
 
 .plant-Card__img-conteiner {
     position: relative;
@@ -810,6 +813,10 @@ th, td {
     display: none;
 }
 
+.most-selled {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 
 /* ICONOS LOCALES  */
@@ -921,6 +928,9 @@ th, td {
     .plant-Card__img-conteiner {
         height: 15rem ;
         object-position: bottom;
+    }
+    .most-selled {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
 
