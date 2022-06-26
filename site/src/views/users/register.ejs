@@ -20,23 +20,23 @@
             </div>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de sign up -->
-                <form action="home" method="post" class="users__form">
+                <form action="/users/register" method="post" class="users__form">
                     <!-- Ingresar el nombre -->
                     <div class="users__form--item">
-                        <label class="users__form--label" for="email">Nombre</label>
-                        <input class="users__form--input" type="text" placeholder="Ingresá tu nombre" minlength="3"
+                        <label class="users__form--label" for="firstName">Nombre</label>
+                        <input class="users__form--input" name="firstName" type="text" placeholder="Ingresá tu nombre" minlength="3"
                             maxlength="20" required>
                     </div>
                     <!-- Ingresar el apellido -->
                     <div class="users__form--item">
-                        <label class="users__form--label" for="email">Apellido</label>
-                        <input class="users__form--input" type="text" placeholder="Ingresá tu apellido" minlength="3"
-                            maxlength="20" required>
+                        <label class="users__form--label" for="lastName">Apellido</label>
+                        <input class="users__form--input" name="lastName" type="text" placeholder="Ingresá tu apellido" minlength="3"
+                            maxlength="20" required >
                     </div>
                     <!-- Ingresar el correo electrónico -->
                     <div class="users__form--item">
                         <label class="users__form--label" for="email"> Correo electrónico</label>
-                        <input class="users__form--input" type="email" placeholder="Ingresá correo" required>
+                        <input class="users__form--input" name="email" type="email" placeholder="Ingresá correo" required>
                     </div>
                     <!-- Ingresar la contraseña -->
                     <div class="users__form--item">
@@ -45,8 +45,8 @@
                     </div>
                     <!-- Repetir la contraseña -->
                     <div class="users__form--item">
-                        <label class="users__form--label" for="password-check">Repeti tu contraseña</label>
-                        <input class="users__form--input" type="password" placeholder="Ingresá contraseña" required>
+                        <label class="users__form--label" for="passwordCheck">Repeti tu contraseña</label>
+                        <input class="users__form--input" name="passwordCheck" type="password" placeholder="Ingresá contraseña" required>
                     </div>
                     <!-- Boton de iniciar sesion -->
                     <input type="submit" value="Creá tu cuenta" class="btnStyle2">

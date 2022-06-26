@@ -4,8 +4,11 @@ const router = express.Router();
 const usersController = require('../controllers/usersController');
 
 router.get('/login', usersController.login);
-router.get('/register', usersController.registerForm);
 router.get('/userRecovery', usersController.userRecovery);
+
+// Registro de usuarios
+router.get('/register', usersController.registerForm);
+router.post('/register', usersController.registerAction);
 
 //* CRUD de Users *//
 // listado de los usuarios

@@ -35,15 +35,13 @@ const controller = {
             newId = Math.max(...ids)+1; // busca el id mas alto y suma 1 para obtener el nuevo id
         }
         // recepcion de formulario de entrada de usuario
-        let newUser ={
+        let newUser = {
         id: newId,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        mobile: req.body.mobile,
-        address: req.body.address,
-        birth: req.body.birth,
-        img: req.body.img,
+        password: req.body.passwordCheck,
+        img: '/img/otros/user.png',
         }
         
         // agregar el user al array
@@ -53,7 +51,7 @@ const controller = {
         console.log(usersExport);
         fs.writeFileSync(usersFilePath, usersExport, 'utf-8');
 
-        res.redirect("/users/");
+        res.redirect(`/users/menu/${newId}`);
     },
     create: (req,res) => {
         // CREATE ID
