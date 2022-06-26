@@ -269,18 +269,18 @@ header {
 }
 
 /* Formulario de login */
-.users__form{
+.users-form{
     padding: 10px 20px;
     margin-top: 10px;
 }
-.users__form--item{
+.users-form__field{
     margin-bottom: 20px;
 }
-.users__form--label{
+.users-form__label{
     display: block;
     margin: 6px 0px;
 }
-.users__form--input{
+.users-form__input{
     width: 100%;
     padding: 9px;
     border: #014934 solid 1px;

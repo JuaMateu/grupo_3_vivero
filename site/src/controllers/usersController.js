@@ -94,7 +94,7 @@ const controller = {
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
 
-        return res.render('../views/users/usersEdit.ejs',{editUser : editUser});
+        return res.render('../views/users/usersMenu.ejs',{ user: editUser});
     },
     edit: (req,res) => {
         // UPDATE

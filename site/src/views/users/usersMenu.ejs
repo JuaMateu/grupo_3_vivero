@@ -11,32 +11,27 @@
         <section class="flex-column media-flex-row">
             <div class="auto-flex">
                 <!-- Aqui va el texto principal de la pagina -->
-                <h1 class="users__title">Crear Cuenta</h1>
-                <!-- Seccion de pregunta de sign up -->
-                <div class="users__subtitle">
-                    <h4>¿Ya tenés cuenta?</h4>
-                    <a href="/users/login" class="users__link">Iniciá sesión</a>
-                </div>
+                <h1 class="users__title">Bienvenido <%- user.firstName + " " + user.lastName %> </h1>
             </div>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de sign up -->
-                <form action="/users/register" method="post" class="users-form">
+                <form action="home" method="post" class="users-form">
                     <!-- Ingresar el nombre -->
                     <div class="users-form__field">
-                        <label class="users-form__label" for="firstName">Nombre</label>
-                        <input class="users-form__input" name="firstName" type="text" placeholder="Ingresá tu nombre" minlength="3"
+                        <label class="users-form__label" for="email">Nombre</label>
+                        <input class="users-form__input" type="text" placeholder="Ingresá tu nombre" minlength="3"
                             maxlength="20" required>
                     </div>
                     <!-- Ingresar el apellido -->
                     <div class="users-form__field">
-                        <label class="users-form__label" for="lastName">Apellido</label>
-                        <input class="users-form__input" name="lastName" type="text" placeholder="Ingresá tu apellido" minlength="3"
-                            maxlength="20" required >
+                        <label class="users-form__label" for="email">Apellido</label>
+                        <input class="users-form__input" type="text" placeholder="Ingresá tu apellido" minlength="3"
+                            maxlength="20" required>
                     </div>
                     <!-- Ingresar el correo electrónico -->
                     <div class="users-form__field">
                         <label class="users-form__label" for="email"> Correo electrónico</label>
-                        <input class="users-form__input" name="email" type="email" placeholder="Ingresá correo" required>
+                        <input class="users-form__input" type="email" placeholder="Ingresá correo" required>
                     </div>
                     <!-- Ingresar la contraseña -->
                     <div class="users-form__field">
@@ -45,8 +40,8 @@
                     </div>
                     <!-- Repetir la contraseña -->
                     <div class="users-form__field">
-                        <label class="users-form__label" for="passwordCheck">Repeti tu contraseña</label>
-                        <input class="users-form__input" name="passwordCheck" type="password" placeholder="Ingresá contraseña" required>
+                        <label class="users-form__label" for="password-check">Repeti tu contraseña</label>
+                        <input class="users-form__input" type="password" placeholder="Ingresá contraseña" required>
                     </div>
                     <!-- Boton de iniciar sesion -->
                     <input type="submit" value="Creá tu cuenta" class="btnStyle2">
