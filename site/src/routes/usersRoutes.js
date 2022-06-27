@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+//! probar si funciona este middleware
+const uploadUser = require('../middlewares/MulterUsers') 
+
 
 const usersController = require('../controllers/usersController');
 
@@ -21,7 +24,10 @@ router.post('/create',usersController.create);
 
 // Menu de usuario
 router.get('/menu/:id',usersController.menuForm);
-router.put('/menu/:id',usersController.edit);
+router.put('/menu/:id', uploadUser.single('img'), usersController.edit); //Falta implementar la accion de editar
+
+
+
 // formulario de edicion de usuario
 router.get('/edit/:id',usersController.editForm);
 router.put('/edit/:id',usersController.edit);
