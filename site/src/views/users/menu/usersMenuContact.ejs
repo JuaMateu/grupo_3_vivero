@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../../partials/head') %>
+        <title>Registrate</title>
+    </head>
+<body>
+    <%- include('../../partials/header') %>
+    <!-- Aca va el cuerpo la pagina -->
+    <main>
+        <div class="user-menu-header">
+            <img src="<%- user.img %> " alt="imagen de usuario" class="user-menu__img">
+            <!-- Aqui va el texto principal de la pagina -->
+            <h1 class="user-menu__title">Bienvenido <%- user.firstName + " " + user.lastName %> </h1>
+        </div>
+
+        <nav class="user-menu__nav">
+            <ul>
+                <li class="no-list-style" ><a class="user-menu__links" href="">Actualizá tus datos de contacto</a></li> <!-- dir telefono y nacimiento -->
+            </ul>
+            <ul>
+                <li class="no-list-style" ><a class="user-menu__links" href="">Corregí tus datos</a></li> <!-- cambiar nombre y apellido -->
+            </ul>
+            <ul>
+                <li class="no-list-style" ><a class="user-menu__links" href="">Actualizá tu password</a></li> <!-- cambiar pass -->
+            </ul>
+            <ul>
+                <li class="no-list-style" ><a class="user-menu__links" href="">Subí tu foto!</a></li> <!-- cambiar foto -->
+            </ul>
+            <ul>
+                <li class="no-list-style" ><a class="user-menu__links" href="">Actualizá tu Mail</a></li> <!-- actualizar mail -->
+            </ul>
+        </nav>
+    
+    </main>
+
+    <!-- aca arranca el footer -->
+    <%- include('../../partials/footer') %>
+</body>
+</html>
