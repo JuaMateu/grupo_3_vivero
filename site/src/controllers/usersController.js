@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -26,13 +27,26 @@ const controller = {
         return res.render("users/usersAdd");
     },
     registerAction: (req,res) => {
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0){
+            return res.render('users/register',{
+                errors: resultValidation.mapped(),
+                oldData:req.body
+            });
+        };
+
         // CREATE ID
         let newId = 1
         if (users.length != 0) {
             const ids = users.map(user => {  // consigue un array con todos los Ids de usuarios
-            return user.id;
+                return user.id;
             });
             newId = Math.max(...ids)+1; // busca el id mas alto y suma 1 para obtener el nuevo id
+        }
+
+        if (req.body.password != req.body.passwordCheck){
+
         }
         // recepcion de formulario de entrada de usuario
         let newUser = {

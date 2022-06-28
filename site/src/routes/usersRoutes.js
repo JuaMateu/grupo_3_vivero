@@ -2,15 +2,24 @@ const express = require('express');
 const router = express.Router();
 //! probar si funciona este middleware
 const uploadUser = require('../middlewares/MulterUsers') 
+const { body } = require('express-validator');
 
 const usersController = require('../controllers/usersController');
+
+const validations = [
+    body('firstName').notEmpty().withMessage("Debes de ingresar tu nombre"),
+    body('lastName').notEmpty().withMessage("Debes de ingresar tu apellido"),
+    body('email').notEmpty().withMessage("Debes de ingresar tu email"),
+    body('password').notEmpty().withMessage("Debes de ingresar una contraseña"),
+    body('passwordCheck').notEmpty().withMessage("Debes de ingresar una contraseña"),
+];
 
 router.get('/login', usersController.login);
 router.get('/userRecovery', usersController.userRecovery);
 
 // Registro de usuarios
 router.get('/register', usersController.registerForm);
-router.post('/register', usersController.registerAction);
+router.post('/register', validations, usersController.registerAction);
 
 //* CRUD de Users *//
 // listado de los usuarios

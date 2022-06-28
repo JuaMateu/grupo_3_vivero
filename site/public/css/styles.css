@@ -115,7 +115,10 @@ article {
 .bold{
     font-weight: 600;
 }
-
+.text-danger{
+    color: red;
+    font-size: medium;
+}
 
 
 /* =========
