@@ -3,7 +3,6 @@ const router = express.Router();
 //! probar si funciona este middleware
 const uploadUser = require('../middlewares/MulterUsers') 
 
-
 const usersController = require('../controllers/usersController');
 
 router.get('/login', usersController.login);

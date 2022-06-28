@@ -48,7 +48,7 @@ const controller = {
         users.push(newUser);
 
         let usersExport = JSON.stringify(users, null, 2);
-        console.log(usersExport);
+
         fs.writeFileSync(usersFilePath, usersExport, 'utf-8');
 
         res.redirect(`/users/menu/${newId}`);
@@ -78,7 +78,7 @@ const controller = {
         users.push(newUser);
 
         let usersExport = JSON.stringify(users, null, 2);
-        console.log(usersExport);
+
         fs.writeFileSync(usersFilePath, usersExport, 'utf-8');
 
         res.redirect("/users/");

@@ -36,9 +36,9 @@ const controller = {
             const ids = products.map(prod => {
             return prod.id;
             });
-            console.log(ids); // 👉️ [ array de id de productos]
+
             newId = Math.max(...ids)+1;
-            console.log(newId)
+
         }
 
         let newProduct = {
@@ -58,7 +58,7 @@ const controller = {
         products.push(newProduct);
 
         let productsExport = JSON.stringify(products, null, 2);
-        console.log(productsExport)
+
         fs.writeFileSync(productsFilePath, productsExport, 'utf-8');
 
         res.redirect("/products/");

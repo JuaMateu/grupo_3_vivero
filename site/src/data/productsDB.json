@@ -488,5 +488,17 @@
     "label": "none",
     "img": "/img/plantas/planta-1655445053927.png",
     "sells": 0
+  },
+  {
+    "id": 42,
+    "name": "Monstera Deliciosa",
+    "type": "Planta Floral",
+    "careLevel": "Básico",
+    "description": "Una hermosa planta para interiores, trepadora con huecos en sus hojas.",
+    "stock": "50",
+    "price": "3000",
+    "label": "none",
+    "img": "/img/plantas/planta-Monstera_Deliciosa-1656377660944.png",
+    "sells": 0
   }
 ]
