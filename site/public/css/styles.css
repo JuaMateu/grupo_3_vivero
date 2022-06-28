@@ -646,6 +646,7 @@ th, td {
 .user-menu__img{
     margin: 0 auto;
     width: 50%;
+    border-radius: 50%;
 }
 .user-menu__nav{
  margin-top: 1rem;

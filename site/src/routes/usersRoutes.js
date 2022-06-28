@@ -22,8 +22,20 @@ router.get('/create',usersController.addForm);
 router.post('/create',usersController.create);
 
 // Menu de usuario
-router.get('/menu/:id',usersController.menuForm);
-router.put('/menu/:id', uploadUser.single('img'), usersController.edit); //Falta implementar la accion de editar
+router.get('/menu/:id',usersController.menu);
+//datos de contacto
+router.get('/menu/contact/:id',usersController.contactform);
+router.put('/menu/contact/:id',usersController.contactform);
+//datos basicos
+router.get('/menu/name/:id',usersController.nameForm);
+router.put('/menu/name/:id',usersController.nameForm);
+//actualizar password
+router.get('/menu/password/:id',usersController.passForm);
+router.put('/menu/password/:id',usersController.passForm);
+//Subir foto
+router.get('/menu/avatar/:id',usersController.avatarForm);
+router.put('/menu/avatar/:id',uploadUser.single('img'), usersController.avatarForm);
+//actualizar mail
 
 
 

@@ -89,12 +89,40 @@ const controller = {
 
         return res.render('../views/users/usersEdit.ejs',{ editUser });
     },
-    menuForm: (req,res) => {
+    menu: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
 
         return res.render('../views/users/menu/usersMenu.ejs',{ user: editUser});
+    },
+    contactform: (req,res) => {
+        // READ
+        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // renderizamos la vista con el elemento correpondiente
+
+        return res.render('../views/users/menu/usersMenuContact.ejs',{ user: editUser});
+    },
+    nameForm: (req,res) => {
+        // READ
+        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // renderizamos la vista con el elemento correpondiente
+
+        return res.render('../views/users/menu/usersMenuBasicData.ejs',{ user: editUser});
+    },
+    passForm: (req,res) => {
+        // READ
+        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // renderizamos la vista con el elemento correpondiente
+
+        return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: editUser});
+    },
+    avatarForm: (req,res) => {
+        // READ
+        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // renderizamos la vista con el elemento correpondiente
+
+        return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
     },
     edit: (req,res) => {
         // UPDATE
@@ -125,7 +153,7 @@ const controller = {
         fs.writeFileSync(usersFilePath, usersExport,'utf-8');
         
         res.redirect("/users/");
-    }
+    },
     
 }
 
