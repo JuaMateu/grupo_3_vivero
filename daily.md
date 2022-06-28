@@ -101,7 +101,13 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 
 
 ## Sabado 25 de Junio
-### Orlando Ayala:
+### Juan Mateu
 - ¿Qué hice?: Mejoré la estetica de las cartas de productos y arregle algunos problemas con las imagnes
 - Problemas: N/A
 - ¿Qué voy a hacer?: voy a empezar la vista de panel de usuario
+
+## Lunes 27 de Junio
+### Juan Mateu
+- ¿Qué hice?: completé las vistas del menú de usuario con varios formularios segun los datos que se quieran actualizar
+- Problemas: No se si debería armar un nuevo archivo de rutas y controllador para esta seccion de menu porque se esta poniendo muy extenso el de usuarios
+- ¿Qué voy a hacer?: empezar a agregarle funcionalidad
