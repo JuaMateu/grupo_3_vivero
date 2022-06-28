@@ -645,8 +645,9 @@ th, td {
 
 .user-menu__img{
     margin: 0 auto;
-    width: 50%;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
 }
 .user-menu__nav{
  margin-top: 1rem;
@@ -658,12 +659,23 @@ th, td {
 .user-menu__nav ul{
 margin: 1rem 0;
 background-color: var(--third-light-green-soft);
-border-radius: 10px
+border-radius: 10px;
+border: #014934 solid 2px;
+transition: all 1s;
+}
+.user-menu__nav ul:hover {
+background-color: var(--highlight-Orange);
+border: #014934 solid 2px;
 }
 
 .user-menu__links{
     font-weight: 700;
     color: #014934;
+    transition: all 1s;
+}
+.user-menu__links:hover{
+
+    color: #ffffff;
 }
 
 
@@ -677,6 +689,10 @@ border-radius: 10px
     display: flex;
 }
 .flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-column-to-RowDekstop{
     display: flex;
     flex-direction: column;
 }
@@ -906,6 +922,9 @@ border-radius: 10px
     .media-flex-row {
         flex-direction: row;
     }
+    .flex-column-to-RowDekstop{
+        flex-direction: row;
+    }
     /* desaparece burguer menu y aparecen los links de navegacion */
     .burger-menu {
         display: none;
@@ -1084,8 +1103,10 @@ border-radius: 10px
         margin-bottom: 4rem;
     }
     .user-menu__img{
-        max-width: 200px;
-        margin: 0 auto ;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        
     }
     .user-menu__title{
         line-height: 200px;

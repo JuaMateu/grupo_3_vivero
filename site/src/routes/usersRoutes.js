@@ -14,27 +14,27 @@ router.post('/register', usersController.registerAction);
 
 //* CRUD de Users *//
 // listado de los usuarios
-router.get('/',usersController.list);
+router.get('/', usersController.list);
 
 // formulario de agregar usuario
-router.get('/create',usersController.addForm);
+router.get('/create', usersController.addForm);
 // accion de agregar al usuario
-router.post('/create',usersController.create);
+router.post('/create', usersController.create);
 
 // Menu de usuario
-router.get('/menu/:id',usersController.menu);
+router.get('/menu/:id', usersController.menu);
 //datos de contacto
-router.get('/menu/contact/:id',usersController.contactform);
-router.put('/menu/contact/:id',usersController.contactform);
+router.get('/menu/contact/:id', usersController.contactform);
+router.put('/menu/contact/:id', usersController.contactform);
 //datos basicos
-router.get('/menu/name/:id',usersController.nameForm);
-router.put('/menu/name/:id',usersController.nameForm);
+router.get('/menu/name/:id', usersController.nameForm);
+router.put('/menu/name/:id', usersController.nameForm);
 //actualizar password
-router.get('/menu/password/:id',usersController.passForm);
-router.put('/menu/password/:id',usersController.passForm);
+router.get('/menu/password/:id', usersController.passForm);
+router.put('/menu/password/:id', usersController.passForm);
 //Subir foto
-router.get('/menu/avatar/:id',usersController.avatarForm);
-router.put('/menu/avatar/:id',uploadUser.single('img'), usersController.avatarForm);
+router.get('/menu/avatar/:id', usersController.avatarForm);
+router.put('/menu/avatar/:id', uploadUser.single('img'), usersController.avatarAction);
 //actualizar mail
 
 

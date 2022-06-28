@@ -124,6 +124,16 @@ const controller = {
 
         return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
     },
+    avatarAction: (req,res) => {
+        // READ
+        let editUser = users.find(user => {return user.id == req.params.id});
+        // 
+        if (req.file) {
+            editUser.img = "/img/users/avatar/" + req.file.filename
+        }
+
+        return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
+    },
     edit: (req,res) => {
         // UPDATE
         // solicitamos el id de los parametros
