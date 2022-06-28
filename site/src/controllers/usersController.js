@@ -131,8 +131,12 @@ const controller = {
         if (req.file) {
             editUser.img = "/img/users/avatar/" + req.file.filename
         }
+        // sobreescribimos el JSON
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
+        // redirigimos
+        res.redirect("/users/menu/"+req.params.id );
 
-        return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
+        // return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
     },
     edit: (req,res) => {
         // UPDATE
