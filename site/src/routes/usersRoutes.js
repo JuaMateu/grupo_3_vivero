@@ -7,11 +7,28 @@ const { body } = require('express-validator');
 const usersController = require('../controllers/usersController');
 
 const validations = [
-    body('firstName').notEmpty().withMessage("Debes de ingresar tu nombre"),
-    body('lastName').notEmpty().withMessage("Debes de ingresar tu apellido"),
-    body('email').notEmpty().withMessage("Debes de ingresar tu email"),
-    body('password').notEmpty().withMessage("Debes de ingresar una contraseña"),
-    body('passwordCheck').notEmpty().withMessage("Debes de ingresar una contraseña"),
+    body('firstName')
+        .notEmpty().withMessage("Debes de ingresar tu nombre").bail()
+        .isLength({min:3, max:20}).withMessage("Debes ingresar entre 3 y 20 caracteres"),
+    body('lastName')
+        .notEmpty().withMessage("Debes de ingresar tu apellido").bail()
+        .isLength({min:3, max:20}).withMessage("Debes ingresar entre 3 y 20 caracteres"),
+    body('email')
+        .notEmpty().withMessage("Debes de ingresar tu email").bail()
+        .isEmail().withMessage("Debes ingresar un formato de correo electrónico válido"),
+    body('password')
+        .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
+        .isStrongPassword().withMessage("Debes ingresar una contraseña mas fuerte"),
+    body('passwordCheck')
+        .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
+        .custom((valor,{req}) => {
+            if (valor !== req.body.password) {
+                // Mensaje en caso de no coincidir
+                throw new Error("Las contraseñas no coinciden");
+            } else {
+                return valor;
+            }
+        }),
 ];
 
 router.get('/login', usersController.login);

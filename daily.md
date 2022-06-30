@@ -111,3 +111,15 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: completé las vistas del menú de usuario con varios formularios segun los datos que se quieran actualizar
 - Problemas: No se si debería armar un nuevo archivo de rutas y controllador para esta seccion de menu porque se esta poniendo muy extenso el de usuarios
 - ¿Qué voy a hacer?: empezar a agregarle funcionalidad
+
+## Martes 28 de Junio
+### Orlando Ayala
+- ¿Qué hice?: Empecé a realizar las validaciones en el registro de usuario "sign up"
+- Problemas: Implementar la validacion de la coincidencia de la contraseña
+- ¿Qué voy a hacer?: Arreglar esa funcionalidad
+
+## Jueves 30 de Junio
+### Orlando Ayala
+- ¿Qué hice?: Arreglé la comparación de las contraseñas
+- Problemas: Verificar la funcionalidad total del Sign Up
+- ¿Qué voy a hacer?: Verificar la funcionalidad y seguir validaciones con el login 
