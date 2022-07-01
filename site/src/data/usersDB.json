@@ -58,5 +58,13 @@
     "mobile": 1234567890,
     "address": "Avenida siempre viva #60",
     "birth": "1990-09-22"
+  },
+  {
+    "id": 6,
+    "firstName": "Fidel",
+    "lastName": "Castro",
+    "email": "fcastro@cuba.com",
+    "password": "$2a$10$.yxQuTvdgO2y71/wEWTDCeOgbnMdi1gyHlIo1mV6.6B5iirlPQDPW",
+    "img": "/img/otros/user.png"
   }
 ]

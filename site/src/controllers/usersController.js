@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -45,16 +46,13 @@ const controller = {
             newId = Math.max(...ids)+1; // busca el id mas alto y suma 1 para obtener el nuevo id
         }
 
-        if (req.body.password != req.body.passwordCheck){
-
-        }
         // recepcion de formulario de entrada de usuario
         let newUser = {
         id: newId,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.passwordCheck,
+        password: bcryptjs.hashSync(req.body.passwordCheck,10),
         img: '/img/otros/user.png',
         }
         

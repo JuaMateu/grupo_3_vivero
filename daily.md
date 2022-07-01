@@ -123,3 +123,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Arreglé la comparación de las contraseñas
 - Problemas: Verificar la funcionalidad total del Sign Up
 - ¿Qué voy a hacer?: Verificar la funcionalidad y seguir validaciones con el login 
+
+## Viernes 01 de Julio
+### Orlando Ayala
+- ¿Qué hice?: Hashear las contraseñas de Sign Up y dejar la funcionalidad total de la misma
+- Problemas: Falta de concentración al eliminar un campo "name" en el EJS pero se solucionó
+- ¿Qué voy a hacer?: Validar login 
