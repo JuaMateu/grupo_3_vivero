@@ -34,12 +34,16 @@ const validations = [
         }),
 ];
 
+//Formulario de Login
 router.get('/login', usersController.login);
+router.post('/login', usersController.processLogin);
+
+//Recuperar Cuenta
 router.get('/userRecovery', usersController.userRecovery);
 
-// Registro de usuarios
-router.get('/register', usersController.registerForm);
-router.post('/register', validations, usersController.registerAction);
+// Formulario de Registro
+router.get('/register', usersController.register);
+router.post('/register', validations, usersController.processRegister);
 
 //* CRUD de Users *//
 // listado de los usuarios

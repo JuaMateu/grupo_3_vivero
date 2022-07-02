@@ -2,40 +2,48 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override')
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const port = 3000
 
-//routers
+// Routers
 const mainRoutes = require('./routes/mainRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 
+// Express Session
+app.use(session({
+    secret: "Shhh, I'm a secret message",
+    resave: false,
+    saveUninitialized: false
+}));
 
+// Cookies
+app.use(cookies());
 
-// Define the static file path
+// Definir la ruta de archivos estaticos a nivel aplicacion
 app.use(express.static(path.join(__dirname, "..", "public")))
-// method override para post
+// Utilizar los metodos HTTP 'PUT' y 'DELETE'
 app.use(methodOverride ("_method"))
-// seteo para copturar informacion formulario post en forma de objeto literal
+// Capturar la informacion proveniente del formulario en forma de un objeto literal
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
-// determina la direccion de views adentro de la carpeta src
+// Definir el motor de vistas que va a ser utilizado a nivel aplicacion
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views');
-
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
     console.log(__dirname)
 })
 
-
-//rutas
+// Rutas
 app.use("/", mainRoutes);
 app.use('/users/', usersRoutes);
 app.use('/products/', productsRoutes);
 
-
+// Error Handling
 app.use((req,res,next)=>{
     res.status(404).render("error404")
 });

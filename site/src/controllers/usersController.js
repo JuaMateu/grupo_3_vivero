@@ -11,7 +11,7 @@ const controller = {
         // READ
         return res.render("users/login");
     },
-    registerForm: (req, res) => {
+    register: (req, res) => {
         // READ
         return res.render("users/register");
     },
@@ -27,7 +27,7 @@ const controller = {
         // READ
         return res.render("users/usersAdd");
     },
-    registerAction: (req,res) => {
+    processRegister: (req,res) => {
         const resultValidation = validationResult(req);
 
         if(resultValidation.errors.length > 0){
@@ -64,6 +64,39 @@ const controller = {
         fs.writeFileSync(usersFilePath, usersExport, 'utf-8');
 
         res.redirect(`/users/menu/${newId}`);
+    },
+    processLogin: (req, res) => {
+        userToLogin = users.find(user => user['email'] == req.body.email);
+
+        if (userToLogin) {
+            let passwordControlPoint = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if (passwordControlPoint) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+
+                if (req.body.checkbox) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 });
+                }
+
+                res.redirect('/users/menu/' + userToLogin.id)
+            }
+            res.render('users/login', {
+                errors: {
+                    password: {
+                        msg: 'La contraseña no es válida.'
+                    }
+                },
+                oldData: req.body
+            })
+        }
+
+        res.render('users/login', {
+            errors: {
+                email: {
+                    msg: 'El correo electrónico no es válido.'
+                }
+            }
+        })
     },
     create: (req,res) => {
         // CREATE ID
@@ -106,7 +139,7 @@ const controller = {
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
 
-        return res.render('../views/users/menu/usersMenu.ejs',{ user: editUser});
+        return res.render('../views/users/menu/usersMenu.ejs',{ user: req.session.userLogged});
     },
     contactform: (req,res) => {
         // READ
