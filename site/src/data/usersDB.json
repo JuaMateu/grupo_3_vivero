@@ -66,5 +66,12 @@
     "email": "fcastro@cuba.com",
     "password": "$2a$10$.yxQuTvdgO2y71/wEWTDCeOgbnMdi1gyHlIo1mV6.6B5iirlPQDPW",
     "img": "/img/otros/user.png"
+  },
+  {
+    "id": 7,
+    "firstName": "Bruno",
+    "lastName": "Secchiari",
+    "email": "brunosecchiari@gmail.com",
+    "img": "/img/users/avatar/user-1-1656435506082.jpg"
   }
 ]
