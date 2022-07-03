@@ -22,11 +22,11 @@ app.use(session({
     saveUninitialized: false
 }));
 
-// Header Adjustments
-app.use(userFoundMiddleware);
-
 // Cookies
 app.use(cookies());
+
+// Header Adjustments
+app.use(userFoundMiddleware);
 
 // Definir la ruta de archivos estaticos a nivel aplicacion
 app.use(express.static(path.join(__dirname, "..", "public")))

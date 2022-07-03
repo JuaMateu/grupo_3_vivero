@@ -80,7 +80,7 @@ const controller = {
             if (passwordControlPoint) {
                 req.session.userLogged = userToLogin;
 
-                if (req.body.checkbox) {
+                if (req.body.recordarUsuario) {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 });
                 }
 
@@ -205,7 +205,7 @@ const controller = {
         // return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
     },
 
-    edit: (req,res) => {
+    edit: (req, res) => {
         // UPDATE
         // solicitamos el id de los parametros
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
@@ -224,7 +224,7 @@ const controller = {
         res.redirect("/users/");
     },
 
-    delete: (req,res) => {
+    delete: (req, res) => {
         // DELETE
         let idUser = req.params.id;
         users = users.filter(user => {

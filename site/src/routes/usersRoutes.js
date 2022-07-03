@@ -74,6 +74,7 @@ router.get('/menu/avatar/:id', usersController.avatarForm);
 router.put('/menu/avatar/:id', uploadUser.single('img'), usersController.avatarAction);
 //actualizar mail
 
+
 // formulario de edicion de usuario
 router.get('/edit/:id',usersController.editForm);
 router.put('/edit/:id',usersController.edit);
