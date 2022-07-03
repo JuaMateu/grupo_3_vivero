@@ -69,7 +69,7 @@ const controller = {
 
         fs.writeFileSync(usersFilePath, usersExport, 'utf-8');
 
-        res.redirect(`/users/menu/${newId}`);
+        return res.redirect(`/users/menu/${newId}`);
     },
 
     processLogin: (req, res) => {
@@ -78,32 +78,32 @@ const controller = {
         if (userToLogin) {
             let passwordControlPoint = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if (passwordControlPoint) {
-                delete userToLogin.password;
                 req.session.userLogged = userToLogin;
 
                 if (req.body.checkbox) {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 });
                 }
 
-                res.redirect('/users/menu/' + userToLogin.id)
+                return res.redirect('/users/menu/' + userToLogin.id);
             }
-            res.render('users/login', {
+
+            return res.render('users/login', {
                 errors: {
                     password: {
                         msg: 'La contraseña no es válida.'
                     }
                 },
                 oldData: req.body
-            })
+            });
         }
 
-        res.render('users/login', {
+        return res.render('users/login', {
             errors: {
                 email: {
                     msg: 'El correo electrónico no es válido.'
                 }
             }
-        })
+        });
     },
 
     processLogout: (req, res) => {
