@@ -12,12 +12,18 @@ const mainRoutes = require('./routes/mainRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 
+//Middlewares
+const userFoundMiddleware = require('./middlewares/userFoundMiddleware');
+
 // Express Session
 app.use(session({
     secret: "Shhh, I'm a secret message",
     resave: false,
     saveUninitialized: false
 }));
+
+// Header Adjustments
+app.use(userFoundMiddleware);
 
 // Cookies
 app.use(cookies());
@@ -44,6 +50,6 @@ app.use('/users/', usersRoutes);
 app.use('/products/', productsRoutes);
 
 // Error Handling
-app.use((req,res,next)=>{
-    res.status(404).render("error404")
+app.use((req, res, next) => {
+    res.status(404).render("error404");
 });

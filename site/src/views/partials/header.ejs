@@ -31,9 +31,21 @@
         </div>
         <!-- iconos de navegacion -->
         <ul class="icon-menu">
-            <li class="no-list-style"><a href='/products/shop'><i class="icon" id="search"></i></a></li>
-            <li class="no-list-style"><a href='/users/login'><i class="icon" id="user"></i></a></li>
-            <li class="no-list-style"><a href='/shopCart'><i class="icon" id="cart"></i></a></li>
+            <% if (locals.userFound) { %>
+                <li class="no-list-style"><a href='/products/shop'><i class="icon" id="search"></i></a></li>
+                <div class="dropdown">
+                    <button class="dropdown__button"><i class="icon" id="user"></i></button>
+                    <div class="dropdown__menu">
+                        <a class="dropdown__a" href="<%= '/users/menu/' + locals.userLogged.id %>">Mi perfil</a>
+                        <a class="dropdown__a" href="/users/logout">Cerrar sesión</a>
+                    </div>
+                </div>
+                <li class="no-list-style"><a href='/shopCart'><i class="icon" id="cart"></i></a></li>
+            <% } else { %>
+                <li class="no-list-style"><a href='/products/shop'><i class="icon" id="search"></i></a></li>
+                <li class="no-list-style"><a href='/users/login'><i class="icon" id="user"></i></a></li>
+                <li class="no-list-style"><a href='/shopCart'><i class="icon" id="cart"></i></a></li>
+            <% } %>
         </ul>
     </nav>
 </header>

@@ -71,7 +71,15 @@
     "id": 7,
     "firstName": "Bruno",
     "lastName": "Secchiari",
-    "email": "brunosecchiari@gmail.com",
-    "img": "/img/users/avatar/user-1-1656435506082.jpg"
+    "email": "brunosecchiari95@gmail.com",
+    "img": "/img/otros/user.png"
+  },
+  {
+    "id": 8,
+    "firstName": "Carlos",
+    "lastName": "Menem",
+    "email": "carlitosmenem@gmail.com",
+    "password": "$2a$10$JFF5mIouOJl31Szy41kMLeP61WTscrOXR7uv9UOhzwGA2B6ABiSZe",
+    "img": "/img/otros/user.png"
   }
 ]

@@ -7,26 +7,32 @@ const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const controller = {
+
     login: (req, res) => {
         // READ
         return res.render("users/login");
     },
+
     register: (req, res) => {
         // READ
         return res.render("users/register");
     },
+
     userRecovery: (req, res) => {
         // READ
         return res.render("users/userRecovery");
     },
+
     list: (req,res) => {
         // READ
         return res.render("users/usersList", { users });
     },
+
     addForm : (req,res) => {
         // READ
         return res.render("users/usersAdd");
     },
+
     processRegister: (req,res) => {
         const resultValidation = validationResult(req);
 
@@ -65,6 +71,7 @@ const controller = {
 
         res.redirect(`/users/menu/${newId}`);
     },
+
     processLogin: (req, res) => {
         userToLogin = users.find(user => user['email'] == req.body.email);
 
@@ -98,6 +105,13 @@ const controller = {
             }
         })
     },
+
+    processLogout: (req, res) => {
+        req.session.destroy();
+        res.clearCookie('userEmail');
+        return res.redirect('/');
+    },
+
     create: (req,res) => {
         // CREATE ID
         let newId = 1
@@ -128,19 +142,22 @@ const controller = {
 
         res.redirect("/users/");
     },
+
     editForm: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
 
-        return res.render('../views/users/usersEdit.ejs',{ editUser });
+        return res.render('../views/users/usersEdit.ejs', { editUser });
     },
+
     menu: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
 
-        return res.render('../views/users/menu/usersMenu.ejs',{ user: req.session.userLogged});
+        return res.render('../views/users/menu/usersMenu.ejs', { user: req.session.userLogged});
     },
+
     contactform: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
@@ -148,6 +165,7 @@ const controller = {
 
         return res.render('../views/users/menu/usersMenuContact.ejs',{ user: editUser});
     },
+
     nameForm: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
@@ -155,6 +173,7 @@ const controller = {
 
         return res.render('../views/users/menu/usersMenuBasicData.ejs',{ user: editUser});
     },
+
     passForm: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
@@ -162,6 +181,7 @@ const controller = {
 
         return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: editUser});
     },
+
     avatarForm: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
@@ -169,6 +189,7 @@ const controller = {
 
         return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
     },
+
     avatarAction: (req,res) => {
         // READ
         let editUser = users.find(user => {return user.id == req.params.id});
@@ -183,6 +204,7 @@ const controller = {
 
         // return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
     },
+
     edit: (req,res) => {
         // UPDATE
         // solicitamos el id de los parametros
@@ -201,6 +223,7 @@ const controller = {
         // redirigimos
         res.redirect("/users/");
     },
+
     delete: (req,res) => {
         // DELETE
         let idUser = req.params.id;
@@ -212,8 +235,8 @@ const controller = {
         fs.writeFileSync(usersFilePath, usersExport,'utf-8');
         
         res.redirect("/users/");
-    },
-    
+    }
+
 }
 
 module.exports = controller

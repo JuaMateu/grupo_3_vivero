@@ -4,6 +4,9 @@ const router = express.Router();
 const uploadUser = require('../middlewares/MulterUsers') 
 const { body } = require('express-validator');
 
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
+
 const usersController = require('../controllers/usersController');
 
 const validations = [
@@ -35,14 +38,15 @@ const validations = [
 ];
 
 //Formulario de Login
-router.get('/login', usersController.login);
+router.get('/login', userLoggedMiddleware, usersController.login);
 router.post('/login', usersController.processLogin);
+router.get('/logout', usersController.processLogout);
 
 //Recuperar Cuenta
 router.get('/userRecovery', usersController.userRecovery);
 
 // Formulario de Registro
-router.get('/register', usersController.register);
+router.get('/register', userLoggedMiddleware, usersController.register);
 router.post('/register', validations, usersController.processRegister);
 
 //* CRUD de Users *//
@@ -55,7 +59,7 @@ router.get('/create', usersController.addForm);
 router.post('/create', usersController.create);
 
 // Menu de usuario
-router.get('/menu/:id', usersController.menu);
+router.get('/menu/:id', userNotLoggedMiddleware, usersController.menu);
 //datos de contacto
 router.get('/menu/contact/:id', usersController.contactform);
 router.put('/menu/contact/:id', usersController.contactform);
@@ -69,8 +73,6 @@ router.put('/menu/password/:id', usersController.passForm);
 router.get('/menu/avatar/:id', usersController.avatarForm);
 router.put('/menu/avatar/:id', uploadUser.single('img'), usersController.avatarAction);
 //actualizar mail
-
-
 
 // formulario de edicion de usuario
 router.get('/edit/:id',usersController.editForm);
