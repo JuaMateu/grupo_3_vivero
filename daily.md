@@ -129,3 +129,15 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Hashear las contraseñas de Sign Up y dejar la funcionalidad total de la misma
 - Problemas: Falta de concentración al eliminar un campo "name" en el EJS pero se solucionó
 - ¿Qué voy a hacer?: Validar login 
+
+## Viernes 01 de Julio
+### Bruno Secchiari
+- ¿Qué hice?: Darle funcionalidad al proceso de Log-In.
+- Problemas: Aparecieron algunos errores de sintaxis en el camino que se pudieron solucionar sin mayor inconvenientes.
+- ¿Qué voy a hacer?: Seguir trabajando con las librerias Express-Session y Cookie-Parser.
+
+## Domingo 03 de Julio
+### Bruno Secchiari
+- ¿Qué hice?: Finalice el armado del Log-In y del Log-Out
+- Problemas: No tuve mayores inconvenientes.
+- ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de la pagina que se podrian mejorar.
