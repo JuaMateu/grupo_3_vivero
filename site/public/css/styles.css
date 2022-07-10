@@ -115,7 +115,7 @@ article {
 }
 
 .text-danger{
-    color: red;
+    color: #E74C3C;
     font-size: medium;
 }
 
@@ -331,6 +331,32 @@ header {
 
 .users-form__field{
     margin-bottom: 20px;
+    position: relative;
+}
+
+.users-form__field i{
+    position: absolute;
+    top: 2.7rem;
+    right: 1rem;
+    visibility: hidden;
+}
+
+.users-form__field.inputSuccess input{
+    border-color: #2ECC71;
+}
+
+.users-form__field.inputFailure input{
+    border-color: #E74C3C;
+}
+
+.users-form__field.inputSuccess i.fa-circle-check{
+    color:#2ECC71;
+    visibility: visible;
+}
+
+.users-form__field.inputFailure i.fa-circle-exclamation{
+    color: #E74C3C;
+    visibility: visible;
 }
 
 .users-form__label{

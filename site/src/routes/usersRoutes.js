@@ -2,40 +2,10 @@ const express = require('express');
 const router = express.Router();
 //! probar si funciona este middleware
 const uploadUser = require('../middlewares/MulterUsers') 
-const { body } = require('express-validator');
-
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
-
 const usersController = require('../controllers/usersController');
-
-const validations = [
-    body('firstName')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar tu primer nombre").bail()
-        .isLength({min:3, max:20}).withMessage("Debes ingresar entre 3 y 20 caracteres"),
-    body('lastName')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar tu primer apellido").bail()
-        .isLength({min:3, max:20}).withMessage("Debes ingresar entre 3 y 20 caracteres"),
-    body('email')
-        .notEmpty().withMessage("Debes de ingresar tu email").bail()
-        .isEmail().withMessage("Debes ingresar un formato de correo electrónico válido"),
-    body('password')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
-        .isStrongPassword().withMessage("Tu contraseña debe tener mínimo 8 caracteres, una mayúscula, una minúscula y un símbolo"),
-    body('passwordCheck')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
-        .custom((value, {req}) => {
-            if (value !== req.body.password) {
-                // Mensaje en caso de no coincidir
-                throw new Error("Las contraseñas no coinciden");
-            } 
-            return true;
-        }),
-];
+const userValidations = require("../middlewares/userValidationsRegister");
 
 //Formulario de Login
 router.get('/login', userLoggedMiddleware, usersController.login);
@@ -47,7 +17,7 @@ router.get('/userRecovery', usersController.userRecovery);
 
 // Formulario de Registro
 router.get('/register', userLoggedMiddleware, usersController.register);
-router.post('/register', validations, usersController.processRegister);
+router.post('/register', userValidations, usersController.processRegister);
 
 //* CRUD de Users *//
 // listado de los usuarios

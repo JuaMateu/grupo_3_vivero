@@ -141,3 +141,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Finalice el armado del Log-In y del Log-Out
 - Problemas: No tuve mayores inconvenientes.
 - ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de la pagina que se podrian mejorar.
+
+## Domingo 07 de Julio
+### Orlando Ayala
+- ¿Qué hice?: Implementé iconos y CSS en las validaciones para que se hiciera más amigable con el usuario
+- Problemas: Problema con la contraseña al momento de hacer login
+- ¿Qué voy a hacer?: Revisar ese detalle y seguir indagando en los problemas de eficacia y mensajes de error de contraseña de Sign Up (register)
