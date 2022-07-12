@@ -142,8 +142,26 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Problemas: No tuve mayores inconvenientes.
 - ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de la pagina que se podrian mejorar.
 
-## Domingo 07 de Julio
+## Domingo 10 de Julio
 ### Orlando Ayala
 - ¿Qué hice?: Implementé iconos y CSS en las validaciones para que se hiciera más amigable con el usuario
 - Problemas: Problema con la contraseña al momento de hacer login
 - ¿Qué voy a hacer?: Revisar ese detalle y seguir indagando en los problemas de eficacia y mensajes de error de contraseña de Sign Up (register)
+
+## Domingo 10 de Julio
+### Juan Mateu
+- ¿Qué hice?: actualicé controladores y router de usuarios de forma que usen session en vez de rutas parametrizadas.
+- Problemas: problemas tecnicos para aplicar los cambios, los pude solucionar
+- ¿Qué voy a hacer?: avanzar con distintos controladores y vistas del menu de usuario
+
+## Lunes 11 de Julio
+### Juan Mateu
+- ¿Qué hice?: Avance con todos los formularios del menu de usuario. aplique el middleware de usuario logeado a estas rutas, cambie el controller de registro para que te loguee con registro exitoso y cambios menores de CSS
+- Problemas: sin problemas
+- ¿Qué voy a hacer?: avanzar con validaciones para estos formularios
+
+## Martes 12 de Julio
+### Juan Mateu
+- ¿Qué hice?: Nos reunimos para dividir 
+- Problemas: sin problemas
+- ¿Qué voy a hacer?: avanzar con validaciones para estos formularios

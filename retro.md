@@ -7,7 +7,7 @@
 Concluído el Primer sprint realizamos una retrospectiva sobre el trabajo realzado y la dinamica del grupo. Para esto utilizamos el metodo Starfish
 <br><br><br>
 
-## 1° Retrospectiva - Starfish:
+## 1° Retrospectiva - Starfish (sobre sprint 1):
 
 -  Comenzar a hacer: <br>
     decidimos ponernos de acuerdo para tener una reunion semanal para estar mas coordinados
@@ -34,7 +34,7 @@ Concluído el Primer sprint realizamos una retrospectiva sobre el trabajo realza
 
 Concluído el Segundo sprint realizamos una retrospectiva sobre el trabajo realzado y la dinamica del grupo. <br>
 
-## 2° Retrospectiva:
+## 2° Retrospectiva (sobre sprint 2):
 
 1. Que problemas tuvimos?: 
 - El mayor problema que enfrentamos fue perder dos integrantes del equipo y que nos quedaran pendientes las tareas que tenían asignadas
@@ -55,7 +55,7 @@ Concluído el Segundo sprint realizamos una retrospectiva sobre el trabajo realz
 
 Concluído el tercer sprint realizamos una retrospectiva sobre el trabajo realzado y la dinamica del grupo. <br>
 
-## 3° Retrospectiva:
+## 3° Retrospectiva (sobre sprint 3):
 
 1. ¿Qué problemas tuvimos?: 
 - Aprender a implementar los métodos que aprendimos a lo largo de la cursada en el proyecto.
@@ -71,3 +71,26 @@ Concluído el tercer sprint realizamos una retrospectiva sobre el trabajo realza
 - Con el anexo del nuevo compañero Bruno, podremos mejorar nuestro tiempo de entrega del proyecto así como mejorar las funcionalidades más rápido, estetización, entre otras cosas
 - Investigar distintas fuentes de información y compartiéndolas con el equipo para que nos sirva como material extra al momento de solucionar un problema presente en el proyecto
 - Definiendo un horario específico para que cada quién pueda programar sin pisar al otro y/o implementando la creación de nuevas ramas en Git.
+
+## 3° Retrospectiva (sobre sprint 4):
+
+-  Comenzar a hacer: <br>
+    Consolidar los elementos de los artículos en la base de datos
+    Hacer la retrospectiva al inicio del sprint
+
+-  Hacer más: <br>
+    Reuniones con demostración del código implementado para resolver las dudas y errores
+    Reuniones con duracion acotada para aprovechar el tiempo
+    Utilizar mas el tablero de planificacion de trello para asignar tareas y darles seguimiento
+
+- Continuar haciendo: <br>
+    Mantener la comunicación constante con el equipo sean cambios radicales o pequeños en el proyecto
+    Planificar correctamente los requerimientos, sus interdependencias y la division de tareas al principio del sprint
+
+- Hacer menos: <br>
+    Aplazar las reuniones periodicas
+
+- Dejar de hacer: <br>
+    sin comentarios
+
+### Para hacer la retrospectiva nos ayudamos con el siguiente tablero [Trello](https://trello.com/b/N5D2ber1/retrospectiva)
