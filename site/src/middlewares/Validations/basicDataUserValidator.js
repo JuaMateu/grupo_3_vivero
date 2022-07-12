@@ -12,8 +12,8 @@ const validations = [
     body('birth')
         .notEmpty().withMessage("Debes de ingresar tu fecha de nacimiento").bail()
         .isISO8601().withMessage("Debes ingresar una fecha con formato valido").bail()
-        .isAfter('birth',[1950-1-1]).withMessage("la fecha debe ser posterior a 1900").bail()
-        .isbefore('birth',[2018-1-1]).withMessage("la fecha debe ser anterior a 2018").bail()
+        .isAfter('birth',[1950-1-1]).withMessage("La fecha debe ser posterior a 1900").bail()
+        .isBefore('birth',[2018-1-1]).withMessage("La fecha debe ser anterior a 2018").bail()
 ];
 
 module.exports = validations;

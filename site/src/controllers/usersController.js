@@ -231,7 +231,7 @@ const controller = {
         return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: req.session.userLogged});
     },
     passwordUpdate: (req,res) =>  {
-        
+          
     },
     
     avatarForm: (req,res) => {
