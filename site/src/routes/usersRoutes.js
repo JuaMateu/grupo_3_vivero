@@ -5,7 +5,7 @@ const uploadUser = require('../middlewares/MulterUsers')
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const usersController = require('../controllers/usersController');
-const userValidations = require("../middlewares/userValidationsRegister");
+const userValidations = require("../middlewares/Validations/userValidationsRegister");
 
 //Formulario de Login
 router.get('/login', userLoggedMiddleware, usersController.login);
