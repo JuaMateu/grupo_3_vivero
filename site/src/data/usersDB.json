@@ -120,9 +120,18 @@
   {
     "id": 13,
     "firstName": "Johnny",
-    "lastName": "Depp",
+    "lastName": "Deppo",
     "email": "jdepp@yo.com",
-    "password": "$2a$10$oRqjAxrsbuKvilBfyeDqWu/zjv2RjDiH61Lbf.NZQy53yR.szM/hO",
+    "password": "$2a$10$prYs6rTKcK8xw6KJW0VQaO6ugYTcIT.EmqiWC8NXFVFUAr5RDeMGq",
+    "img": "/img/otros/user.png",
+    "birth": "1981-01-01"
+  },
+  {
+    "id": 14,
+    "firstName": "Amelie",
+    "lastName": "Poulain",
+    "email": "apou@yo.com",
+    "password": "$2a$10$fw7Ngd.Tudply9NfjjugV.PBrh08RRT3BpAwA6i6ABIFJJcvf0MPy",
     "img": "/img/otros/user.png"
   }
 ]

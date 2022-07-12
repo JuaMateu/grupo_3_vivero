@@ -158,9 +158,6 @@ const controller = {
         
         return res.render('../views/users/menu/usersMenu.ejs', { user: req.session.userLogged});
     },
-    passwordUpdate: (req,res) =>  {
-        
-    },
     
     contactform: (req,res) => {
         // READ
@@ -230,8 +227,35 @@ const controller = {
         
         return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: req.session.userLogged});
     },
+
     passwordUpdate: (req,res) =>  {
-          
+        var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        let userIndex = users.findIndex(user => user.id == req.session.userLogged.id);
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0){
+            return res.render('../views/users/menu/usersMenuPassword.ejs',{
+                errors: resultValidation.mapped(),
+                user: users[userIndex]
+            });
+        };
+        let passwordControlPoint = bcryptjs.compareSync(req.body.actualPass, users[userIndex].password);
+        console.log(passwordControlPoint);
+        if (passwordControlPoint){
+            if (req.body.newPassCheck == req.body.newPass) {
+                users[userIndex].password = bcryptjs.hashSync(req.body.newPassCheck,10)
+            }
+        }
+        console.log(resultValidation.errors);
+        console.log(resultValidation.errors.length);
+
+        req.session.userLogged = users[userIndex] 
+
+        // sobreescribimos el JSON
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
+        
+        // redirigimos
+        res.redirect("/users/menu/");
     },
     
     avatarForm: (req,res) => {
