@@ -64,12 +64,12 @@ const controller = {
         
         // agregar el user al array
         users.push(newUser);
-
         let usersExport = JSON.stringify(users, null, 2);
-
         fs.writeFileSync(usersFilePath, usersExport, 'utf-8');
+        // SE LOGEA EN SESSION
+        req.session.userLogged = newUser
 
-        return res.redirect(`/users/menu/${newId}`);
+        return res.redirect(`/users/menu/contact/`);
     },
 
     processLogin: (req, res) => {
@@ -84,7 +84,7 @@ const controller = {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 });
                 }
 
-                return res.redirect('/users/menu/' + userToLogin.id);
+                return res.redirect('/users/menu/');
             }
 
             return res.render('users/login', {
@@ -142,69 +142,112 @@ const controller = {
 
         res.redirect("/users/");
     },
-
+    
     editForm: (req,res) => {
         // READ
         let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
-
+        
         return res.render('../views/users/usersEdit.ejs', { editUser });
     },
-
+    
     menu: (req,res) => {
         // READ
-        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
-
+        
+        
         return res.render('../views/users/menu/usersMenu.ejs', { user: req.session.userLogged});
     },
-
+    passwordUpdate: (req,res) =>  {
+        
+    },
+    
     contactform: (req,res) => {
         // READ
-        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
 
-        return res.render('../views/users/menu/usersMenuContact.ejs',{ user: editUser});
+
+        return res.render('../views/users/menu/usersMenuContact.ejs',{ user: req.session.userLogged});
+    },
+
+    contactAction: (req,res) =>  {
+        var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        let userIndex = users.findIndex(user => user.id == req.session.userLogged.id)
+        users[userIndex].address = req.body.address,
+        users[userIndex].mobile = req.body.mobile,
+        req.session.userLogged = users[userIndex]
+
+        // sobreescribimos el JSON
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
+        
+        // redirigimos
+        res.redirect("/users/menu/");
+
     },
 
     nameForm: (req,res) => {
         // READ
-        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+         [ editUser ]  = users.filter(user => {return user.id == req.session.userLogged.id});
+        
         // renderizamos la vista con el elemento correpondiente
 
         return res.render('../views/users/menu/usersMenuBasicData.ejs',{ user: editUser});
     },
+    nameAction: (req,res) =>  {
+        let userIndex = users.findIndex(user => user.id == req.session.userLogged.id)
+        console.log(userIndex)
 
+        users[userIndex].firstName = req.body.firstName,
+        users[userIndex].lastName = req.body.lastName,
+        users[userIndex].birth = req.body.birth 
+        console.log(users[userIndex])
+
+        req.session.userLogged = users[userIndex]
+        // sobreescribimos el JSON
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
+        
+        // redirigimos
+        res.redirect("/users/menu/");
+
+    },
+    
+    
     passForm: (req,res) => {
         // READ
-        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
-
-        return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: editUser});
+        
+        return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: req.session.userLogged});
     },
-
+    passwordUpdate: (req,res) =>  {
+        
+    },
+    
     avatarForm: (req,res) => {
         // READ
-        let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
+        // let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
-
-        return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
+        
+        return res.render('../views/users/menu/usersMenuImage.ejs',{ user: req.session.userLogged});
     },
-
+    
     avatarAction: (req,res) => {
-        // READ
-        let editUser = users.find(user => {return user.id == req.params.id});
-        // 
-        if (req.file) {
-            editUser.img = "/img/users/avatar/" + req.file.filename
+        // index a editar
+        let userIndex = users.findIndex(user => user.id == req.session.userLogged.id)
+        // si hay archivo se actualiza la ruta en session y en base de datos
+        if (!req.file) {
+            res.redirect("/users/menu/");
         }
+        req.session.userLogged.img = "/img/users/avatar/" + req.file.filename 
+        users[userIndex].img = req.session.userLogged.img
         // sobreescribimos el JSON
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
         // redirigimos
-        res.redirect("/users/menu/"+req.params.id );
-
-        // return res.render('../views/users/menu/usersMenuImage.ejs',{ user: editUser});
+        res.redirect("/users/menu/");
     },
-
+    
     edit: (req, res) => {
         // UPDATE
         // solicitamos el id de los parametros
@@ -223,20 +266,20 @@ const controller = {
         // redirigimos
         res.redirect("/users/");
     },
-
+    
     delete: (req, res) => {
         // DELETE
         let idUser = req.params.id;
         users = users.filter(user => {
             return user.id != idUser
         });
-
+        
         let usersExport = JSON.stringify(users, null, 2);
         fs.writeFileSync(usersFilePath, usersExport,'utf-8');
         
         res.redirect("/users/");
     }
-
+    
 }
 
 module.exports = controller

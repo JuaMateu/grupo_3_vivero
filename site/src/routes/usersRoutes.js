@@ -29,19 +29,22 @@ router.get('/create', usersController.addForm);
 router.post('/create', usersController.create);
 
 // Menu de usuario
-router.get('/menu/:id', userNotLoggedMiddleware, usersController.menu);
+router.get('/menu', userNotLoggedMiddleware, usersController.menu);
 //datos de contacto
-router.get('/menu/contact/:id', usersController.contactform);
-router.put('/menu/contact/:id', usersController.contactform);
+router.get('/menu/contact', userNotLoggedMiddleware, usersController.contactform);
+router.put('/menu/contact', userNotLoggedMiddleware, usersController.contactAction);
 //datos basicos
-router.get('/menu/name/:id', usersController.nameForm);
-router.put('/menu/name/:id', usersController.nameForm);
+router.get('/menu/name', userNotLoggedMiddleware, usersController.nameForm);
+router.put('/menu/name', userNotLoggedMiddleware, usersController.nameAction);
 //actualizar password
-router.get('/menu/password/:id', usersController.passForm);
-router.put('/menu/password/:id', usersController.passForm);
+router.get('/menu/password', userNotLoggedMiddleware, usersController.passForm);
+router.put('/menu/password', userNotLoggedMiddleware, usersController.passForm);
 //Subir foto
-router.get('/menu/avatar/:id', usersController.avatarForm);
-router.put('/menu/avatar/:id', uploadUser.single('img'), usersController.avatarAction);
+router.get('/menu/avatar', userNotLoggedMiddleware, usersController.avatarForm);
+router.put('/menu/avatar', userNotLoggedMiddleware, uploadUser.single('img'), usersController.avatarAction);
+//actualizar mail
+// router.get('/menu/mail', userNotLoggedMiddleware, usersController.avatarForm);
+// router.put('/menu/mail', userNotLoggedMiddleware, uploadUser.single('img'), usersController.avatarAction);
 //actualizar mail
 
 

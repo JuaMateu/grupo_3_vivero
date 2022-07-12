@@ -19,9 +19,11 @@
             <div class='flex-column-to-RowDekstop'>
 
                     <%- include('../../partials/userMenuNav.ejs') %>
+
                     <div class="auto-flex">
                         <!-- Iniciamos el formulario de sign up -->
-                        <form action="/users/name/<%- user.id %>?_method=PUT " method="POST" class="users-form">
+                        <form action="/users/menu/name?_method=PUT " method="POST" class="users-form">
+                            <h3>Completá tus datos personales</h3>
                             <!-- Ingresar el nombre -->
                             <div class="users-form__field">
                                 <label class="users-form__label" for="firstName">Nombre</label>
@@ -41,7 +43,16 @@
                             </div>
                             <!-- Boton de iniciar sesion -->
                             <input type="submit" value="Actualizar" class="btnStyle2">
+
+    
                         </form>
+                        <ul>
+                            <li class="no-list-style">
+                                <a class="user-menu__links" href="/users/menu/">Volver al Menú</a>
+                            </li>
+                            <!-- cambiar pass -->
+                        </ul>
+                        
 
                     </div>
             </div>

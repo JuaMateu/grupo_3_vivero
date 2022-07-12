@@ -6,7 +6,7 @@
     "email": "joaquinP@digitalhouse.com",
     "password": "12345678",
     "category": true,
-    "img": "/img/users/avatar/user-1-1656435506082.jpg",
+    "img": "/img/users/avatar/user-undefined-1657563466724.jpg",
     "mobile": 1234567890,
     "address": "Avenida siempre viva #60",
     "birth": "1988-05-06"
@@ -81,6 +81,41 @@
     "lastName": "Menem",
     "email": "carlitosmenem@gmail.com",
     "password": "$2a$10$JFF5mIouOJl31Szy41kMLeP61WTscrOXR7uv9UOhzwGA2B6ABiSZe",
+    "img": "/img/otros/user.png"
+  },
+  {
+    "id": 9,
+    "email": "clave@prueba.com",
+    "firstName": "Clave ",
+    "lastName": "Chancleta1!",
+    "password": "$2a$10$LqU.KKkbMCk3mblMWicz1O03pHC42TKvguR5grfEhmalfj4/IR3mq",
+    "img": "/img/users/avatar/user-undefined-1657566191847.jpg",
+    "address": "Calle siempre viva 2480",
+    "mobile": "153546548",
+    "birth": "1313-12-13"
+  },
+  {
+    "id": 10,
+    "firstName": "pepito",
+    "lastName": "cueva",
+    "email": "asdsadeu@gmail.com",
+    "password": "$2a$10$Qlfwzr0uQmNWHMXg1Vc9UezNhAS19x9jPPcrmDme/H6A4EGuEciRK",
+    "img": "/img/otros/user.png"
+  },
+  {
+    "id": 11,
+    "firstName": "ASDASD",
+    "lastName": "ASDSAD",
+    "email": "asdSasd@masd.com",
+    "password": "$2a$10$we5INrmKEmePf2Ak4t8tKulSapnOy76Nnl4mDxtum/2SM8eLA3bsu",
+    "img": "/img/otros/user.png"
+  },
+  {
+    "id": 12,
+    "firstName": "pepito",
+    "lastName": "gomez",
+    "email": "pepito@aksmdkamsd.com",
+    "password": "$2a$10$G7cJyCxwjj8sZD0N4CR0ae2DBwHH.IL32g17ewnUSTpn5Bw29HOR6",
     "img": "/img/otros/user.png"
   }
 ]

@@ -13,7 +13,19 @@
             <!-- Aqui va el texto principal de la pagina -->
             <h1 class="user-menu__title">Bienvenido <%- user.firstName + " " + user.lastName %> </h1>
         </div>
-        <%- include('../../partials/userMenuNav.ejs') %>
+        <div class='flex-column-to-RowDekstop'>
+
+            <%- include('../../partials/userMenuNav.ejs') %>
+
+                <div class="user-menu__info">
+                    <p><span class="bold">Nombre Completo:</span>  <%- user.firstName + " " + user.lastName %></p>
+                    <p><span class="bold">Email:</span> <%- user.email %></p>
+                    <p><span class="bold">Telefono:</span> <%- user.mobile %></p>
+                    <p><span class="bold">Dirección:</span> <%- user.address %></p>
+                    <p><span class="bold">Fecha de Nacimiento:</span> <%- user.birth %></p>
+                </div>
+
+    </div>
     </main>
     <!-- aca arranca el footer -->
     <%- include('../../partials/footer') %>

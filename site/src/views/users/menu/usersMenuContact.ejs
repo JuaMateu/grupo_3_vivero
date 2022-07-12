@@ -19,25 +19,27 @@
             <%- include('../../partials/userMenuNav.ejs') %>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de sign up -->
-                <form action="/users/name/<%- user.id %>?_method=PUT " method="POST" class="users-form">
+                <form action="/users/menu/contact/?_method=PUT " method="POST" class="users-form">
+                    <h3>Completá tus datos de contacto</h3>
                     <!-- Ingresar el nombre -->
                     <div class="users-form__field">
                         <label class="users-form__label" for="address">Direccion</label>
                         <input class="users-form__input" name="address" type="text"
-                            placeholder="Ingresá tu Dirección" value="<%- user.address %>" minlength="3" maxlength="40" required>
+                            placeholder="Ingresá tu Dirección" value="<%= user.address %>" minlength="3" maxlength="40" required>
                     </div>
                     <!-- Ingresar el apellido -->
                     <div class="users-form__field">
                         <label class="users-form__label" for="mobile">Telefono</label>
                         <input class="users-form__input" name="mobile" type="number"
-                            placeholder="Ingresá tu telefono" value="<%- user.mobile %>" minlength="8" maxlength="20" required>
+                            placeholder="Ingresá tu telefono" value="<%= user.mobile %>" minlength="8" maxlength="20" required>
                     </div>
                     <!-- Boton de iniciar sesion -->
                     <input type="submit" value="Actualizar" class="btnStyle2">
                 </form>
-
+                
             </div>
-    </div>
+        </div>
+
     
     </main>
 

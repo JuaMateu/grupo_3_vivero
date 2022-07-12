@@ -19,7 +19,7 @@
             <%- include('../../partials/userMenuNav.ejs') %>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de sign up -->
-                <form action="/users/menu/avatar/<%- user.id %>?_method=PUT " method="POST" enctype="multipart/form-data" class="users-form">
+                <form action="/users/menu/avatar/?_method=PUT " method="POST" enctype="multipart/form-data" class="users-form">
                     <!-- Ingresar el nombre -->
                     <div class="users-form__field">
                         <label class="users-form__label" for="img">Subi tu foto</label>
@@ -30,6 +30,7 @@
                     <!-- Boton de iniciar sesion -->
                     <input type="submit" value="Actualizar" class="btnStyle2">
                 </form>
+
 
             </div>
     </div>
