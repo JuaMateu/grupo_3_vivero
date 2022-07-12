@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include('../../partials/head') %>
-        <title>Registrate</title>
+        <title>Menu usuario</title>
     </head>
 <body>
     <%- include('../../partials/header') %>
@@ -20,9 +20,15 @@
                 <div class="user-menu__info">
                     <p><span class="bold">Nombre Completo:</span>  <%- user.firstName + " " + user.lastName %></p>
                     <p><span class="bold">Email:</span> <%- user.email %></p>
+                    <% if (user.mobile) { %> 
                     <p><span class="bold">Telefono:</span> <%- user.mobile %></p>
-                    <p><span class="bold">Dirección:</span> <%- user.address %></p>
-                    <p><span class="bold">Fecha de Nacimiento:</span> <%- user.birth %></p>
+                    <% } %> 
+                    <% if (user.address) { %> 
+                        <p><span class="bold">Dirección:</span> <%- user.address %></p>
+                    <% } %> 
+                    <% if (user.birth) { %> 
+                        <p><span class="bold">Fecha de Nacimiento:</span> <%- user.birth %></p>
+                    <% } %> 
                 </div>
 
     </div>

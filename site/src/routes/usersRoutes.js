@@ -6,6 +6,7 @@ const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const usersController = require('../controllers/usersController');
 const userValidations = require("../middlewares/Validations/userValidationsRegister");
+const basicDataUserValidator = require("../middlewares/Validations/basicDataUserValidator");
 
 //Formulario de Login
 router.get('/login', userLoggedMiddleware, usersController.login);
@@ -35,7 +36,7 @@ router.get('/menu/contact', userNotLoggedMiddleware, usersController.contactform
 router.put('/menu/contact', userNotLoggedMiddleware, usersController.contactAction);
 //datos basicos
 router.get('/menu/name', userNotLoggedMiddleware, usersController.nameForm);
-router.put('/menu/name', userNotLoggedMiddleware, usersController.nameAction);
+router.put('/menu/name', userNotLoggedMiddleware, basicDataUserValidator, usersController.nameAction);
 //actualizar password
 router.get('/menu/password', userNotLoggedMiddleware, usersController.passForm);
 router.put('/menu/password', userNotLoggedMiddleware, usersController.passForm);

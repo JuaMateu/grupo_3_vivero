@@ -197,12 +197,21 @@ const controller = {
     },
     nameAction: (req,res) =>  {
         let userIndex = users.findIndex(user => user.id == req.session.userLogged.id)
-        console.log(userIndex)
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0){
+            return res.render('../views/users/menu/usersMenuBasicData.ejs',{
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                user: users[userIndex]
+            });
+        };
+
 
         users[userIndex].firstName = req.body.firstName,
         users[userIndex].lastName = req.body.lastName,
         users[userIndex].birth = req.body.birth 
-        console.log(users[userIndex])
+        
 
         req.session.userLogged = users[userIndex]
         // sobreescribimos el JSON
