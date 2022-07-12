@@ -208,7 +208,6 @@ const controller = {
         users[userIndex].firstName = req.body.firstName,
         users[userIndex].lastName = req.body.lastName,
         users[userIndex].birth = req.body.birth 
-        
 
         req.session.userLogged = users[userIndex]
         // sobreescribimos el JSON
@@ -233,29 +232,31 @@ const controller = {
         let userIndex = users.findIndex(user => user.id == req.session.userLogged.id);
         const resultValidation = validationResult(req);
 
-        if(resultValidation.errors.length > 0){
+        let passwordControlPoint = bcryptjs.compareSync(req.body.actualPass, users[userIndex].password);
+        if (!passwordControlPoint){
+        console.log(passwordControlPoint);
+            return res.render('users/menu/usersMenuPassword.ejs', {
+                errors: {
+                    actualPass: {
+                        msg: 'La contraseña es incorrecta'
+                    }
+                },
+                user: users[userIndex]
+            });
+        } else if(resultValidation.errors.length > 0){
             return res.render('../views/users/menu/usersMenuPassword.ejs',{
                 errors: resultValidation.mapped(),
                 user: users[userIndex]
             });
-        };
-        let passwordControlPoint = bcryptjs.compareSync(req.body.actualPass, users[userIndex].password);
-        console.log(passwordControlPoint);
-        if (passwordControlPoint){
-            if (req.body.newPassCheck == req.body.newPass) {
-                users[userIndex].password = bcryptjs.hashSync(req.body.newPassCheck,10)
-            }
-        }
-        console.log(resultValidation.errors);
-        console.log(resultValidation.errors.length);
+        } else {
+            users[userIndex].password = bcryptjs.hashSync(req.body.newPassCheck,10);
+            // sobreescribimos el JSON
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
+            
+            // redirigimos
+            res.redirect("/users/menu/");
+        } 
 
-        req.session.userLogged = users[userIndex] 
-
-        // sobreescribimos el JSON
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
-        
-        // redirigimos
-        res.redirect("/users/menu/");
     },
     
     avatarForm: (req,res) => {

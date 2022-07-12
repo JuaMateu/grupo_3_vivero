@@ -142,8 +142,15 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Problemas: No tuve mayores inconvenientes.
 - ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de la pagina que se podrian mejorar.
 
-## Domingo 07 de Julio
+## Jueves 07 de Julio
 ### Orlando Ayala
 - ¿Qué hice?: Implementé iconos y CSS en las validaciones para que se hiciera más amigable con el usuario
 - Problemas: Problema con la contraseña al momento de hacer login
 - ¿Qué voy a hacer?: Revisar ese detalle y seguir indagando en los problemas de eficacia y mensajes de error de contraseña de Sign Up (register)
+
+## Martes 12 de Julio
+### Orlando Ayala, Bruno Secchiari, Juan Mateu
+- ¿Qué hice?: Se completó el menu para actualizar contraseña
+- Problemas: arrores con validaciones 
+- ¿Qué voy a hacer?: Estilizar y terminar demás funcionalidades extra no inmediatas del sprint actual
+
