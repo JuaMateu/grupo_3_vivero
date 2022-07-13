@@ -175,4 +175,3 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Se completó el menu para actualizar contraseña
 - Problemas: errores con validaciones 
 - ¿Qué voy a hacer?: Estilizar y terminar demás funcionalidades extra no inmediatas del sprint actual
-

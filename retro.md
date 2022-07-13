@@ -91,6 +91,28 @@ Concluído el tercer sprint realizamos una retrospectiva sobre el trabajo realza
     Aplazar las reuniones periodicas
 
 - Dejar de hacer: <br>
-    sin comentarios
+    no aplica
+
+### Para hacer la retrospectiva nos ayudamos con el siguiente tablero [Trello](https://trello.com/b/N5D2ber1/retrospectiva)
+
+## 4° Retrospectiva (sobre sprint 5):
+
+-  Comenzar a hacer: <br>
+    Completar la base de datos de imagenes de las plantas
+    Hacer la retrospectiva al inicio del sprint
+
+-  Hacer más: <br>
+    Reuniones con demostración del código implementado para resolver las dudas y errores
+
+- Continuar haciendo: <br>
+    Buscar darle valor agregado a la pagina con funcionalidades, una vez que esten terminados los requerimientos
+    Mantener la comunicación constante con el equipo sean cambios radicales o pequeños en el proyecto
+    Planificar correctamente los requerimientos, sus interdependencias y la division de tareas al principio del sprint
+
+- Hacer menos: <br>
+    no aplica
+
+- Dejar de hacer: <br>
+    Cambiar el archivo daily.md por  comunicacion via chat de lo que estamos haciendo, lo que vamos a hacer y los impedimientos que nos encontramos
 
 ### Para hacer la retrospectiva nos ayudamos con el siguiente tablero [Trello](https://trello.com/b/N5D2ber1/retrospectiva)
