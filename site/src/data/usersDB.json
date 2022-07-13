@@ -86,12 +86,13 @@
   {
     "id": 9,
     "email": "clave@prueba.com",
-    "firstName": "Clave ",
+    "firstName": "Clave",
     "lastName": "Chancleta1!",
     "password": "$2a$10$LqU.KKkbMCk3mblMWicz1O03pHC42TKvguR5grfEhmalfj4/IR3mq",
     "img": "/img/users/avatar/user-undefined-1657566191847.jpg",
     "address": "Calle siempre viva 2480",
-    "birth": "1313-12-13"
+    "mobile": "17238789123",
+    "birth": "2022-07-12"
   },
   {
     "id": 10,

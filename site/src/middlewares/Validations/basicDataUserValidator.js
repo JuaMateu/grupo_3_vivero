@@ -1,10 +1,9 @@
 const { body } = require('express-validator');
 
-let actualDate = Date.now("%y-%m-%d");
+// let actualDate = Date.now("%y-%m-%d");
 const moment = require('moment');
 let now = moment();
 actualDate = now.format("YYYY-MM-DD")
-console.log(actualDate);
 
 const validations = [
     body('firstName')

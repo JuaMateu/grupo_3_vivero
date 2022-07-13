@@ -3,6 +3,9 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 
+const moment = require('moment');
+
+
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -156,7 +159,7 @@ const controller = {
         // renderizamos la vista con el elemento correpondiente
         
         
-        return res.render('../views/users/menu/usersMenu.ejs', { user: req.session.userLogged});
+        return res.render('users/menu/usersMenu.ejs', { user: req.session.userLogged});
     },
     
     contactform: (req,res) => {
@@ -165,12 +168,22 @@ const controller = {
         // renderizamos la vista con el elemento correpondiente
 
 
-        return res.render('../views/users/menu/usersMenuContact.ejs',{ user: req.session.userLogged});
+        return res.render('users/menu/usersMenuContact.ejs',{ user: req.session.userLogged});
     },
 
     contactAction: (req,res) =>  {
         var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
         let userIndex = users.findIndex(user => user.id == req.session.userLogged.id)
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0){
+            return res.render('users/menu/usersMenuContact.ejs',{
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                user: users[userIndex]
+            });
+        };
+
         users[userIndex].address = req.body.address,
         users[userIndex].mobile = req.body.mobile,
         req.session.userLogged = users[userIndex]
@@ -190,14 +203,16 @@ const controller = {
         
         // renderizamos la vista con el elemento correpondiente
 
-        return res.render('../views/users/menu/usersMenuBasicData.ejs',{ user: editUser});
+        actualDate = moment().format("YYYY-MM-DD")
+
+        return res.render('users/menu/usersMenuBasicData.ejs',{ user: editUser, date: actualDate});
     },
     nameAction: (req,res) =>  {
         let userIndex = users.findIndex(user => user.id == req.session.userLogged.id)
         const resultValidation = validationResult(req);
 
         if(resultValidation.errors.length > 0){
-            return res.render('../views/users/menu/usersMenuBasicData.ejs',{
+            return res.render('users/menu/usersMenuBasicData.ejs',{
                 errors: resultValidation.mapped(),
                 oldData: req.body,
                 user: users[userIndex]
@@ -224,7 +239,7 @@ const controller = {
         // let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
         
-        return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: req.session.userLogged});
+        return res.render('users/menu/usersMenuPassword.ejs',{ user: req.session.userLogged});
     },
 
     passwordUpdate: (req,res) =>  {
@@ -244,7 +259,7 @@ const controller = {
                 user: users[userIndex]
             });
         } else if(resultValidation.errors.length > 0){
-            return res.render('../views/users/menu/usersMenuPassword.ejs',{
+            return res.render('users/menu/usersMenuPassword.ejs',{
                 errors: resultValidation.mapped(),
                 user: users[userIndex]
             });
@@ -264,7 +279,7 @@ const controller = {
         // let  [ editUser ]  = users.filter(user => {return user.id == req.params.id});
         // renderizamos la vista con el elemento correpondiente
         
-        return res.render('../views/users/menu/usersMenuImage.ejs',{ user: req.session.userLogged});
+        return res.render('users/menu/usersMenuImage.ejs',{ user: req.session.userLogged});
     },
     
     avatarAction: (req,res) => {

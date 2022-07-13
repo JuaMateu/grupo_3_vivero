@@ -74,7 +74,9 @@
                                     name="birth" 
                                     type="date"
                                     placeholder="Ingresá tu fecha de nacimiento"  
-                                    min="1900-01-01" 
+                                    min="1900-01-01"
+                                    max="<%= date %>"
+                                    value="<%= user.birth ? user.birth : "" %>"
                         
                                     required
                                 >

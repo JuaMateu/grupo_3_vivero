@@ -22,16 +22,30 @@
                 <form action="/users/menu/contact/?_method=PUT " method="POST" class="users-form">
                     <h3>Completá tus datos de contacto</h3>
                     <!-- Ingresar el nombre -->
-                    <div class="users-form__field">
+                    <div class="users-form__field <%= locals.errors && errors.address ? "inputFailure" : "inputSuccess" %>">
                         <label class="users-form__label" for="address">Direccion</label>
                         <input class="users-form__input" name="address" type="text"
                             placeholder="Ingresá tu Dirección" value="<%= user.address %>" minlength="3" maxlength="40" required>
+                            <i class="fa-solid fa-circle-check"></i>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.address) { %>
+                                    <div class="text-danger">
+                                        <%= errors.address.msg %> 
+                                    </div>
+                                <% } %>
                     </div>
                     <!-- Ingresar el apellido -->
-                    <div class="users-form__field">
+                    <div class="users-form__field <%= locals.errors && errors.mobile ? "inputFailure" : "inputSuccess" %>">
                         <label class="users-form__label" for="mobile">Telefono</label>
                         <input class="users-form__input" name="mobile" type="number"
-                            placeholder="Ingresá tu telefono" value="<%= user.mobile %>" minlength="8" maxlength="20" required>
+                            placeholder="Ingresá tu telefono" value="<% user.mobile  %>" minlength="8" maxlength="20" required>
+                            <i class="fa-solid fa-circle-check"></i>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.mobile) { %>
+                                    <div class="text-danger">
+                                        <%= errors.mobile.msg %> 
+                                    </div>
+                                <% } %>
                     </div>
                     <!-- Boton de iniciar sesion -->
                     <input type="submit" value="Actualizar" class="btnStyle2">
