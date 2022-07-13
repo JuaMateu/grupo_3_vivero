@@ -25,38 +25,64 @@
                         <form action="/users/menu/name?_method=PUT " method="POST" class="users-form">
                             <h3>Completá tus datos personales</h3>
                             <!-- Ingresar el nombre -->
-                            <div class="users-form__field">
+                            <div class="users-form__field <%= locals.errors && errors.firstName ? "inputFailure" : "inputSuccess" %>">
                                 <label class="users-form__label" for="firstName">Nombre</label>
-                                <input class="users-form__input" name="firstName" type="text"
-                                    placeholder="Ingresá tu nombre" value="<%- user.firstName %> " minlength="3" maxlength="20" required>
-                                    <% if (locals.errors && errors.firstName) { %>
-                                        <div class="text-danger">
-                                            <%= errors.firstName.msg %> 
-                                        </div>
-                                    <% } %>
+                                <input 
+                                    class="users-form__input " 
+                                    name="firstName" 
+                                    type="text"
+                                    placeholder="Ingresá tu nombre" 
+                                    value="<%- user.firstName %> " 
+                                    minlength="3" 
+                                    maxlength="20" 
+                                    required
+                                >
+                                <i class="fa-solid fa-circle-check"></i>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.firstName) { %>
+                                    <div class="text-danger">
+                                        <%= errors.firstName.msg %> 
+                                    </div>
+                                <% } %>
                                 </div>
                             
                             <!-- Ingresar el apellido -->
-                            <div class="users-form__field">
+                            <div class="users-form__field <%= locals.errors && errors.lastName ? "inputFailure" : "inputSuccess" %>">
                                 <label class="users-form__label" for="lastName">Apellido</label>
-                                <input class="users-form__input" name="lastName" type="text"
-                                    placeholder="Ingresá tu apellido" value="<%- user.lastName %>" minlength="3" maxlength="20" required>
-                                    <% if (locals.errors && errors.lastName) { %>
-                                        <div class="text-danger">
-                                            <%= errors.lastName.msg %> 
-                                        </div>
-                                    <% } %>
+                                <input 
+                                    class="users-form__input" 
+                                    name="lastName" 
+                                    type="text"
+                                    placeholder="Ingresá tu apellido" 
+                                    value="<%- user.lastName %>" 
+                                    minlength="3" 
+                                    maxlength="20" 
+                                    required
+                                >
+                                <i class="fa-solid fa-circle-check"></i>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.lastName) { %>
+                                    <div class="text-danger">
+                                        <%= errors.lastName.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
-                            <div class="users-form__field">
+                            <div class="users-form__field <%= locals.errors && errors.birth ? "inputFailure" : "inputSuccess" %>">
                                 <label class="users-form__label" for="birth">fecha de nacimiento</label>
-                                <input class="users-form__input" name="birth" type="date"
+                                <input 
+                                    class="users-form__input" 
+                                    name="birth" 
+                                    type="date"
                                     placeholder="Ingresá tu fecha de nacimiento"  
-                                    min="1900-01-01" max="2018-01-01"required>
-                                    <% if (locals.errors && errors.birth) { %>
-                                        <div class="text-danger">
-                                            <%= errors.birth.msg %> 
-                                        </div>
-                                    <% } %>
+                                    min="1900-01-01" 
+                        
+                                    required
+                                >
+                                <% if (locals.errors && errors.birth) { %>
+                                    <div class="text-danger">
+                                        <%= errors.birth.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                             <!-- Boton de iniciar sesion -->
                             <input type="submit" value="Actualizar" class="btnStyle2">

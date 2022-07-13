@@ -7,6 +7,7 @@ const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware'
 const usersController = require('../controllers/usersController');
 const userValidations = require("../middlewares/Validations/userValidationsRegister");
 const basicDataUserValidator = require("../middlewares/Validations/basicDataUserValidator");
+const usersMenuPasswordValidator = require("../middlewares/Validations/usersMenuPassValidator");
 
 //Formulario de Login
 router.get('/login', userLoggedMiddleware, usersController.login);
@@ -39,7 +40,7 @@ router.get('/menu/name', userNotLoggedMiddleware, usersController.nameForm);
 router.put('/menu/name', userNotLoggedMiddleware, basicDataUserValidator, usersController.nameAction);
 //actualizar password
 router.get('/menu/password', userNotLoggedMiddleware, usersController.passForm);
-router.put('/menu/password', userNotLoggedMiddleware, usersController.passForm);
+router.put('/menu/password', userNotLoggedMiddleware, usersMenuPasswordValidator, usersController.passwordUpdate);
 //Subir foto
 router.get('/menu/avatar', userNotLoggedMiddleware, usersController.avatarForm);
 router.put('/menu/avatar', userNotLoggedMiddleware, uploadUser.single('img'), usersController.avatarAction);

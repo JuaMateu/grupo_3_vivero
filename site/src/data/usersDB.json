@@ -116,5 +116,22 @@
     "email": "pepito@aksmdkamsd.com",
     "password": "$2a$10$G7cJyCxwjj8sZD0N4CR0ae2DBwHH.IL32g17ewnUSTpn5Bw29HOR6",
     "img": "/img/otros/user.png"
+  },
+  {
+    "id": 13,
+    "firstName": "Johnny",
+    "lastName": "Depp",
+    "email": "jdepp@yo.com",
+    "password": "$2a$10$prYs6rTKcK8xw6KJW0VQaO6ugYTcIT.EmqiWC8NXFVFUAr5RDeMGq",
+    "img": "/img/otros/user.png",
+    "birth": "2022-07-11"
+  },
+  {
+    "id": 14,
+    "firstName": "Amelie",
+    "lastName": "Poulain",
+    "email": "apou@yo.com",
+    "password": "$2a$10$tvKBQgzGedppAelF2gFA6ef8Mx/YsJIPJ5DnBj6tmV0fDievZOMi.",
+    "img": "/img/otros/user.png"
   }
 ]

@@ -1316,5 +1316,11 @@ th, td {
         margin-top: 5px;
 
     }
-
+    
+    .users-form__field i{
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        visibility: hidden;
+    }
 }

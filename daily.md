@@ -142,7 +142,11 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Problemas: No tuve mayores inconvenientes.
 - ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de la pagina que se podrian mejorar.
 
+<<<<<<< HEAD
 ## Domingo 10 de Julio
+=======
+## Jueves 07 de Julio
+>>>>>>> 5c76b7e9b24ef405f5d4786aefa812da788b65aa
 ### Orlando Ayala
 - ¿Qué hice?: Implementé iconos y CSS en las validaciones para que se hiciera más amigable con el usuario
 - Problemas: Problema con la contraseña al momento de hacer login
@@ -162,6 +166,13 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 
 ## Martes 12 de Julio
 ### Juan Mateu
-- ¿Qué hice?: Nos reunimos para dividir 
+- ¿Qué hice?: Nos reunimos para dividir asuntos pendientes y resolver dudas del menu de usuario
 - Problemas: sin problemas
-- ¿Qué voy a hacer?: avanzar con validaciones para estos formularios
+- ¿Qué voy a hacer?: testear distintas funcionalidades del menu de usuario
+
+## Martes 12 de Julio
+### Orlando Ayala, Bruno Secchiari, Juan Mateu
+- ¿Qué hice?: Se completó el menu para actualizar contraseña
+- Problemas: errores con validaciones 
+- ¿Qué voy a hacer?: Estilizar y terminar demás funcionalidades extra no inmediatas del sprint actual
+

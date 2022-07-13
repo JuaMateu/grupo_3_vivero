@@ -158,9 +158,6 @@ const controller = {
         
         return res.render('../views/users/menu/usersMenu.ejs', { user: req.session.userLogged});
     },
-    passwordUpdate: (req,res) =>  {
-        
-    },
     
     contactform: (req,res) => {
         // READ
@@ -211,7 +208,6 @@ const controller = {
         users[userIndex].firstName = req.body.firstName,
         users[userIndex].lastName = req.body.lastName,
         users[userIndex].birth = req.body.birth 
-        
 
         req.session.userLogged = users[userIndex]
         // sobreescribimos el JSON
@@ -230,8 +226,37 @@ const controller = {
         
         return res.render('../views/users/menu/usersMenuPassword.ejs',{ user: req.session.userLogged});
     },
+
     passwordUpdate: (req,res) =>  {
-        
+        var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        let userIndex = users.findIndex(user => user.id == req.session.userLogged.id);
+        const resultValidation = validationResult(req);
+
+        let passwordControlPoint = bcryptjs.compareSync(req.body.actualPass, users[userIndex].password);
+        if (!passwordControlPoint){
+        console.log(passwordControlPoint);
+            return res.render('users/menu/usersMenuPassword.ejs', {
+                errors: {
+                    actualPass: {
+                        msg: 'La contraseña es incorrecta'
+                    }
+                },
+                user: users[userIndex]
+            });
+        } else if(resultValidation.errors.length > 0){
+            return res.render('../views/users/menu/usersMenuPassword.ejs',{
+                errors: resultValidation.mapped(),
+                user: users[userIndex]
+            });
+        } else {
+            users[userIndex].password = bcryptjs.hashSync(req.body.newPassCheck,10);
+            // sobreescribimos el JSON
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2), 'utf-8');
+            
+            // redirigimos
+            res.redirect("/users/menu/");
+        } 
+
     },
     
     avatarForm: (req,res) => {
