@@ -7,6 +7,9 @@ const cookies = require('cookie-parser');
 
 const port = 3000
 
+// .ENV
+require('dotenv').config();
+
 // Routers
 const mainRoutes = require('./routes/mainRoutes');
 const usersRoutes = require('./routes/usersRoutes');
