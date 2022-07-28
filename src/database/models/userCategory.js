@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
     UserCategory.associate = models => {
 
         UserCategory.hasMeny(models.User, {
-            as: 'users', //no se si ponerlo en plural o no
+            as: 'user', //no se si ponerlo en plural o no
             foreignKey: 'user_category_id'
         })
     }

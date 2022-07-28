@@ -55,7 +55,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = models => {
 
         User.hasMeny(models.Address, {
-            as: 'addresses', //revisar singular o plural
+            as: 'address', //revisar singular o plural
             foreignKey: 'address_id'
         })
     }
