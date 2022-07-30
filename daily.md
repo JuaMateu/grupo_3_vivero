@@ -175,3 +175,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Se completó el menu para actualizar contraseña
 - Problemas: errores con validaciones 
 - ¿Qué voy a hacer?: Estilizar y terminar demás funcionalidades extra no inmediatas del sprint actual
+
+## Sábado 30 de Julio
+### Orlando Ayala
+- ¿Qué hice?: Añadir los modelos de "Products","OrderToProduct", "Discount" y "Category"
+- Problemas: Ninguno
+- ¿Qué voy a hacer?: Agendar una reunión en el equipo para continuar con las siguientes actividades
