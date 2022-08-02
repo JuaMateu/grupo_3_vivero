@@ -134,5 +134,13 @@
     "email": "apou@yo.com",
     "password": "$2a$10$tvKBQgzGedppAelF2gFA6ef8Mx/YsJIPJ5DnBj6tmV0fDievZOMi.",
     "img": "/img/otros/user.png"
+  },
+  {
+    "id": 15,
+    "firstName": "Pepito",
+    "lastName": "Menganito",
+    "email": "pepito15@gmail.com",
+    "password": "$2a$10$XzjZiHPc2o4aM4iD75Qzj.Jkf/uDmkklZIQPUqAlcKahm5EowXqXi",
+    "img": "/img/otros/user.png"
   }
 ]

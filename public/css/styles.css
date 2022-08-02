@@ -905,9 +905,11 @@ th, td {
     border: 0px;
 }
 
+/*
 .btn:hover {
     font-weight: bold;
 }
+*/
 
 .btn--comprar {
     margin-left: auto;
@@ -984,13 +986,13 @@ th, td {
     position: relative;
     margin: 0 0.1rem;
     padding: 0.5rem;
-    transition: all 2s;
+    transition: all .5s;
 }
 
 .plant-Card:hover {
-    border: 1px solid rgba(0, 74, 53, 0.473);
-    border-radius: 7px;
-    box-shadow: 7px 7px 9px 1px #014934;
+    border-radius: .3rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .2);
+    transform: translateY(-.5rem);
 }
 
 .plant-card__img {
