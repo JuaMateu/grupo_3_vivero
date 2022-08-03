@@ -1,3 +1,4 @@
+require('dotenv').config(); //Es necesaria esta linea ???
 module.exports = {
   "development": {
     "username": process.env.USER,

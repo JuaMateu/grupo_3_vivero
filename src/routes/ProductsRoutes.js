@@ -2,14 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 const productsController = require('../controllers/productController');
+const productsControllerV2 = require('../controllers/productControllerV2');
 
-const uploadProduct = require('../middlewares/MulterProducts');
+const uploadProduct = require('../middlewares/multerProducts');
 
 // renderiza vista de productos para clientes
 router.get('/shop',productsController.shop);
 
 //* CRUD de productos *//
 // listar productos
+router.get('/prueba',productsControllerV2.list);
 router.get('/',productsController.list);
 // mostrar detalle de producto
 router.get('/detail/:id', productsController.detail);
