@@ -92,6 +92,9 @@ const controller = {
             .then(() => {
                 res.redirect("/products");
             })
+            .catch(error => {
+                res.send(error);
+            });
     },
     
     editForm:(req,res)=> {
@@ -129,14 +132,22 @@ const controller = {
     delete:(req,res)=> {
         // DELETE
         // solcitamos el id y con filter, pedimos devolver todos los elementos cuyo id sea distinto al entrante
-        products = products.filter(product => {
+        /* products = products.filter(product => {
             return product.id != req.params.id
         });
         // sobreescribimos el JSON
         let productsExport = JSON.stringify(products, null, 2);
         fs.writeFileSync(productsFilePath, productsExport,'utf-8');
         // redirigimos a la lista de productos
-        res.redirect("/products/");
+        res.redirect("/products/"); */
+
+        db.Product.destroy({
+            where: {id: req.params.id}
+        }).then(() => {
+            res.redirect("/products");
+        }).catch(error => {
+            res.send(error);
+        });
     }
     
 }
