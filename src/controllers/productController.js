@@ -1,24 +1,36 @@
 const fs = require('fs');
+const { resolve } = require('path');
 const path = require('path');
+const db = require("../database/models");
 
 const productsFilePath = path.join(__dirname, '../data/productsDB.json');
 var products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     shop: (req, res) => {
-        // READ
-        res.render("products/shop", { products })
+         // READ
+         db.Product.findAll()
+         .then((products) => {
+             res.render("products/shop", { products })
+         });
     },
     list: (req, res) => {
         // READ
-        res.render("products/listProducts", { products });
+        db.Product.findAll()
+         .then((products) => {
+             res.render("products/listProducts", { products })
+         });
     },
 
     detail: (req, res) => {
-        // READ
-        let  [ selectedProduct ]  = products.filter(prod => {return prod.id == req.params.id});
-        res.render("products/productDetail", { product : selectedProduct, products });
-    },
+        let productPromise = db.Product.findByPk(req.params.id)
+        let productsPromise = db.Product.findAll()
+        Promise.all([productPromise, productsPromise ])
+           .then(([product, products]) => {
+           return res.render('products/productDetail', { product, products})
+            })
+            .catch((error) => res.send(error));
+},
 
     addForm:(req,res)=> {
         // READ
@@ -30,7 +42,7 @@ const controller = {
         // CREATE
         // recibir formulario crear producto
         // buscamos el maximo id en la base de datos
-        let newId = 1
+        /* let newId = 1
         if (products.length != 0) {
            
             const ids = products.map(prod => {
@@ -61,7 +73,32 @@ const controller = {
 
         fs.writeFileSync(productsFilePath, productsExport, 'utf-8');
 
-        res.redirect("/products/");
+        res.redirect("/products/"); */
+        console.log(req.body.type);
+        let flowerType = 0;
+        if (req.body.type == "Planta Floral"){
+            flowerType = 1
+        } else  if (req.body.type == "Aromatica") {
+            flowerType = 2
+        } else if (req.body.type == "Arbusto") {
+            flowerType = 3
+        } else  if (req.body.type == "Suculenta") {
+            flowerType = 4
+        } else  if (req.body.type == "Frutal") {
+            flowerType = 5
+        }
+        console.log("aqui vamos");
+        console.log(flowerType);
+        db.Product.create({
+            name: req.body.name,
+            category_id: flowerType,
+            care_level: req.body.careLevel,
+            description: req.body.description,
+            stock: req.body.stock,
+            price: req.body.price,
+            label: req.body.label,
+            img: "/img/plantas/" + req.file.filename,
+        });
     },
     
     editForm:(req,res)=> {
