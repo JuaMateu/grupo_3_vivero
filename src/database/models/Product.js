@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
   const Product = sequelize.define(alias, columns, configurations);
 
   Product.associate = (models) => {
-    Product.belongsTo(models.OrderToProduct, {
+    Product.hasMany(models.OrderToProduct, {
       as: "orderToProduct", //revisar singular o plural
       foreignKey: "product_id",
     });

@@ -1,13 +1,24 @@
-const fs = require('fs');
-const path = require('path');
+const db = require ('../database/models')
+const sequelize = db.sequelize;
 
-const productsFilePath = path.join(__dirname, '../data/productsDB.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let Products = db.Product
+console.log(Products)
 
 const controller = {
     home: (req, res) => {
-        let topSellers = products.filter(prod => {return prod.label === "Mas Vendida"})
-        return res.render("home" , { products : topSellers});
+        Products.findAll({
+            where: {
+                label: "Mas Vendida"
+            }
+        })
+            .then(Product =>{
+                return res.render("home" , { products : Product});
+            })
+            .catch(err=>{
+                console.log("hubo un error")
+            })
+
+
     },
     cart: (req,res) => {
         return res.render('shopCart');
