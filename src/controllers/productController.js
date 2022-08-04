@@ -1,3 +1,4 @@
+const { response } = require('express');
 const fs = require('fs');
 const { resolve } = require('path');
 const path = require('path');
@@ -74,31 +75,23 @@ const controller = {
         fs.writeFileSync(productsFilePath, productsExport, 'utf-8');
 
         res.redirect("/products/"); */
-        console.log(req.body.type);
-        let flowerType = 0;
-        if (req.body.type == "Planta Floral"){
-            flowerType = 1
-        } else  if (req.body.type == "Aromatica") {
-            flowerType = 2
-        } else if (req.body.type == "Arbusto") {
-            flowerType = 3
-        } else  if (req.body.type == "Suculenta") {
-            flowerType = 4
-        } else  if (req.body.type == "Frutal") {
-            flowerType = 5
-        }
-        console.log("aqui vamos");
-        console.log(flowerType);
-        db.Product.create({
+        
+        let data = {
             name: req.body.name,
-            category_id: flowerType,
+            category_id: req.body.type,
             care_level: req.body.careLevel,
             description: req.body.description,
             stock: req.body.stock,
             price: req.body.price,
+            dicount_id: null,
             label: req.body.label,
             img: "/img/plantas/" + req.file.filename,
-        });
+            discount_id : null
+        }
+        db.Product.create(data)
+            .then(() => {
+                res.redirect("/products");
+            })
     },
     
     editForm:(req,res)=> {
