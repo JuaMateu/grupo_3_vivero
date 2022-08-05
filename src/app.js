@@ -49,6 +49,7 @@ app.listen(port, () => {
 
 // Rutas
 app.use("/", mainRoutes);
+
 app.use('/users/', usersRoutes);
 app.use('/products/', productsRoutes);
 

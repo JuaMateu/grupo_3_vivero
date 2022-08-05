@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 
 const validations = [
-    body('address')
+    body('street')
         .trim()
         .notEmpty().withMessage("Debes agregar tu direccion valida").bail()
         .isLength({min:3, max:30}).withMessage("Debes ingresar entre 3 y 30 caracteres"),

@@ -11,23 +11,23 @@
         <div class="user-menu-header">
             <img src="<%- user.img %> " alt="imagen de usuario" class="user-menu__img">
             <!-- Aqui va el texto principal de la pagina -->
-            <h1 class="user-menu__title">Bienvenido <%- user.firstName + " " + user.lastName %> </h1>
+            <h1 class="user-menu__title">Bienvenido <%- user.first_name + " " + user.last_name %> </h1>
         </div>
         <div class='flex-column-to-RowDekstop'>
 
             <%- include('../../partials/userMenuNav.ejs') %>
 
                 <div class="user-menu__info">
-                    <p><span class="bold">Nombre Completo:</span>  <%- user.firstName + " " + user.lastName %></p>
+                    <p><span class="bold">Nombre Completo:</span>  <%- user.first_name + " " + user.last_name %></p>
                     <p><span class="bold">Email:</span> <%- user.email %></p>
                     <% if (user.mobile) { %> 
                     <p><span class="bold">Telefono:</span> <%- user.mobile %></p>
                     <% } %> 
                     <% if (user.address) { %> 
-                        <p><span class="bold">Dirección:</span> <%- user.address %></p>
+                        <p><span class="bold">Dirección:</span> <%- address %></p>
                     <% } %> 
-                    <% if (user.birth) { %> 
-                        <p><span class="bold">Fecha de Nacimiento:</span> <%- user.birth %></p>
+                    <% if (user.date_of_birth) { %> 
+                        <p><span class="bold">Fecha de Nacimiento:</span> <%- user.date_of_birth %></p>
                     <% } %> 
                 </div>
 

@@ -32,6 +32,8 @@
                     <th>Apellido</th>
                     <th>Email</th>
                     <th>Teléfono</th>
+                    <th>Nacimiento</th>
+                    <th>Premisos</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -40,11 +42,13 @@
                     <%  users.forEach( user => { %>
                     <tr>
                         <td><%= user.id %></td>
-                        <td><div class="list-table__img-conteiner"><img src= <%= user.img %> alt="user"></div></td>
-                        <td><%= user.firstName %></td>
-                        <td><%= user.lastName %></td>
+                        <td><div class="list-table__img-conteiner"><img src= <%= user.img %> alt="userAvatar"></div></td>
+                        <td><%= user.first_name %></td>
+                        <td><%= user.last_name %></td>
                         <td><%= user.email %></td>
                         <td><%= user.mobile %></td>
+                        <td><%= user.date_of_birth %></td>
+                        <td><%= user.user_category_id %></td>
                         <td>
                             <a href="/users/edit/<%= user.id %>" class="table-btn" >
                                 <span>Editar<i class="fa-solid fa-pencil-alt"></i></span>

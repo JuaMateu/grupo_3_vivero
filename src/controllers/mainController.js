@@ -2,7 +2,6 @@ const db = require ('../database/models')
 const sequelize = db.sequelize;
 
 let Products = db.Product
-console.log(Products)
 
 const controller = {
     home: (req, res) => {
@@ -15,10 +14,8 @@ const controller = {
                 return res.render("home" , { products : Product});
             })
             .catch(err=>{
-                console.log("hubo un error")
+                res.send('No se pudo cargar la pagina principal, chequear conexion con base de datos')
             })
-
-
     },
     cart: (req,res) => {
         return res.render('shopCart');
