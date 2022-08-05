@@ -15,8 +15,8 @@
         
         <h1>Administrar Productos</h1>
         <h3>Agregá los articulos a la base de datos</h3>
-        <div class="img-conteiner flex-column">
-            <img src="<%= editProduct.img %>" alt="<%= editProduct.name %>">
+        <div class="img-conteiner-edit flex-column">
+            <img class="img-edit" src="<%= editProduct.img %>" alt="<%= editProduct.name %>">
         </div>
         <form action="/products/edit/<%= editProduct.id %>?_method=PUT" method="post" class="admin__form" enctype="multipart/form-data">
             <div class="admin__form--item">
