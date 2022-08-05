@@ -13,7 +13,7 @@
             <div class="user-menu-header">
                 <img src="<%- user.img %> " alt="imagen de usuario" class="user-menu__img">
                 <!-- Aqui va el texto principal de la pagina -->
-                <h1 class="user-menu__title">Bienvenido <%- user.firstName + " " + user.lastName %>
+                <h1 class="user-menu__title">Bienvenido <%- user.first_name + " " + user.last_name %>
                 </h1>
             </div>
             <div class='flex-column-to-RowDekstop'>
@@ -25,64 +25,66 @@
                         <form action="/users/menu/name?_method=PUT " method="POST" class="users-form">
                             <h3>Completá tus datos personales</h3>
                             <!-- Ingresar el nombre -->
-                            <div class="users-form__field <%= locals.errors && errors.firstName ? "inputFailure" : "inputSuccess" %>">
+                            <div class="users-form__field <%= locals.errors && errors.first_name ? "inputFailure" : "inputSuccess" %>">
                                 <label class="users-form__label" for="firstName">Nombre</label>
                                 <input 
                                     class="users-form__input " 
-                                    name="firstName" 
+                                    name="first_name" 
+                                    id="first_name"
                                     type="text"
                                     placeholder="Ingresá tu nombre" 
-                                    value="<%- user.firstName %> " 
+                                    value="<%- user.first_name %> " 
                                     minlength="3" 
                                     maxlength="20" 
                                     required
                                 >
                                 <i class="fa-solid fa-circle-check"></i>
                                 <i class="fa-solid fa-circle-exclamation"></i>
-                                <% if (locals.errors && errors.firstName) { %>
+                                <% if (locals.errors && errors.first_name) { %>
                                     <div class="text-danger">
-                                        <%= errors.firstName.msg %> 
+                                        <%= errors.first_name.msg %> 
                                     </div>
                                 <% } %>
                                 </div>
                             
                             <!-- Ingresar el apellido -->
-                            <div class="users-form__field <%= locals.errors && errors.lastName ? "inputFailure" : "inputSuccess" %>">
-                                <label class="users-form__label" for="lastName">Apellido</label>
+                            <div class="users-form__field <%= locals.errors && errors.last_name ? "inputFailure" : "inputSuccess" %>">
+                                <label class="users-form__label" for="last_name">Apellido</label>
                                 <input 
                                     class="users-form__input" 
-                                    name="lastName" 
+                                    name="last_name" 
+                                    id="last_name" 
                                     type="text"
                                     placeholder="Ingresá tu apellido" 
-                                    value="<%- user.lastName %>" 
+                                    value="<%- user.last_name %>" 
                                     minlength="3" 
                                     maxlength="20" 
                                     required
                                 >
                                 <i class="fa-solid fa-circle-check"></i>
                                 <i class="fa-solid fa-circle-exclamation"></i>
-                                <% if (locals.errors && errors.lastName) { %>
+                                <% if (locals.errors && errors.last_name) { %>
                                     <div class="text-danger">
-                                        <%= errors.lastName.msg %> 
+                                        <%= errors.last_name.msg %> 
                                     </div>
                                 <% } %>
                             </div>
-                            <div class="users-form__field <%= locals.errors && errors.birth ? "inputFailure" : "inputSuccess" %>">
-                                <label class="users-form__label" for="birth">fecha de nacimiento</label>
+                            <div class="users-form__field <%= locals.errors && errors.date_of_birth ? "inputFailure" : "inputSuccess" %>">
+                                <label class="users-form__label" for="date_of_birth">fecha de nacimiento</label>
                                 <input 
                                     class="users-form__input" 
-                                    name="birth" 
+                                    name="date_of_birth" 
+                                    id="date_of_birth"
                                     type="date"
                                     placeholder="Ingresá tu fecha de nacimiento"  
                                     min="1900-01-01"
-                                    max="<%= date %>"
-                                    value="<%= user.birth ? user.birth : "" %>"
-                        
+                                    max="2020-01-01"
+                                    value="<%= user.date_of_birth ? user.date_of_birth : "" %>"
                                     required
                                 >
-                                <% if (locals.errors && errors.birth) { %>
+                                <% if (locals.errors && errors.date_of_birth) { %>
                                     <div class="text-danger">
-                                        <%= errors.birth.msg %> 
+                                        <%= errors.date_of_birth.msg %> 
                                     </div>
                                 <% } %>
                             </div>

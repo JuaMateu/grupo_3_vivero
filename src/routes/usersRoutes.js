@@ -5,6 +5,8 @@ const uploadUser = require('../middlewares/MulterUsers')
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const usersController = require('../controllers/usersController');
+
+
 const userValidations = require("../middlewares/Validations/userValidationsRegister");
 const basicDataUserValidator = require("../middlewares/Validations/basicDataUserValidator");
 const usersMenuPasswordValidator = require("../middlewares/Validations/usersMenuPassValidator");
@@ -29,10 +31,10 @@ router.get('/', usersController.list);
 // formulario de agregar usuario
 router.get('/create', usersController.addForm);
 // accion de agregar al usuario
-router.post('/create', usersController.create);
+router.post('/create', uploadUser.single('img'), usersController.create);
 
-// Menu de usuario
-router.get('/menu', userNotLoggedMiddleware, usersController.menu);
+// Menu de usuario //
+router.get('/menu/', userNotLoggedMiddleware, usersController.menu);
 //datos de contacto
 router.get('/menu/contact', userNotLoggedMiddleware, usersController.contactform);
 router.put('/menu/contact', userNotLoggedMiddleware, usersMenuusersContactValidator, usersController.contactAction);
@@ -53,7 +55,7 @@ router.put('/menu/avatar', userNotLoggedMiddleware, uploadUser.single('img'), us
 
 // formulario de edicion de usuario
 router.get('/edit/:id',usersController.editForm);
-router.put('/edit/:id',usersController.edit);
+router.put('/edit/:id', uploadUser.single('img'), usersController.edit);
 
 //accion de borrar usuario
 router.delete('/delete/:id',usersController.delete);

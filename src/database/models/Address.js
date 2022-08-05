@@ -34,14 +34,16 @@ module.exports = (sequelize, dataTypes) => {
     };
     let configurations = {
         timestamps: false,
-        deletedAt: false
+        deletedAt: false,
+        freezeTableName: true,
+        tableName: 'address'
     };
 
     const Address = sequelize.define(alias, columns, configurations);
 
     Address.associate = models => {
 
-        Address.belongsTo(models.User, {
+        Address.hasMany(models.User, {
             as: 'user', //revisar singular o plural
             foreignKey: 'address_id'
         })
