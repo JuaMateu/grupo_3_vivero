@@ -20,6 +20,9 @@ const controller = {
     cart: (req,res) => {
         return res.render('shopCart');
     },
+    aboutUs: (req,res) => {
+        return res.render("aboutUs");
+    }
 }
 
 module.exports = controller

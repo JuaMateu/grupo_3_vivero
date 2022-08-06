@@ -181,3 +181,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Añadir los modelos de "Products","OrderToProduct", "Discount" y "Category"
 - Problemas: Ninguno
 - ¿Qué voy a hacer?: Agendar una reunión en el equipo para continuar con las siguientes actividades
+
+## Sábado 06 de Agosto
+### Orlando Ayala
+- ¿Qué hice?: Creación de pagina sobre nosotros
+- Problemas: Ninguno
+- ¿Qué voy a hacer?: Estilar la página 
