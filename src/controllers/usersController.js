@@ -178,16 +178,18 @@ const controller = {
   },
   menu: async (req, res) => {
     let userDb = await Users.findByPk(req.session.userLogged.id, {include:['address']})
-    let address = `${userDb.address.street} ${userDb.address.number}, ${userDb.address.city}`
-
+    let address = ""
+    if (userDb.address_id){
+      address = `${userDb.address.street} ${userDb.address.number}, ${userDb.address.city}`
+    }
     return res.render("users/menu/usersMenu.ejs", {
       user: userDb, address
     });
   },
   contactform: async(req, res) => {
     let userDb = await Users.findByPk(req.session.userLogged.id, {include:['address']})
-
-
+    console.log(userDb)
+    
     return res.render("users/menu/usersMenuContact.ejs", {
       user: userDb
     });

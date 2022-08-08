@@ -26,7 +26,7 @@
                         <div class="users-form__field <%= locals.errors && errors.street ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="street">Calle</label>
                             <input class="users-form__input" name="street" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address.street %>" minlength="3" maxlength="100" required>
+                                placeholder="Ingresá tu Dirección" value="<%= user.address_id ? user.address.street : "" %>" minlength="3" maxlength="100" required>
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.street) { %>
@@ -39,7 +39,7 @@
                         <div class="users-form__field <%= locals.errors && errors.number ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="number">Número</label>
                             <input class="users-form__input" name="number" type="number"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address.number %>" min="0" max="9999999999" required>
+                                placeholder="Ingresá tu Dirección" value="<%= user.address_id ? user.address.number : "" %>" min="0" max="9999999999" required>
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.number) { %>
@@ -52,7 +52,7 @@
                         <div class="users-form__field <%= locals.errors && errors.state ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="state">Provincia</label>
                             <input class="users-form__input" name="state" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address.state %>" minlength="3" maxlength="40" required>
+                                placeholder="Ingresá tu Dirección" value="<%= user.address_id  ? user.address.state : ""  %>" minlength="3" maxlength="40" required>
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.state) { %>
@@ -65,7 +65,7 @@
                         <div class="users-form__field <%= locals.errors && errors.city ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="city">Ciudad</label>
                             <input class="users-form__input" name="city" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address.city %>" minlength="3" maxlength="40" required>
+                                placeholder="Ingresá tu Dirección" value="<%= user.address_id  ? user.address.city : "" %>" minlength="3" maxlength="40" required>
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.city) { %>
@@ -78,7 +78,7 @@
                         <div class="users-form__field <%= locals.errors && errors.postal_code ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="postal_code">Codigo Postal</label>
                             <input class="users-form__input" name="postal_code" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address.postal_code %>" minlength="3" maxlength="10" required>
+                                placeholder="Ingresá tu Dirección" value="<%= user.address_id  ? user.address.postal_code : "" %>" minlength="3" maxlength="10" required>
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.postal_code) { %>
