@@ -7,11 +7,10 @@ const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware'
 const usersController = require('../controllers/usersController');
 const userIsAdmin = require('../middlewares/userAdminMiddleware');
 
+const usersMenuRoutes = require('./usersMenuRoutes')
 
 const userValidations = require("../middlewares/Validations/userValidationsRegister");
-const basicDataUserValidator = require("../middlewares/Validations/basicDataUserValidator");
-const usersMenuPasswordValidator = require("../middlewares/Validations/usersMenuPassValidator");
-const usersMenuusersContactValidator = require("../middlewares/Validations/usersContactValidator");
+
 
 //Formulario de Login
 router.get('/login', userLoggedMiddleware, usersController.login);
@@ -35,23 +34,7 @@ router.get('/create', userNotLoggedMiddleware, userIsAdmin, usersController.addF
 router.post('/create', userNotLoggedMiddleware, userIsAdmin, uploadUser.single('img'), usersController.create);
 
 // Menu de usuario //
-router.get('/menu/', userNotLoggedMiddleware, usersController.menu);
-//datos de contacto
-router.get('/menu/contact', userNotLoggedMiddleware, usersController.contactform);
-router.put('/menu/contact', userNotLoggedMiddleware, usersMenuusersContactValidator, usersController.contactAction);
-//datos basicos
-router.get('/menu/name', userNotLoggedMiddleware, usersController.nameForm);
-router.put('/menu/name', userNotLoggedMiddleware, basicDataUserValidator, usersController.nameAction);
-//actualizar password
-router.get('/menu/password', userNotLoggedMiddleware, usersController.passForm);
-router.put('/menu/password', userNotLoggedMiddleware, usersMenuPasswordValidator, usersController.passwordUpdate);
-//Subir foto
-router.get('/menu/avatar', userNotLoggedMiddleware, usersController.avatarForm);
-router.put('/menu/avatar', userNotLoggedMiddleware, uploadUser.single('img'), usersController.avatarAction);
-//actualizar mail
-// router.get('/menu/mail', userNotLoggedMiddleware, usersController.avatarForm);
-// router.put('/menu/mail', userNotLoggedMiddleware, uploadUser.single('img'), usersController.avatarAction);
-//actualizar mail
+router.use('/menu/', usersMenuRoutes)
 
 
 // formulario de edicion de usuario
