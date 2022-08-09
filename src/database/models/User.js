@@ -39,11 +39,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: 3,
-    },
-    address_id: {
-      type: dataTypes.INTEGER(11),
-      allowNull: true,
-    },
+    }
   };
   let configurations = {
     timestamps: false,
@@ -53,9 +49,9 @@ module.exports = (sequelize, dataTypes) => {
   const User = sequelize.define(alias, columns, configurations);
 
   User.associate = (models) => {
-    User.belongsTo(models.Address, {
+    User.hasMany(models.Address, {
       as: "address", //revisar singular o plural
-      foreignKey: "address_id",
+      foreignKey: "user_id_address",
     });
 
     User.belongsTo(models.userCategory, {

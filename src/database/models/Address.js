@@ -30,6 +30,10 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(50),
             allowNull: false
+        },
+        user_id_address: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
         }
     };
     let configurations = {
@@ -43,9 +47,9 @@ module.exports = (sequelize, dataTypes) => {
 
     Address.associate = models => {
 
-        Address.hasMany(models.User, {
+        Address.belongsTo(models.User, {
             as: 'user', //revisar singular o plural
-            foreignKey: 'address_id'
+            foreignKey: 'user_id_address'
         })
     }
 
