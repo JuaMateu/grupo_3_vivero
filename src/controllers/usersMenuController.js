@@ -9,29 +9,27 @@ const Users = db.User;
 const Address = db.Address;
 
 const controller = {
+  // === Menu de usuario ===//
+  // muestra informacion del usuario y permite modificar sus datos a través de distintos formularios
   menu: async (req, res) => {
-    let userDb = await Users.findByPk(req.session.userLogged.id, {
-      include: ["address"],
-    });
+    // busca al usuario de la base de datos a partir del session id
+    let userDb = await Users.findByPk(req.session.userLogged.id, {include: ["address"]});
+    // se crea direccion vacía para enviar al menú
     let address = "";
-    if (userDb.address[0]) {
+    // En caso de que el usuario tenga direccion relacionada se la envía a la vista con formato legible
+    if (userDb.address[0]) { //por el momento solo se puede cargar una direccion por usuario
       address = `${userDb.address[0].street} ${userDb.address[0].number}, ${userDb.address[0].city}`;
     }
-    return res.render("users/menu/usersMenu.ejs", {
-      user: userDb,
-      address,
-    });
+    return res.render("users/menu/usersMenu.ejs", { user: userDb, address });
   },
+
+  // === Formulario de contacto (muestra y/o actualiza direcciones) === //
   contactform: async (req, res) => {
-    let userDb = await Users.findByPk(req.session.userLogged.id, {
-      include: ["address"],
-    });
+    let userDb = await Users.findByPk(req.session.userLogged.id, {include: ["address"]});
 
-    return res.render("users/menu/usersMenuContact.ejs", {
-      user: userDb,
-    });
+    return res.render("users/menu/usersMenuContact.ejs", { user: userDb });
   },
-
+  
   contactAction: async (req, res) => {
     //validamos los datos recibidos
     const resultValidation = validationResult(req);
@@ -44,51 +42,42 @@ const controller = {
       });
     }
 
-    // guardamos la nueva data del usaurio
+    // si no hay errores armamos el objeto de address
     let data = {
       ...req.body,
-      name: "unica",
-      user_id: req.session.userLogged.id,
+      name: "unica", //por ahora la direccion es unica, el campo name no se usa
+      user_id: req.session.userLogged.id, // el user_id es foreign key del usuario logeado
     };
+    // busca si hay un address correspondiente al usuario logueado (si no hay devuelve)
+    let hasAddress = await Address.findOne({ where: { user_id: req.session.userLogged.id } });
 
-    let hasAddress = await Address.findOne({
-      where: { user_id: req.session.userLogged.id },
-    });
-
-    //si es la primera address guardada se crea una entrada si no se actualiza
+    // si el usuario tiene dirección guardada se actualiza, si no se crea
     if (hasAddress) {
       Address.update(data, { where: { user_id: req.session.userLogged.id } });
     } else {
       Address.create(data);
     }
+    //esta parte actualiza el telefono si fue cargado
     if (req.body.mobile) {
-      Users.update(
-        { mobile: req.body.mobile },
-        { where: { id: req.session.userLogged.id } }
-      );
+      Users.update( { mobile: req.body.mobile }, { where: { id: req.session.userLogged.id }} );
     }
-
-    // redirigimos
+    // redirigimos al menú
     res.redirect("/users/menu/");
   },
 
+  // === Formulario de nombre (muestra y/o actualiza el nombre del usuario) === //
   nameForm: async (req, res) => {
     // READ
-    let editUser = await Users.findOne({
-      where: { id: req.session.userLogged.id },
-    });
-    // renderizamos la vista con el elemento correpondiente
+    let editUser = await Users.findOne({ where: { id: req.session.userLogged.id } });
+    // guardamos la fecha actual, se envía para limitar en el front la fecha de nacimiento
     let actualDate = moment().format("YYYY-MM-DD");
 
-    return res.render("users/menu/usersMenuBasicData.ejs", {
-      user: editUser,
-      date: actualDate,
-    });
+    return res.render("users/menu/usersMenuBasicData.ejs", { user: editUser, date: actualDate });
   },
+
   nameAction: async (req, res) => {
-    let editUser = await Users.findOne({
-      where: { id: req.session.userLogged.id },
-    });
+    let editUser = await Users.findOne({ where: { id: req.session.userLogged.id }});
+    //validaciones del body
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render("users/menu/usersMenuBasicData.ejs", {
@@ -97,34 +86,26 @@ const controller = {
         user: editUser,
       });
     }
-    let newData = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      date_of_birth: req.body.date_of_birth,
-    };
 
-    await Users.update(newData, { where: { id: req.session.userLogged.id } });
+    await Users.update( {...req.body}, { where: { id: req.session.userLogged.id } });
 
     // redirigimos
     res.redirect("/users/menu/");
   },
+
+  // === Actualizar password === //
   passForm: (req, res) => {
-    return res.render("users/menu/usersMenuPassword.ejs", {
-      user: req.session.userLogged,
-    });
+    return res.render("users/menu/usersMenuPassword.ejs", { user: req.session.userLogged, });
   },
+  
   passwordUpdate: async (req, res) => {
-    let editUser = await Users.findOne({
-      where: { id: req.session.userLogged.id },
-    });
+    let editUser = await Users.findOne({ where: { id: req.session.userLogged.id } });
 
     const resultValidation = validationResult(req);
-
-    let passwordControlPoint = bcryptjs.compareSync(
-      req.body.actualPass,
-      editUser.password
-    );
-
+    
+    //controla password actual
+    let passwordControlPoint = bcryptjs.compareSync( req.body.actualPass, editUser.password );
+    // si la password no coincide devuelve error
     if (!passwordControlPoint) {
       return res.render("users/menu/usersMenuPassword.ejs", {
         errors: {
@@ -134,41 +115,37 @@ const controller = {
         },
         user: editUser,
       });
-    } else if (resultValidation.errors.length > 0) {
+      //si la password actual coincide continua con validaciones de password nuevas
+    } else if (resultValidation.errors.length > 0) { 
       return res.render("users/menu/usersMenuPassword.ejs", {
         errors: resultValidation.mapped(),
         user: editUser,
       });
-    } else {
+      // si no hay errores encripta password y la guarda en base de datos
+    } else { 
       let newPass = bcryptjs.hashSync(req.body.newPassCheck, 10);
-      // sobreescribimos el JSON
-      await Users.update(
-        { password: newPass },
-        { where: { id: req.session.userLogged.id } }
-      );
+      
+      await Users.update( { password: newPass }, { where: { id: req.session.userLogged.id } });
 
-      // redirigimos
+      // redirigimos al menu
       res.redirect("/users/menu/");
     }
   },
+
+  // === Actualizar Avatar === //
   avatarForm: (req, res) => {
-    return res.render("users/menu/usersMenuImage.ejs", {
-      user: req.session.userLogged,
-    });
+    return res.render("users/menu/usersMenuImage.ejs", { user: req.session.userLogged });
   },
   avatarAction: async (req, res) => {
-    // index a editar
 
-    // si hay archivo se actualiza la ruta en session y en base de datos
+    // si no se recibe una imagen se redirige al menú sin acciones
     if (!req.file) {
-      res.redirect("/users/menu/");
+      return res.redirect("/users/menu/");
     }
-    req.session.userLogged.img = "/img/users/avatar/" + req.file.filename;
-    await Users.update(
-      { img: req.session.userLogged.img },
-      { where: { id: req.session.userLogged.id } }
-    );
-    // sobreescribimos el JSON
+
+    let img = "/img/users/avatar/" + req.file.filename;
+    await Users.update( { img }, { where: { id: req.session.userLogged.id } });
+
     // redirigimos
     res.redirect("/users/menu/");
   },
