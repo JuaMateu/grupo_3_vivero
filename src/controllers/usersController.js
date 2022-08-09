@@ -179,16 +179,16 @@ const controller = {
   menu: async (req, res) => {
     let userDb = await Users.findByPk(req.session.userLogged.id, {include:['address']})
     let address = ""
-    if (userDb.address_id){
-      address = `${userDb.address.street} ${userDb.address.number}, ${userDb.address.city}`
+    if (userDb.address[0]){
+      address = `${userDb.address[0].street} ${userDb.address[0].number}, ${userDb.address[0].city}`
     }
     return res.render("users/menu/usersMenu.ejs", {
       user: userDb, address
     });
   },
   contactform: async(req, res) => {
+
     let userDb = await Users.findByPk(req.session.userLogged.id, {include:['address']})
-    console.log(userDb)
     
     return res.render("users/menu/usersMenuContact.ejs", {
       user: userDb
@@ -211,30 +211,22 @@ const controller = {
     let data = {
       ...req.body,
       name: "unica",
+      user_id: req.session.userLogged.id
     };
 
-    //guardamos datos del usuario para ver si tiene direccion guardada
-    let user = await Users.findOne({
-      where: { id: req.session.userLogged.id },
-    });
-    // si el usuario tiene direccion cargada se actualiza, si no se graba
-    if (user.address_id) {
-      //actualiza direccion del usuario
-      await Address.update(data, { where: { id: user.address_id } });
-      //si se cargó telefono se actualiza en usuario
-      if (req.body.mobile) {
-        await Users.update(
-          { mobile: req.body.mobile },
-          { where: { id: req.session.userLogged.id } }
-        );
-      }
-    } else { //si el usuario no tiene direccion se le asigna una nueva
-      let newAddress = await Address.create(data);
-      await Users.update(
-        { mobile: req.body.mobile, address_id: newAddress.id },
-        { where: { id: req.session.userLogged.id } }
-      );
+    let hasAddress = await Address.findOne({where: { user_id: req.session.userLogged.id }})
+    
+    //si es la primera address guardada se crea una entrada si no se actualiza
+    if(hasAddress){
+      Address.update(data, {where:{user_id : req.session.userLogged.id}})
+    } else {
+      Address.create(data)
     }
+    if(req.body.mobile){
+      Users.update({mobile:req.body.mobile}, {where:{id:req.session.userLogged.id }})
+    }
+
+  
 
     // redirigimos
     res.redirect("/users/menu/");

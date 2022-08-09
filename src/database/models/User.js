@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
   User.associate = (models) => {
     User.hasMany(models.Address, {
       as: "address", //revisar singular o plural
-      foreignKey: "user_id_address",
+      foreignKey: "user_id",
     });
 
     User.belongsTo(models.userCategory, {

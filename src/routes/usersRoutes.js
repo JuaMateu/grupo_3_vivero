@@ -5,6 +5,7 @@ const uploadUser = require('../middlewares/MulterUsers')
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const usersController = require('../controllers/usersController');
+const userIsAdmin = require('../middlewares/userAdminMiddleware');
 
 
 const userValidations = require("../middlewares/Validations/userValidationsRegister");
@@ -26,12 +27,12 @@ router.post('/register', userValidations, usersController.processRegister);
 
 //* CRUD de Users *//
 // listado de los usuarios
-router.get('/', usersController.list);
+router.get('/', userNotLoggedMiddleware, userIsAdmin, usersController.list);
 
 // formulario de agregar usuario
-router.get('/create', usersController.addForm);
+router.get('/create', userNotLoggedMiddleware, userIsAdmin, usersController.addForm);
 // accion de agregar al usuario
-router.post('/create', uploadUser.single('img'), usersController.create);
+router.post('/create', userNotLoggedMiddleware, userIsAdmin, uploadUser.single('img'), usersController.create);
 
 // Menu de usuario //
 router.get('/menu/', userNotLoggedMiddleware, usersController.menu);
@@ -54,10 +55,10 @@ router.put('/menu/avatar', userNotLoggedMiddleware, uploadUser.single('img'), us
 
 
 // formulario de edicion de usuario
-router.get('/edit/:id',usersController.editForm);
-router.put('/edit/:id', uploadUser.single('img'), usersController.edit);
+router.get('/edit/:id', userNotLoggedMiddleware, userIsAdmin, usersController.editForm);
+router.put('/edit/:id', userNotLoggedMiddleware, userIsAdmin,  uploadUser.single('img'), usersController.edit);
 
 //accion de borrar usuario
-router.delete('/delete/:id',usersController.delete);
+router.delete('/delete/:id', userNotLoggedMiddleware, userIsAdmin, usersController.delete);
 
 module.exports = router;

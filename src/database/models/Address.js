@@ -31,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        user_id_address: {
+        user_id: {
             type: dataTypes.INTEGER(11),
             allowNull: false
         }
@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
 
         Address.belongsTo(models.User, {
             as: 'user', //revisar singular o plural
-            foreignKey: 'user_id_address'
+            foreignKey: 'user_id'
         })
     }
 
