@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../partials/head') %>
-    </head>
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
 <body>
     <%- include('../partials/header') %>
-    <!-- Aca va el cuerpo la pagina -->
-    <main>
-        <div class="shop">
-            <section class="shop__header">
-                
-                <h1 class="shop__title">Nuestras Plantas</h1>
-                
-                <div class="flex-row space-around">
-                    <button class="shop__btn" for="filters">Filtrar</button>
-<!--                   
+        <!-- Aca va el cuerpo la pagina -->
+        <main>
+            <div class="shop">
+                <section class="shop__header">
+
+                    <h1 class="shop__title">Nuestras Plantas</h1>
+
+                    <!-- <div class="flex-row space-around">
+                        <form action="">
+                            <button class="shop__btn" for="filters">Filtrar</button>
+                        </form> -->
+                        <!--                   
                     <div class="menu-shadow">
                         <div class="shop__filter">
                             <ul>
@@ -28,8 +32,18 @@
                         </div>
                     </div>
                      -->
-                    <button class="shop__btn" for="sort">Ordenar</button>
-<!--                     
+                        <form action="/orderBy/" method="get">
+                            <label for="orderBy">Ordenar </label>
+                            <select name="orderBy" id="orderBy" onchange='this.form.submit();' >
+                                <option hidden selected>Selecciona una opción</option>
+                                <option value="nameAsc">Orden A -> Z</option>
+                                <option value="nameDesc">Orden Z -> A</option>
+                                <option value="priceAsc">Mayor Precio</option>
+                                <option value="PriceDesc">Menor Precio</option>
+                            </select>
+                        </form>
+
+                        <!--                     
                     <div class="shop__sort">
                         <ul>
                             <li class="no-list-style">Precio</li>
@@ -38,19 +52,20 @@
                         </ul>
                     </div>
                 </div> -->
-            </section>
-            <section class="shop-wrapper">
-                <% products.forEach(prod => { %>
-                    <%- include('../partials/PlantCard.ejs', { data : prod }) %>
-                    <% }); %> 
-            </section>
-        </div>
-        </div>
-    
-    </main>
+                </section>
+                <section class="shop-wrapper">
+                    <% products.forEach(prod=> { %>
+                        <%- include('../partials/PlantCard.ejs', { data : prod }) %>
+                            <% }); %>
+                </section>
+            </div>
+            </div>
+
+        </main>
 
 
-    <!-- footer -->
-    <%- include('../partials/footer') %>
+        <!-- footer -->
+        <%- include('../partials/footer') %>
 </body>
+
 </html>
