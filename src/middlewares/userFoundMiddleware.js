@@ -1,15 +1,16 @@
-const fs = require('fs');
-const path = require('path');
+const db = require("../database/models");
+const Users = db.User;
 
-const usersFilePath = path.join(__dirname, '../data/usersDB.json');
-let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-userFoundMiddleware = (req, res, next) => {
+userFoundMiddleware = async (req, res, next) => {
     res.locals.userFound = false;
+    res.locals.isAdmin = false
+    let userFromCookie
 
-    let emailFromCookie = req.cookies.userEmail;
-    let userFromCookie = users.find(user => user['email'] == emailFromCookie);
-
+    if (req.cookies.userId){
+    userFromCookie = await Users.findOne({where:{id: req.cookies.userId }});
+    
+    }
+    
     if (userFromCookie) {
         req.session.userLogged = userFromCookie;
     }
@@ -17,6 +18,9 @@ userFoundMiddleware = (req, res, next) => {
     if (req.session && req.session.userLogged) {
         res.locals.userFound = true;
         res.locals.userLogged = req.session.userLogged;
+        if(req.session.userLogged.user_category_id != 3) {
+            res.locals.isAdmin = true;
+        }
     }
     
     next();

@@ -80,7 +80,7 @@ const controller = {
 
           //si recordar usuario esta activado enviamos una cookie con el email
           if (req.body.recordarUsuario) {
-            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 5 });
+            res.cookie("userId", userToLogin.id, { maxAge: 1000 * 60 * 5 });
           }
           //redirigimos al menu de usuario
           return res.redirect("/users/menu/");
@@ -107,7 +107,7 @@ const controller = {
   },
   processLogout: (req, res) => {
     req.session.destroy();
-    res.clearCookie("userEmail");
+    res.clearCookie("userId");
     return res.redirect("/");
   },
   //TODO crear usuario desde el menu de admin. Hay que revisar y cambiar la vista

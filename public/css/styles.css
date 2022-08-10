@@ -188,6 +188,65 @@ header {
   text-decoration: none;
 }
 
+/* search bar */
+.search-bar {
+  --size: 30px;
+  border: 2px solid var(--primary-green);
+  display: flex;
+  border-radius: 500px;
+  height: var(--size);
+  width: var(--size);
+  padding: 3px;
+  position: relative;
+  transition: width 300ms ease-in-out;
+  overflow: hidden;
+}
+
+.search-bar:focus-within {
+  width: 200px;
+}
+
+.search-bar__input {
+  flex-grow: 1;
+  padding: 0 0.5rem;
+  border: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: calc(var(--size) - 3px);
+  opacity: 0;
+  background: transparent;
+  cursor: pointer;
+  
+}
+.search-bar__input:focus {
+  outline: 0;  
+}
+.search-bar:focus-within .search-bar__input {
+  opacity: 1;
+  cursor: initial;
+}
+.search-bar__submit {
+  cursor:pointer;
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+  width: calc(var(--size) - 10px);
+  height: calc(var(--size) - 10px);
+  margin-left: auto;
+  transition: background-color 150ms ease-in-out;
+}
+.search-bar:focus-within .search-bar__submit {
+  background-color: var(--secondary-light-green);
+}
+.search-bar:focus-within>.search-bar__submit:focus, 
+.search-bar:focus-within>.search-bar__submit:hover {
+  outline: 0;
+  box-shadow: 0 0 10px var(--secondary-light-green);
+}
+
+
 /* Burger Menu */
 
 .burger-menu {

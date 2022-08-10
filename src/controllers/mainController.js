@@ -1,3 +1,4 @@
+const { Sequelize } = require('../database/models');
 const db = require ('../database/models')
 const sequelize = db.sequelize;
 
@@ -22,6 +23,16 @@ const controller = {
     },
     aboutUs: (req,res) => {
         return res.render("aboutUs");
+    },
+    search: async (req,res) => {
+        let search = req.query.searched;
+        console.log(search)
+        let products = await Products.findAll({
+            where: {
+                name: {[db.Sequelize.Op.like] : `%${search}%`}
+        }})
+
+            return res.render('products/shop', {products})
     }
 }
 
