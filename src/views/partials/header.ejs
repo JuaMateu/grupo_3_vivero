@@ -47,7 +47,7 @@
             </li>
             <% if (locals.userFound) { %>
                 <div class="dropdown">
-                    <button class="dropdown__button"><i class="icon" id="user"></i></button>
+                    <button class="dropdown__button"><div class="dropdown__user-img"><img src=<%= locals.userLogged.img %> alt="user image"></div></button>
                     <div class="dropdown__menu">
                         <% if (locals.isAdmin) { %>
                             <a class="dropdown__a" href="/products/">Admin Menu</a>

@@ -156,6 +156,16 @@ header {
   margin-left: 0.25rem;
 }
 
+.dropdown__user-img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 2px var(--primary-green) solid;
+}
+.dropdown__user-img img{
+  border-radius: 50%;
+}
+
 .dropdown__menu {
   position: absolute;
   left: 0;
@@ -1144,10 +1154,12 @@ tr:hover {
 
 #user {
   background-image: url(../img/icons/icon-user.svg);
+  margin: 4px 0;
 }
 
 #cart {
   background-image: url(../img/icons/icon-cart.svg);
+  margin: 4px 0;
 }
 
 #burger {
