@@ -60,7 +60,7 @@ const controller = {
         atribute = "price"
         order = "ASC"
         break;
-      case 'PriceDesc':
+      case 'priceDesc':
         atribute = "price"
         order = "DESC"
         break;
