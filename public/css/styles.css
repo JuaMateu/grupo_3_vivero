@@ -116,6 +116,7 @@ article {
 .text-danger {
   color: #e74c3c;
   font-size: medium;
+  max-width: 30rem;
 }
 
 /* =========
@@ -162,7 +163,7 @@ header {
   border-radius: 50%;
   border: 2px var(--primary-green) solid;
 }
-.dropdown__user-img img{
+.dropdown__user-img img {
   border-radius: 50%;
 }
 
@@ -228,17 +229,16 @@ header {
   opacity: 0;
   background: transparent;
   cursor: pointer;
-  
 }
 .search-bar__input:focus {
-  outline: 0;  
+  outline: 0;
 }
 .search-bar:focus-within .search-bar__input {
   opacity: 1;
   cursor: initial;
 }
 .search-bar__submit {
-  cursor:pointer;
+  cursor: pointer;
   border: 0;
   background: transparent;
   border-radius: 50%;
@@ -250,12 +250,11 @@ header {
 .search-bar:focus-within .search-bar__submit {
   background-color: var(--secondary-light-green);
 }
-.search-bar:focus-within>.search-bar__submit:focus, 
-.search-bar:focus-within>.search-bar__submit:hover {
+.search-bar:focus-within > .search-bar__submit:focus,
+.search-bar:focus-within > .search-bar__submit:hover {
   outline: 0;
   box-shadow: 0 0 10px var(--secondary-light-green);
 }
-
 
 /* Burger Menu */
 
@@ -788,26 +787,23 @@ tr:hover {
   color: #014934;
 }
 
-
-  .list-table {
-    width: 95%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    font-size: 1rem;
-  }
-  .list-table__img-conteiner {
-      width: 3rem;
-      height: 3rem;
-      margin: 0 auto;
-
-    }
-  .list-table__img-conteiner img{
-      width: 3rem;
-      height: 3rem;
-      margin: 0 auto;
-      border-radius: 1.5rem;
-    }
-
+.list-table {
+  width: 95%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.list-table__img-conteiner {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+}
+.list-table__img-conteiner img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+}
 
 /* 1-3.j ERROR PAGE */
 
@@ -899,21 +895,18 @@ tr:hover {
 /* adress form */
 
 .address-form {
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .address-form .users-form__field {
-    grid-column-end: span 2
+  grid-column-end: span 2;
 }
 .address-form input:last-child {
-    grid-column-start: 1 ;
-    grid-column-end: span 2;
+  grid-column-start: 1;
+  grid-column-end: span 2;
 }
-
-
 
 /*==========
    1-4 LIBRERY
@@ -1417,36 +1410,34 @@ tr:hover {
     margin: 0 auto;
   }
 
-
-  .users-form__field i{
-      position: absolute;
-      top: 2.5rem;
-      right: 1rem;
-      visibility: hidden;
+  .users-form__field i {
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    visibility: hidden;
   }
 
   /* adress form user menu */
   /* adress form */
 
   .address-form {
-
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
   }
 
   .address-form .users-form__field {
-      grid-column-end: span 2
+    grid-column-end: span 2;
   }
   .address-form input:last-child {
-      grid-column-start: 2 ;
-      grid-column-end: span 2;
+    grid-column-start: 2;
+    grid-column-end: span 2;
   }
   .user-menu__title {
     line-height: 200px;
     margin: 0 auto;
   }
-  
+
   .user-menu__info {
     display: flex;
     flex-direction: column;
@@ -1456,12 +1447,11 @@ tr:hover {
   .user-menu__info > p {
     margin-top: 5px;
   }
-  
+
   .users-form__field i {
     position: absolute;
     top: 2.5rem;
     right: 1rem;
     visibility: hidden;
   }
-    }
-    
+}
