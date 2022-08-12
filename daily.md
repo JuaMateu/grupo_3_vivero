@@ -187,3 +187,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Creación de pagina sobre nosotros
 - Problemas: Ninguno
 - ¿Qué voy a hacer?: Estilar la página 
+
+## Jueves 11 de Agosto
+### Orlando Ayala
+- ¿Qué hice?: Validar la Login desde el Front
+- Problemas: Configuracion de timer para mostrar errores
+- ¿Qué voy a hacer?: Adaptar el temporizador 

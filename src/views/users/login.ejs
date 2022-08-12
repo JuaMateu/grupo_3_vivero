@@ -20,33 +20,35 @@
             </div>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de login -->
-                <form action="/users/login" method="post" class="users-form">
+                <form id="formLogin" action="/users/login" method="post" class="users-form">
                     <!-- Ingresar el correo electrónico -->
-                    <div class="users-form__field <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
+                    <div id="divEmail" class="users-form__field <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
                         <label class="users-form__label" for="email"> Correo electrónico</label>
                         <input 
+                            id="email"
                             class="users-form__input" 
                             name="email" 
-                            type="email" 
+                            type="text" 
                             placeholder="Ingresá tu correo"
                             value="<%= locals.oldData ? oldData.email : null %>"
                         />
-                        <i class="fa-solid fa-circle-check"></i>
+                        <i id="OKIcon" class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <% if (locals.errors && errors.email) { %>
                             <p class="text-danger"><%= errors.email.msg %></p>
                         <% } %>
                     </div>
                     <!-- Ingresar la contraseña -->
-                    <div class="users-form__field <%= locals.errors && errors.password ? "inputFailure" : "inputSuccess" %>">
+                    <div id="divPassword" class="users-form__field <%= locals.errors && errors.password ? "inputFailure" : "inputSuccess" %>">
                         <label class="users-form__label" for="password">Contraseña</label>
                         <input 
+                            id="password"
                             class="users-form__input" 
                             name="password" 
                             type="password" 
                             placeholder="Ingresá tu contraseña"
                         />
-                        <i class="fa-solid fa-circle-check"></i>
+                        <i id="OKIcon" class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <% if (locals.errors && errors.password) { %>
                             <p class="text-danger"><%= errors.password.msg %></p>
@@ -70,5 +72,7 @@
 
     <!-- aca arranca el footer -->
     <%- include('../partials/footer') %>
+    <!-- Vinculacion con el script -->
+    <script src="/js/scriptLogin.js"></script>
   </body>
 </html>
