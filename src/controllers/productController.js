@@ -36,7 +36,10 @@ const controller = {
 
     create:(req,res)=> {
         // CREATE
-
+        let imgPath = '/img/plantas/Aglaonema.png';
+        if (req.file) {
+          imgPath = req.file.filename
+        }
         let data = {
             name: req.body.name,
             category_id: req.body.type,
@@ -46,8 +49,7 @@ const controller = {
             price: req.body.price,
             dicount_id: null,
             label: req.body.label,
-            img: "/img/plantas/" + req.file.filename,
-            discount_id : null
+            img: imgPath,
         }
         db.Product.create(data)
             .then(() => {
