@@ -26,15 +26,15 @@
                             enctype="multipart/form-data">
                         <% } %>
 
-                                <div>
-                                    <% if (locals.editProduct) { %>
-                                        <div class="img-conteiner-edit flex-column">
-                                            <img class="img-edit" src="<%= editProduct.img %>"
-                                                alt="<%= editProduct.name %>" />
-                                        </div>
-                                        <% } %>
-                                            <div class="admin__form--item">
-                                                <label class="admin__label" for="product-text">Ingresá el nombre
+                        <% if (locals.editProduct) { %>
+                            <div class="img-conteiner-edit flex-column">
+                                <img class="img-edit" src="<%= editProduct.img %>"
+                                    alt="<%= editProduct.name %>" />
+                            </div>
+                        <% } %>
+                                <div class="admin-form__conteiner">
+                                            <div class="admin__form--item" class="admin__form--item">
+                                                <label class="admin-form__label" for="product-text">Ingresá el nombre
                                                     del
                                                     producto</label>
                                                 <input class="admin__input" name="name" type="text"
@@ -43,9 +43,9 @@
                                                     minlength="4" maxlength="20" />
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="product-clasf">Ingresá la
+                                                <label class="admin-form__label" for="product-clasf">Ingresá la
                                                     categoría</label>
-                                                <select name="type" id="product-clasf" required>
+                                                <select class="admin__input" name="type" id="product-clasf" required>
                                                     <option value="1">Planta Floral</option>
                                                     <option value="2">Aromatica</option>
                                                     <option value="3">Arbusto</option>
@@ -54,25 +54,25 @@
                                                 </select>
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="careLevel">Seleccioná el
+                                                <label class="admin-form__label" for="careLevel">Seleccioná el
                                                     cuidado del
                                                     producto</label>
-                                                <select name="careLevel" id="careLevel" required>
+                                                <select class="admin__input" name="careLevel" id="careLevel" required>
                                                     <option value="Básico">Básico</option>
                                                     <option value="Intermedio">Intermedio</option>
                                                     <option value="Experto">Experto</option>
                                                 </select>
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="product-description">Ingresá la
+                                                <label class="admin-form__label" for="product-description">Ingresá la
                                                     descripción del
                                                     producto</label>
-                                                <textarea class="admin__textarea" name="description"
+                                                <textarea class="admin__input" class="admin__textarea" name="description"
                                                     id="product-description" cols="25" rows="4" maxlength="100">
                                 <%= locals.editProduct ? editProduct.description : '' %></textarea>
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="stock">Stock del
+                                                <label class="admin-form__label" for="stock">Stock del
                                                     producto</label>
                                                 <input class="admin__input" name="stock" type="number"
                                                     id="stock"
@@ -82,7 +82,7 @@
                                                     required />
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="product-price">Ingresá el
+                                                <label class="admin-form__label" for="product-price">Ingresá el
                                                     precio del producto</label>
                                                 <input class="admin__input" name="price" type="number"
                                                     id="product-price" min="500" required max="100000"
@@ -90,16 +90,16 @@
                                                     step="100" />
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="label">Seleccionar una etiqueta
+                                                <label class="admin-form__label" for="label">Seleccionar una etiqueta
                                                     para el producto</label>
-                                                <select name="label" id="label" required>
+                                                <select class="admin__input" name="label" id="label" required>
                                                     <option value="none">None</option>
                                                     <option value="Oferta">Oferta</option>
                                                     <option value="Mas vendida">Mas vendida</option>
                                                 </select>
                                             </div>
                                             <div class="admin__form--item">
-                                                <label class="admin__label" for="product-image">Seleccioná la
+                                                <label class="admin-form__label" for="product-image">Seleccioná la
                                                     imagen para el
                                                     producto</label>
                                                 <input class="admin__input" name="img" type="file"
