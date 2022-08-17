@@ -31,7 +31,7 @@ const controller = {
     addForm:(req,res)=> {
         // READ
         // accion necesaria para ver el formulario
-        res.render("products/addProducts");
+        res.render("products/editProducts");
     },
 
     create:(req,res)=> {
