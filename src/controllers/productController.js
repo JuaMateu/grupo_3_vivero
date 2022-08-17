@@ -12,7 +12,7 @@ const controller = {
     },
     list: (req, res) => {
         // READ
-        db.Product.findAll()
+        db.Product.findAll({include: ["category"]})
          .then((products) => {
              res.render("products/listProducts", { products })
          });
