@@ -30,7 +30,7 @@ Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyec
 - La config de la conexion a la base de dato esta configurada con variables de entorno.
 - Los usuarios tienen distintos permisos segun el rol. 
 Para ingresar al menú de administracion **ingresar con el usuario root**:
-email: jphoenix@digitalhouse.com
+email: joaquinP@digitalhouse.com
 pass: 12345678 (esta password la dejamos sin validaciones de strongPass para que sea mas facil el testeo)
 Luego en haciendo click en el logo de usuario se desplegará un menu con acceso a la seccion de admin (dependiendo del rol), al menú de usuario y a la opcion de logout
 - Para probar funcionalidades de usuario se puede generar un nuevo usuario. Una vez creado la app redirige a la seccion de contacto dentro del menú de usuario donde se puede completar la informacion para entrega y telefono. 
