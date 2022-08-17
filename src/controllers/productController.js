@@ -42,8 +42,8 @@ const controller = {
         }
         let data = {
             name: req.body.name,
-            category_id: req.body.type,
-            care_level: req.body.careLevel,
+            category_id: req.body.category_id,
+            care_level: req.body.care_level,
             description: req.body.description,
             stock: req.body.stock,
             price: req.body.price,
@@ -62,9 +62,7 @@ const controller = {
     
     editForm: (req, res) => {
         // READ
-        console.log(req.params.id)
         if(req.params.id) {
-          console.log(`ingresa en el if ${req.params.id}`)
           db.Product.findByPk(req.params.id).then((product) => {
             return res.render("products/editProducts", { editProduct: product });
           });
@@ -73,35 +71,22 @@ const controller = {
         }
       },
       edit: (req, res) => {
-        let id = req.params.id;
-        let productType = 0;
-        let productImage = "/img/plantas/Aglaonema.png";
-        req.body.type == "Planta Floral" ? (productType = 1) : "";
-        req.body.type == "Aromatica" ? (productType = 2) : "";
-        req.body.type == "Arbusto" ? (productType = 3) : "";
-        req.body.type == "Suculenta" ? (productType = 4) : "";
-        req.body.type == "Frutal" ? (productType = 5) : "";
-        if (req.file) {
-          productImage = "/img/plantas/" + req.file.filename;
+        let data = {            
+          name: req.body.name,
+          category_id: req.body.category_id,
+          care_level: req.body.care_level,
+          description: req.body.description,
+          stock: req.body.stock,
+          price: req.body.price,
+          label: req.body.label,
         }
-        db.Product.update(
-          {
-            name: req.body.name,
-            type: productType,
-            careLevel: req.body.careLevel,
-            description: req.body.description,
-            stock: req.body.stock,
-            price: req.body.price,
-            label: req.body.label,
-            img: productImage,
-          },
-          {
-            where: {
-              id: id,
-            },
+          if (req.file) {
+            data.img = "/img/plantas/" + req.file.filename;
           }
+
+        db.Product.update( data, { where: {id: req.params.id}}
         ).then((product) => {
-          return res.redirect("/products/edit/" + id);
+          return res.redirect("/products/edit/" + req.params.id);
         });
         
       },
