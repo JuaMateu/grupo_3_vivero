@@ -60,10 +60,15 @@ const controller = {
     
     editForm: (req, res) => {
         // READ
-
-        db.Product.findByPk(req.params.id).then((product) => {
-          return res.render("products/editProducts", { editProduct: product });
-        });
+        console.log(req.params.id)
+        if(req.params.id) {
+          console.log(`ingresa en el if ${req.params.id}`)
+          db.Product.findByPk(req.params.id).then((product) => {
+            return res.render("products/editProducts", { editProduct: product });
+          });
+        } else {
+          return res.render("products/editProducts");
+        }
       },
       edit: (req, res) => {
         let id = req.params.id;

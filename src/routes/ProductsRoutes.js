@@ -19,10 +19,10 @@ router.get('/',userNotLoggedMiddleware, userNotLoggedMiddleware, userIsAdmin, pr
 // mostrar detalle de producto
 router.get('/detail/:id', productsController.detail);
 
-//formulario de crear producto
-router.get('/create', userNotLoggedMiddleware, userIsAdmin, productsController.addForm);
+//formulario de crear o editar producto
+router.get('/create', userNotLoggedMiddleware, userIsAdmin, productsController.editForm);
 
-//acion de crear producto
+//accion de crear producto
 router.post('/create', userNotLoggedMiddleware, userIsAdmin,  uploadProduct.single('img'),productsController.create);
 
 //formulario de editar o borrar producto
