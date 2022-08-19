@@ -20,6 +20,10 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 - [VIVERO EL BAMBÚ](https://www.viveroelbambu.com.ar/): Tiene un diseño milimalista con tonos en blancos y verdes que resulta muy agradable a la vista.
 - [VIVERO MARIO](https://tienda.viveromario.com.ar/):  Lo tomamos como referencia por ser lider en el mercado. Tiene una seccion interesante sobre el cuidado de las plantas, asi como un muy buen diseño de logo.
 
+### Planificacion y Organizacion 📌
+Utilizamos un tablero Kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
+Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyecto-integrador-grupo-3)
+
 ### Navegacion 🗺️
 
 - La conexion a la base de datos se realiza a traves de variables de entorno.
@@ -27,7 +31,3 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 - Para poder visualizar el menu de administrador es necesario ingresar con un usuario que cuente con dicho nivel de acceso. Un ejemplo podria ser joaquinP@digitalhouse.com, cuya contraseña es 12345678. **Para este caso en particular no se realizaron validaciones sobre la contraseña del usuario por una cuestion de facilidad de acceso.** 
 - Una vez iniciada la sesion correspondiente, al hacer click sobre el icono del usuario se desplegara un menu con diferentes enlaces, uno de los cuales redirigira hacia el menu de administrador.
 - Otra funcionalidad que se puede probar es la de generar un nuevo usuario. Una vez que este procedimiento se haya realizado con exito, se redirigira hacia el menu de usuario. Desde alli, es posible realizar diferentes acciones, como bien podria ser actualizar la informacion de contacto.
-
-### Planificacion y Organizacion 📌
-Utilizamos un tablero Kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
-Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyecto-integrador-grupo-3)
