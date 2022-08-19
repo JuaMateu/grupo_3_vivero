@@ -24,14 +24,12 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 Utilizamos un tablero Kanban en Trello para visualizar, asignar y darle seguimiento a las tareas de cada etapa del proyecto.
 Los invitamos a verlo [haciendo click aca!](https://trello.com/b/pRBxCwUR/proyecto-integrador-grupo-3)
 
+### Navegacion 🗺️
 
-### Informacion para probar la App
-
-- La config de la conexion a la base de dato esta configurada con variables de entorno.
-- Los usuarios tienen distintos permisos segun el rol. 
-Para ingresar al menú de administracion **ingresar con el usuario root**:
-email: joaquinP@digitalhouse.com
-pass: 12345678 (esta password la dejamos sin validaciones de strongPass para que sea mas facil el testeo)
-Luego en haciendo click en el logo de usuario se desplegará un menu con acceso a la seccion de admin (dependiendo del rol), al menú de usuario y a la opcion de logout
-- Para probar funcionalidades de usuario se puede generar un nuevo usuario. Una vez creado la app redirige a la seccion de contacto dentro del menú de usuario donde se puede completar la informacion para entrega y telefono. 
-- En este mismo menú de usaurio se muestran y se pueden completar los distintos campos de informacion del usuario
+- La conexion a la base de datos se realiza a traves de variables de entorno.
+- Existen diferentes niveles de acceso de usuario, y las paginas a las que se podra acceder dependera justamente de cada uno de ellos.
+- Para poder visualizar el menu de administrador es necesario ingresar con un usuario que cuente con dicho nivel de acceso, como bien podria ser:
+  Email: joaquinP@digitalhouse.com
+  Password: 12345678
+- Una vez iniciada la sesion correspondiente, al hacer click sobre el icono del usuario se desplegara un menu con diferentes enlaces, uno de los cuales redirigira hacia el menu de administrador.
+- Otra funcionalidad que se puede probar es la de generar un nuevo usuario. Una vez que este procedimiento se haya realizado con exito, se redirigira hacia el menu de usuario. Desde alli, es posible realizar diferentes acciones, como bien podria ser actualizar la informacion de contacto.
