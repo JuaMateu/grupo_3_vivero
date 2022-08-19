@@ -25,7 +25,7 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 
 - La conexion a la base de datos se realiza a traves de variables de entorno.
 - Existen diferentes niveles de acceso de usuario, y las paginas a las que se podra acceder dependera justamente de cada uno de ellos.
-- Para poder visualizar el menu de administrador es necesario ingresar con un usuario que cuente con dicho nivel de acceso (**Email: joaquinP@digitalhouse.com / Password: 12345678**)
+- Para poder visualizar el menu de administrador es necesario ingresar con un usuario que cuente con dicho nivel de acceso. Un ejemplo podria ser joaquinP@digitalhouse.com, cuya contraseña es 12345678.
 - Una vez iniciada la sesion correspondiente, al hacer click sobre el icono del usuario se desplegara un menu con diferentes enlaces, uno de los cuales redirigira hacia el menu de administrador.
 - Otra funcionalidad que se puede probar es la de generar un nuevo usuario. Una vez que este procedimiento se haya realizado con exito, se redirigira hacia el menu de usuario. Desde alli, es posible realizar diferentes acciones, como bien podria ser actualizar la informacion de contacto.
 
