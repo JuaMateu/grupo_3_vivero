@@ -108,6 +108,7 @@ window.addEventListener("load", () => {
       }
     } else if (
       document.getElementById("password-check-error") &&
+      passwordCheck.value &&
       passwordCheck.value === password.value
     ) {
       const paragraph = document.getElementById("password-check-error");
