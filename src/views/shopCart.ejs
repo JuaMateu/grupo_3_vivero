@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('./partials/head') %>
-    </head>
-<body>
+  <head>
+    <!-- Head -->
+    <%- include('./partials/head') %>
+  </head>
+  <body>
+    <!-- Header -->
     <%- include('./partials/header') %>
-    <!-- Aca va el cuerpo la pagina -->
+
+    <!-- Main -->
     <main>
-        <section class="cart">
-            <div class="cart__title">
-                <div>Comprar</div>
-                <p class="cart__totalPrice">$999.99</p>
+      <section class="cart">
+        <div class="cart__title">
+          <div>Comprar</div>
+          <p class="cart__totalPrice"></p>
+        </div>
+
+        <!--
+        <div class="cart__product">
+          <div class="cart__productImageContainer">
+            <img
+              class="cart__productImage"
+              src="img/plantas/potus1.png"
+              alt="Potus"
+            />
+          </div>
+          <div class="cart__productDescription">
+            <div class="cart__productName">Potus</div>
+            <div class="cart__productPrice">
+              <div>$800</div>
+              <div>
+                <input
+                  class="cart__quantityButton"
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
             </div>
-            <div class="cart__product">
-                <div class="cart__productImageContainer">
-                    <img class="cart__productImage" src="img/plantas/potus1.png" alt="Potus">
-                </div>
-                <div class="cart__productDescription">
-                    <div class="cart__productName">Potus</div>
-                    <div class="cart__productPrice">
-                        <div>$800</div>
-                        <div>
-                            <input class="cart__quantityButton" type="number" value="1" min="1" max="10">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__product">
-                <div class="cart__productImageContainer">
-                    <img class="cart__productImage"src="img/plantas/Aglaonema.png" alt="Aglaonema">
-                </div>
-                <div class="cart__productDescription">
-                    <div class="cart__productName">Aglaonema</div>
-                    <div class="cart__productPrice">
-                        <div>$800</div>
-                        <div>
-                            <input class="cart__quantityButton" type="number" value="1" min="1" max="10">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__product">
-                <div class="cart__productImageContainer">
-                    <img class="cart__productImage" src="img/plantas/portulacaria afra.png" alt="Portulacaria Afra">
-                </div>
-                <div class="cart__productDescription">
-                    <div class="cart__productName">Portulacaria</div>
-                    <div class="cart__productPrice">
-                        <div>$800</div>
-                        <div>
-                            <input class="cart__quantityButton" type="number" value="1" min="1" max="10">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__buttons">
-                <a href="shop">
-                    <button type="button" value="Volver a la tienda" class="cart__btn btnStyle2">Volver a la Tienda</button>
-                </a>
-                <a href="#">
-                    <button type="button" value="Proceder al pago" class="cart__btn btnStyle2">Proceder al pago</button>
-                </a>
-            </div>
-        </section>
+          </div>
+        </div>
+        -->
+
+        <div class="cart__buttons">
+          <a href="shop">
+            <button
+              type="button"
+              value="Volver a la tienda"
+              class="cart__btn btnStyle2"
+            >
+              Volver
+            </button>
+          </a>
+          <a href="#">
+            <button
+              type="button"
+              value="Proceder al pago"
+              class="cart__btn btnStyle2"
+            >
+              Proceder
+            </button>
+          </a>
+        </div>
+      </section>
     </main>
 
-
-
-
-    <!-- aca arranca el footer -->
+    <!-- Footer -->
     <%- include('./partials/footer') %>
-</body>
+
+    <!-- Script -->
+    <script src="/js/shopCart.js"></script>
+  </body>
 </html>

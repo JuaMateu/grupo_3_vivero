@@ -38,43 +38,41 @@ const controller = {
     return res.render("products/shop", { products });
   },
   orderBy: async (req, res) => {
-    let search = ""
+    let search = "";
     if (req.query.searched) {
-        search = req.query.searched;
+      search = req.query.searched;
     }
     let orderBy = req.query.orderBy;
     let atribute = "";
-    let order = ""
+    let order = "";
 
     switch (orderBy) {
-      case 'nameAsc':
+      case "nameAsc":
         console.log("nombre ascendente");
-        atribute = "name"
-        order = "ASC"
+        atribute = "name";
+        order = "ASC";
         break;
-      case 'nameDesc':
-        atribute = "name"
-        order = "DESC"
+      case "nameDesc":
+        atribute = "name";
+        order = "DESC";
         break;
-      case 'priceAsc':
-        atribute = "price"
-        order = "ASC"
+      case "priceAsc":
+        atribute = "price";
+        order = "ASC";
         break;
-      case 'priceDesc':
-        atribute = "price"
-        order = "DESC"
+      case "priceDesc":
+        atribute = "price";
+        order = "DESC";
         break;
       default:
-
         break;
     }
 
     let products = await Products.findAll({
       where: {
         name: { [db.Sequelize.Op.like]: `%${search}%` },
-      },order: [
-                [atribute, order]
-            ]
+      },
+      order: [[atribute, order]],
     });
 
     return res.render("products/shop", { products });
