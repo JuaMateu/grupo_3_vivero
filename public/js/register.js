@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
     // First Name
 
     if (!document.getElementById("first-name-error")) {
-      if (!firstName.value || firstName.value.length >= 2) {
+      if (!firstName.value || firstName.value.length < 2) {
         const paragraph = document.createElement("p");
         paragraph.setAttribute("id", "first-name-error");
         paragraph.classList.add("text-danger");
@@ -27,12 +27,18 @@ window.addEventListener("load", () => {
           "El campo de nombre debe contener al menos 2 caracteres.";
         div1.appendChild(paragraph);
       }
+    } else if (
+      document.getElementById("first-name-error") &&
+      firstName.value.length >= 2
+    ) {
+      const paragraph = document.getElementById("first-name-error");
+      paragraph.remove();
     }
 
     // Last Name
 
     if (!document.getElementById("last-name-error")) {
-      if (!lastName.value || lastName.value.length >= 2) {
+      if (!lastName.value || lastName.value.length < 2) {
         const paragraph = document.createElement("p");
         paragraph.setAttribute("id", "last-name-error");
         paragraph.classList.add("text-danger");
@@ -40,6 +46,12 @@ window.addEventListener("load", () => {
           "El campo de apellido debe contener al menos 2 caracteres.";
         div2.appendChild(paragraph);
       }
+    } else if (
+      document.getElementById("last-name-error") &&
+      lastName.value.length >= 2
+    ) {
+      const paragraph = document.getElementById("last-name-error");
+      paragraph.remove();
     }
 
     // Email
@@ -47,8 +59,8 @@ window.addEventListener("load", () => {
     if (!document.getElementById("email-error")) {
       if (
         !email.value ||
-        email.value.includes("@") ||
-        email.value.includes(".com")
+        !email.value.includes("@") ||
+        !email.value.includes(".com")
       ) {
         const paragraph = document.createElement("p");
         paragraph.setAttribute("id", "email-error");
@@ -56,12 +68,19 @@ window.addEventListener("load", () => {
         paragraph.innerText = "El campo de email debe ser válido.";
         div3.appendChild(paragraph);
       }
+    } else if (
+      document.getElementById("email-error") &&
+      email.value.includes("@") &&
+      email.value.includes(".com")
+    ) {
+      const paragraph = document.getElementById("email-error");
+      paragraph.remove();
     }
 
     // Password
 
     if (!document.getElementById("password-error")) {
-      if (!password.value || password.value.length >= 8) {
+      if (!password.value || password.value.length < 8) {
         const paragraph = document.createElement("p");
         paragraph.setAttribute("id", "password-error");
         paragraph.classList.add("text-danger");
@@ -69,18 +88,30 @@ window.addEventListener("load", () => {
           "El campo de contraseña debe contener al menos 8 caracteres.";
         div4.appendChild(paragraph);
       }
+    } else if (
+      document.getElementById("password-error") &&
+      password.value.length >= 8
+    ) {
+      const paragraph = document.getElementById("password-error");
+      paragraph.remove();
     }
 
     // Password Check
 
     if (!document.getElementById("password-check-error")) {
-      if (!passwordCheck.value || passwordCheck.value === password.value) {
+      if (!passwordCheck.value || passwordCheck.value !== password.value) {
         const paragraph = document.createElement("p");
         paragraph.setAttribute("id", "password-check-error");
         paragraph.classList.add("text-danger");
         paragraph.innerText = "Ambas campos de contraseña deben coincidir.";
         div5.appendChild(paragraph);
       }
+    } else if (
+      document.getElementById("password-check-error") &&
+      passwordCheck.value === password.value
+    ) {
+      const paragraph = document.getElementById("password-check-error");
+      paragraph.remove();
     }
   });
 });
