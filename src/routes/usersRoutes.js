@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //! probar si funciona este middleware
-const uploadUser = require('../middlewares/MulterUsers') 
+const uploadUser = require('../middlewares/multerUsers') 
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const usersController = require('../controllers/usersController');
@@ -10,6 +10,7 @@ const userIsAdmin = require('../middlewares/userAdminMiddleware');
 const usersMenuRoutes = require('./usersMenuRoutes')
 
 const userValidations = require("../middlewares/Validations/userValidationsRegister");
+const userAddAdminValidator = require('../middlewares/Validations/userAddAdminValidator');
 
 
 //Formulario de Login
@@ -31,7 +32,7 @@ router.get('/', userNotLoggedMiddleware, userIsAdmin, usersController.list);
 // formulario de agregar usuario
 router.get('/create', userNotLoggedMiddleware, userIsAdmin, usersController.addForm);
 // accion de agregar al usuario
-router.post('/create', userNotLoggedMiddleware, userIsAdmin, uploadUser.single('img'), usersController.create);
+router.post('/create', userNotLoggedMiddleware, userIsAdmin,userAddAdminValidator,uploadUser.single('img'), usersController.create);
 
 // Menu de usuario //
 router.use('/menu/', usersMenuRoutes)

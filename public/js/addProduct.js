@@ -10,7 +10,7 @@ window.addEventListener('load',function(){
     let care_level = document.querySelector("#care_level");
     let label = document.querySelector("#label");
 
-    let errores = [];
+    let errorCounter = 0;
     
     // Mostrar los errores en la vista
     showMessage = (element,message) => {
@@ -18,7 +18,7 @@ window.addEventListener('load',function(){
         paragraph.classList.toggle("text-danger");
         paragraph.innerText = message;
         element.insertAdjacentElement("afterend", paragraph);
-        errores.push(1);
+        errorCounter += 1;
     };
 
     // Ocultamos los iconos de "check" al cargar la pagina
@@ -35,35 +35,45 @@ window.addEventListener('load',function(){
         }
     };
 
-    //Eliminacion de mensaje de error y puesta de vuelta a iconos
-    continousMessage = () => {
-        hideOk();
-            setTimeout(function(){
-                let hideError = document.querySelector('p'); // seleccionamos elemnto creado en linea 12
-                hideError.style.display = "none"
-                showOk();
-            },5000);
-    }
 
     // Frenamos el form para validar
     formProduct.addEventListener("submit",function(event){
-        
-        // Chequeamos si name vacio
+        errorCounter = 0;
+
+        //eliminar mensajes de error acumulados
+        document.querySelectorAll('.text-danger').forEach(e=> e.remove())
+
+        // Nombre de producto
         if (!name.value) {
             showMessage(name,"El nombre de producto debe estar completo");
 
         } else if (name.value.length < 3) {
             showMessage(name,"El campo de nombre debe tener mas de 3 caracteres");
         }
-        // Chequeamos si description vacio y tiene menos de 400 caracteres
+
+        // descripcion del producto
         if (!description.value) {
             showMessage(description,"El campo de description debe estar completo");
 
-        } else if (password.value.length > 400) {
+        } else if (description.value.length > 400) {
             showMessage(description,"La descripción no puede superar 400 caracteres");
         };
-        // let stock = document.querySelector("#stock");
-        // let price = document.querySelector("#price");
+
+        // stock 
+        if (!stock.value) {
+            showMessage(stock,"El stock de producto no puede estar vacío");
+
+        } else if (stock.value < 0 || stock.value > 1000) {
+            showMessage(stock,"El stock debe ser un numero entre 0 y 1000");
+        }
+        // precio
+        if (!price.value) {
+            showMessage(price,"El precio de producto no puede estar vacío");
+        } else if (price.value < 0 || price.value > 1000) {
+            showMessage(price,"El stock debe ser un numero entre 0 y 1000");
+        } else if (price.value % 1 != 0) {
+            showMessage(price,"el precio debe ser un numero entero");
+        }
 
         // let category_id = document.querySelector("#category_id");
         // let care_level = document.querySelector("#care_level");
@@ -71,15 +81,11 @@ window.addEventListener('load',function(){
 
         // Si hay errores, detenemos el envio del form
         console.log("veamos errores");
-        if (errores.length >= 1) {
-            console.log(errores.length);
+        if (errorCounter > 0) {
+            console.log(errorCounter);
             event.preventDefault();
         }
 
-        // Si los errores superan a 2 se recarga para evitar aglomeracion de mensajes de error
-        if (errores.length > 2){
-            // location.reload(); 
-        };
     });
 });
 

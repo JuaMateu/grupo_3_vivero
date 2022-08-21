@@ -17,33 +17,128 @@
         <h1>Administrar Usuarios</h1>
         <h3>Agregá los usuarios a la base de datos</h3>
         <form action="/users/create" method="post" enctype="multipart/form-data" class="admin__form">
-            <div class="admin__form--item">
+            <div class="admin__form--item <%= locals.errors && errors.firstName ? "inputFailure" : "inputSuccess" %>">
                 <label class="admin__label" for="product-text">Ingresá tu nombre</label>
-                <input class="admin__input" name="firstName" type="text" id="firstName" required placeholder="Ingresá el nombre del usuario" minlength="4" maxlength="20">
+                <input 
+                    class="admin__input" 
+                    name="firstName" 
+                    type="text" 
+                    id="firstName" 
+                    placeholder="Ingresá el nombre del usuario" 
+                    minlength="4" 
+                    maxlength="20"
+                    value="<%= locals.oldData ? oldData.firstName : null %>"
+                >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <% if (locals.errors && errors.firstName) { %>
+                    <div class="text-danger">
+                        <%= errors.firstName.msg %> 
+                    </div>
+                <% } %>
             </div>
-            <div class="admin__form--item">
+            <div class="admin__form--item <%= locals.errors && errors.lastName ? "inputFailure" : "inputSuccess" %>">
                 <label class="admin__label" for="product-text">Ingresá tu apellido</label>
-                <input class="admin__input" name="lastName" type="text" id="lastName" required placeholder="Ingresá el apellido" minlength="4" maxlength="20">
+                <input 
+                    class="admin__input" 
+                    name="lastName" 
+                    type="text" 
+                    id="lastName" 
+                    placeholder="Ingresá el apellido" 
+                    minlength="4" 
+                    maxlength="20"
+                    value="<%= locals.oldData ? oldData.lastName : null %>"
+                >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <% if (locals.errors && errors.lastName) { %>
+                        <div class="text-danger">
+                            <%= errors.lastName.msg %> 
+                        </div>
+                <% } %>
             </div>
-            <div class="admin__form--item">
+            <div class="admin__form--item <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
                 <label class="admin__label" for="product-text">Ingresá tu email</label>
-                <input class="admin__input" name="email" type="email" id="email" required placeholder="Ingresá el email" minlength="4" maxlength="20">
+                <input 
+                    class="admin__input" 
+                    name="email" 
+                    type="email" 
+                    id="email" 
+                    placeholder="Ingresá el email" 
+                    minlength="4" 
+                    maxlength="20"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %> 
+                    </div>
+                <% } %>
             </div>
-            <div class="admin__form--item">
+            <div class="admin__form--item <%= locals.errors && errors.password? "inputFailure" : "inputSuccess" %>">
                 <label class="admin__label" for="product-text">Ingresá tu Password</label>
-                <input class="admin__input" name="password" type="password" id="password" required placeholder="Ingresá el email" minlength="4" maxlength="20">
+                <input 
+                    class="admin__input" 
+                    name="password" 
+                    type="password" 
+                    id="password" 
+                    placeholder="Ingresá el email" 
+                    minlength="4" 
+                    maxlength="20"
+                >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %> 
+                    </div>
+                <% } %>
             </div>
-            <div class="admin__form--item">
+            <div class="admin__form--item <%= locals.errors && errors.mobile? "inputFailure" : "inputSuccess" %>">
                 <label class="admin__label" for="product-text">Ingresá tu número telefónico</label>
-                <input class="admin__input" name="mobile" type="number" id="mobile" required placeholder="Ingresá el número" minlength="10" maxlength="15">
+                <input 
+                    class="admin__input" 
+                    name="mobile" 
+                    type="number" 
+                    id="mobile" 
+                    placeholder="Ingresá el número" 
+                    minlength="10" 
+                    maxlength="15"
+                    value="<%= locals.oldData ? oldData.mobile: null %>"
+                >
+                <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <% if (locals.errors && errors.mobile) { %>
+                        <div class="text-danger">
+                            <%= errors.mobile.msg %> 
+                        </div>
+                    <% } %>
             </div>
             <!-- <div class="admin__form--item">
                 <label class="admin__label" for="product-text">Ingresá tu dirección</label>
                 <input class="admin__input" name="address" type="text" id="address" required placeholder="Ingresá la dirección" minlength="4" maxlength="40">
             </div> -->
-            <div class="admin__form--item">
+            <div class="admin__form--item <%= locals.errors && errors.birth? "inputFailure" : "inputSuccess" %>">
                 <label class="admin__label" for="product-text">Ingresá tu fecha de nacimiento</label>
-                <input class="admin__input" name="birth" type="date" id="birth" required placeholder="Ingresá tu fecha de nacimiento" minlength="4" maxlength="20">
+                <input 
+                    class="admin__input" 
+                    name="birth" 
+                    type="date" 
+                    id="birth" 
+                    placeholder="Ingresá tu fecha de nacimiento" 
+                    minlength="4" 
+                    maxlength="20"
+                    value="<%= locals.oldData ? oldData.birth : null %>"
+                >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <% if (locals.errors && errors.birth) { %>
+                    <div class="text-danger">
+                        <%= errors.birth.msg %> 
+                    </div>
+                <% } %>
             </div>
             <div class="admin__form--item">
                 <label class="admin__label" for="avatar-image">Seleccioná tu foto de usuario</label>
