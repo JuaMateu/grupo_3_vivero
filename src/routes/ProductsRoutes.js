@@ -9,6 +9,8 @@ const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const userIsAdmin = require('../middlewares/userAdminMiddleware');
 
+const productValidations = require("../middlewares/Validations/productValidator");
+
 // renderiza vista de productos para clientes
 router.get('/shop',productsController.shop);
 
@@ -20,16 +22,16 @@ router.get('/',userNotLoggedMiddleware, userNotLoggedMiddleware, userIsAdmin, pr
 router.get('/detail/:id', productsController.detail);
 
 //formulario de crear o editar producto
-router.get('/create', userNotLoggedMiddleware, userIsAdmin, productsController.editForm);
+router.get('/create', userNotLoggedMiddleware, userIsAdmin, productsController.addForm);
 
 //accion de crear producto
-router.post('/create', userNotLoggedMiddleware, userIsAdmin,  uploadProduct.single('img'),productsController.create);
+router.post('/create', userNotLoggedMiddleware, userIsAdmin,  uploadProduct.single('img'), productValidations, productsController.create);
 
 //formulario de editar o borrar producto
 router.get('/edit/:id', userNotLoggedMiddleware, userIsAdmin, productsController.editForm);
 
 //accion de editar producto
-router.put('/edit/:id', userNotLoggedMiddleware, userIsAdmin,  uploadProduct.single('img'), productsController.edit);
+router.put('/edit/:id', userNotLoggedMiddleware, userIsAdmin,  uploadProduct.single('img'), productValidations, productsController.edit);
 
 //accion de borrar producto
 router.delete('/delete/:id', userNotLoggedMiddleware, userIsAdmin, productsController.delete);
