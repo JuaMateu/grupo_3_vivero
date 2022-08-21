@@ -4,7 +4,9 @@ window.addEventListener("load", () => {
   const firstName = document.querySelector("#first_name");
   const lastName = document.querySelector("#last_name");
   const birthday = document.querySelector("#date_of_birth");
-  console.log(birthday.value.toString().substring(0, 4));
+  const button = document.querySelector("#submit-button");
+
+  let errorCounter = 0;
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -19,6 +21,7 @@ window.addEventListener("load", () => {
         paragraph.innerText =
           "El campo de nombre debe contener al menos 2 caracteres.";
         firstName.insertAdjacentElement("afterend", paragraph);
+        errorCounter += 1;
       }
     } else if (
       document.getElementById("first-name-error") &&
@@ -26,6 +29,7 @@ window.addEventListener("load", () => {
     ) {
       const paragraph = document.getElementById("first-name-error");
       paragraph.remove();
+      errorCounter -= 1;
     }
 
     // Last Name
@@ -38,6 +42,7 @@ window.addEventListener("load", () => {
         paragraph.innerText =
           "El campo de apellido debe contener al menos 2 caracteres.";
         lastName.insertAdjacentElement("afterend", paragraph);
+        errorCounter += 1;
       }
     } else if (
       document.getElementById("last-name-error") &&
@@ -45,25 +50,11 @@ window.addEventListener("load", () => {
     ) {
       const paragraph = document.getElementById("last-name-error");
       paragraph.remove();
+      errorCounter -= 1;
     }
 
-    // Birthday
-
-    if (!document.getElementById("birthday-error")) {
-      if (!birthday.value.length != 10 && birthday.value.toString().substring(0, 4) ) {
-        const paragraph = document.createElement("p");
-        paragraph.setAttribute("id", "birthday-error");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de fecha de nacimiento debe ser válido.";
-        birthday.insertAdjacentElement("afterend", paragraph);
-      }
-    } else if (
-      document.getElementById("birthday-error") &&
-      birthday.value.length >= 2
-    ) {
-      const paragraph = document.getElementById("birthday-error");
-      paragraph.remove();
+    if (errorCounter === 0) {
+      form.submit();
     }
   });
 });
