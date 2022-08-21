@@ -22,7 +22,7 @@
                 <!-- Nombre del producto -->
                 <div  class="admin__form--item <%= locals.errors && errors.name ? "inputFailure" : "inputSuccess" %>">
                     <label class="admin-form__label" for="product-text">Nombre del producto</label>
-                    <input class="admin__input" name="name" type="text" id="product-text" required
+                    <input id="name"  class="admin__input" name="name" type="text" id="product-text" required
                     value="<%= locals.oldData ? oldData.name : null %>" minlength="4" maxlength="20" />
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
@@ -32,9 +32,9 @@
                 </div>
 
                 <!-- descipcion del producto -->
-                <div class="admin__form--item">
+                <div  class="admin__form--item">
                     <label class="admin-form__label" for="product-description"> Descripción del producto</label>
-                    <textarea class="admin__input" class="admin__textarea" name="description" id="product-description" cols="25"
+                    <textarea id="description" class="admin__input" class="admin__textarea" name="description" id="product-description" cols="25"
                         rows="4" maxlength="200"><%= locals.oldData ? oldData.description : '' %></textarea>
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
@@ -44,7 +44,7 @@
                 </div>
 
                 <!-- id de categoria del producto -->
-                <div class="admin__form--item">
+                <div id="category_id" class="admin__form--item">
                     <label class="admin-form__label" for="category_id"> Categoría</label>
                     <select class="admin__input" name="category_id" id="category_id" required>
                         <option <%= locals.oldData && locals.oldData.category_id == 1 ? "selected" : ""%> value="1">Planta Floral</option>
@@ -61,7 +61,7 @@
                 </div>
 
                 <!-- cuidados del producto -->
-                <div class="admin__form--item">
+                <div id="care_level" class="admin__form--item">
                     <label class="admin-form__label" for="care_level"> Cuidados</label>
                     <select class="admin__input" name="care_level" id="care_level" required>
                         <option <%= locals.oldData && locals.oldData.care_level ==="Básico"     ? "selected" : ""%> value="Básico">Básico</option>
@@ -77,9 +77,9 @@
                 </div>
 
                 <!-- stock  -->
-                <div class="admin__form--item">
+                <div  class="admin__form--item">
                     <label class="admin-form__label" for="stock">Stock</label>
-                    <input class="admin__input" name="stock" type="number" id="stock"
+                    <input id="stock" class="admin__input" name="stock" type="number" id="stock"
                         min="0" max="1000" value="<%= locals.oldData ? oldData.stock : '' %>" required />
                         <% if (locals.errors && errors.stock) { %>
                             <div class="text-danger">
@@ -89,9 +89,9 @@
                     </div>
 
                 <!-- precio -->
-                <div class="admin__form--item">
-                    <label class="admin-form__label" for="product-price"> Precio </label>
-                    <input class="admin__input" name="price" type="number" id="product-price" min="0" max="99999" required 
+                <div  class="admin__form--item">
+                    <label class="admin-form__label" for="price"> Precio </label>
+                    <input id="price" class="admin__input" name="price" type="number" id="price" min="0" max="99999" required 
                         value="<%= locals.oldData ? oldData.price : 0 %>" step="100" />
                         <% if (locals.errors && errors.price) { %>
                             <div class="text-danger">
@@ -101,7 +101,7 @@
                     </div>
 
                 <!-- label del producto -->
-                <div class="admin__form--item">
+                <div id="label" class="admin__form--item">
                     <label class="admin-form__label" for="label"> Etiqueta del producto</label>
                     <select class="admin__input" name="label" id="label" required>
                         <option <%= locals.oldData && oldData.label ==="none"        ? "selected" : ""%> value="none">None</option>
@@ -131,5 +131,6 @@
             </div>    
         </form>
     </div>
+    <script src="/js/addProduct"></script>
 </body>
 </html>
