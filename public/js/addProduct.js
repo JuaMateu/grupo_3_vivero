@@ -9,6 +9,7 @@ window.addEventListener('load',function(){
     let category_id = document.querySelector("#category_id");
     let care_level = document.querySelector("#care_level");
     let label = document.querySelector("#label");
+    let img = this.document.querySelector('#img');
 
     let errorCounter = 0;
     
@@ -46,26 +47,25 @@ window.addEventListener('load',function(){
         // Nombre de producto
         if (!name.value) {
             showMessage(name,"El nombre de producto debe estar completo");
-
-        } else if (name.value.length < 3) {
-            showMessage(name,"El campo de nombre debe tener mas de 3 caracteres");
+        } else if (name.value.length < 4) {
+            showMessage(name,"El nombre debe tener por lo menos 5 caracteres");
         }
 
         // descripcion del producto
         if (!description.value) {
             showMessage(description,"El campo de description debe estar completo");
 
-        } else if (description.value.length > 400) {
-            showMessage(description,"La descripción no puede superar 400 caracteres");
+        } else if (description.value.length <20 && description.value.length > 400) {
+            showMessage(description,"La descripcion debe tener entre 20 y 400 caracteres");
         };
 
         // stock 
         if (!stock.value) {
             showMessage(stock,"El stock de producto no puede estar vacío");
-
         } else if (stock.value < 0 || stock.value > 1000) {
             showMessage(stock,"El stock debe ser un numero entre 0 y 1000");
         }
+
         // precio
         if (!price.value) {
             showMessage(price,"El precio de producto no puede estar vacío");

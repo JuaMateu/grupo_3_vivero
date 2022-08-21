@@ -12,107 +12,125 @@ window.addEventListener("load", () => {
   const div3 = document.querySelector("#div-3");
   const div4 = document.querySelector("#div-4");
   const div5 = document.querySelector("#div-5");
+  
 
+  let errorCounter = 0;
+
+  // Mostrar los errores en la vista
+  showMessage = (element,message) => {
+    let paragraph = document.createElement("p");
+    paragraph.classList.toggle("text-danger");
+    paragraph.innerText = message;
+    element.insertAdjacentElement("afterend", paragraph);
+    errorCounter += 1;
+  };
+
+  inputFailure = (element) => {
+    element.classList.remove('inputSuccess')
+    element.classList.add('inputFailure')
+  }
+  inputSuccess = (element) => {
+    element.classList.remove('inputFailure')
+    element.classList.add('inputSuccess')
+  }
+
+  // mostrar icono de check o error para cada campo
+
+  // First name
+  firstName.addEventListener("change", (event) =>{
+    if(!firstName.value || firstName.value.length < 2){
+      inputFailure(div1)
+    } else {
+      inputSuccess(div1)
+    }
+  })
+
+  // last name
+  lastName.addEventListener("change", (event) => {
+    if(!lastName.value || lastName.value.length < 2){
+      inputFailure(div2)
+    } else {
+      inputSuccess(div2)
+    }
+  })
+
+  // email
+  email.addEventListener("change", (event) => {
+    if(
+      !email.value ||
+      !email.value.includes("@") ||
+      !email.value.includes(".com")
+      ){
+      inputFailure(div3)
+    } else {
+      inputSuccess(div3)
+    }
+  })
+
+  // password
+  password.addEventListener("change", (event) => {
+    if(!password.value || password.value.length < 8 ){
+      inputFailure(div4)
+    } else {
+      inputSuccess(div4)
+    }
+  })
+
+  // password check
+  passwordCheck.addEventListener("change", (event) => {
+    if(!passwordCheck.value || passwordCheck.value !== password.value ){
+      inputFailure(div5)
+    } else {
+      inputSuccess(div5)
+    }
+  })
+
+  //chequo de submit
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    errorCounter = 0;
+    let errorMsg = document.querySelectorAll('.text-danger').forEach(e=> e.remove())
+    console.log(errorMsg)
 
     // First Name
-
-    if (!document.getElementById("first-name-error")) {
       if (!firstName.value || firstName.value.length < 2) {
-        const paragraph = document.createElement("p");
-        paragraph.setAttribute("id", "first-name-error");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de nombre debe contener al menos 2 caracteres.";
-        div1.appendChild(paragraph);
+        showMessage(firstName, "El campo de nombre debe contener al menos 2 caracteres.")
       }
-    } else if (
-      document.getElementById("first-name-error") &&
-      firstName.value.length >= 2
-    ) {
-      const paragraph = document.getElementById("first-name-error");
-      paragraph.remove();
-    }
-
     // Last Name
 
-    if (!document.getElementById("last-name-error")) {
+
       if (!lastName.value || lastName.value.length < 2) {
-        const paragraph = document.createElement("p");
-        paragraph.setAttribute("id", "last-name-error");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de apellido debe contener al menos 2 caracteres.";
-        div2.appendChild(paragraph);
+        showMessage(lastName, "El campo de apellido debe contener al menos 2 caracteres.")
       }
-    } else if (
-      document.getElementById("last-name-error") &&
-      lastName.value.length >= 2
-    ) {
-      const paragraph = document.getElementById("last-name-error");
-      paragraph.remove();
-    }
+   
 
     // Email
-
-    if (!document.getElementById("email-error")) {
+    
       if (
         !email.value ||
         !email.value.includes("@") ||
         !email.value.includes(".com")
       ) {
-        const paragraph = document.createElement("p");
-        paragraph.setAttribute("id", "email-error");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText = "El campo de email debe ser válido.";
-        div3.appendChild(paragraph);
+        showMessage(email, "El campo de email debe ser válido.");
       }
-    } else if (
-      document.getElementById("email-error") &&
-      email.value.includes("@") &&
-      email.value.includes(".com")
-    ) {
-      const paragraph = document.getElementById("email-error");
-      paragraph.remove();
-    }
-
+    
     // Password
 
-    if (!document.getElementById("password-error")) {
+    
       if (!password.value || password.value.length < 8) {
-        const paragraph = document.createElement("p");
-        paragraph.setAttribute("id", "password-error");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de contraseña debe contener al menos 8 caracteres.";
-        div4.appendChild(paragraph);
+        showMessage(password, "El campo de contraseña debe contener al menos 8 caracteres.");
       }
-    } else if (
-      document.getElementById("password-error") &&
-      password.value.length >= 8
-    ) {
-      const paragraph = document.getElementById("password-error");
-      paragraph.remove();
-    }
+   
 
     // Password Check
 
-    if (!document.getElementById("password-check-error")) {
+   
       if (!passwordCheck.value || passwordCheck.value !== password.value) {
-        const paragraph = document.createElement("p");
-        paragraph.setAttribute("id", "password-check-error");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText = "Ambas campos de contraseña deben coincidir.";
-        div5.appendChild(paragraph);
+        showMessage(passwordCheck, "Ambas campos de contraseña deben coincidir.");
       }
-    } else if (
-      document.getElementById("password-check-error") &&
-      passwordCheck.value &&
-      passwordCheck.value === password.value
-    ) {
-      const paragraph = document.getElementById("password-check-error");
-      paragraph.remove();
+    
+    console.log(errorCounter)
+    if (errorCounter > 0) {
+      event.preventDefault()
     }
   });
 });

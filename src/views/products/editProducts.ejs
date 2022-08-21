@@ -24,8 +24,8 @@
                 <div class="admin-form__conteiner">
                     <!-- Nombre del producto -->
                     <div  class="admin__form--item <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
-                        <label class="admin-form__label" for="product-text">Nombre del producto</label>
-                        <input class="admin__input" name="name" type="text" id="product-text" 
+                        <label class="admin-form__label" for="name">Nombre del producto</label>
+                        <input class="admin__input" name="name" type="text" id="name" 
                         value="<%= locals.editProduct ?  editProduct.name : '' %>"  maxlength="20" />
                         <% if (locals.errors && errors.name) { %>
                             <div class="text-danger">
@@ -42,8 +42,8 @@
                     </div>
                     <!-- descipcion del producto -->
                     <div class="admin__form--item">
-                        <label class="admin-form__label" for="product-description"> Descripción del producto</label>
-                        <textarea class="admin__input" class="admin__textarea" name="description" id="product-description" cols="25"
+                        <label class="admin-form__label" for="description"> Descripción del producto</label>
+                        <textarea class="admin__input" class="admin__textarea" name="description" id="description" cols="25"
                             rows="4" maxlength="200"><%= locals.editProduct ? editProduct.description : '' %></textarea>
                             <% if (locals.errors && errors.name) { %>
                                 <div class="text-danger">
@@ -97,8 +97,8 @@
 
                     <!-- precio -->
                     <div class="admin__form--item">
-                        <label class="admin-form__label" for="product-price"> Precio </label>
-                        <input class="admin__input" name="price" type="number" id="product-price" min="0" max="99999" required 
+                        <label class="admin-form__label" for="price"> Precio </label>
+                        <input class="admin__input" name="price" type="number" id="price" min="0" max="99999" required 
                             value="<%= locals.editProduct ? editProduct.price : 0 %>" step="100" />
                             <% if (locals.errors && errors.price) { %>
                                 <div class="text-danger">
@@ -123,8 +123,8 @@
                     </div>
                     <!-- subir imagen del producto -->
                     <div class="admin__form--item">
-                        <label class="admin-form__label" for="product-image"> Imagen</label>
-                        <input class="admin__input--img admin__input" name="img" type="file" id="product-image" accept="/image*" />
+                        <label class="admin-form__label" for="img"> Imagen</label>
+                        <input class="admin__input--img admin__input" name="img" type="file" id="img" accept=".jpg,.png,.jpeg,.gif,/image*" />
                     </div>
 
                     <!-- boton de editar producto -->
@@ -139,5 +139,6 @@
                 </div>
             </form>
         </div>
+        <script src="/js/addProduct.js"></script>
 </body>
 </html>
