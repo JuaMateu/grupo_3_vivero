@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
   // mostrar icono de check o error para cada campo
 
   // First name
-  firstName.addEventListener("change", (event) =>{
+  firstName.addEventListener("keypress", (event) =>{
     if(!firstName.value || firstName.value.length < 2){
       inputFailure(div1)
     } else {
@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
   })
 
   // last name
-  lastName.addEventListener("change", (event) => {
+  lastName.addEventListener("keypress", (event) => {
     if(!lastName.value || lastName.value.length < 2){
       inputFailure(div2)
     } else {
@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
   })
 
   // email
-  email.addEventListener("change", (event) => {
+  email.addEventListener("keypress", (event) => {
     if(
       !email.value ||
       !email.value.includes("@") ||
@@ -68,7 +68,7 @@ window.addEventListener("load", () => {
   })
 
   // password
-  password.addEventListener("change", (event) => {
+  password.addEventListener("keypress", (event) => {
     if(!password.value || password.value.length < 8 ){
       inputFailure(div4)
     } else {
@@ -77,7 +77,7 @@ window.addEventListener("load", () => {
   })
 
   // password check
-  passwordCheck.addEventListener("change", (event) => {
+  passwordCheck.addEventListener("keypress", (event) => {
     if(!passwordCheck.value || passwordCheck.value !== password.value ){
       inputFailure(div5)
     } else {
