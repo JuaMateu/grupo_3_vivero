@@ -1,89 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Head menos title -->
     <%- include('../partials/head') %>
-    <title>Editar Productos</title>
+        <title>Editar Productos</title>
 </head>
+
 <body>
     <%- include('../partials/header') %>
     <!-- Sidebar -->
     <%- include('../partials/sidebarAdmin') %>
-    <!-- Page content -->
+        <!-- Page content -->
     <div class="admin">
         <%- include('../partials/productsNav') %>
-        
+
         <h1>Administrar Productos</h1>
-        <h3>Agregá los articulos a la base de datos</h3>
-        <div class="img-conteiner-edit flex-column">
-            <img class="img-edit" src="<%= editProduct.img %>" alt="<%= editProduct.name %>">
+        <h3>Editar productos</h3>
+        <!-- Formulario de edicion de productos -->
+        
+            <form action="/products/edit/<%=editProduct.id%>?_method=PUT&img=<%=editProduct.img%>" method="post" class="admin__form" enctype="multipart/form-data">
+        
+                <div class="admin-form__conteiner">
+                    <!-- Nombre del producto -->
+                    <div  class="admin__form--item <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
+                        <label class="admin-form__label" for="product-text">Nombre del producto</label>
+                        <input class="admin__input" name="name" type="text" id="product-text" 
+                        value="<%= locals.editProduct ?  editProduct.name : '' %>"  maxlength="20" />
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+                    <!-- imagen del producto -->
+                
+                    <div class="img-conteiner-edit admin__form--item flex-column">
+                        <label for="product-img" class="admin-form__label">Imagen del producto</label>
+                        <img  id="product-img" name="product-img" class="img-edit" src="<%= editProduct.img %>"
+                        alt="<%= editProduct.name %>" />
+                    </div>
+                    <!-- descipcion del producto -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="product-description"> Descripción del producto</label>
+                        <textarea class="admin__input" class="admin__textarea" name="description" id="product-description" cols="25"
+                            rows="4" maxlength="200"><%= locals.editProduct ? editProduct.description : '' %></textarea>
+                            <% if (locals.errors && errors.name) { %>
+                                <div class="text-danger">
+                                    <%= errors.name.msg %> 
+                                </div>
+                            <% } %>
+                        </div>
+                    <!-- id de categoria del producto -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="category_id"> Categoría</label>
+                        <select class="admin__input" name="category_id" id="category_id" required>
+                            <option <%= locals.editProduct && editProduct.category_id == 1 ? "selected" : ""%> value="1">Planta Floral</option>
+                            <option <%= locals.editProduct && editProduct.category_id == 2 ? "selected" : ""%> value="2">Aromatica</option>
+                            <option <%= locals.editProduct && editProduct.category_id == 3 ? "selected" : ""%> value="3">Arbusto</option>
+                            <option <%= locals.editProduct && editProduct.category_id == 4 ? "selected" : ""%> value="4">Suculenta</option>
+                            <option <%= locals.editProduct && editProduct.category_id == 5 ? "selected" : ""%> value="5">Frutal</option>
+                        </select>
+                        <% if (locals.errors && errors.category_id) { %>
+                            <div class="text-danger">
+                                <%= errors.category_id.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <!-- cuidados del producto -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="care_level"> Cuidados</label>
+                        <select class="admin__input" name="care_level" id="care_level" required>
+                            <option <%= locals.editProduct && editProduct.care_level ==="Básico"     ? "selected" : ""%> value="Básico">Básico</option>
+                            <option <%= locals.editProduct && editProduct.care_level ==="Intermedio" ? "selected" : ""%> value="Intermedio">Intermedio</option>
+                            <option <%= locals.editProduct && editProduct.care_level ==="Experto"    ? "selected" : ""%> value="Experto">Experto</option>
+                        </select>
+                        <% if (locals.errors && errors.care_level) { %>
+                            <div class="text-danger">
+                                <%= errors.care_level.msg %> 
+                            </div>
+                        <% } %>    
+                    </div>
+
+                    <!-- stock  -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="stock">Stock</label>
+                        <input class="admin__input" name="stock" type="number" id="stock"
+                            min="0" max="1000" value="<%= locals.editProduct ?  editProduct.stock : '' %>" required />
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="text-danger">
+                                <%= errors.stock.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <!-- precio -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="product-price"> Precio </label>
+                        <input class="admin__input" name="price" type="number" id="product-price" min="0" max="99999" required 
+                            value="<%= locals.editProduct ? editProduct.price : 0 %>" step="100" />
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="text-danger">
+                                    <%= errors.price.msg %> 
+                                </div>
+                            <% } %>
+                        </div>
+
+                    <!-- label del producto -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="label"> Etiqueta del producto</label>
+                        <select class="admin__input" name="label" id="label" required>
+                            <option <%= locals.editProduct && editProduct.label ==="none"        ? "selected" : ""%> value="none">None</option>
+                            <option <%= locals.editProduct && editProduct.label ==="Oferta"      ? "selected" : ""%> value="Oferta">Oferta</option>
+                            <option <%= locals.editProduct && editProduct.label ==="Mas vendida" ? "selected" : ""%> value="Mas vendida">Mas vendida</option>
+                        </select>
+                        <% if (locals.errors && errors.label) { %>
+                            <div class="text-danger">
+                                <%= errors.label.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+                    <!-- subir imagen del producto -->
+                    <div class="admin__form--item">
+                        <label class="admin-form__label" for="product-image"> Imagen</label>
+                        <input class="admin__input--img admin__input" name="img" type="file" id="product-image" accept="/image*" />
+                    </div>
+
+                    <!-- boton de editar producto -->
+                    <div class="grid-1-start">
+                        <input class="admin__buttons--input   btnStyle2" type="submit" value="Editar" />
+                    </div>
+                    <!-- boton de eliminar el producto -->
+                    <div>
+                        <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar" 
+                        formaction="/products/delete/<%= locals.editProduct ? editProduct.id : '' %>?_method=DELETE">
+                    </div>
+                </div>
+            </form>
         </div>
-        <form action="/products/edit/<%= editProduct.id %>?_method=PUT" method="post" class="admin__form" enctype="multipart/form-data">
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-text">Ingresá el nombre del producto</label>
-                <input class="admin__input" name="name" type="text" id="product-text" required value="<%= editProduct.name %>" minlength="4" maxlength="20">
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-clasf">Ingresá la categoría</label>
-                <select name="type" id="product-clasf" required>
-                    <option value="Planta Floral">Planta Floral</option>
-                    <option value="Aromatica">Aromatica</option>
-                    <option value="Frutal">Frutal</option>
-                    <option value="Arbusto">Arbusto</option>
-                    <option value="Suculenta">Suculenta</option>
-                    <!-- <option value="<%= editProduct.type%>" selected><%= editProduct.type%></option> -->
-                </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-care">Seleccioná el cuidado del producto</label>
-                <select name="careLevel" id="product-care" required>
-                    <option value="Básico">Básico</option>
-                    <option value="Intermedio">Intermedio</option>
-                    <option value="Experto">Experto</option>
-                    <!-- <option value="<%= editProduct.careLevel %>" selected><%= editProduct.careLevel %></option> -->
-                </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-description">Ingresá la descripción del producto</label>
-                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" maxlength="100"><%= editProduct.description %></textarea>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="stock">Stock inicial del producto</label>
-                <input class="admin__input" name="stock" type="number" id="stock" value="<%= editProduct.stock %>" min="0" max="1000" value="<%= editProduct.stock %>" required >
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
-                <input class="admin__input" name="price" type="number" id="product-price" min="500" required max="100000" value="<%= editProduct.price %>" step=100>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="label">Seleccionar una etiqueta para el producto</label>
-                <select name="label" id="label" required>
-                    <option value="none">None</option>
-                    <option value="Oferta">Oferta</option>
-                    <option value="Mas vendida">Mas vendida</option>
-                    <!-- <option value="<%= editProduct.label %>" selected><%= editProduct.label %></option> -->
-                </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-image">Seleccioná la imagen para el producto</label>
-                <input class="admin__input"  name="img" type="file" id="product-image" accept="/image*">
-            </div>
-
-            <div class="admin__buttons">
-                <div>
-                    <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
-                </div>
-                <div>
-                    <input class="admin__buttons--input btnStyle2" type="submit" value="Editar">
-                </div>
-            </div>
-        </form>
-        <form action="/products/delete/<%= editProduct.id %>?_method=DELETE" method="post">
-            <div>
-                <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar">
-            </div>
-        </form>
-    </div>
-
 </body>
 </html>

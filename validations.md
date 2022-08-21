@@ -27,8 +27,18 @@
 - First Name
 - Last Name
 - Birth Date
+>>>>>>> c30425e0c2f7e2f12b53df421c1795986a310482
 
 --------------------- SIN VALIDAR ------------------------
+
+**User address (user Menu)**
+- Contact
+- Street
+- Street No.
+- State
+- City
+- CP
+- Mobile
 
 **Password**
 

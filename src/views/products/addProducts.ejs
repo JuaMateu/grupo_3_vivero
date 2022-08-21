@@ -16,66 +16,121 @@
         
         <h1>Administrar Productos</h1>
         <h3>Agregá los articulos a la base de datos</h3>
-        <form action="/products/create" method="post" enctype="multipart/form-data" class="admin__form">
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-text">Ingresá el nombre del producto</label>
-                <input class="admin__input" name="name" type="text" id="product-text" required placeholder="Ingresá el nombre del producto" minlength="4" maxlength="20">
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-clasf">Ingresá la categoría</label>
-                <select name="type" id="product-clasf" required>
-                    <option value="1">Planta Floral</option>
-                    <option value="2">Aromatica</option>
-                    <option value="3">Arbusto</option>
-                    <option value="4">Suculenta</option>
-                    <option value="5">Frutal</option>
-                </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-care">Seleccioná el cuidado del producto</label>
-                <select name="careLevel" id="product-care" required>
-                    <option value="Básico">Básico</option>
-                    <option value="Intermedio">Intermedio</option>
-                    <option value="Experto">Experto</option>
-                </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-description">Ingresá la descripción del producto</label>
-                <textarea class="admin__textarea" name="description" id="product-description" cols="25" rows="4" maxlength="100" placeholder="Ingresá la descripción del articulo"></textarea>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="stock">Stock inicial del producto</label>
-                <input class="admin__input" name="stock" type="number" id="stock" value="0" min="0" max="1000" required >
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-price">Ingresá el precio del producto a adicionar al inventario</label>
-                <input class="admin__input" name="price" type="number" id="product-price" min="500" required max="100000" value="500" step=100>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="label">Seleccionar una etiqueta para el producto</label>
-                <select name="label" id="label" required>
-                    <option value="None">None</option>
-                    <option value="Oferta">Oferta</option>
-                    <option value="Mas vendida">Mas vendida</option>
-                </select>
-            </div>
-            <div class="admin__form--item">
-                <label class="admin__label" for="product-image">Seleccioná la imagen para el producto</label>
-                <input class="admin__input" name="img" type="file" id="product-image" accept="/image*">
-            </div>
-            <!-- <div class="admin__form--item">
-                <label class="admin__label" for="product-size">Ingresá el tamaño del articulo en cm</label>
-                <input class="admin__input" name="size" type="number" id="product-size" min="50" max="100" value="50">
-            </div> -->
-            <div class="admin__buttons">
-                <div>
-                    <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
+        <form action="/products/create" method="post" class="admin__form" enctype="multipart/form-data">
+            <div class="admin-form__conteiner">
+                
+                <!-- Nombre del producto -->
+                <div  class="admin__form--item <%= locals.errors && errors.name ? "inputFailure" : "inputSuccess" %>">
+                    <label class="admin-form__label" for="name">Nombre del producto</label>
+                    <input class="admin__input" name="name" type="text" id="name" 
+                    value="<%= locals.oldData ? oldData.name : null %>"  />
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
                 </div>
-                <div>
-                    <input class="admin__buttons--input btnStyle2" type="submit" value="Agregar">
+
+                <!-- descipcion del producto -->
+                <div  class="admin__form--item">
+                    <label class="admin-form__label" for="description"> Descripción del producto</label>
+                    <textarea class="admin__input" class="admin__textarea" name="description" id="description" cols="25"
+                        rows="4" maxlength="200"><%= locals.oldData ? oldData.description : '' %></textarea>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
                 </div>
-            </div>
+
+                <!-- id de categoria del producto -->
+                <div id="category_id" class="admin__form--item">
+                    <label class="admin-form__label" for="category_id"> Categoría</label>
+                    <select class="admin__input" name="category_id" id="category_id" required>
+                        <option <%= locals.oldData && locals.oldData.category_id == 1 ? "selected" : ""%> value="1">Planta Floral</option>
+                        <option <%= locals.oldData && locals.oldData.category_id == 2 ? "selected" : ""%> value="2">Aromatica</option>
+                        <option <%= locals.oldData && locals.oldData.category_id == 3 ? "selected" : ""%> value="3">Arbusto</option>
+                        <option <%= locals.oldData && locals.oldData.category_id == 4 ? "selected" : ""%> value="4">Suculenta</option>
+                        <option <%= locals.oldData && locals.oldData.category_id == 5 ? "selected" : ""%> value="5">Frutal</option>
+                    </select>
+                    <% if (locals.errors && errors.category_id) { %>
+                        <div class="text-danger">
+                            <%= errors.category_id.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <!-- cuidados del producto -->
+                <div id="care_level" class="admin__form--item">
+                    <label class="admin-form__label" for="care_level"> Cuidados</label>
+                    <select class="admin__input" name="care_level" id="care_level" required>
+                        <option <%= locals.oldData && locals.oldData.care_level ==="Básico"     ? "selected" : ""%> value="Básico">Básico</option>
+                        <option <%= locals.oldData && locals.oldData.care_level ==="Intermedio" ? "selected" : ""%> value="Intermedio">Intermedio</option>
+                        <option <%= locals.oldData && locals.oldData.care_level ==="Experto"    ? "selected" : ""%> value="Experto">Experto</option>
+                    </select>
+                    <% if (locals.errors && errors.care_level) { %>
+                        <div class="text-danger">
+                            <%= errors.care_level.msg %> 
+                        </div>
+                    <% } %>    
+
+                </div>
+
+                <!-- stock  -->
+                <div  class="admin__form--item">
+                    <label class="admin-form__label" for="stock">Stock</label>
+                    <input class="admin__input" name="stock" type="number" id="stock"
+                        min="0" max="1000" value="<%= locals.oldData ? oldData.stock : '' %>" required />
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="text-danger">
+                                <%= errors.stock.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+
+                <!-- precio -->
+                <div  class="admin__form--item">
+                    <label class="admin-form__label" for="price"> Precio </label>
+                    <input class="admin__input" name="price" type="number" id="price" min="0" max="99999" required 
+                        value="<%= locals.oldData ? oldData.price : 0 %>" step="100" />
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="text-danger">
+                                <%= errors.price.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+
+                <!-- label del producto -->
+                <div class="admin__form--item">
+                    <label class="admin-form__label" for="label"> Etiqueta del producto</label>
+                    <select class="admin__input" name="label" id="label" required>
+                        <option <%= locals.oldData && oldData.label ==="none"        ? "selected" : ""%> value="none">None</option>
+                        <option <%= locals.oldData && oldData.label ==="Oferta"      ? "selected" : ""%> value="Oferta">Oferta</option>
+                        <option <%= locals.oldData && oldData.label ==="Mas vendida" ? "selected" : ""%> value="Mas vendida">Mas vendida</option>
+                    </select>
+                    <% if (locals.errors && errors.label) { %>
+                        <div class="text-danger">
+                            <%= errors.label.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+                <!-- subir imagen del producto -->
+                <div class="admin__form--item">
+                    <label class="admin-form__label" for="product-image"> Imagen</label>
+                    <input class="admin__input--img admin__input" name="img" type="file" id="product-image" accept="/image*" />
+                </div>
+                <!-- boton de resetear formulario -->
+                <div class="grid-1-start">
+                    <input class="admin__buttons--input  btnStyle2" type="reset" value="Limpiar formulario" />
+                </div>
+                <!-- boton de submit -->
+                <div>
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Agregar" />
+                </div>
+                
+            </div>    
         </form>
     </div>
+    <script src="/js/addProduct.js"></script>
 </body>
 </html>

@@ -25,6 +25,7 @@
                     <th>imagen</th>
                     <th>Nombre</th>
                     <th>Categoría</th>
+                    <th>Cuidados</th>
                     <th>Stock</th>
                     <th>precio</th>
                     <th>Action</th>
@@ -37,7 +38,8 @@
                         <td><%= prod.id %></td>
                         <td><div class="list-table__img-conteiner"><img src= <%= prod.img %> alt="aglaonema"></div></td>
                         <td><%= prod.name %></td>
-                        <td><%= prod.type %></td>
+                        <td><%= prod.category.name %></td>
+                        <td><%= prod.care_level %></td>
                         <td><%= prod.stock %></td>
                         <td><%= prod.price %></td>
                         <td>
