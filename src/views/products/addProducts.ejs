@@ -21,9 +21,9 @@
                 
                 <!-- Nombre del producto -->
                 <div  class="admin__form--item <%= locals.errors && errors.name ? "inputFailure" : "inputSuccess" %>">
-                    <label class="admin-form__label" for="product-text">Nombre del producto</label>
-                    <input id="name"  class="admin__input" name="name" type="text" id="product-text" required
-                    value="<%= locals.oldData ? oldData.name : null %>" minlength="4" maxlength="20" />
+                    <label class="admin-form__label" for="name">Nombre del producto</label>
+                    <input class="admin__input" name="name" type="text" id="name" 
+                    value="<%= locals.oldData ? oldData.name : null %>"  />
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
                             <%= errors.name.msg %> 
@@ -33,8 +33,8 @@
 
                 <!-- descipcion del producto -->
                 <div  class="admin__form--item">
-                    <label class="admin-form__label" for="product-description"> Descripción del producto</label>
-                    <textarea id="description" class="admin__input" class="admin__textarea" name="description" id="product-description" cols="25"
+                    <label class="admin-form__label" for="description"> Descripción del producto</label>
+                    <textarea class="admin__input" class="admin__textarea" name="description" id="description" cols="25"
                         rows="4" maxlength="200"><%= locals.oldData ? oldData.description : '' %></textarea>
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
@@ -79,7 +79,7 @@
                 <!-- stock  -->
                 <div  class="admin__form--item">
                     <label class="admin-form__label" for="stock">Stock</label>
-                    <input id="stock" class="admin__input" name="stock" type="number" id="stock"
+                    <input class="admin__input" name="stock" type="number" id="stock"
                         min="0" max="1000" value="<%= locals.oldData ? oldData.stock : '' %>" required />
                         <% if (locals.errors && errors.stock) { %>
                             <div class="text-danger">
@@ -91,7 +91,7 @@
                 <!-- precio -->
                 <div  class="admin__form--item">
                     <label class="admin-form__label" for="price"> Precio </label>
-                    <input id="price" class="admin__input" name="price" type="number" id="price" min="0" max="99999" required 
+                    <input class="admin__input" name="price" type="number" id="price" min="0" max="99999" required 
                         value="<%= locals.oldData ? oldData.price : 0 %>" step="100" />
                         <% if (locals.errors && errors.price) { %>
                             <div class="text-danger">
@@ -101,7 +101,7 @@
                     </div>
 
                 <!-- label del producto -->
-                <div id="label" class="admin__form--item">
+                <div class="admin__form--item">
                     <label class="admin-form__label" for="label"> Etiqueta del producto</label>
                     <select class="admin__input" name="label" id="label" required>
                         <option <%= locals.oldData && oldData.label ==="none"        ? "selected" : ""%> value="none">None</option>

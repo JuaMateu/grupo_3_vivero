@@ -1,72 +1,85 @@
-window.addEventListener("load", () => {
-    const form = document.querySelector("#users-form");
-  
-    const firstName = document.querySelector("#name");
-    const lastName = document.querySelector("#description");
-    const email = document.querySelector("#category_id");
-    const password = document.querySelector("#password");
-    const passwordCheck = document.querySelector("#passwordCheck");
-  
-    const div1 = document.querySelector("#div-1");
-    const div2 = document.querySelector("#div-2");
-    const div3 = document.querySelector("#div-3");
-    const div4 = document.querySelector("#div-4");
-    const div5 = document.querySelector("#div-5");
-  
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-  
-      // First Name
-  
-      if (!firstName.value || firstName.value.length >= 2) {
-        const paragraph = document.createElement("p");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de nombre debe contener al menos 2 caracteres.";
-        div1.appendChild(paragraph);
-      }
-  
-      // Last Name
-  
-      if (!lastName.value || lastName.value.length >= 2) {
-        const paragraph = document.createElement("p");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de apellido debe contener al menos 2 caracteres.";
-        div2.appendChild(paragraph);
-      }
-  
-      // Email
-  
-      if (
-        !email.value ||
-        email.value.includes("@") ||
-        email.value.includes(".com")
-      ) {
-        const paragraph = document.createElement("p");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText = "El campo de email debe ser válido.";
-        div3.appendChild(paragraph);
-      }
-  
-      // Password
-  
-      if (!password.value || password.value.length >= 8) {
-        const paragraph = document.createElement("p");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText =
-          "El campo de contraseña debe contener al menos 8 caracteres.";
-        div4.appendChild(paragraph);
-      }
-  
-      // Password Check
-  
-      if (!passwordCheck.value || passwordCheck.value === password.value) {
-        const paragraph = document.createElement("p");
-        paragraph.classList.add("text-danger");
-        paragraph.innerText = "Ambas campos de contraseña deben coincidir.";
-        div5.appendChild(paragraph);
-      }
+window.addEventListener('load',function(){
+    let formProduct = document.querySelector(".admin__form");
+
+    let name = document.querySelector("#name");
+    let description = document.querySelector("#description");
+    let stock = document.querySelector("#stock");
+    let price = document.querySelector("#price");
+
+    let category_id = document.querySelector("#category_id");
+    let care_level = document.querySelector("#care_level");
+    let label = document.querySelector("#label");
+
+    let errores = [];
+    
+    // Mostrar los errores en la vista
+    showMessage = (element,message) => {
+        let paragraph = document.createElement("p");
+        paragraph.classList.toggle("text-danger");
+        paragraph.innerText = message;
+        element.insertAdjacentElement("afterend", paragraph);
+        errores.push(1);
+    };
+
+    // Ocultamos los iconos de "check" al cargar la pagina
+    hideOk = () => {
+        for (i=0; i<OkIcon.length; i++){
+            OkIcon[i].style.display = "none";
+        }
+    };
+
+    //Mostrar mensajes de error
+    showOk = () => {
+        for (i=0; i<OkIcon.length; i++){
+            OkIcon[i].style.display = "block";
+        }
+    };
+
+    //Eliminacion de mensaje de error y puesta de vuelta a iconos
+    continousMessage = () => {
+        hideOk();
+            setTimeout(function(){
+                let hideError = document.querySelector('p'); // seleccionamos elemnto creado en linea 12
+                hideError.style.display = "none"
+                showOk();
+            },5000);
+    }
+
+    // Frenamos el form para validar
+    formProduct.addEventListener("submit",function(event){
+        
+        // Chequeamos si name vacio
+        if (!name.value) {
+            showMessage(name,"El nombre de producto debe estar completo");
+
+        } else if (name.value.length < 3) {
+            showMessage(name,"El campo de nombre debe tener mas de 3 caracteres");
+        }
+        // Chequeamos si description vacio y tiene menos de 400 caracteres
+        if (!description.value) {
+            showMessage(description,"El campo de description debe estar completo");
+
+        } else if (password.value.length > 400) {
+            showMessage(description,"La descripción no puede superar 400 caracteres");
+        };
+        // let stock = document.querySelector("#stock");
+        // let price = document.querySelector("#price");
+
+        // let category_id = document.querySelector("#category_id");
+        // let care_level = document.querySelector("#care_level");
+        // let label = document.querySelector("#label");
+
+        // Si hay errores, detenemos el envio del form
+        console.log("veamos errores");
+        if (errores.length >= 1) {
+            console.log(errores.length);
+            event.preventDefault();
+        }
+
+        // Si los errores superan a 2 se recarga para evitar aglomeracion de mensajes de error
+        if (errores.length > 2){
+            // location.reload(); 
+        };
     });
-  });
-  
+});
+
