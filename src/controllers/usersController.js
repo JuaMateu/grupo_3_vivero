@@ -112,6 +112,14 @@ const controller = {
   },
   //TODO crear usuario desde el menu de admin. Hay que revisar y cambiar la vista
   create: async (req, res) => {
+    const resultValidation = validationResult(req);
+    //Validaciones de formulario
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/usersAdd", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
     // recepcion de formulario de entrada de usuario
     let data = {
       first_name: req.body.firstName,

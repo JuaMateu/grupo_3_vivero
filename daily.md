@@ -193,3 +193,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Validar la Login desde el Front
 - Problemas: Configuracion de timer para mostrar errores
 - ¿Qué voy a hacer?: Adaptar el temporizador 
+
+## Sábado 20 de Agosto
+### Orlando Ayala
+- ¿Qué hice?: Validar añadir usuarios de admin menu desde el back
+- Problemas: Eliminación de mensajes de error aunque esté correcta la info
+- ¿Qué voy a hacer?: Resolver el detalle con ayuda del grupo por las vistas que han cambiado, están en stage y no se han pusheado 
