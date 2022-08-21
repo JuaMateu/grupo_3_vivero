@@ -22,10 +22,10 @@
 
                     <div class="auto-flex">
                         <!-- Iniciamos el formulario de sign up -->
-                        <form action="/users/menu/name?_method=PUT " method="POST" class="users-form">
+                        <form id="users-form" action="/users/menu/name?_method=PUT " method="POST" class="users-form">
                             <h3>Completá tus datos personales</h3>
                             <!-- Ingresar el nombre -->
-                            <div class="users-form__field <%= locals.errors && errors.first_name ? "inputFailure" : "inputSuccess" %>">
+                            <div id="div-1" class="users-form__field <%= locals.errors && errors.first_name ? "inputFailure" : "inputSuccess" %>">
                                 <label class="users-form__label" for="firstName">Nombre</label>
                                 <input 
                                     class="users-form__input " 
@@ -35,8 +35,7 @@
                                     placeholder="Ingresá tu nombre" 
                                     value="<%- user.first_name %> " 
                                     minlength="3" 
-                                    maxlength="20" 
-                                    required
+                                    maxlength="20"
                                 >
                                 <i class="fa-solid fa-circle-check"></i>
                                 <i class="fa-solid fa-circle-exclamation"></i>
@@ -58,8 +57,7 @@
                                     placeholder="Ingresá tu apellido" 
                                     value="<%- user.last_name %>" 
                                     minlength="3" 
-                                    maxlength="20" 
-                                    required
+                                    maxlength="20"
                                 >
                                 <i class="fa-solid fa-circle-check"></i>
                                 <i class="fa-solid fa-circle-exclamation"></i>
@@ -70,7 +68,7 @@
                                 <% } %>
                             </div>
                             <div class="users-form__field <%= locals.errors && errors.date_of_birth ? "inputFailure" : "inputSuccess" %>">
-                                <label class="users-form__label" for="date_of_birth">fecha de nacimiento</label>
+                                <label class="users-form__label" for="date_of_birth">Fecha De Nacimiento</label>
                                 <input 
                                     class="users-form__input" 
                                     name="date_of_birth" 
@@ -80,7 +78,6 @@
                                     min="1900-01-01"
                                     max="2020-01-01"
                                     value="<%= user.date_of_birth ? user.date_of_birth : "" %>"
-                                    required
                                 >
                                 <% if (locals.errors && errors.date_of_birth) { %>
                                     <div class="text-danger">
@@ -89,7 +86,7 @@
                                 <% } %>
                             </div>
                             <!-- Boton de iniciar sesion -->
-                            <input type="submit" value="Actualizar" class="btnStyle2">
+                            <input id="submit-button" type="submit" value="Actualizar" class="btnStyle2">
 
     
                         </form>
@@ -108,6 +105,7 @@
 
         <!-- aca arranca el footer -->
         <%- include('../../partials/footer') %>
+        <script src="/js/usersMenuBasicData.js"></script>
 </body>
 
 </html>

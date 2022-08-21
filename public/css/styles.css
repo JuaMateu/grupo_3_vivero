@@ -940,7 +940,8 @@ tr:hover {
 .user-menu__links {
   font-weight: 700;
   color: #014934;
-  transition: all 1s;
+  transition: all 0.2s;
+  padding: 1rem;
 }
 
 .user-menu__links:hover {

@@ -19,14 +19,14 @@
             <%- include('../../partials/userMenuNav.ejs') %>
             <div class="auto-flex">
                 <!-- Iniciamos el formulario de sign up -->
-                <form action="/users/menu/contact/?_method=PUT " method="POST" class="users-form">
+                <form id="users-form" action="/users/menu/contact/?_method=PUT " method="POST" class="users-form">
                     <h3>Completá tus datos de contacto</h3>
                     <!-- Ingresar la calle -->
                     <div class="address-form">
                         <div class="users-form__field <%= locals.errors && errors.street ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="street">Calle</label>
-                            <input class="users-form__input" name="street" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0] ? user.address[0].street : "" %>" minlength="3" maxlength="100" required>
+                            <input id="street" class="users-form__input" name="street" type="text"
+                                placeholder="Ingresá tu Dirección" value="<%= user.address[0] ? user.address[0].street : "" %>" minlength="3" maxlength="100">
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.street) { %>
@@ -38,8 +38,8 @@
                         <!--  ingresar altura de calle -->
                         <div class="users-form__field <%= locals.errors && errors.number ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="number">Número</label>
-                            <input class="users-form__input" name="number" type="number"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0] ? user.address[0].number : "" %>" min="0" max="9999999999" required>
+                            <input id="number" class="users-form__input" name="number" type="number"
+                                placeholder="Ingresá tu Dirección" value="<%= user.address[0] ? user.address[0].number : "" %>" min="0" max="9999999999">
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.number) { %>
@@ -51,8 +51,8 @@
                         <!--  ingresar estado o provincia -->
                         <div class="users-form__field <%= locals.errors && errors.state ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="state">Provincia</label>
-                            <input class="users-form__input" name="state" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].state : ""  %>" minlength="3" maxlength="40" required>
+                            <input id="state" class="users-form__input" name="state" type="text"
+                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].state : ""  %>" minlength="3" maxlength="40">
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.state) { %>
@@ -64,8 +64,8 @@
                         <!--  ingresar Ciudad -->
                         <div class="users-form__field <%= locals.errors && errors.city ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="city">Ciudad</label>
-                            <input class="users-form__input" name="city" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].city : "" %>" minlength="3" maxlength="40" required>
+                            <input id="city" class="users-form__input" name="city" type="text"
+                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].city : "" %>" minlength="3" maxlength="40">
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.city) { %>
@@ -77,8 +77,8 @@
                         <!--  ingresar codigo postal -->
                         <div class="users-form__field <%= locals.errors && errors.postal_code ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="postal_code">Codigo Postal</label>
-                            <input class="users-form__input" name="postal_code" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].postal_code : "" %>" minlength="3" maxlength="10" required>
+                            <input id="postal-code" class="users-form__input" name="postal_code" type="text"
+                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].postal_code : "" %>" minlength="3" maxlength="10">
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.postal_code) { %>
@@ -90,8 +90,8 @@
                         <!--  ingresar telefono -->
                         <div class="users-form__field <%= locals.errors && errors.mobile ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="mobile">Telefono</label>
-                            <input class="users-form__input" name="mobile" type="number"
-                                placeholder="Ingresá tu telefono" value="<%= user.mobile  %>" minlength="8" maxlength="20" required>
+                            <input id="mobile" class="users-form__input" name="mobile" type="number"
+                                placeholder="Ingresá tu telefono" value="<%= user.mobile  %>" minlength="8" maxlength="20">
                                 <i class="fa-solid fa-circle-check"></i>
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                     <% if (locals.errors && errors.mobile) { %>
@@ -113,5 +113,6 @@
 
     <!-- aca arranca el footer -->
     <%- include('../../partials/footer') %>
+    <script src="/js/usersMenuContact.js"></script>
 </body>
 </html>
