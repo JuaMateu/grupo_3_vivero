@@ -4,7 +4,6 @@ window.addEventListener("load", () => {
   const firstName = document.querySelector("#first_name");
   const lastName = document.querySelector("#last_name");
   const birthday = document.querySelector("#date_of_birth");
-  const button = document.querySelector("#submit-button");
 
   let errorCounter = 0;
 
