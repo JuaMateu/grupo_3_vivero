@@ -28,7 +28,7 @@ const controller = {
 
   addForm: (req, res) => {
     // formulario de creacion de producto
-    res.render("products/editProducts");
+    res.render("products/addProducts");
   },
 
   create: (req, res) => {
@@ -36,7 +36,7 @@ const controller = {
     const resultValidation = validationResult(req);
     //Validaciones de formulario
     if (resultValidation.errors.length > 0) {
-      return res.render("products/editProducts", {
+      return res.render("products/addProducts", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
@@ -44,7 +44,7 @@ const controller = {
     // imagen por defecto
     let imgPath = "/img/plantas/Aglaonema.png";
     if (req.file) {
-      imgPath = req.file.filename;
+      imgPath = "/img/plantas/" + req.file.filename;
     }
     //objeto data para crear producto
     let data = {
@@ -79,7 +79,7 @@ const controller = {
     if (resultValidation.errors.length > 0) {
       return res.render("products/editProducts", {
         errors: resultValidation.mapped(),
-        oldData: req.body,
+        editProduct: {...req.body, id:req.params.id, img:req.query.img},
       });
     }
     let data = {

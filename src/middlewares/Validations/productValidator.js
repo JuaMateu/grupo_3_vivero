@@ -25,11 +25,7 @@ const validations = [
     body('label')
         .trim()
         .notEmpty().withMessage("debes seleccionar una etiqueta").bail()
-        .isLength({min:3, max:40}).withMessage("la etiqueta debe tener entre 3 y 40 caracteres"),
-    body('img')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar tu primer apellido").bail()
-        .isLength({min:3, max:20}).withMessage("Debes ingresar entre 3 y 20 caracteres"),
+        .isLength({min:3, max:40}).withMessage("la etiqueta debe tener entre 3 y 40 caracteres")
 ];
 
 module.exports = validations;

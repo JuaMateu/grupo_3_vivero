@@ -19,14 +19,19 @@
         <h3>Editar productos</h3>
         <!-- Formulario de edicion de productos -->
         
-            <form action="/products/edit/<%= editProduct.id  %>?_method=PUT" method="post" class="admin__form" enctype="multipart/form-data">
+            <form action="/products/edit/<%=editProduct.id%>?_method=PUT&img=<%=editProduct.img%>" method="post" class="admin__form" enctype="multipart/form-data">
         
                 <div class="admin-form__conteiner">
                     <!-- Nombre del producto -->
                     <div  class="admin__form--item <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
                         <label class="admin-form__label" for="product-text">Nombre del producto</label>
-                        <input class="admin__input" name="name" type="text" id="product-text" required
-                        value="<%= locals.editProduct ?  editProduct.name : '' %>" minlength="4" maxlength="20" />
+                        <input class="admin__input" name="name" type="text" id="product-text" 
+                        value="<%= locals.editProduct ?  editProduct.name : '' %>"  maxlength="20" />
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <!-- imagen del producto -->
                 
@@ -40,7 +45,12 @@
                         <label class="admin-form__label" for="product-description"> Descripción del producto</label>
                         <textarea class="admin__input" class="admin__textarea" name="description" id="product-description" cols="25"
                             rows="4" maxlength="200"><%= locals.editProduct ? editProduct.description : '' %></textarea>
-                    </div>
+                            <% if (locals.errors && errors.name) { %>
+                                <div class="text-danger">
+                                    <%= errors.name.msg %> 
+                                </div>
+                            <% } %>
+                        </div>
                     <!-- id de categoria del producto -->
                     <div class="admin__form--item">
                         <label class="admin-form__label" for="category_id"> Categoría</label>
@@ -51,6 +61,11 @@
                             <option <%= locals.editProduct && editProduct.category_id == 4 ? "selected" : ""%> value="4">Suculenta</option>
                             <option <%= locals.editProduct && editProduct.category_id == 5 ? "selected" : ""%> value="5">Frutal</option>
                         </select>
+                        <% if (locals.errors && errors.category_id) { %>
+                            <div class="text-danger">
+                                <%= errors.category_id.msg %> 
+                            </div>
+                        <% } %>
                     </div>
 
                     <!-- cuidados del producto -->
@@ -61,6 +76,11 @@
                             <option <%= locals.editProduct && editProduct.care_level ==="Intermedio" ? "selected" : ""%> value="Intermedio">Intermedio</option>
                             <option <%= locals.editProduct && editProduct.care_level ==="Experto"    ? "selected" : ""%> value="Experto">Experto</option>
                         </select>
+                        <% if (locals.errors && errors.care_level) { %>
+                            <div class="text-danger">
+                                <%= errors.care_level.msg %> 
+                            </div>
+                        <% } %>    
                     </div>
 
                     <!-- stock  -->
@@ -68,6 +88,11 @@
                         <label class="admin-form__label" for="stock">Stock</label>
                         <input class="admin__input" name="stock" type="number" id="stock"
                             min="0" max="1000" value="<%= locals.editProduct ?  editProduct.stock : '' %>" required />
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="text-danger">
+                                <%= errors.stock.msg %> 
+                            </div>
+                        <% } %>
                     </div>
 
                     <!-- precio -->
@@ -75,7 +100,12 @@
                         <label class="admin-form__label" for="product-price"> Precio </label>
                         <input class="admin__input" name="price" type="number" id="product-price" min="0" max="99999" required 
                             value="<%= locals.editProduct ? editProduct.price : 0 %>" step="100" />
-                    </div>
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="text-danger">
+                                    <%= errors.price.msg %> 
+                                </div>
+                            <% } %>
+                        </div>
 
                     <!-- label del producto -->
                     <div class="admin__form--item">
@@ -85,6 +115,11 @@
                             <option <%= locals.editProduct && editProduct.label ==="Oferta"      ? "selected" : ""%> value="Oferta">Oferta</option>
                             <option <%= locals.editProduct && editProduct.label ==="Mas vendida" ? "selected" : ""%> value="Mas vendida">Mas vendida</option>
                         </select>
+                        <% if (locals.errors && errors.label) { %>
+                            <div class="text-danger">
+                                <%= errors.label.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <!-- subir imagen del producto -->
                     <div class="admin__form--item">
