@@ -6,10 +6,10 @@ window.addEventListener('load',function(){
     let stock = document.querySelector("#stock");
     let price = document.querySelector("#price");
 
-    let category_id = document.querySelector("#category_id");
+    let category_id = document.getElementById("category_id");
     let care_level = document.querySelector("#care_level");
     let label = document.querySelector("#label");
-    let img = this.document.querySelector('#img');
+    let img = document.querySelector('#img');
 
     let errorCounter = 0;
     
@@ -75,12 +75,44 @@ window.addEventListener('load',function(){
             showMessage(price,"el precio debe ser un numero entero");
         }
 
-        // let category_id = document.querySelector("#category_id");
-        // let care_level = document.querySelector("#care_level");
-        // let label = document.querySelector("#label");
+        // categoría
+        console.log()
+        console.log(category_id.options.length)
+        if (!category_id.value) {
+            showMessage(category_id,"La categoría no puede estar vacía");
+        } else if (Number(category_id.value) < 1 
+        || Number(category_id.value) > category_id.options.length 
+        || Number(category_id.value) % 1 != 0) {
+            showMessage(category_id,"Debes elegir una de las opciones");
+        } 
+        
+        // Care Level 
+        if (!care_level) {
+            showMessage(care_level,"Debes elegir un nivel de cuidados para la planta");
+        } else if (care_level.value != "Básico" 
+        && care_level.value != "Intermedio"
+        && care_level.value != "Experto") {
+            showMessage(care_level,"Debes elegir una de las opciones");
+        } 
+        // Label
+        if (!label) {
+            showMessage(label,"Debes elegir un nivel de cuidados para la planta");
+        } else if (label.value != "none" 
+        && label.value != "Oferta"
+        && label.value != "Mas vendida") {
+            showMessage(label,"Debes elegir una de las opciones");
+        } 
+
+        //img 
+        let imgExtention = img.value.split(".")[1]
+        if (imgExtention != "jpg" 
+        && imgExtention != "gif"
+        && imgExtention != "png"
+        && imgExtention != "jpeg") {
+            showMessage(img,"las extensiones aceptadas son jpg, gif, png y jpeg");
+        } 
 
         // Si hay errores, detenemos el envio del form
-        console.log("veamos errores");
         if (errorCounter > 0) {
             console.log(errorCounter);
             event.preventDefault();

@@ -44,7 +44,7 @@
                 </div>
 
                 <!-- id de categoria del producto -->
-                <div id="category_id" class="admin__form--item">
+                <div class="admin__form--item">
                     <label class="admin-form__label" for="category_id"> Categoría</label>
                     <select class="admin__input" name="category_id" id="category_id" required>
                         <option <%= locals.oldData && locals.oldData.category_id == 1 ? "selected" : ""%> value="1">Planta Floral</option>
@@ -61,7 +61,7 @@
                 </div>
 
                 <!-- cuidados del producto -->
-                <div id="care_level" class="admin__form--item">
+                <div class="admin__form--item">
                     <label class="admin-form__label" for="care_level"> Cuidados</label>
                     <select class="admin__input" name="care_level" id="care_level" required>
                         <option <%= locals.oldData && locals.oldData.care_level ==="Básico"     ? "selected" : ""%> value="Básico">Básico</option>
@@ -117,7 +117,7 @@
                 <!-- subir imagen del producto -->
                 <div class="admin__form--item">
                     <label class="admin-form__label" for="product-image"> Imagen</label>
-                    <input class="admin__input--img admin__input" name="img" type="file" id="product-image" accept=".jpg,.gif,.jpeg,.png,/image*" />
+                    <input class="admin__input--img admin__input" name="img" type="file" id="img" accept=".jpg,.gif,.jpeg,.png,/image*" />
                 </div>
                 <!-- boton de resetear formulario -->
                 <div class="grid-1-start">
