@@ -25,10 +25,12 @@ window.addEventListener("load", () => {
     errorCounter += 1;
   };
 
+  //agrega icono de error
   inputFailure = (element) => {
     element.classList.remove('inputSuccess')
     element.classList.add('inputFailure')
   }
+  //agrega icono de tilde
   inputSuccess = (element) => {
     element.classList.remove('inputFailure')
     element.classList.add('inputSuccess')
