@@ -15,10 +15,7 @@ window.addEventListener("load", () => {
   const div4 = document.querySelector("#div-4");
   const div5 = document.querySelector("#div-5");
   
-  // Contador de errores para prevenir el envío del form
-  let errorCounter = 0;
-
-  // == FUNCIONES ==
+  // ==== FUNCIONES ====
 
   // Recibe elemento DOM y un mensaje para mostrar en caso de error
   showMessage = (element,message) => {
@@ -26,7 +23,6 @@ window.addEventListener("load", () => {
     paragraph.classList.toggle("text-danger");
     paragraph.innerText = message;
     element.insertAdjacentElement("afterend", paragraph);
-    errorCounter += 1;
   };
 
   // Asigna clase de error a un input
@@ -38,98 +34,134 @@ window.addEventListener("load", () => {
   inputSuccess = (element) => {
     element.classList.remove('inputFailure')
     element.classList.add('inputSuccess')
+    
   }
 
-  // === Feedback para de cada input === 
+  // Controla que la pasword sea segura y da feedback con cada keyup del usuario
+  passwordStrengthChecker = (p) => {
+    let passwordStrength = 5;
+    let Weaknesses = [];
+    div4.querySelectorAll('.text-danger').forEach(e=> e.remove())
 
-  // First name
-  firstName.addEventListener("keypress", (event) =>{
-    if(!firstName.value || firstName.value.length < 2){
+    p.length < 8 ? Weaknesses.push("Debe contener como minimo 8 caracteres") : passwordStrength--
+    p.match(/[a-z]/g) === null ? Weaknesses.push("Debe contener una minúscula") : passwordStrength--
+    p.match(/[A-Z]/g) === null ? Weaknesses.push("Debe contener una mayúscula") : passwordStrength--
+    p.match(/[\W]/g) === null ? Weaknesses.push("Debe contener un símbolo") : passwordStrength--
+    p.match(/[0-9]/g) === null ? Weaknesses.push("Debe contener número") : passwordStrength--
+
+    Weaknesses.forEach(w => showMessage(password, w))
+    Weaknesses.length > 0 ? inputFailure(div4) : "";
+    return passwordStrength
+  }
+  
+  
+  // === VALIDACIONES ON KEYUP PARA DAR FEEDBACK INSTANTANEO === 
+
+  // First Name
+  firstName.addEventListener("keyup", (event) =>{
+    div1.querySelectorAll('.text-danger').forEach(e=> e.remove())
+    if(!firstName.value || firstName.value.length < 3){
       inputFailure(div1)
+      showMessage(firstName, "El campo de nombre debe contener al menos 3 caracteres.")
     } else {
       inputSuccess(div1)
     }
   })
 
-  // last name
-  lastName.addEventListener("keypress", (event) => {
-    if(!lastName.value || lastName.value.length < 2){
+  // Last name
+  lastName.addEventListener("keyup", (event) => {
+    div2.querySelectorAll('.text-danger').forEach(e=> e.remove())
+    if(!lastName.value || lastName.value.length < 3){
       inputFailure(div2)
+      showMessage(lastName, "El campo de apellido debe contener al menos 3 caracteres.")
     } else {
       inputSuccess(div2)
     }
   })
 
-  // email
-  email.addEventListener("keypress", (event) => {
+  // Email
+  email.addEventListener("keyup", (event) => {
+    div3.querySelectorAll('.text-danger').forEach(e=> e.remove())
     if(
       !email.value ||
       !email.value.includes("@") ||
       !email.value.includes(".com")
       ){
+      showMessage(email, "El campo de email debe ser válido.");
       inputFailure(div3)
     } else {
       inputSuccess(div3)
     }
   })
 
-  // password
-  password.addEventListener("keypress", (event) => {
-    if(!password.value || password.value.length < 8 ){
+  // Password
+  password.addEventListener("keyup", (event) => {
+    
+    if(passwordStrengthChecker(password.value) > 0 ){
       inputFailure(div4)
     } else {
       inputSuccess(div4)
     }
   })
 
-  // password check
-  passwordCheck.addEventListener("keypress", (event) => {
+  // Password check
+  passwordCheck.addEventListener("keyup", (event) => {
+    div5.querySelectorAll('.text-danger').forEach(e=> e.remove())
     if(!passwordCheck.value || passwordCheck.value !== password.value ){
       inputFailure(div5)
+      showMessage(passwordCheck, "Ambas campos de contraseña deben coincidir.");
     } else {
       inputSuccess(div5)
     }
   })
 
-  // === muestra mensajes de error al hacer submit ===
+  // fin validaciones onkeyup
+
+  // === VALIDACIONES ON SUBMIT ===
+
   form.addEventListener("submit", (event) => {
-    errorCounter = 0;
-    let errorMsg = document.querySelectorAll('.text-danger').forEach(e=> e.remove())
-    console.log(errorMsg)
+    let errorCounter = 0;
 
     // First Name
     if (!firstName.value || firstName.value.length < 3) {
-      showMessage(firstName, "El campo de nombre debe contener al menos 3 caracteres.")
+      div1.querySelectorAll('.text-danger').forEach(e=> e.remove())
+      showMessage(firstName, "El nombre debe contener al menos 3 caracteres.")
+      errorCounter++
     }
-
+    
     // Last Name
     if (!lastName.value || lastName.value.length < 3 ) {
-      showMessage(lastName, "El campo de apellido debe contener al menos 3 caracteres.")
+      div2.querySelectorAll('.text-danger').forEach(e=> e.remove())
+      showMessage(lastName, "El apellido debe contener al menos 3 caracteres.")
+      errorCounter++
     }
-
+    
     // Email
     if (
       !email.value ||
       !email.value.includes("@") ||
-      !email.value.includes(".com")
-    ) {
-      showMessage(email, "El campo de email debe ser válido.");
+      !email.value.includes(".com")) {
+      div3.querySelectorAll('.text-danger').forEach(e=> e.remove())
+      showMessage(email, "Debes ingresar una direccion válida")
+      errorCounter++
+      
     }
-    
-    // Password
-    if (!password.value || password.value.length < 8) {
-      showMessage(password, "El campo de contraseña debe contener al menos 8 caracteres.");
-    }
-   
-
-    // Password Check
-    if (!passwordCheck.value || passwordCheck.value !== password.value) {
-      showMessage(passwordCheck, "Ambas campos de contraseña deben coincidir.");
-    }
-    
+      
+      // Password
+      if (passwordStrengthChecker(password.value) > 0) {
+        errorCounter++
+      }
+      
+      
+      // Password Check
+      if (!passwordCheck.value || passwordCheck.value !== password.value) {
+        errorCounter++
+      }
+      
     // Si hay al menos un error se detiene el envio y se muestran los mensaje de error 
     console.log(errorCounter)
     if (errorCounter > 0) {
+      console.log(`se previene el default, Errores:${errorCounter}`)
       event.preventDefault()
     }
   });
