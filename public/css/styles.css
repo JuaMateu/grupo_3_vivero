@@ -381,16 +381,28 @@ header {
 }
 
 .users__subtitle {
-  display: flex;
+  text-align: center;
   justify-content: space-around;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #014934;
+
+}
+.users__subtitle h4 {
+  font-size: 0.9rem;
 }
 
 .users__link {
+  display: inline-block;
   text-decoration-line: underline;
   font-weight: 700;
   color: #014934;
+  margin-top: 20px;
+  transition: color, 0.2s;
+}
+.users__link:hover {
+
+  color: var(--highlight-Orange);
+
 }
 
 /* Formulario de Login */
