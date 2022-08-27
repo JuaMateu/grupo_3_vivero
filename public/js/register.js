@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+  // == Selectores DOM ==
   const form = document.querySelector("#users-form");
 
   const firstName = document.querySelector("#firstName");
@@ -7,16 +8,19 @@ window.addEventListener("load", () => {
   const password = document.querySelector("#password");
   const passwordCheck = document.querySelector("#passwordCheck");
 
+  // contenedores de cada input, se usan para clases de succces o failure
   const div1 = document.querySelector("#div-1");
   const div2 = document.querySelector("#div-2");
   const div3 = document.querySelector("#div-3");
   const div4 = document.querySelector("#div-4");
   const div5 = document.querySelector("#div-5");
   
-
+  // Contador de errores para prevenir el envío del form
   let errorCounter = 0;
 
-  // Mostrar los errores en la vista
+  // == FUNCIONES ==
+
+  // Recibe elemento DOM y un mensaje para mostrar en caso de error
   showMessage = (element,message) => {
     let paragraph = document.createElement("p");
     paragraph.classList.toggle("text-danger");
@@ -25,18 +29,18 @@ window.addEventListener("load", () => {
     errorCounter += 1;
   };
 
-  //agrega icono de error
+  // Asigna clase de error a un input
   inputFailure = (element) => {
     element.classList.remove('inputSuccess')
     element.classList.add('inputFailure')
   }
-  //agrega icono de tilde
+  // Asigna clase de exito a un input
   inputSuccess = (element) => {
     element.classList.remove('inputFailure')
     element.classList.add('inputSuccess')
   }
 
-  // mostrar icono de check o error para cada campo
+  // === Feedback para de cada input === 
 
   // First name
   firstName.addEventListener("keypress", (event) =>{
@@ -87,49 +91,43 @@ window.addEventListener("load", () => {
     }
   })
 
-  //chequo de submit
+  // === muestra mensajes de error al hacer submit ===
   form.addEventListener("submit", (event) => {
     errorCounter = 0;
     let errorMsg = document.querySelectorAll('.text-danger').forEach(e=> e.remove())
     console.log(errorMsg)
 
     // First Name
-      if (!firstName.value || firstName.value.length < 2) {
-        showMessage(firstName, "El campo de nombre debe contener al menos 2 caracteres.")
-      }
+    if (!firstName.value || firstName.value.length < 3) {
+      showMessage(firstName, "El campo de nombre debe contener al menos 3 caracteres.")
+    }
+
     // Last Name
-
-
-      if (!lastName.value || lastName.value.length < 2) {
-        showMessage(lastName, "El campo de apellido debe contener al menos 2 caracteres.")
-      }
-   
+    if (!lastName.value || lastName.value.length < 3 ) {
+      showMessage(lastName, "El campo de apellido debe contener al menos 3 caracteres.")
+    }
 
     // Email
-    
-      if (
-        !email.value ||
-        !email.value.includes("@") ||
-        !email.value.includes(".com")
-      ) {
-        showMessage(email, "El campo de email debe ser válido.");
-      }
+    if (
+      !email.value ||
+      !email.value.includes("@") ||
+      !email.value.includes(".com")
+    ) {
+      showMessage(email, "El campo de email debe ser válido.");
+    }
     
     // Password
-
-    
-      if (!password.value || password.value.length < 8) {
-        showMessage(password, "El campo de contraseña debe contener al menos 8 caracteres.");
-      }
+    if (!password.value || password.value.length < 8) {
+      showMessage(password, "El campo de contraseña debe contener al menos 8 caracteres.");
+    }
    
 
     // Password Check
-
-   
-      if (!passwordCheck.value || passwordCheck.value !== password.value) {
-        showMessage(passwordCheck, "Ambas campos de contraseña deben coincidir.");
-      }
+    if (!passwordCheck.value || passwordCheck.value !== password.value) {
+      showMessage(passwordCheck, "Ambas campos de contraseña deben coincidir.");
+    }
     
+    // Si hay al menos un error se detiene el envio y se muestran los mensaje de error 
     console.log(errorCounter)
     if (errorCounter > 0) {
       event.preventDefault()
