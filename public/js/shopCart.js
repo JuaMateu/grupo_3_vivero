@@ -49,13 +49,15 @@ window.addEventListener("load", () => {
       let input = document.createElement("input");
       quantity.appendChild(input);
       input.setAttribute("type", "number");
-      input.setAttribute("value", "1");
+      input.setAttribute("value", product.quantity);
       input.setAttribute("min", "1");
       input.setAttribute("max", "100");
 
       let total = document.createElement("div");
       myProduct.appendChild(total);
-      total.innerText = product.price;
+      total.innerText =
+        "$" +
+        +product.price.substring(1, product.price.length) * product.quantity;
       total.classList.add("cart__product-total");
     });
   } else {
