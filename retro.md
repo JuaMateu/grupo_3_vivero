@@ -137,3 +137,25 @@ Concluído el tercer sprint realizamos una retrospectiva sobre el trabajo realza
     no aplica
 
 ### Para hacer la retrospectiva nos ayudamos con el siguiente tablero [Trello](https://trello.com/b/N5D2ber1/retrospectiva)
+
+## 6° Retrospectiva (sobre sprint 7):
+
+-  Comenzar a hacer: <br>
+    n/a
+
+-  Hacer más: <br>
+    Planificar correctamente los requerimientos, sus interdependencias y la division de tareas al principio del sprint
+
+- Continuar haciendo: <br>
+    Completar las dailys y retrospectivas con mayor frecuencia
+    Reuniones con demostración del código implementado para resolver las dudas y errores
+    Buscar darle valor agregado a la pagina con funcionalidades, una vez que esten terminados los requerimientos
+    Mantener la comunicación constante con el equipo sean cambios radicales o pequeños en el proyecto
+
+- Hacer menos: <br>
+    no aplica
+
+- Dejar de hacer: <br>
+    No aprovechar en su totalidad el tiempo del sprint para realizar las tareas requeridas
+
+### Para hacer la retrospectiva nos ayudamos con el siguiente tablero [Trello](https://trello.com/b/N5D2ber1/retrospectiva)
