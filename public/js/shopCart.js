@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   /*
   let totalPrice = 0;
   products.forEach((product) => {
-    totalPrice += parseInt(product.price.substring(1, product.price.length));
+  totalPrice += parseInt(product.price.substring(1, product.price.length));
   });
 
   let finalPrice = document.querySelector(".cart__total-price");
@@ -22,6 +22,7 @@ window.addEventListener("load", () => {
     products.forEach((product) => {
       let myProduct = document.createElement("div");
       cart.insertBefore(myProduct, buttons);
+      myProduct.setAttribute("id", product.id);
       myProduct.classList.add("cart__product");
 
       let detail = document.createElement("div");
@@ -49,13 +50,26 @@ window.addEventListener("load", () => {
       let input = document.createElement("input");
       quantity.appendChild(input);
       input.setAttribute("type", "number");
-      input.setAttribute("value", "1");
+      input.setAttribute("value", product.quantity);
       input.setAttribute("min", "1");
       input.setAttribute("max", "100");
 
+      let deleteButton = document.createElement("a");
+      quantity.appendChild(deleteButton);
+      deleteButton.setAttribute("id", "delete-button");
+      deleteButton.setAttribute("href", "");
+
+      let icon = document.createElement("i");
+      deleteButton.appendChild(icon);
+      icon.classList.add("icon");
+      icon.classList.add("cart__icon");
+      icon.setAttribute("id", "trash");
+
       let total = document.createElement("div");
       myProduct.appendChild(total);
-      total.innerText = product.price;
+      total.innerText =
+        "$" +
+        +product.price.substring(1, product.price.length) * product.quantity;
       total.classList.add("cart__product-total");
     });
   } else {
@@ -64,5 +78,36 @@ window.addEventListener("load", () => {
     message.innerHTML =
       "<div>Tu carrito esta vacio.</div><a href='/products/shop'>Hace click aca para ver los productos que tenemos disponibles!<a/>";
     message.classList.add("cart__message");
+    message.setAttribute("id", "cart-empty");
+  }
+
+  if (document.getElementById("delete-button")) {
+    let deleteButtons = document.querySelectorAll("#delete-button");
+
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        productQuantity = button.parentElement;
+        productRow = productQuantity.parentElement;
+        productRow.remove();
+
+        const id = productRow.getAttribute("id");
+        let products = JSON.parse(localStorage.getItem("products"));
+        products = products.filter((product) => product.id != id);
+
+        if (products.length > 0) {
+          localStorage.setItem("products", JSON.stringify(products));
+        } else {
+          localStorage.clear();
+
+          let message = document.createElement("div");
+          cart.insertBefore(message, buttons);
+          message.innerHTML =
+            "<div>Tu carrito esta vacio.</div><a href='/products/shop'>Hace click aca para ver los productos que tenemos disponibles!<a/>";
+          message.classList.add("cart__message");
+          message.setAttribute("id", "cart-empty");
+        }
+      });
+    });
   }
 });

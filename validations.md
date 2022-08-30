@@ -1,10 +1,9 @@
---------------- VALIDADAS EN BACK ------------------
-**Login**
+**>LOGIN**
 
 - Email
 - Password
 
-**Register**
+**REGISTER**
 
 - First Name
 - Last Name
@@ -12,7 +11,13 @@
 - Password
 - Check Password
 
-**User Data**
+**USER MENU - BASIC INFORMATION**
+
+- First Name
+- Last Name
+- Birth Date
+
+**USER MENU - CONCTACT**
 
 - Contact
 - Street
@@ -22,35 +27,17 @@
 - Postal Code
 - Phone Number
 
-**Basic Data**
-
-- First Name
-- Last Name
-- Birth Date
->>>>>>> c30425e0c2f7e2f12b53df421c1795986a310482
-
---------------------- SIN VALIDAR ------------------------
-
-**User address (user Menu)**
-- Contact
-- Street
-- Street No.
-- State
-- City
-- CP
-- Mobile
-
-**Password**
+**USER MENU - PASSWORD**
 
 - Actual Password
 - Update Password
 - Check Update Password
 
-**Avatar**
+**USER MENU - AVATAR**
 
 - Image
 
-**Create Product / Edit Product**
+**PRODUCT - CRUD**
 
 - Name
 - Category
@@ -61,7 +48,7 @@
 - Label
 - Image
 
-**Create User / Edit User**
+**USER - CRUD**
 
 - First Name
 - Last Name

@@ -1,61 +1,102 @@
 <header>
-    <nav class="header">
-      
-        <!-- Burger Menu (Mobile) -->
-        <div class="burger-menu">
-            <label for="nav-troggler"><i class="icon" id="burger"></i></label>
-            <input type="checkbox" id="nav-troggler" class="burger-menu__nav-toggler">
-            <div class="burger-menu__shadow">
-                <nav class="burger-menu__links">
-                    <ul>
-                        <li><a class="nav-item no-list-style" href='/products/shop'>Tienda</a></li>
-                        <li><a class="nav-item no-list-style" href='/home'>Ofertas</a></li>
-                        <li><a class="nav-item no-list-style" href='/products/detail/1'>Cuidados</a></li>
-                        <li><a class="nav-item no-list-style" href='/aboutUs'>Sobre Nosotros</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-
-        <!-- Navigation Bar (Desktop) -->
-        <nav class="section-menu">
-            <ul class="section-menu__list">
-                <li><a class="nav-item no-list-style" href='/products/shop'>Tienda</a></li>
-                <li><a class="nav-item no-list-style" href='/home'>Ofertas</a></li>
-                <li><a class="nav-item no-list-style" href='/products/detail/1'>Cuidados</a></li>
-                <li><a class="nav-item no-list-style" href='/aboutUs'>Sobre Nosotros</a></li>
-            </ul>
-        </nav>
-
-        <!-- Logo -->
-        <div class="header__logo">
-            <a href="/"><img src="/img/Logo-2.svg" alt="logo del E-commmerce"></a>
-        </div>
-
-        <!-- Navigation -->
-        <ul class="icon-menu">
-            <li class="no-list-style">
-                <form action="/search/" class="search-bar">
-                    <input id="searched" name="searched" type="text" class="search-bar__input" placeholder="Enter your search"
-                        aria-label="submit search">
-                    <button type="submit" class="search-bar__submit"><i class="icon" id="search"></i></button>
-                </form>
+  <nav class="header">
+    <!-- Burger Menu (Mobile) -->
+    <div class="burger-menu">
+      <label for="nav-troggler"><i class="icon" id="burger"></i></label>
+      <input
+        type="checkbox"
+        id="nav-troggler"
+        class="burger-menu__nav-toggler"
+      />
+      <div class="burger-menu__shadow">
+        <nav class="burger-menu__links">
+          <ul>
+            <li>
+              <a class="nav-item no-list-style" href="/products/shop">Tienda</a>
             </li>
-            <% if (locals.userFound) { %>
-              <div class="dropdown">
-                <button class="dropdown__button"><div class="dropdown__user-img"><img src=<%= locals.userLogged.img %> alt="user image"></div></button>
-                <div class="dropdown__menu">
-                  <a class="dropdown__a" href="/users/menu/">Mi perfil</a>
-                  <% if (locals.isAdmin) { %>
-                      <a class="dropdown__a" href="/products/">Menu de administrador</a>
-                  <% } %>
-                  <a class="dropdown__a" href="/users/logout">Cerrar sesión</a>
-                </div>
-              </div>
-            <% } else { %>
-              <li class="no-list-style"><a href='/users/login'><i class="icon" id="user"></i></a></li>
-            <% } %>
-              <li class="no-list-style"><a href='/shopCart'><i class="icon" id="cart"></i></a></li>
-        </ul>
+            <li><a class="nav-item no-list-style" href="/home">Ofertas</a></li>
+            <li>
+              <a class="nav-item no-list-style" href="/products/detail/1"
+                >Cuidados</a
+              >
+            </li>
+            <li>
+              <a class="nav-item no-list-style" href="/aboutUs"
+                >Sobre Nosotros</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Navigation Bar (Desktop) -->
+    <nav class="section-menu">
+      <ul class="section-menu__list">
+        <li>
+          <a class="nav-item no-list-style" href="/products/shop">Tienda</a>
+        </li>
+        <li><a class="nav-item no-list-style" href="/home">Ofertas</a></li>
+        <li>
+          <a class="nav-item no-list-style" href="/products/detail/1"
+            >Cuidados</a
+          >
+        </li>
+        <li>
+          <a class="nav-item no-list-style" href="/aboutUs">Sobre Nosotros</a>
+        </li>
+      </ul>
     </nav>
+
+    <!-- Logo -->
+    <div class="header__logo">
+      <a href="/"><img src="/img/Logo-2.svg" alt="logo del E-commmerce" /></a>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="icon-menu">
+      <li class="no-list-style">
+        <form action="/search/" class="search-bar">
+          <input
+            id="searched"
+            name="searched"
+            type="text"
+            class="search-bar__input"
+            placeholder="Enter your search"
+            aria-label="submit search"
+          />
+          <button type="submit" class="search-bar__submit">
+            <i class="icon" id="search"></i>
+          </button>
+        </form>
+      </li>
+      <% if (locals.userFound) { %>
+      <div class="dropdown">
+        <button class="dropdown__button">
+          <div class="dropdown__user-img">
+            <img src="<%= locals.userLogged.img %>" alt="Avatar" />
+          </div>
+        </button>
+        <div class="dropdown__menu">
+          <a class="dropdown__a" href="/users/menu/">Mi perfil</a>
+          <% if (locals.isAdmin) { %>
+          <a class="dropdown__a" href="/products/">Menu de administrador</a>
+          <% } %>
+          <a class="dropdown__a" href="/users/logout">Cerrar sesión</a>
+        </div>
+      </div>
+      <% } else { %>
+      <li class="no-list-style">
+        <a href="/users/login"><i class="icon" id="user"></i></a>
+      </li>
+      <% } %>
+      <div class="cart__section">
+        <li id="shopping-cart" class="no-list-style">
+          <a href="/shopCart"><i class="icon" id="cart"></i></a>
+        </li>
+        <div class="cart__counter"></div>
+      </div>
+    </ul>
+  </nav>
 </header>
+<script src="/js/header.js"></script>

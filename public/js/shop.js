@@ -17,27 +17,64 @@ window.addEventListener("load", () => {
 
       if (localStorage.getItem("products")) {
         let products = JSON.parse(localStorage.getItem("products"));
+        let productFound = false;
 
-        localStorage.setItem(
-          "products",
-          JSON.stringify([
-            ...products,
-            { name: name, price: price, image: image },
-          ])
-        );
+        products.forEach((product) => {
+          if (product.name === name) {
+            product.quantity++;
+            productFound = true;
+          }
+        });
 
-        const messageBox = document.createElement("div");
-        messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
-        messageBox.classList.add("cart__message-box");
-        body.appendChild(messageBox);
-        setTimeout(() => {
-          messageBox.remove();
-        }, 5000);
+        if (productFound) {
+          localStorage.setItem("products", JSON.stringify(products));
+
+          const messageBox = document.createElement("div");
+          messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
+          messageBox.classList.add("cart__message-box");
+          body.appendChild(messageBox);
+          setTimeout(() => {
+            messageBox.remove();
+          }, 5000);
+
+          button.innerText = "Añadido";
+          setTimeout(() => {
+            button.innerText = "Agregar Al Carrito";
+          }, 1000);
+        } else {
+          localStorage.setItem(
+            "products",
+            JSON.stringify([
+              ...products,
+              {
+                id: products[products.length - 1].id + 1,
+                name: name,
+                price: price,
+                quantity: 1,
+                image: image,
+              },
+            ])
+          );
+
+          const messageBox = document.createElement("div");
+          messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
+          messageBox.classList.add("cart__message-box");
+          body.appendChild(messageBox);
+          setTimeout(() => {
+            messageBox.remove();
+          }, 5000);
+
+          button.innerText = "Añadido";
+          setTimeout(() => {
+            button.innerText = "Agregar Al Carrito";
+          }, 1000);
+        }
       } else {
-        localStorage.setItem(
-          "products",
-          JSON.stringify([{ name: name, price: price, image: image }])
-        );
+        let products = [
+          { id: 1, name: name, price: price, image: image, quantity: 1 },
+        ];
+
+        localStorage.setItem("products", JSON.stringify(products));
 
         const messageBox = document.createElement("div");
         messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
@@ -46,6 +83,11 @@ window.addEventListener("load", () => {
         setTimeout(() => {
           messageBox.remove();
         }, 5000);
+
+        button.innerText = "Añadido";
+        setTimeout(() => {
+          button.innerText = "Agregar Al Carrito";
+        }, 1000);
       }
     });
   });
