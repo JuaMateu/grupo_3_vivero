@@ -14,13 +14,13 @@
     <div class="admin">
         <%- include('../partials/productsNav') %>
         
-        <h1>Administrar Productos</h1>
-        <h3>Agregá los articulos a la base de datos</h3>
+        <h1 class="adminMenu__title">Administrar Productos</h1>
         <form action="/products/create" method="post" class="admin__form" enctype="multipart/form-data">
             <div class="admin-form__conteiner">
+                <h3 class="span-2">Agregá los articulos a la base de datos</h3>
                 
                 <!-- Nombre del producto -->
-                <div  class="admin__form--item <%= locals.errors && errors.name ? "inputFailure" : "inputSuccess" %>">
+                <div  class="adminForm__inputConteiner <%= locals.errors && errors.name ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="name">Nombre del producto</label>
                     <input class="admin__input" name="name" type="text" id="name" 
                     value="<%= locals.oldData ? oldData.name : null %>"  />
@@ -32,8 +32,8 @@
                 </div>
 
                 <!-- descipcion del producto -->
-                <div  class="admin__form--item">
-                    <label class="admin-form__label" for="description"> Descripción del producto</label>
+                <div  class="adminForm__inputConteiner  adminForm__inputConteiner--desc">
+                    <label class="admin-form__label admin-form__label--desc " for="description"> Descripción del producto</label>
                     <textarea class="admin__input" class="admin__textarea" name="description" id="description" cols="25"
                         rows="4" maxlength="200"><%= locals.oldData ? oldData.description : '' %></textarea>
                     <% if (locals.errors && errors.name) { %>
@@ -44,9 +44,9 @@
                 </div>
 
                 <!-- id de categoria del producto -->
-                <div class="admin__form--item">
+                <div class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="category_id"> Categoría</label>
-                    <select class="admin__input" name="category_id" id="category_id" required>
+                    <select class="admin__input" name="category_id" id="category_id">
                         <option <%= locals.oldData && locals.oldData.category_id == 1 ? "selected" : ""%> value="1">Planta Floral</option>
                         <option <%= locals.oldData && locals.oldData.category_id == 2 ? "selected" : ""%> value="2">Aromatica</option>
                         <option <%= locals.oldData && locals.oldData.category_id == 3 ? "selected" : ""%> value="3">Arbusto</option>
@@ -61,9 +61,9 @@
                 </div>
 
                 <!-- cuidados del producto -->
-                <div class="admin__form--item">
+                <div class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="care_level"> Cuidados</label>
-                    <select class="admin__input" name="care_level" id="care_level" required>
+                    <select class="admin__input" name="care_level" id="care_level">
                         <option <%= locals.oldData && locals.oldData.care_level ==="Básico"     ? "selected" : ""%> value="Básico">Básico</option>
                         <option <%= locals.oldData && locals.oldData.care_level ==="Intermedio" ? "selected" : ""%> value="Intermedio">Intermedio</option>
                         <option <%= locals.oldData && locals.oldData.care_level ==="Experto"    ? "selected" : ""%> value="Experto">Experto</option>
@@ -77,10 +77,10 @@
                 </div>
 
                 <!-- stock  -->
-                <div  class="admin__form--item">
+                <div  class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="stock">Stock</label>
                     <input class="admin__input" name="stock" type="number" id="stock"
-                        min="0" max="1000" value="<%= locals.oldData ? oldData.stock : '' %>" required />
+                        value="<%= locals.oldData ? oldData.stock : '' %>" />
                         <% if (locals.errors && errors.stock) { %>
                             <div class="text-danger">
                                 <%= errors.stock.msg %> 
@@ -89,9 +89,9 @@
                     </div>
 
                 <!-- precio -->
-                <div  class="admin__form--item">
+                <div  class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="price"> Precio </label>
-                    <input class="admin__input" name="price" type="number" id="price" min="0" max="99999" required 
+                    <input class="admin__input" name="price" type="number" id="price" min="0" max="999999" 
                         value="<%= locals.oldData ? oldData.price : 0 %>" step="100" />
                         <% if (locals.errors && errors.price) { %>
                             <div class="text-danger">
@@ -101,9 +101,9 @@
                     </div>
 
                 <!-- label del producto -->
-                <div class="admin__form--item">
+                <div class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="label"> Etiqueta del producto</label>
-                    <select class="admin__input" name="label" id="label" required>
+                    <select class="admin__input" name="label" id="label">
                         <option <%= locals.oldData && oldData.label ==="none"        ? "selected" : ""%> value="none">None</option>
                         <option <%= locals.oldData && oldData.label ==="Oferta"      ? "selected" : ""%> value="Oferta">Oferta</option>
                         <option <%= locals.oldData && oldData.label ==="Mas vendida" ? "selected" : ""%> value="Mas vendida">Mas vendida</option>
@@ -115,7 +115,7 @@
                     <% } %>
                 </div>
                 <!-- subir imagen del producto -->
-                <div class="admin__form--item">
+                <div class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="product-image"> Imagen</label>
                     <input class="admin__input--img admin__input" name="img" type="file" id="img" accept=".jpg,.gif,.jpeg,.png,/image*" />
                 </div>

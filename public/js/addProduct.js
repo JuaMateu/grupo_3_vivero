@@ -13,28 +13,30 @@ window.addEventListener('load',function(){
 
     let errorCounter = 0;
     
-    // Mostrar los errores en la vista
     showMessage = (element,message) => {
+        deleteErrorMsg(element.parentElement)
+        inputFailure(element.parentElement)
         let paragraph = document.createElement("p");
         paragraph.classList.toggle("text-danger");
         paragraph.innerText = message;
         element.insertAdjacentElement("afterend", paragraph);
-        errorCounter += 1;
+        errorCounter++
     };
 
-    // Ocultamos los iconos de "check" al cargar la pagina
-    hideOk = () => {
-        for (i=0; i<OkIcon.length; i++){
-            OkIcon[i].style.display = "none";
-        }
-    };
-
-    //Mostrar mensajes de error
-    showOk = () => {
-        for (i=0; i<OkIcon.length; i++){
-            OkIcon[i].style.display = "block";
-        }
-    };
+    // Asigna clase de error a un input
+    inputFailure = (element) => {
+        element.classList.remove('inputSuccess');
+        element.classList.add('inputFailure');
+    }
+    // Asigna clase de exito a un input
+    inputSuccess = (element) => {
+        element.classList.remove('inputFailure');
+        element.classList.add('inputSuccess'); 
+    }
+    // Borra mensajes de error
+    deleteErrorMsg = (element) => {
+        element.querySelectorAll('.text-danger').forEach(e=> e.remove())
+    }
 
 
     // Frenamos el form para validar
@@ -47,8 +49,11 @@ window.addEventListener('load',function(){
         // Nombre de producto
         if (!name.value) {
             showMessage(name,"El nombre de producto debe estar completo");
+
         } else if (name.value.length < 4) {
             showMessage(name,"El nombre debe tener por lo menos 5 caracteres");
+        } else {
+            inputSuccess(name.parentElement)
         }
 
         // descripcion del producto
@@ -57,34 +62,40 @@ window.addEventListener('load',function(){
 
         } else if (description.value.length <20 && description.value.length > 400) {
             showMessage(description,"La descripcion debe tener entre 20 y 400 caracteres");
-        };
+        } else {
+            inputSuccess(description.parentElement)
+        }
 
         // stock 
         if (!stock.value) {
             showMessage(stock,"El stock de producto no puede estar vacío");
         } else if (stock.value < 0 || stock.value > 1000) {
             showMessage(stock,"El stock debe ser un numero entre 0 y 1000");
+        } else {
+            inputSuccess(stock.parentElement)
         }
 
         // precio
         if (!price.value) {
             showMessage(price,"El precio de producto no puede estar vacío");
-        } else if (price.value < 0 || price.value > 1000) {
-            showMessage(price,"El stock debe ser un numero entre 0 y 1000");
+        } else if (price.value < 500 || price.value > 40000) {
+            showMessage(price,"El Precio debe estar entre 500 y 40000");
         } else if (price.value % 1 != 0) {
             showMessage(price,"el precio debe ser un numero entero");
+        } else {
+            inputSuccess(price.parentElement)
         }
 
         // categoría
-        console.log()
-        console.log(category_id.options.length)
         if (!category_id.value) {
             showMessage(category_id,"La categoría no puede estar vacía");
         } else if (Number(category_id.value) < 1 
         || Number(category_id.value) > category_id.options.length 
         || Number(category_id.value) % 1 != 0) {
             showMessage(category_id,"Debes elegir una de las opciones");
-        } 
+        } else { 
+            inputSuccess(category_id.parentElement)
+        }
         
         // Care Level 
         if (!care_level) {
@@ -93,7 +104,9 @@ window.addEventListener('load',function(){
         && care_level.value != "Intermedio"
         && care_level.value != "Experto") {
             showMessage(care_level,"Debes elegir una de las opciones");
-        } 
+        } else {
+            inputSuccess(care_level.parentElement)
+        }
         // Label
         if (!label) {
             showMessage(label,"Debes elegir un nivel de cuidados para la planta");
@@ -101,22 +114,36 @@ window.addEventListener('load',function(){
         && label.value != "Oferta"
         && label.value != "Mas vendida") {
             showMessage(label,"Debes elegir una de las opciones");
-        } 
+        } else {
+            inputSuccess(label.parentElement)
+        }
 
         //img 
-        let imgExtention = img.value.split(".")[1]
-        if (imgExtention != "jpg" 
-        && imgExtention != "gif"
-        && imgExtention != "png"
-        && imgExtention != "jpeg") {
-            showMessage(img,"las extensiones aceptadas son jpg, gif, png y jpeg");
-        } 
+        console.log(Boolean(img.value))
+        if (img.value) {
+            let imgExtention = img.value.split(".")[1]
+            if (imgExtention != "jpg" 
+            && imgExtention != "gif"
+            && imgExtention != "png"
+            && imgExtention != "jpeg") {
+                showMessage(img,"las extensiones aceptadas son jpg, gif, png y jpeg");
+            } else { 
+                inputSuccess(img.parentElement)
+            }
+        } else if (window.location.pathname.split('/').includes('edit')) {
+
+        } else  {
+            showMessage(img,"Debes subir una imagen del producto");
+        }
+
 
         // Si hay errores, detenemos el envio del form
+
+        console.log(errorCounter);
         if (errorCounter > 0) {
-            console.log(errorCounter);
             event.preventDefault();
         }
+
 
     });
 });

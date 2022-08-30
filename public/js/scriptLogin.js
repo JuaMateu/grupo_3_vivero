@@ -1,11 +1,15 @@
 window.addEventListener('load',function(){
-    let divEmail = document.querySelector("#divEmail");
-    let email = document.querySelector("#email");
-    let divPassword = document.querySelector("#divPassword");
-    let password = document.querySelector("#password");
+    // == Selectores DOM ==
     let formLogin = document.querySelector("#formLogin");
-    let OkIcon = document.querySelectorAll("#OKIcon");
-    let errores = [];
+
+    let email = document.querySelector("#email");
+    let password = document.querySelector("#password");
+    
+    let divEmail = document.querySelector("#divEmail");
+    let divPassword = document.querySelector("#divPassword");
+
+      // RegExp para validar mail
+    const isEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     
     // Mostrar los errores en la vista
     showMessage = (element,message) => {
@@ -13,62 +17,68 @@ window.addEventListener('load',function(){
         paragraph.classList.toggle("text-danger");
         paragraph.innerText = message;
         element.appendChild(paragraph);
-        errores.push(1);
     };
 
-    // Ocultamos los iconos de "check" al cargar la pagina
-    hideOk = () => {
-        for (i=0; i<OkIcon.length; i++){
-            OkIcon[i].style.display = "none";
-        }
-    };
-
-    //Mostrar mensajes de error
-    showOk = () => {
-        for (i=0; i<OkIcon.length; i++){
-            OkIcon[i].style.display = "block";
-        }
-    };
-
-    //Eliminacion de mensaje de error y puesta de vuelta a iconos
-    continousMessage = () => {
-        hideOk();
-            setTimeout(function(){
-                let hideError = document.querySelector('p'); // seleccionamos elemnto creado en linea 12
-                hideError.style.display = "none"
-                showOk();
-            },5000);
+    // Asigna clase de error a un input
+    inputFailure = (element) => {
+        element.classList.remove('inputSuccess');
+        element.classList.add('inputFailure');
     }
+    // Asigna clase de exito a un input
+    inputSuccess = (element) => {
+        element.classList.remove('inputFailure');
+        element.classList.add('inputSuccess');
+    }
+    
+    email.addEventListener("keyup", (event) => {
+        divEmail.querySelectorAll('.text-danger').forEach(e=> e.remove())
+        divEmail.classList.remove('inputFailure');
+    })
+
+      // Borra mensajes de error
+    deleteErrorMsg = (element) => {
+        element.querySelectorAll('.text-danger').forEach(e=> e.remove())
+    }
+
+    password.addEventListener('focus', function (event) {
+        deleteErrorMsg(divPassword)
+        divPassword.classList.remove("inputFailure");
+    })
 
     // Frenamos el form para validar
     formLogin.addEventListener("submit",function(event){
-        // Chequeamos si email vacio
-        if (!email.value) {
-            showMessage(divEmail,"El campo de email debe estar completo");
-            continousMessage();
-        } else if (!email.value.includes("@") || !email.value.includes(".com")) {
-            showMessage(divEmail,"El campo de email debe ser válido");
-            continousMessage();
-        }
-        // Chequeamos si password vacio
-        if (!password.value) {
-            showMessage(divPassword,"El campo de password debe estar completo");
-            continousMessage(); // no llega el scoope de la funcion REVISAR
-        } else if (password.value.length < 8) {
-            showMessage(divPassword,"La contraseña debe tener mínimo 8 caracteres");
-            continousMessage(); // no llega el scoope de la funcion REVISAR
-        };
-        // Si hay errores, detenemos el envio del form
-        console.log("veamos errores");
-        if (errores.length > 1) {
-            console.log(errores.length);
-            event.preventDefault();
+        let errorCounter = 0;
+
+        // Email
+        if (!email.value || !isEmail.test(email.value)) {
+            deleteErrorMsg(divEmail)
+            showMessage(divEmail,"El Email no es válido");
+            inputFailure(divEmail);
+            errorCounter++;
+            console.log('email invalido')
+        } else {
+            inputSuccess(divEmail)
         }
 
-        // Si los errores superan a 2 se recarga para evitar aglomeracion de mensajes de error
-        if (errores.length > 2){
-            location.reload(); 
+        // Password
+        if (!password.value) {
+            deleteErrorMsg(divPassword)
+            showMessage(divPassword,"El campo de password debe estar completo");
+            inputFailure(divPassword); 
+            errorCounter++;
+        } else if (password.value.length < 8) {
+            deleteErrorMsg(divPassword)
+            showMessage(divPassword,"La contraseña debe tener mínimo 8 caracteres");
+            inputFailure(); 
+            errorCounter++;
+        } else {
+            inputSuccess(divEmail);
         };
+
+        // Si hay errores, detenemos el envio del form
+        if (errorCounter > 0) {
+            event.preventDefault();
+        }
     });
 });
 
