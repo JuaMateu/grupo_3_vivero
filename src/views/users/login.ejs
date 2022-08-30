@@ -22,7 +22,7 @@
                 <!-- Iniciamos el formulario de login -->
                 <form id="formLogin" action="/users/login" method="post" class="users-form">
                     <!-- Ingresar el correo electrónico -->
-                    <div id="divEmail" class="users-form__field <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
+                    <div id="divEmail" class="users-form__field <%= locals.errors && errors.email ? "inputFailure" : "" %>">
                         <label class="users-form__label" for="email"> Correo electrónico</label>
                         <input 
                             id="email"
@@ -39,7 +39,7 @@
                         <% } %>
                     </div>
                     <!-- Ingresar la contraseña -->
-                    <div id="divPassword" class="users-form__field <%= locals.errors && errors.password ? "inputFailure" : "inputSuccess" %>">
+                    <div id="divPassword" class="users-form__field <%= locals.errors && errors.password ? "inputFailure" : "" %>">
                         <label class="users-form__label" for="password">Contraseña</label>
                         <input 
                             id="password"
