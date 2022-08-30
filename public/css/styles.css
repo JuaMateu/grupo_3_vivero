@@ -536,6 +536,7 @@ header {
   display: flex;
   align-items: center;
   border-bottom: solid 1px black;
+  font-size: 16px;
 }
 
 .cart__product-detail {
@@ -557,11 +558,22 @@ header {
   text-align: center;
 }
 
+.cart__product-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cart__product-quantity input {
   text-align: center;
   width: 30%;
   border: solid 1px black;
   border-radius: 0.1rem;
+}
+
+.cart__icon {
+  margin-bottom: -0.25rem;
+  margin-left: 0.5rem;
 }
 
 .cart__message {
@@ -1232,6 +1244,10 @@ tr:hover {
 
 #whatsapp {
   background-image: url(../img/icons/icon-whatsapp.svg);
+}
+
+#trash {
+  background-image: url(../img/icons/icon-trash.svg);
 }
 
 /*=================
