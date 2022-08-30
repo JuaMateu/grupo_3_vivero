@@ -92,15 +92,15 @@ const controller = {
                 msg: "La contraseña no es válida.",
               },
             },
-            oldData: req.body,
+            oldData: req.body.email,
           });
         }
       }
       return res.render("users/login", {
         errors: {
           email: {
-            msg: "El correo electrónico no es válido.",
-          },
+            msg: "las credenciales no son válidas.",
+          }
         },
       });
     });
