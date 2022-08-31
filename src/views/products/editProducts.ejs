@@ -68,6 +68,12 @@
                         <% } %>
                     </div>
 
+                    <!-- subir imagen del producto -->
+                    <div class="adminForm__inputConteiner">
+                        <label class="admin-form__label" for="img"> Imagen</label>
+                        <input class="admin__input--img admin__input" name="img" type="file" id="img" accept=".jpg,.png,.jpeg,.gif,/image*" />
+                    </div>
+                    
                     <!-- cuidados del producto -->
                     <div class="adminForm__inputConteiner">
                         <label class="admin-form__label" for="care_level"> Cuidados</label>
@@ -120,11 +126,6 @@
                                 <%= errors.label.msg %> 
                             </div>
                         <% } %>
-                    </div>
-                    <!-- subir imagen del producto -->
-                    <div class="adminForm__inputConteiner">
-                        <label class="admin-form__label" for="img"> Imagen</label>
-                        <input class="admin__input--img admin__input" name="img" type="file" id="img" accept=".jpg,.png,.jpeg,.gif,/image*" />
                     </div>
 
                     <!-- boton de editar producto -->

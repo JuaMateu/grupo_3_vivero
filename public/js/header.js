@@ -10,9 +10,10 @@ window.addEventListener("load", () => {
         productsTotal = productsTotal + product.quantity;
       });
 
-      numberOfProducts.innerText = "(" + productsTotal + ")";
+      numberOfProducts.innerText = productsTotal;
     } else {
-      numberOfProducts.innerText = "(0)";
+      numberOfProducts.style.display = 'none'
+      numberOfProducts.innerText = "0";
     }
   }, 100);
 });
