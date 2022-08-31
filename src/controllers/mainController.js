@@ -23,8 +23,8 @@ const controller = {
   cart: (req, res) => {
     return res.render("shopCart");
   },
-  aboutUs: (req, res) => {
-    return res.render("aboutUs");
+  about: (req, res) => {
+    return res.render("about");
   },
   search: async (req, res) => {
     let search = req.query.searched;
