@@ -142,11 +142,7 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - Problemas: No tuve mayores inconvenientes.
 - ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de la pagina que se podrian mejorar.
 
-<<<<<<< HEAD
-## Domingo 10 de Julio
-=======
 ## Jueves 07 de Julio
->>>>>>> 5c76b7e9b24ef405f5d4786aefa812da788b65aa
 ### Orlando Ayala
 - ¿Qué hice?: Implementé iconos y CSS en las validaciones para que se hiciera más amigable con el usuario
 - Problemas: Problema con la contraseña al momento de hacer login
@@ -199,3 +195,33 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Validar añadir usuarios de admin menu desde el back
 - Problemas: Eliminación de mensajes de error aunque esté correcta la info
 - ¿Qué voy a hacer?: Resolver el detalle con ayuda del grupo por las vistas que han cambiado, están en stage y no se han pusheado 
+
+## Sábado 20 de Agosto
+### Bruno Secchiari
+- ¿Qué hice?: Trabaje en el carrito de compras
+- Problemas: Dificultad para identificar a cada uno de los productos que se agregan al carrito
+- ¿Qué voy a hacer?: Seguir puliendo las diferentes funcionalidades asociadas al carrito
+
+## Domingo 21 de Agosto
+### Juan Mateu, Bruno Secchiari
+- ¿Qué hice?: Validaciones de los formularios del lado del front-end
+- Problemas: Eliminar las validaciones propias del código HTML
+- ¿Qué voy a hacer?: Seguir revisando aquellos aspectos de los formularios que se podrian mejorar
+
+## Viernes 26 de Agosto
+### Juan Mateu
+- ¿Qué hice?: Terminar de trabajar con las validaciones de los formularios (tanto del front-end como del back-end)
+- Problemas: Por el momento, no me encontre con mayores problemas
+- ¿Qué voy a hacer?: Trabajar un poco mas sobre el aspecto estético de las validaciones
+
+## Lunes 29 de Agosto
+### Bruno Secchiari
+- ¿Qué hice?: Agregue la propiedad ID a cada uno de los productos del carrito
+- Problemas: Por el momento, no me encontre con mayores problemas
+- ¿Qué voy a hacer?: Avanzar con las funcionalidades destinadas a eliminar productos del carrito
+
+## Martes 30 de Agosto
+### Juan Mateu, Bruno Secchiari
+- ¿Qué hice?: Actualizando el CSS y el carrito
+- Problemas: Por el momento, no nos encontramos con mayores problemas
+- ¿Qué voy a hacer?: Seguir revisando la parte estetica de la pagina y el comportamiento de los productos del carrito
