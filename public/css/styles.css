@@ -1187,6 +1187,7 @@ tr:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-area: 2/2/4/-1;
 }
 
 .img-edit {
@@ -1534,14 +1535,17 @@ tr:hover {
   }
 
   .cart__section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
+    position: relative;
   }
 
   .cart__counter {
-    margin-bottom: 0.3rem;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    padding: 0 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 148, 68, 0.7);
+    font-size: 10px;
   }
 
   /* ADMINISTRATOR */
@@ -1573,9 +1577,9 @@ tr:hover {
     transition: all 0.2s;
   }
 
-  .admin_sidebar__nav > li:active {
-    /* background-color: var(--highlight-Orange); */
-  }
+  /* .admin_sidebar__nav > li:active {
+    background-color: var(--highlight-Orange);
+  } */
 
   .admin-sidebar__link {
     color: #ffffff;
@@ -1702,6 +1706,7 @@ tr:hover {
     background-color: var(--secondary-light-green);
     max-width: 1000px;
   }
+
   .adminMenu__title {
     margin-top: 6rem;
   }
