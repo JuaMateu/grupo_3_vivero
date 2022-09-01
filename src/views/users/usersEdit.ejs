@@ -1,76 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Head menos title -->
     <%- include('../partials/head') %>
-    <title>Agregar Usuarios</title>
+        <title>Agregar Usuarios</title>
 </head>
+
 <body>
+    <!-- Header -->
     <%- include('../partials/header') %>
-    <!-- Sidebar -->
+    <!-- Admin Sidebar -->
     <%- include('../partials/sidebarAdmin') %>
 
     <!-- Page content -->
     <div class="admin">
-        <%- include('../partials/adminUsersNav') %>
-        
+
+        <!-- Titulo -->
         <h1>Administrar Usuarios</h1>
-        <h3>Agregá los usuarios a la base de datos</h3>
-        <form action="/users/edit/<%- editUser.id %>?_method=PUT" enctype="multipart/form-data" method="post" class="admin__form">
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu nombre</label>
-                <input class="admin__input" name="firstName" type="text" id="product-text" required value="<%= editUser.first_name %>" minlength="4" maxlength="20">
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu apellido</label>
-                <input class="admin__input" name="lastName" type="text" id="product-text" required value="<%= editUser.last_name %>" minlength="4" maxlength="20">
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu email</label>
-                <input class="admin__input" name="email" type="email" id="product-text" required value="<%= editUser.email %>" minlength="4" maxlength="20">
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu número telefónico</label>
-                <input class="admin__input" name="mobile" type="number" id="product-text" required value="<%= editUser.mobile %>" minlength="10" maxlength="15">
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu dirección</label>
-                <input class="admin__input" name="address" type="text" id="product-text"  value="<%= editUser.address %>" minlength="4" maxlength="40">
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu fecha de nacimiento</label>
-                <input class="admin__input" name="birth" type="date" id="product-text" required value="<%= editUser.date_of_birth %>" minlength="4" maxlength="20">
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="category">Asignar permisos</label>
-                <select class="admin__input"  name="category" id="category" >
-                    <option value="1">Root User</option>
-                    <option value="2">Admin</option>
-                    <option value="3">Usuario</option>
-                </select>
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="img">Seleccioná tu foto de usuario</label>
-                <input class="admin__input"  name="img" accept='.jpg, .png' type="file" id="img">
-            </div>
-            <!-- <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-size">Ingresá el tamaño del articulo en cm</label>
-                <input class="admin__input" name="size" type="number" id="product-size" min="50" max="100" value="50">
-            </div> -->
-            <div class="admin__buttons">
-                <div>
-                    <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
+
+        <form action="/users/edit/<%- editUser.id %>?_method=PUT" enctype="multipart/form-data"
+            method="post" class="admin__form">
+
+            <!-- contenedor Grid -->
+            <div class="admin-form__conteiner">
+
+                <!-- subtitulo / accion -->
+                <h3 id='subtitle' class="span-2">Editar usuario de la base de datos</br> id del Usuario: <%= locals.editUser ?  editUser.id : ''  %> </h3>
+
+                <!-- nombre  -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="firstName">Ingresá tu nombre</label>
+                    <input class="admin__input" name="firstName" type="text" id="firstName" placeholder="Nombre" 
+                         value="<%= locals.editUser ?  editUser.first_name : '' %>">
+                
+                    <% if (locals.errors && errors.firstName) { %>
+                        <div class="text-danger">
+                            <%= errors.firstName.msg %>
+                        </div>
+                        <% } %>
                 </div>
+
+                <!-- Apellido -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.lastName ? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="lastName">Ingresá tu apellido</label>
+                    <input class="admin__input" name="lastName" type="text" id="lastName" placeholder="Apellido"  value="<%= locals.editUser ?  editUser.last_name : '' %>">
+                
+                    <% if (locals.errors && errors.lastName) { %>
+                        <div class="text-danger">
+                            <%= errors.lastName.msg %>
+                        </div>
+                        <% } %>
+                </div>
+
+                <!-- Email -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.email ? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="email">Ingresá tu email</label>
+                    <input class="admin__input" name="email" type="email" id="email" placeholder="Email"
+                    value="<%= locals.editUser ?  editUser.email : '' %>">
+                
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+                </div>
+
+                <!-- Password -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.password? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="password">Ingresá tu Password</label>
+                    <input class="admin__input" name="password" type="password" id="password" placeholder="Password">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                        <% } %>
+                </div>
+
+                <!-- telefono -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="mobile">Ingresá tu número telefónico</label>
+                    <input class="admin__input" name="mobile" type="number" id="mobile" placeholder="Teléfono" minlength="10"
+                        maxlength="15" value="<%= locals.editUser ?  editUser.mobile : '' %>">
+                
+                    <% if (locals.errors && errors.mobile) { %>
+                        <div class="text-danger">
+                            <%= errors.mobile.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                
+                <!-- fecha de nacimiento -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="birth">Ingresá tu fecha de nacimiento</label>
+                    <input class="admin__input" name="birth" type="date" id="birth" placeholder="Ingresá tu fecha de nacimiento"
+                        minlength="4" maxlength="20" value="<%= locals.editUser ?  editUser.date_of_birth : '' %>">
+                
+                    <% if (locals.errors && errors.birth) { %>
+                        <div class="text-danger">
+                            <%= errors.birth.msg %>
+                        </div>
+                        <% } %>
+                </div>
+
+                <!-- Subir imagen -->
+                <div class="adminForm__inputConteiner">
+                    <label class="admin-form__label" for="avatar-image">Seleccioná tu foto de usuario</label>
+                    <input class="admin__input" id="fieldInput" name="img" accept='.jpg, .png' type="file" id="avatar-image"
+                        accept="/image*">
+                </div>
+
+                <div class="grid-1-start">
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Editar" />
+                </div>
+                <!-- boton de eliminar el usuario -->
                 <div>
-                    <input class="admin__buttons--input btnStyle2" type="submit" value="Editar">
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar" 
+                    formaction="/users/delete/<%= locals.editUser ? editUser.id : '' %>?_method=DELETE">
                 </div>
             </div>
         </form>
-        <form action="/users/delete/<%- editUser.id %>?_method=DELETE" method="post">
-            <div>
-                <input class="admin__buttons--input btnStyle2" type="submit" value="Eliminar">
+
+        <!-- COMIENZA SECCION ADDRESS -->
+        <form action="/users/editAddress/<%=editUser.id%>?_method=PUT" 
+            method="post" class="admin__form" id="Admin-addressEdit">
+
+            <!-- contenedor Grid -->
+            <div class="admin-form__conteiner">
+                <!-- subtitulo / accion -->
+                <br>
+                <h3 class="span-2" > Dirección de entrega </h3>
+
+                <!-- prueba address -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.street ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="street">Calle</label>
+                    <input id="street" class="admin__input" name="street" type="text"
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].street : "" %>" minlength="3" maxlength="100">
+                        <% if (locals.errors && errors.street) { %>
+                            <div class="text-danger">
+                                <%= errors.street.msg %> 
+                            </div>
+                        <% } %>
+                </div>
+                <!--  ingresar altura de calle -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.number ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="number">Número</label>
+                    <input id="number" class="admin__input" name="number" type="number"
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].number : "" %>" min="0" max="9999999999">
+                        <% if (locals.errors && errors.number) { %>
+                            <div class="text-danger">
+                                <%= errors.number.msg %> 
+                            </div>
+                        <% } %>
+                </div>
+                <!--  ingresar estado o provincia -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.state ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="state">Provincia</label>
+                    <input id="state" class="admin__input" name="state" type="text"
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].state : ""  %>" minlength="3" maxlength="40">
+                        <% if (locals.errors && errors.state) { %>
+                            <div class="text-danger">
+                                <%= errors.state.msg %> 
+                            </div>
+                        <% } %>
+                </div>
+                <!--  ingresar Ciudad -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.city ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="city">Ciudad</label>
+                    <input id="city" class="admin__input" name="city" type="text"
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].city : "" %>" minlength="3" maxlength="40">
+                        <% if (locals.errors && errors.city) { %>
+                            <div class="text-danger">
+                                <%= errors.city.msg %> 
+                            </div>
+                        <% } %>
+                </div>
+                <!--  ingresar codigo postal -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.postal_code ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="postal_code">Codigo Postal</label>
+                    <input id="postal-code" class="admin__input" name="postal_code" type="text"
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].postal_code : "" %>" minlength="3" maxlength="10">
+                        <% if (locals.errors && errors.postal_code) { %>
+                            <div class="text-danger">
+                                <%= errors.postal_code.msg %> 
+                            </div>
+                        <% } %>
+                </div>
+
+                <div class="grid-1-start">
+                    <input class="admin__buttons--input btnStyle2" type="submit" value="Editar" />
+                </div>
+                <!-- fin de prueba address -->
             </div>
         </form>
+        <button class="admin__buttons--input btnStyle2" id="showAddress"> Editar dirección de entrega</button>
+
+
+
+
+
     </div>
 </body>
+<script src="/js/editUser.js"></script>
 </html>
+
