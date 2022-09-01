@@ -11,9 +11,9 @@ window.addEventListener("load", () => {
       });
 
       numberOfProducts.innerText = productsTotal;
+      numberOfProducts.style.display = "block";
     } else {
-      numberOfProducts.style.display = 'none'
-      numberOfProducts.innerText = "0";
+      numberOfProducts.style.display = "none";
     }
   }, 100);
 });
