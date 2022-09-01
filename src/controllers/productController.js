@@ -79,7 +79,7 @@ const controller = {
     if (resultValidation.errors.length > 0) {
       return res.render("products/editProducts", {
         errors: resultValidation.mapped(),
-        editProduct: {...req.body, id:req.params.id, img:req.query.img},
+        editProduct: { ...req.body, id: req.params.id, img: req.query.img },
       });
     }
     let data = {
@@ -95,9 +95,11 @@ const controller = {
       data.img = "/img/plantas/" + req.file.filename;
     }
 
-    db.Product.update(data, { where: { id: req.params.id } }).then((product) => {
-      return res.redirect("/products/edit/" + req.params.id);
-    });
+    db.Product.update(data, { where: { id: req.params.id } }).then(
+      (product) => {
+        return res.redirect("/products/edit/" + req.params.id);
+      }
+    );
   },
   delete: (req, res) => {
     // DELETE

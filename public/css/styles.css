@@ -18,7 +18,8 @@
         1-3.h PRODUCT DETAIL
         1-3.i ADMINISTRATOR
         1-3.j ERROR PAGE 
-        1-3.h USER MENU
+        1-3.k USER MENU
+        1-3.l ABOUT
 
         1-4 LIBRERY
 
@@ -89,8 +90,6 @@ img {
 article {
   margin-bottom: 10px;
 }
-
-
 
 /* =========
 1.2 Fonts 
@@ -376,7 +375,6 @@ header {
 
 /*        1-3.d LOGIN AND REGISTER      */
 
-
 .users__title {
   font-weight: 700;
   text-align: center;
@@ -388,7 +386,6 @@ header {
   justify-content: space-around;
   margin-top: 20px;
   color: #014934;
-
 }
 .users__subtitle h4 {
   font-size: 0.9rem;
@@ -403,9 +400,7 @@ header {
   transition: color, 0.2s;
 }
 .users__link:hover {
-
   color: var(--highlight-Orange);
-
 }
 
 /* Formulario de Login */
@@ -436,34 +431,38 @@ header {
 
 input:focus {
   outline: none;
-  border:1px solid var(--highlight-Orange);
+  border: 1px solid var(--highlight-Orange);
   box-shadow: 0 0 5px var(--highlight-Orange);
 }
 
-.inputSuccess input, .inputSuccess textarea, .inputSuccess select {
+.inputSuccess input,
+.inputSuccess textarea,
+.inputSuccess select {
   border-color: var(--success-green);
 }
-.inputSuccess input:focus, textarea:focus, .inputSuccess select:focus{
+.inputSuccess input:focus,
+textarea:focus,
+.inputSuccess select:focus {
   outline: none;
-  border:1px solid var(--success-green);
+  border: 1px solid var(--success-green);
   box-shadow: 0 0 5px var(--success-green);
 }
 
-.inputFailure input, .inputFailure textarea {
+.inputFailure input,
+.inputFailure textarea {
   border-color: var(--failure);
 }
-.inputFailure input:focus, .inputFailure textarea:focus {
+.inputFailure input:focus,
+.inputFailure textarea:focus {
   outline: none;
-  border:1px solid var(--failure);
-  box-shadow: 0 0 5px var(--failure);;
+  border: 1px solid var(--failure);
+  box-shadow: 0 0 5px var(--failure);
 }
-
 
 .inputSuccess i.fa-circle-check {
   color: var(--success-green);
   visibility: visible;
 }
-
 
 .inputFailure i.fa-circle-exclamation {
   color: var(--failure);
@@ -473,7 +472,6 @@ input:focus {
 .users-form__label {
   display: block;
   margin: 6px 0px;
-
 }
 
 .users-form__input {
@@ -607,6 +605,21 @@ input:focus {
   padding: 1rem;
 }
 
+.cart__section {
+  position: relative;
+}
+
+.cart__counter {
+  display: none;
+  position: absolute;
+  top: -0.1rem;
+  right: -0.7rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 50%;
+  background-color: rgba(46, 204, 113, 0.9);
+  font-size: 8px;
+}
+
 /* Hasta aca llega lo que arme dinamicamente para esta seccion */
 
 .cart__title {
@@ -650,6 +663,7 @@ input:focus {
 .shop__title {
   align-self: center;
   margin-bottom: 1rem;
+  font-size: 40px;
 }
 
 .shop__btn {
@@ -726,7 +740,6 @@ input:focus {
 .prod-detail__next:hover {
   background-color: var(--primary-green-soft);
 }
-
 
 .prod-detail h2 {
   margin-top: 1rem;
@@ -850,10 +863,12 @@ input:focus {
 .admin__textarea {
   resize: none;
 }
+
 #fieldInput {
   padding-left: 0;
 }
-.admin-form__label{
+
+.admin-form__label {
   text-align: left;
   display: block;
   align-self: flex-start;
@@ -867,7 +882,8 @@ input:focus {
   transition: all 0.3s ease-out;
 }
 
-.admin__input{
+
+.admin__input {
   display: block;
   text-align: center;
   width: 100%;
@@ -879,18 +895,17 @@ input:focus {
   box-shadow: 0px 0px 2px var(--primary-green);
   -webkit-appearance: none;
   -moz-appearance: textfield;
-
-
 }
-.admin__input:focus{
+
+.admin__input:focus {
   outline: none;
-  border:1px solid var(--highlight-Orange);
+  border: 1px solid var(--highlight-Orange);
   box-shadow: 0 0 5px var(--highlight-Orange);
 }
-.admin__buttons--input{
+.admin__buttons--input {
   margin-top: 2rem;
 }
-.admin__input--img{
+.admin__input--img {
   text-align: left;
 }
 
@@ -987,7 +1002,7 @@ tr:hover {
   border-radius: 25px;
 }
 
-/* 1-3.h USER MENU */
+/* 1-3.k USER MENU */
 
 .user-menu-header {
   display: flex;
@@ -1058,13 +1073,11 @@ tr:hover {
   grid-column-end: span 2;
 }
 
-.adminForm__inputConteiner--desc{
+.adminForm__inputConteiner--desc {
   grid-area: 2/2/4/3;
 }
-.adminForm__inputConteiner--big{
-
+.adminForm__inputConteiner--big {
   grid-row-end: span 2;
-
 }
 .span-2 {
   grid-column-end: span 2;
@@ -1072,6 +1085,118 @@ tr:hover {
 .address-form input:last-child {
   grid-column-start: 1;
   grid-column-end: span 2;
+}
+
+/* 1-3.l - ABOUT */
+
+.heading-primary {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.column-1-of-3 {
+  width: 33%;
+}
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 17.5rem;
+  margin-bottom: -3rem;
+}
+
+.card__side {
+  width: 100%;
+  height: 17.5rem;
+  position: absolute;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba(black, 0.2);
+}
+
+.card__side--front {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--third-light-green),
+    var(--secondary-light-green)
+  );
+  z-index: 1;
+}
+
+.card__side--back {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--third-light-green),
+    var(--secondary-light-green)
+  );
+  transform: rotateY(-180deg);
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover .card__side--front {
+  transform: rotateY(180deg);
+  z-index: 0;
+}
+
+.card:hover .card__side--back {
+  transform: rotateY(0);
+  z-index: 1;
+}
+
+.card__picture--1,
+.card__picture--2,
+.card__picture--3 {
+  height: 100%;
+  background-size: cover;
+  border-radius: 0.3rem;
+}
+
+.card__picture--1 {
+  background-image: url("/img/portadas/Jardineria1.jpg");
+}
+
+.card__picture--2 {
+  background-image: url("/img/portadas/otoño.jpg");
+}
+
+.card__picture--3 {
+  background-image: url("/img/portadas/plantas-interior.png");
+}
+
+.card__title {
+  width: 100%;
+  color: var(--primary-green);
+  font-size: 26px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.card__details ul {
+  list-style: none;
+}
+
+.card__details li {
+  color: var(--primary-green);
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.25rem 0;
 }
 
 /*==========
@@ -1488,21 +1613,6 @@ tr:hover {
     width: 13rem;
   }
 
-  .cart__section {
-
-    position: relative;
-  }
-
-  .cart__counter {
-    position: absolute;
-    top: 0;
-    right: -8px;
-    padding: 0 4px;
-    border-radius: 50%;
-    background-color: rgba(255, 148, 68, 0.7);;
-    font-size: 10px;
-  }
-
   /* ADMINISTRATOR */
   /* Admin sidebar */
 
@@ -1642,18 +1752,17 @@ tr:hover {
     visibility: hidden;
   }
 
-
   .users-header {
     width: 50%;
   }
-  
+
   .users-form-conteiner {
     width: 50%;
   }
 
-
-  .admin-form__conteiner{
+  .admin-form__conteiner {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr );
     gap: 1rem 4em;
     padding: 2rem;
@@ -1662,15 +1771,12 @@ tr:hover {
     background-color: var(--secondary-light-green);
     max-width: 800px;
   }
-  .adminMenu__title{
+
+  .adminMenu__title {
     margin-top: 6rem;
   }
 
-  .grid-1-start{
+  .grid-1-start {
     grid-column-start: 1;
   }
-
-
-
-
 }
