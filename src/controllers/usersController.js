@@ -170,7 +170,19 @@ const controller = {
       
     });
   },
-  edit: (req, res) => {
+  edit: async (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
+      console.log("veamos errores");
+      console.log(resultValidation.errors);
+      return res.render("../views/users/usersEdit.ejs", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        user: req.session.userLogged,
+        editUser: userToEdit.dataValues,
+      });
+    }
     // UPDATE
     let userToUpdate = {
       first_name: req.body.firstName,

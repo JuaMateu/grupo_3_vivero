@@ -31,7 +31,7 @@
                                 name="street" 
                                 type="text"
                                 placeholder="Ingresá tu calle" 
-                                value="<%= user.address[0] ? user.address[0].street : "" %>" 
+                                value="<%= locals.oldData ? oldData.street : null %>" 
                                 
                                 maxlength="100"
                             >
@@ -52,7 +52,7 @@
                                 name="number" 
                                 type="number"
                                 placeholder="Ingresá el número de la calle" 
-                                value="<%= user.address[0] ? user.address[0].number : "" %>" 
+                                value="<%= locals.oldData? oldData.number : null %>" 
                                
                                 max="9999999999"
                             >
@@ -73,7 +73,7 @@
                                 name="state" 
                                 type="text"
                                 placeholder="Ingresá tu estado o provincia" 
-                                value="<%= user.address[0]  ? user.address[0].state : ""  %>" 
+                                value="<%= locals.oldData  ? oldData.state : null %>" 
                         
                                 maxlength="40"
                             >
@@ -94,7 +94,7 @@
                                 name="city" 
                                 type="text"
                                 placeholder="Ingresá tu ciudad" 
-                                value="<%= user.address[0]  ? user.address[0].city : "" %>" 
+                                value="<%= locals.oldData ? oldData.city : null%>" 
                                 
                                 maxlength="40"
                             >
@@ -115,7 +115,7 @@
                                 name="postal_code" 
                                 type="text"
                                 placeholder="Ingresá tu código postal" 
-                                value="<%= user.address[0]  ? user.address[0].postal_code : "" %>" 
+                                value="<%= locals.oldData ? oldData.postal_code : "" %>" 
             
                                 maxlength="10"
                             >
@@ -135,7 +135,8 @@
                                 class="users-form__input" 
                                 name="mobile" 
                                 type="number"
-                                placeholder="Ingresá tu telefono" value="<%= user.mobile  %>" 
+                                placeholder="Ingresá tu telefono" 
+                                value="<%= locals.oldData ? oldData.mobile : null  %>" 
                                 maxlength="20"
                             >
                                 <i class="fa-solid fa-circle-check"></i>

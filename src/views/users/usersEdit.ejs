@@ -31,83 +31,131 @@
                 <!-- nombre  -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="firstName">Ingresá tu nombre</label>
-                    <input class="admin__input" name="firstName" type="text" id="firstName" placeholder="Nombre" 
-                         value="<%= locals.editUser ?  editUser.first_name : '' %>">
+                    <input 
+                        class="admin__input" 
+                        name="firstName" 
+                        type="text" 
+                        id="firstName" 
+                        placeholder="Nombre" 
+                        value="<%= locals.editUser ?  editUser.first_name : locals.firstName %>"
+                    >
                 
                     <% if (locals.errors && errors.firstName) { %>
-                        <div class="text-danger">
-                            <%= errors.firstName.msg %>
-                        </div>
-                        <% } %>
+                    <div class="text-danger">
+                        <%= errors.firstName.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <!-- Apellido -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.lastName ? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="lastName">Ingresá tu apellido</label>
-                    <input class="admin__input" name="lastName" type="text" id="lastName" placeholder="Apellido"  value="<%= locals.editUser ?  editUser.last_name : '' %>">
+                    <input 
+                        class="admin__input" 
+                        name="lastName" 
+                        type="text" 
+                        id="lastName" 
+                        placeholder="Apellido"  
+                        value="<%= locals.editUser ?  editUser.last_name : '' %>"
+                    >
                 
                     <% if (locals.errors && errors.lastName) { %>
-                        <div class="text-danger">
-                            <%= errors.lastName.msg %>
-                        </div>
-                        <% } %>
+                    <div class="text-danger">
+                        <%= errors.lastName.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <!-- Email -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.email ? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="email">Ingresá tu email</label>
-                    <input class="admin__input" name="email" type="email" id="email" placeholder="Email"
-                    value="<%= locals.editUser ?  editUser.email : '' %>">
+                    <input 
+                        class="admin__input" 
+                        name="email" 
+                        type="email" 
+                        id="email" 
+                        placeholder="Email"
+                        value="<%= locals.editUser ?  editUser.email : '' %>"
+                    >
                 
                     <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                            <%= errors.email.msg %>
-                        </div>
-                        <% } %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <!-- Password -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.password? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="password">Ingresá tu Password</label>
-                    <input class="admin__input" name="password" type="password" id="password" placeholder="Password">
+                    <input 
+                        class="admin__input" 
+                        name="password" 
+                        type="password" 
+                        id="password" 
+                        placeholder="Password"
+                    >
                     <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger">
-                            <%= errors.password.msg %>
-                        </div>
-                        <% } %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <!-- telefono -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="mobile">Ingresá tu número telefónico</label>
-                    <input class="admin__input" name="mobile" type="number" id="mobile" placeholder="Teléfono" minlength="10"
-                        maxlength="15" value="<%= locals.editUser ?  editUser.mobile : '' %>">
+                    <input 
+                        class="admin__input" 
+                        name="mobile" 
+                        type="number" 
+                        id="mobile" 
+                        placeholder="Teléfono" 
+                        minlength="10"
+                        maxlength="15" 
+                        value="<%= locals.editUser ?  editUser.mobile : '' %>"
+                    >
                 
                     <% if (locals.errors && errors.mobile) { %>
-                        <div class="text-danger">
-                            <%= errors.mobile.msg %>
-                        </div>
-                        <% } %>
+                    <div class="text-danger">
+                        <%= errors.mobile.msg %>
+                    </div>
+                    <% } %>
                 </div>
                 
                 <!-- fecha de nacimiento -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="birth">Ingresá tu fecha de nacimiento</label>
-                    <input class="admin__input" name="birth" type="date" id="birth" placeholder="Ingresá tu fecha de nacimiento"
-                        minlength="4" maxlength="20" value="<%= locals.editUser ?  editUser.date_of_birth : '' %>">
+                    <input 
+                        class="admin__input" 
+                        name="birth" 
+                        type="date" 
+                        id="birth" 
+                        placeholder="Ingresá tu fecha de nacimiento"
+                        minlength="4" 
+                        maxlength="20" 
+                        value="<%= locals.editUser ?  editUser.date_of_birth : '' %>"
+                    >
                 
                     <% if (locals.errors && errors.birth) { %>
-                        <div class="text-danger">
-                            <%= errors.birth.msg %>
-                        </div>
-                        <% } %>
+                    <div class="text-danger">
+                        <%= errors.birth.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <!-- Subir imagen -->
                 <div class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="avatar-image">Seleccioná tu foto de usuario</label>
-                    <input class="admin__input" id="fieldInput" name="img" accept='.jpg, .png' type="file" id="avatar-image"
-                        accept="/image*">
+                    <input 
+                        class="admin__input" 
+                        id="fieldInput" 
+                        name="img" 
+                        accept='.jpg, .png' 
+                        type="file" 
+                        id="avatar-image"
+                        accept="/image*"
+                    >
                 </div>
 
                 <div class="grid-1-start">
