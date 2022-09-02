@@ -66,7 +66,6 @@ window.addEventListener("load", () => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const body = document.querySelector("body");
     let products = JSON.parse(localStorage.getItem("products"));
     let productFound = false;
 
@@ -81,6 +80,25 @@ window.addEventListener("load", () => {
       if (productFound) {
         localStorage.setItem("products", JSON.stringify(products));
         let productFound = false;
+
+        button.innerText = "Añadido";
+        setTimeout(() => {
+          button.innerText = "Agregar Al Carrito";
+        }, 1500);
+      } else {
+        localStorage.setItem(
+          "products",
+          JSON.stringify([
+            ...products,
+            {
+              id: products[products.length - 1].id + 1,
+              name: name,
+              price: price,
+              quantity: 1,
+              image: image,
+            },
+          ])
+        );
 
         button.innerText = "Añadido";
         setTimeout(() => {
