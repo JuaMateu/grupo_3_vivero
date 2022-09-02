@@ -135,7 +135,7 @@
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.street ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="street">Calle</label>
                     <input id="street" class="admin__input" name="street" type="text"
-                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].street : "" %>" minlength="3" maxlength="100">
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].street : "" %>" >
                         <% if (locals.errors && errors.street) { %>
                             <div class="text-danger">
                                 <%= errors.street.msg %> 
@@ -146,7 +146,7 @@
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.number ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="number">Número</label>
                     <input id="number" class="admin__input" name="number" type="number"
-                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].number : "" %>" min="0" max="9999999999">
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].number : "" %>" >
                         <% if (locals.errors && errors.number) { %>
                             <div class="text-danger">
                                 <%= errors.number.msg %> 
@@ -157,7 +157,7 @@
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.state ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="state">Provincia</label>
                     <input id="state" class="admin__input" name="state" type="text"
-                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].state : ""  %>" minlength="3" maxlength="40">
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].state : ""  %>" >
                         <% if (locals.errors && errors.state) { %>
                             <div class="text-danger">
                                 <%= errors.state.msg %> 
@@ -168,7 +168,7 @@
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.city ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="city">Ciudad</label>
                     <input id="city" class="admin__input" name="city" type="text"
-                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].city : "" %>" minlength="3" maxlength="40">
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].city : "" %>" >
                         <% if (locals.errors && errors.city) { %>
                             <div class="text-danger">
                                 <%= errors.city.msg %> 
@@ -179,7 +179,7 @@
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.postal_code ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="postal_code">Codigo Postal</label>
                     <input id="postal-code" class="admin__input" name="postal_code" type="text"
-                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].postal_code : "" %>" minlength="3" maxlength="10">
+                        placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].postal_code : "" %>" >
                         <% if (locals.errors && errors.postal_code) { %>
                             <div class="text-danger">
                                 <%= errors.postal_code.msg %> 
