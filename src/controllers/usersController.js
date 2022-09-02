@@ -165,6 +165,7 @@ const controller = {
     // READ
     let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
     console.log(userToEdit.dataValues)
+    console.log(userToEdit.address)
     return res.render("../views/users/usersEdit.ejs", {
       editUser: userToEdit.dataValues,
       
@@ -172,10 +173,8 @@ const controller = {
   },
   edit: async (req, res) => {
     const resultValidation = validationResult(req);
+    let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
     if (resultValidation.errors.length > 0) {
-      let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
-      console.log("veamos errores");
-      console.log(resultValidation.errors);
       return res.render("../views/users/usersEdit.ejs", {
         errors: resultValidation.mapped(),
         oldData: req.body,

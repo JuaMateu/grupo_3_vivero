@@ -29,7 +29,7 @@
                 <h3 id='subtitle' class="span-2">Editar usuario de la base de datos</br> id del Usuario: <%= locals.editUser ?  editUser.id : ''  %> </h3>
 
                 <!-- nombre  -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? " inputFailure" : "" %>">
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? " inputFailure" : "inputSuccess" %>">
                     <label class="admin-form__label" for="firstName">Ingresá tu nombre</label>
                     <input 
                         class="admin__input" 
@@ -37,9 +37,8 @@
                         type="text" 
                         id="firstName" 
                         placeholder="Nombre" 
-                        value="<%= locals.editUser ?  editUser.first_name : locals.firstName %>"
+                        value="<%= locals.oldData ? oldData.firstName : editUser.first_name %>"
                     >
-                
                     <% if (locals.errors && errors.firstName) { %>
                     <div class="text-danger">
                         <%= errors.firstName.msg %>
@@ -56,7 +55,7 @@
                         type="text" 
                         id="lastName" 
                         placeholder="Apellido"  
-                        value="<%= locals.editUser ?  editUser.last_name : '' %>"
+                        value="<%= locals.oldData ? oldData.lastName: editUser.last_name %>"
                     >
                 
                     <% if (locals.errors && errors.lastName) { %>
@@ -75,7 +74,7 @@
                         type="email" 
                         id="email" 
                         placeholder="Email"
-                        value="<%= locals.editUser ?  editUser.email : '' %>"
+                        value="<%= locals.oldData? oldData.email : editUser.email %>"
                     >
                 
                     <% if (locals.errors && errors.email) { %>
@@ -86,14 +85,13 @@
                 </div>
 
                 <!-- Password -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.password? " inputFailure" : "" %>">
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.password ? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="password">Ingresá tu Password</label>
                     <input 
                         class="admin__input" 
                         name="password" 
                         type="password" 
                         id="password" 
-                        placeholder="Password"
                     >
                     <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
@@ -113,7 +111,7 @@
                         placeholder="Teléfono" 
                         minlength="10"
                         maxlength="15" 
-                        value="<%= locals.editUser ?  editUser.mobile : '' %>"
+                        value="<%= locals.oldData ? oldData.mobile : editUser.mobile %>"
                     >
                 
                     <% if (locals.errors && errors.mobile) { %>
@@ -134,7 +132,7 @@
                         placeholder="Ingresá tu fecha de nacimiento"
                         minlength="4" 
                         maxlength="20" 
-                        value="<%= locals.editUser ?  editUser.date_of_birth : '' %>"
+                        value="<%= locals.oldData ? oldData.birth : editUser.date_of_birth %>"
                     >
                 
                     <% if (locals.errors && errors.birth) { %>
