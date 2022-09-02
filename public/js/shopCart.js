@@ -20,6 +20,10 @@ window.addEventListener("load", () => {
 
   if (products && products.length > 0) {
     products.forEach((product) => {
+      let myPrice = parseInt(
+        product.price.substring(1, product.price.length).replace(",", "")
+      );
+
       let myProduct = document.createElement("div");
       cart.insertBefore(myProduct, buttons);
       myProduct.setAttribute("id", product.id);
@@ -69,7 +73,10 @@ window.addEventListener("load", () => {
       myProduct.appendChild(total);
       total.innerText =
         "$" +
-        +product.price.substring(1, product.price.length) * product.quantity;
+        (myPrice * product.quantity)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
+        ".00";
       total.classList.add("cart__product-total");
     });
   } else {

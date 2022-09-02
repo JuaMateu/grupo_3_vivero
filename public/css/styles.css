@@ -719,6 +719,7 @@ textarea:focus,
   grid-auto-rows: minmax(100px, auto);
   padding: 3rem;
   color: var(--primary-green);
+  margin-top: -1rem;
 }
 
 .column-1-of-2 {
@@ -765,7 +766,7 @@ textarea:focus,
 
 .product-detail__previous:hover,
 .product-detail__next:hover {
-  background-color: var(--success-green);
+  background-color: var(--highlight-Orange);
 }
 
 .product-detail__description {
@@ -818,34 +819,25 @@ textarea:focus,
   margin-bottom: 0.3rem;
 }
 
-.product-detail__size-option {
-  display: inline-block;
-  position: relative;
-}
-
-.product-detail__size-option:not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.product-detail__size-label {
-  position: absolute;
-  font-size: 18px;
-  font-weight: bold;
+.product-detail__size-button {
   height: 2rem;
   width: 2rem;
-  border: solid 1px rgba(0, 0, 0, 1);
+  border: none;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--primary-green);
   color: rgba(255, 255, 255, 1);
-  transition: all 0.2 ease-out;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s ease;
 }
 
-.product-detail__size-input {
-  height: 2rem;
-  width: 2rem;
+.product-detail__size-button:not(:last-child) {
+  margin-right: 0.3rem;
+}
+
+.product-detail__size-button:hover {
+  background-color: var(--success-green);
+  color: var(--primary-green);
 }
 
 .product-detail__color {
@@ -856,30 +848,26 @@ textarea:focus,
   margin-bottom: 0.35rem;
 }
 
-.product-detail__color-input {
-  height: 2rem;
-  width: 2rem;
-}
-
-.product-detail__color-input:not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.product-detail__color-input::after {
-  content: "";
-  display: inline-block;
+.product-detail__color-button {
   height: 2rem;
   width: 2rem;
   border: solid 1px rgba(0, 0, 0, 1);
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 1);
 }
 
-.product-detail__color-input--2::after {
+.product-detail__color-button:not(:last-child) {
+  margin-right: 0.3rem;
+}
+
+.product-detail__color-button--1 {
+  background-color: white;
+}
+
+.product-detail__color-button--2 {
   background-color: brown;
 }
 
-.product-detail__color-input--3::after {
+.product-detail__color-button--3 {
   background-color: orange;
 }
 
@@ -897,7 +885,7 @@ textarea:focus,
   color: rgba(255, 255, 255, 1);
   border-radius: 0.1rem;
   padding: 0.5rem;
-  transition: all 0.5 ease-out;
+  transition: all 0.2 ease;
 }
 
 .product-detail__button:hover {
@@ -914,6 +902,18 @@ textarea:focus,
   border: solid 1px var(--primary-green);
   border-radius: 0.1rem;
   color: var(--primary-green);
+}
+
+.product-detail__less-button,
+.product-detail__plus-button {
+  background-color: transparent;
+  border: none;
+  transition: all 0.1s ease;
+}
+
+.product-detail__less-button:hover,
+.product-detail__plus-button:hover {
+  color: var(--highlight-Orange);
 }
 
 .product-detail__features {
@@ -1346,7 +1346,7 @@ tr:hover {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   background: linear-gradient(
     to right bottom,
     var(--success-green),
@@ -1354,12 +1354,6 @@ tr:hover {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s;
-}
-
-.heading-primary:hover {
-  transform: skewY(2deg) skewX(15deg) scale(1.1);
-  text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
 }
 
 .paragraph-primary {
@@ -1679,7 +1673,7 @@ tr:hover {
 
 .plant-Card__background {
   position: absolute;
-  bottom: 0;
+  bottom: 10%;
   width: 100%;
   height: 60%;
   background-color: var(--third-light-green-soft);

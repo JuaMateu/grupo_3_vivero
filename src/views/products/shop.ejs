@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
+
+    <!-- Head -->
     <%- include('../partials/head') %>
 </head>
 
 <body>
+
+    <!-- Header -->
     <%- include('../partials/header') %>
-        <!-- Aca va el cuerpo la pagina -->
+        
+        <!-- Main -->
         <main>
             <div class="shop">
                 <section class="shop__header">
@@ -32,6 +37,7 @@
                         </div>
                     </div>
                      -->
+
                         <form action="/orderBy/" method="get" class="order-by__form">
                             <select name="orderBy" id="orderBy" class="order-by__input" onchange='this.form.submit();' >
                                 <option hidden selected>Ordenar por</option>
@@ -51,6 +57,7 @@
                         </ul>
                     </div>
                 </div> -->
+
                 </section>
                 <section class="shop-wrapper">
                     <% products.forEach(prod=> { %>
@@ -60,7 +67,8 @@
             </div>
             </div>
         </main>
-        <!-- footer -->
+
+        <!-- Footer -->
         <%- include('../partials/footer') %>
         <script src="/js/shop.js"></script>
 </body>

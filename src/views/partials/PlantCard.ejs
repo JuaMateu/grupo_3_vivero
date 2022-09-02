@@ -5,7 +5,7 @@
             <div class="plant-Card__background"></div>
         </div>
         <h4><%= data.name %></h4>
-        <p class="subtitle">$<%= data.price %></p>
+        <p class="subtitle">$<%= data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></p>
     </a>
     <button class="btn btn--plant">Agregar Al Carrito</button>
     <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->

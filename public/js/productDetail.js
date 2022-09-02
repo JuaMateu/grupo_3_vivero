@@ -31,7 +31,8 @@ window.addEventListener("load", () => {
   sizeArray.forEach((size) => {
     size.addEventListener("click", (event) => {
       event.preventDefault();
-      sizeTitle.innerHTML = "<strong>Size:</strong> <i>" + size.value + "</i>";
+      sizeTitle.innerHTML =
+        "<strong>Size:</strong> <i>" + size.innerText + "</i>";
     });
   });
 
@@ -69,10 +70,14 @@ window.addEventListener("load", () => {
     let products = JSON.parse(localStorage.getItem("products"));
     let productFound = false;
 
+    const quantity = parseInt(
+      document.querySelector(".product-detail__number-display").innerText
+    );
+
     if (products) {
       products.forEach((product) => {
         if (product.name == name) {
-          product.quantity++;
+          product.quantity += quantity;
           productFound = true;
         }
       });
@@ -94,7 +99,7 @@ window.addEventListener("load", () => {
               id: products[products.length - 1].id + 1,
               name: name,
               price: price,
-              quantity: 1,
+              quantity: quantity,
               image: image,
             },
           ])
@@ -107,7 +112,7 @@ window.addEventListener("load", () => {
       }
     } else {
       let products = [
-        { id: 1, name: name, price: price, image: image, quantity: 1 },
+        { id: 1, name: name, price: price, image: image, quantity: quantity },
       ];
 
       localStorage.setItem("products", JSON.stringify(products));
@@ -116,6 +121,26 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         button.innerText = "Agregar Al Carrito";
       }, 1500);
+    }
+  });
+
+  // Quantity
+
+  const less = document.querySelector(".product-detail__less-button");
+  const plus = document.querySelector(".product-detail__plus-button");
+  const number = document.querySelector(".product-detail__number-display");
+
+  less.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (number.innerText > 1) {
+      number.innerText--;
+    }
+  });
+
+  plus.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (number.innerText <= 100) {
+      number.innerText++;
     }
   });
 });
