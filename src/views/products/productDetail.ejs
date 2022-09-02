@@ -6,11 +6,58 @@
     </head>
 <body>
     <%- include('../partials/header') %>
-    <!-- Aca va el cuerpo la pagina -->
+
+    <!-- Main -->
     <main>
+        <section class="product-detail__section">
+            <figure class="column-1-of-2 product-detail__figure">
+                <a href="" class="product-detail__previous"><i class="fa-solid fa-angle-left"></i></a>
+                <img class="product-detail__picture" src="<%= product.img %>" alt="Imagen Del Producto">
+                <a href="" class="product-detail__next"><i class="fa-solid fa-angle-right"></i></a>
+            </figure>
+            <div class="column-2-of-2 product-detail__description">
+                <div class="product-detail__name"><%= product.name %></div>
+                <% if (product.discount_id == 1) { %>
+                    <div class="product-detail__price--discount">$<%= (product.price * 0.7).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+                    <% } %>
+                <div class="product-detail__price--original">$<%= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+                <div class="product-detail__size">
+                    <div class="product-detail__size-title"><strong>Size:</strong> <i>S</i></div>
+                    <div class="product-detail__size-option">
+                        <label for="small" class="product-detail__size-label product-detail__size-label--1">S</label>
+                        <input class="product-detail__size-input" id="small" name="product-size" type="radio">
+                    </div>
+                    <div class="product-detail__size-option">
+                        <label for="medium" class="product-detail__size-label product-detail__size-label--2">M</label>
+                        <input class="product-detail__size-input" id="medium" name="product-size" type="radio">
+                    </div>
+                    <div class="product-detail__size-option">
+                        <label for="large" class="product-detail__size-label product-detail__size-label--3">L</label>
+                        <input class="product-detail__size-input" id="large" name="product-size" type="radio">
+                    </div>
+                    <div class="product-detail__size-option">
+                        <label for="extra-large" class="product-detail__size-label product-detail__size-label--4">XL</label>
+                        <input class="product-detail__size-input" id="extra-large" name="product-size" type="radio">
+                    </div>
+                </div>
+                <div class="product-detail__color">
+                    <div class="product-detail__color-title"><strong>Color:</strong> <i>Blanco</i></div>
+                    <input class="product-detail__color-input product-detail__color-input--1" id="color-1" name="product-color" type="radio">
+                    <input class="product-detail__color-input product-detail__color-input--2" id="color-2" name="product-color" type="radio">
+                    <input class="product-detail__color-input product-detail__color-input--3" id="color-3" name="product-color" type="radio">
+                </div>                
+                <div class="product-detail__quantity">
+                    <button class="product-detail__button" type="submit">Agregar Al Carrito</button>
+                    <div class="product-detail__quantity-selector">
+                        <div class="product-detail__less"><i class="fa-solid fa-minus"></i></div>
+                        <div class="product-detail__number">1</div>
+                        <div class="product-detail__more"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="product-section">
-
+        <!-- <section class="product-section">
             <div class="prod-detail">
                 <figure class="prod-detail__slide">
                     <img src="<%= product.img %>" alt="<%= product.name %>">
@@ -23,7 +70,6 @@
                     <button class="btn--comprar">Comprar</button>
                 </div>
             </div>
-
             <div class="prod-desc">
                 <p> <span class="bold">Descripción:</span>  <%= product.description %> </p>
                 <p> <span class="bold">Nivel de cuidados:</span> <%= product.careLevel %></p>
@@ -37,17 +83,18 @@
                     <button class="btn">Agrega al carrito</button>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <!-- seccion mas vendidos -->
-        <h1 class="center-text">Mas vendidos</h2>
+        <!-- Trending -->
+        <h1 class="heading-primary">Mas vendidos</h2>
             <section class="most-selled">
                 <% for (i = 0 ; i < 4 ; i++) { %>
                         <%- include('../partials/PlantCard.ejs', { data : products[i] }) %>
                     <% }; %> 
             </section>
     </main>
-    <!-- aca arranca el footer -->
+
+    <!-- Footer -->
     <%- include('../partials/footer') %>
     
 </body>
