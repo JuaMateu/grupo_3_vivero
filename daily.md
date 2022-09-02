@@ -231,3 +231,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Arreglé el front de contact menu users y comencé con el back del mismo
 - Problemas: Errores al imprimir por el back
 - ¿Qué voy a hacer?: Solucionar dichos problemas
+
+## Viernes 02 de Septiembre
+### Orlando Ayala
+- ¿Qué hice?: Arreglé el back y de Menu users y fui con update users
+- Problemas: Errores al imprimir por el back, entrelazamiento de variables
+- ¿Qué voy a hacer?: Mantener ambas variables para la estetica y simpleza del formulario 
