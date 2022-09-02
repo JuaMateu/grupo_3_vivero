@@ -9,13 +9,13 @@ const usersMenuController = require('../controllers/usersMenuController');
 
 const basicDataUserValidator = require("../middlewares/Validations/basicDataUserValidator");
 const usersMenuPasswordValidator = require("../middlewares/Validations/usersMenuPassValidator");
-const usersMenuusersContactValidator = require("../middlewares/Validations/usersContactValidator");
+const UserContactValidator = require("../middlewares/Validations/usersContactValidator");
 
 // Menu de usuario //
 router.get('/', userNotLoggedMiddleware, usersMenuController.menu);
 //datos de contacto
 router.get('/contact', userNotLoggedMiddleware, usersMenuController.contactform);
-router.put('/contact', userNotLoggedMiddleware, usersMenuusersContactValidator, usersMenuController.contactAction);
+router.put('/contact', userNotLoggedMiddleware, UserContactValidator, usersMenuController.contactAction);
 //datos basicos
 router.get('/name', userNotLoggedMiddleware, usersMenuController.nameForm);
 router.put('/name', userNotLoggedMiddleware, basicDataUserValidator, usersMenuController.nameAction);
