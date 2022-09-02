@@ -35,6 +35,8 @@ const controller = {
   },
   
   contactAction: async (req, res) => {
+    console.log("Usuario");
+    console.log(req.session.userLogged);
     //validamos los datos recibidos
     const resultValidation = validationResult(req);
     //si hay errores devolvemos la misma vista con los errores, los datos cargados y el usuario loggeado
@@ -45,7 +47,6 @@ const controller = {
         user: req.session.userLogged,
       });
     }
-
     // si no hay errores armamos el objeto de address
     let data = {
       ...req.body,

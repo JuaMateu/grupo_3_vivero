@@ -225,3 +225,9 @@ Generamos este archivo para llevar un registro de nuestras tareas diarias, los p
 - ¿Qué hice?: Actualizando el CSS y el carrito
 - Problemas: Por el momento, no nos encontramos con mayores problemas
 - ¿Qué voy a hacer?: Seguir revisando la parte estetica de la pagina y el comportamiento de los productos del carrito
+
+## Jueves 01 de Septiembre
+### Orlando Ayala
+- ¿Qué hice?: Arreglé el front de contact menu users y comencé con el back del mismo
+- Problemas: Errores al imprimir por el back
+- ¿Qué voy a hacer?: Solucionar dichos problemas
