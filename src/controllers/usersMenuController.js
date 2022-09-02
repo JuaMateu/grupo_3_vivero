@@ -9,13 +9,17 @@ const Users = db.User;
 const Address = db.Address;
 
 const controller = {
+
   // === Menu de usuario ===//
   // muestra informacion del usuario y permite modificar sus datos a través de distintos formularios
+
   menu: async (req, res) => {
     // busca al usuario de la base de datos a partir del session id
     let userDb = await Users.findByPk(req.session.userLogged.id, {include: ["address"]});
+
     // se crea direccion vacía para enviar al menú
     let address = "";
+    
     // En caso de que el usuario tenga direccion relacionada se la envía a la vista con formato legible
     if (userDb.address[0]) { //por el momento solo se puede cargar una direccion por usuario
       address = `${userDb.address[0].street} ${userDb.address[0].number}, ${userDb.address[0].city}`;
@@ -48,7 +52,7 @@ const controller = {
       name: "unica", //por ahora la direccion es unica, el campo name no se usa
       user_id: req.session.userLogged.id, // el user_id es foreign key del usuario logeado
     };
-    // busca si hay un address correspondiente al usuario logueado (si no hay devuelve)
+    // busca si hay un address correspondiente al usuario logueado (si no hay devuelve false)
     let hasAddress = await Address.findOne({ where: { user_id: req.session.userLogged.id } });
 
     // si el usuario tiene dirección guardada se actualiza, si no se crea

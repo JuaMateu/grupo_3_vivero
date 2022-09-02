@@ -9,30 +9,16 @@ const Users = db.User;
 const Address = db.Address;
 
 const controller = {
-  login: (req, res) => {
-    // READ
-    return res.render("users/login");
-  },
+  // register form
   register: (req, res) => {
-    // READ
     return res.render("users/register");
   },
-
-  userRecovery: (req, res) => {
-    // READ
-    return res.render("users/userRecovery");
+  // Login Form
+  login: (req, res) => {
+    return res.render("users/login");
   },
 
-  list: (req, res) => {
-    // READ
-    Users.findAll().then((users) => {
-      return res.render("users/usersList", { users });
-    });
-  },
-  addForm: (req, res) => {
-    // READ
-    return res.render("users/usersAdd");
-  },
+  // Proceso de Registro
   processRegister: async function (req, res) {
     const resultValidation = validationResult(req);
     //Validaciones de formulario
@@ -61,6 +47,8 @@ const controller = {
     //redirigimos a menu de usuario
     return res.redirect(`/users/menu/contact/`);
   },
+
+  //Proceso de logeo
   processLogin: (req, res) => {
     //buscamos el usuario a logearse en la base de datos
     Users.findOne({
@@ -74,18 +62,19 @@ const controller = {
           req.body.password,
           userToLogin.password
         );
+        //si la password es correcta se guarda el usuario en session
         if (passwordControlPoint) {
-          //si la password es correcta se guarda el ususario en session
           req.session.userLogged = userToLogin.dataValues;
 
-          //si recordar usuario esta activado enviamos una cookie con el email
+          //si además "Recordar usuario" esta activado guardamos una cookie con el email
           if (req.body.recordarUsuario) {
             res.cookie("userId", userToLogin.id, { maxAge: 1000 * 60 * 5 });
           }
           //redirigimos al menu de usuario
           return res.redirect("/users/menu/");
+
+          //si la password no es correcta devolvemos el error "La contraseña no es válida."
         } else {
-          //si la password no es correcta devolvemos el error
           return res.render("users/login", {
             errors: {
               password: {
@@ -96,6 +85,7 @@ const controller = {
           });
         }
       }
+      // Si no se encuentra el usuario correspondiente al mail se devuelve un error
       return res.render("users/login", {
         errors: {
           email: {
@@ -105,12 +95,31 @@ const controller = {
       });
     });
   },
+
   processLogout: (req, res) => {
     req.session.destroy();
     res.clearCookie("userId");
     return res.redirect("/");
   },
-  //TODO crear usuario desde el menu de admin. Hay que revisar y cambiar la vista
+
+  // TODO: En desarrollo
+  userRecovery: (req, res) => {
+    return res.render("users/userRecovery");
+  },
+
+  // ==  Menu admin - CRUD =
+
+  // 1 Listar usuarios
+  list: (req, res) => {
+    Users.findAll().then((users) => {
+      return res.render("users/usersList", { users });
+    });
+  },
+  
+  // 2 Agregar usuario
+  addForm: (req, res) => {
+    return res.render("users/usersAdd");
+  },
   create: async (req, res) => {
     const resultValidation = validationResult(req);
     //Validaciones de formulario
@@ -120,6 +129,8 @@ const controller = {
         oldData: req.body,
       });
     }
+    
+
     // recepcion de formulario de entrada de usuario
     let data = {
       first_name: req.body.firstName,
@@ -132,6 +143,9 @@ const controller = {
       birth: req.body.birth,
       user_category_id: 3,
     };
+
+
+
     // en caso de que haya una imagen se asigna la direccion de la imagen
     if (req.file) {
       data = {
@@ -139,18 +153,21 @@ const controller = {
         img: "/img/users/avatar/" + req.file.filename,
       };
     }
-
     // guardar el usuario en DB
-    await Users.create(data);
+    let userID = await Users.create(data);
+    console.log(userID);
 
     res.redirect("/users/");
   },
 
+  // 3 - editar Usuario
   editForm: async (req, res) => {
     // READ
-    let editToUser = await Users.findOne({ where: { id: req.params.id } });
+    let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
+    console.log(userToEdit.dataValues)
     return res.render("../views/users/usersEdit.ejs", {
-      editUser: editToUser.dataValues,
+      editUser: userToEdit.dataValues,
+      
     });
   },
   edit: (req, res) => {
@@ -165,8 +182,10 @@ const controller = {
       date_of_birth: req.body.birth,
       user_category_id: req.body.category,
     };
-    // en caso de que haya una imagen se asigna la direccion de la imagen
 
+
+
+    // en caso de que haya una imagen se asigna la direccion de la imagen
     if (req.file) {
       userToUpdate = {
         ...userToUpdate,
@@ -184,6 +203,44 @@ const controller = {
       return res.redirect("/users/");
     });
   },
+
+  editAddress: async (req, res) => {
+
+    //validamos los datos recibidos
+    // const resultValidation = validationResult(req);
+    // //si hay errores devolvemos la misma vista con los errores, los datos cargados y el usuario loggeado
+    // if (resultValidation.errors.length > 0) {
+    //   return res.render("users/menu/usersMenuContact.ejs", {
+    //     errors: resultValidation.mapped(),
+    //     oldData: req.body,
+    //     user: req.params.id,
+    //   });
+    // }
+
+    // Direccion a guardar
+    console.log(req.body)
+    let addressData = {
+      ...req.body,
+      name: 'unica',
+      user_id: req.params.id,
+    };
+
+    console.log(addressData)
+
+    
+    // busca si hay un Address correspondiente al usuario logueado (si no hay devuelve false)
+    let hasAddress = await Address.findOne({ where: { user_id: req.params.id } });
+
+    // si el usuario tiene dirección guardada se actualiza, si no se crea
+    if (hasAddress) {
+      Address.update(addressData, { where: { user_id: req.params.id } });
+    } else {
+      Address.create(addressData);
+    }
+
+    // redirigimos al edit de usuario
+    res.redirect("/users/edit/" + req.params.id);
+  }, 
  
 delete: async (req, res) => {
     // DELETE

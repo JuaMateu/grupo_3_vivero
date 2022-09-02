@@ -14,147 +14,132 @@
     <div class="admin">
         <%- include('../partials/adminUsersNav') %>
         
+        <!-- Titulo -->
         <h1 class="adminMenu__title">Administrar Usuarios</h1>
+
         <form action="/users/create" method="post" enctype="multipart/form-data" class="admin__form">
-            <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? "inputFailure" : "inputSuccess" %>">
-                <h3>Agregá los usuarios a la base de datos</h3>
-                <label class="admin__label" for="product-text">Ingresá tu nombre</label>
-                <input 
-                    class="admin__input" 
-                    name="firstName" 
-                    type="text" 
-                    id="firstName" 
-                    placeholder="Ingresá el nombre del usuario" 
-                    minlength="4" 
-                    maxlength="20"
-                    value="<%= locals.oldData ? oldData.firstName : null %>"
-                >
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <% if (locals.errors && errors.firstName) { %>
-                    <div class="text-danger">
-                        <%= errors.firstName.msg %> 
-                    </div>
-                <% } %>
-            </div>
-            <div class="adminForm__inputConteiner <%= locals.errors && errors.lastName ? "inputFailure" : "inputSuccess" %>">
-                <label class="admin__label" for="product-text">Ingresá tu apellido</label>
-                <input 
-                    class="admin__input" 
-                    name="lastName" 
-                    type="text" 
-                    id="lastName" 
-                    placeholder="Ingresá el apellido" 
-                    minlength="4" 
-                    maxlength="20"
-                    value="<%= locals.oldData ? oldData.lastName : null %>"
-                >
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <% if (locals.errors && errors.lastName) { %>
+            
+            <!-- contenedor Grid -->
+            <div class="admin-form__conteiner">
+
+                <!-- subtitulo / accion -->
+                <h3 class="span-2" >Agregá los usuarios a la base de datos</h3>
+
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="firstName">Ingresá tu nombre</label>
+                    <input 
+                        class="admin__input" 
+                        name="firstName" 
+                        type="text" 
+                        id="firstName" 
+                        placeholder="Nombre" 
+                        value="<%= locals.oldData ? oldData.firstName : null %>"
+                    >
+
+                    <% if (locals.errors && errors.firstName) { %>
                         <div class="text-danger">
-                            <%= errors.lastName.msg %> 
-                        </div>
-                <% } %>
-            </div>
-            <div class="adminForm__inputConteiner <%= locals.errors && errors.email ? "inputFailure" : "inputSuccess" %>">
-                <label class="admin__label" for="product-text">Ingresá tu email</label>
-                <input 
-                    class="admin__input" 
-                    name="email" 
-                    type="email" 
-                    id="email" 
-                    placeholder="Ingresá el email" 
-                    minlength="4" 
-                    maxlength="20"
-                    value="<%= locals.oldData ? oldData.email : null %>"
-                >
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
-                        <%= errors.email.msg %> 
-                    </div>
-                <% } %>
-            </div>
-            <div class="adminForm__inputConteiner <%= locals.errors && errors.password? "inputFailure" : "inputSuccess" %>">
-                <label class="admin__label" for="product-text">Ingresá tu Password</label>
-                <input 
-                    class="admin__input" 
-                    name="password" 
-                    type="password" 
-                    id="password" 
-                    placeholder="Ingresá el email" 
-                    minlength="4" 
-                    maxlength="20"
-                >
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                        <%= errors.password.msg %> 
-                    </div>
-                <% } %>
-            </div>
-            <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? "inputFailure" : "inputSuccess" %>">
-                <label class="admin__label" for="product-text">Ingresá tu número telefónico</label>
-                <input 
-                    class="admin__input" 
-                    name="mobile" 
-                    type="number" 
-                    id="mobile" 
-                    placeholder="Ingresá el número" 
-                    minlength="10" 
-                    maxlength="15"
-                    value="<%= locals.oldData ? oldData.mobile: null %>"
-                >
-                <i class="fa-solid fa-circle-check"></i>
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <% if (locals.errors && errors.mobile) { %>
-                        <div class="text-danger">
-                            <%= errors.mobile.msg %> 
+                            <%= errors.firstName.msg %> 
                         </div>
                     <% } %>
-            </div>
-            <!-- <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-text">Ingresá tu dirección</label>
-                <input class="admin__input" name="address" type="text" id="address" required placeholder="Ingresá la dirección" minlength="4" maxlength="40">
-            </div> -->
-            <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? "inputFailure" : "inputSuccess" %>">
-                <label class="admin__label" for="product-text">Ingresá tu fecha de nacimiento</label>
-                <input 
-                    class="admin__input" 
-                    name="birth" 
-                    type="date" 
-                    id="birth" 
-                    placeholder="Ingresá tu fecha de nacimiento" 
-                    minlength="4" 
-                    maxlength="20"
-                    value="<%= locals.oldData ? oldData.birth : null %>"
-                >
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <% if (locals.errors && errors.birth) { %>
-                    <div class="text-danger">
-                        <%= errors.birth.msg %> 
-                    </div>
-                <% } %>
-            </div>
-            <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="avatar-image">Seleccioná tu foto de usuario</label>
-                <input class="admin__input"  name="img" accept='.jpg, .png' type="file" id="avatar-image" accept="/image*">
-            </div>
-            <!-- <div class="adminForm__inputConteiner">
-                <label class="admin__label" for="product-size">Ingresá el tamaño del articulo en cm</label>
-                <input class="admin__input" name="size" type="number" id="product-size" min="50" max="100" value="50">
-            </div> -->
-            <div class="admin__buttons">
-                <div>
+                </div>
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.lastName ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="lastName">Ingresá tu apellido</label>
+                    <input 
+                        class="admin__input" 
+                        name="lastName" 
+                        type="text" 
+                        id="lastName" 
+                        placeholder="Apellido" 
+                        value="<%= locals.oldData ? oldData.lastName : null %>"
+                    >
+
+                    <% if (locals.errors && errors.lastName) { %>
+                            <div class="text-danger">
+                                <%= errors.lastName.msg %> 
+                            </div>
+                    <% } %>
+                </div>
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.email ? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="email">Ingresá tu email</label>
+                    <input 
+                        class="admin__input" 
+                        name="email" 
+                        type="email" 
+                        id="email" 
+                        placeholder="Email" 
+                        value="<%= locals.oldData ? oldData.email : null %>"
+                    >
+
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.password? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="password">Ingresá tu Password</label>
+                    <input 
+                        class="admin__input" 
+                        name="password" 
+                        type="password" 
+                        id="password" 
+                        placeholder="Password" 
+                    >
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="mobile">Ingresá tu número telefónico</label>
+                    <input 
+                        class="admin__input" 
+                        name="mobile" 
+                        type="number" 
+                        id="mobile" 
+                        placeholder="Teléfono" 
+                        value="<%= locals.oldData ? oldData.mobile: null %>"
+                    >
+
+                        <% if (locals.errors && errors.mobile) { %>
+                            <div class="text-danger">
+                                <%= errors.mobile.msg %> 
+                            </div>
+                        <% } %>
+                </div>
+
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? "inputFailure" : "" %>">
+                    <label class="admin-form__label" for="birth">Ingresá tu fecha de nacimiento</label>
+                    <input 
+                        class="admin__input" 
+                        name="birth" 
+                        type="date" 
+                        id="birth" 
+                        placeholder="Ingresá tu fecha de nacimiento" 
+                        value="<%= locals.oldData ? oldData.birth : null %>"
+                    >
+
+                    <% if (locals.errors && errors.birth) { %>
+                        <div class="text-danger">
+                            <%= errors.birth.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+                <div class="adminForm__inputConteiner">
+                    <label class="admin-form__label" for="avatar-image">Seleccioná tu foto de usuario</label>
+                    <input class="admin__input" id="fieldInput" name="img" accept='.jpg, .png' type="file" id="avatar-image" accept="/image*">
+                </div>
+
+                
+
+                <div class="grid-1-start">
                     <input class="admin__buttons--input btnStyle2" type="reset" value="Limpiar formulario">
                 </div>
                 <div>
                     <input class="admin__buttons--input btnStyle2" type="submit" value="Agregar">
                 </div>
+
             </div>
         </form>
     </div>
