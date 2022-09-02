@@ -23,82 +23,128 @@
                     <h3>Completá tus datos de contacto</h3>
                     <!-- Ingresar la calle -->
                     <div class="address-form">
-                        <div class="users-form__field <%= locals.errors && errors.street ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_street" class="users-form__field <%= locals.errors && errors.street ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="street">Calle</label>
-                            <input id="street" class="users-form__input" name="street" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0] ? user.address[0].street : "" %>" minlength="3" maxlength="100">
+                            <input 
+                                id="street" 
+                                class="users-form__input" 
+                                name="street" 
+                                type="text"
+                                placeholder="Ingresá tu calle" 
+                                value="<%= user.address[0] ? user.address[0].street : "" %>" 
+                                
+                                maxlength="100"
+                            >
                                 <i class="fa-solid fa-circle-check"></i>
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                    <% if (locals.errors && errors.street) { %>
-                                        <div class="text-danger">
-                                            <%= errors.street.msg %> 
-                                        </div>
-                                    <% } %>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.street) { %>
+                                    <div class="text-danger">
+                                        <%= errors.street.msg %> 
+                                    </div>
+                                <% } %>
                         </div>
                         <!--  ingresar altura de calle -->
-                        <div class="users-form__field <%= locals.errors && errors.number ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_number" class="users-form__field <%= locals.errors && errors.number ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="number">Número</label>
-                            <input id="number" class="users-form__input" name="number" type="number"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0] ? user.address[0].number : "" %>" min="0" max="9999999999">
+                            <input 
+                                id="number" 
+                                class="users-form__input" 
+                                name="number" 
+                                type="number"
+                                placeholder="Ingresá el número de la calle" 
+                                value="<%= user.address[0] ? user.address[0].number : "" %>" 
+                               
+                                max="9999999999"
+                            >
                                 <i class="fa-solid fa-circle-check"></i>
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                    <% if (locals.errors && errors.number) { %>
-                                        <div class="text-danger">
-                                            <%= errors.number.msg %> 
-                                        </div>
-                                    <% } %>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.number) { %>
+                                    <div class="text-danger">
+                                        <%= errors.number.msg %> 
+                                    </div>
+                                <% } %>
                         </div>
                         <!--  ingresar estado o provincia -->
-                        <div class="users-form__field <%= locals.errors && errors.state ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_state" class="users-form__field <%= locals.errors && errors.state ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="state">Provincia</label>
-                            <input id="state" class="users-form__input" name="state" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].state : ""  %>" minlength="3" maxlength="40">
+                            <input 
+                                id="state" 
+                                class="users-form__input" 
+                                name="state" 
+                                type="text"
+                                placeholder="Ingresá tu estado o provincia" 
+                                value="<%= user.address[0]  ? user.address[0].state : ""  %>" 
+                        
+                                maxlength="40"
+                            >
                                 <i class="fa-solid fa-circle-check"></i>
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                    <% if (locals.errors && errors.state) { %>
-                                        <div class="text-danger">
-                                            <%= errors.state.msg %> 
-                                        </div>
-                                    <% } %>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.state) { %>
+                                    <div class="text-danger">
+                                        <%= errors.state.msg %> 
+                                    </div>
+                                <% } %>
                         </div>
                         <!--  ingresar Ciudad -->
-                        <div class="users-form__field <%= locals.errors && errors.city ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_city" class="users-form__field <%= locals.errors && errors.city ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="city">Ciudad</label>
-                            <input id="city" class="users-form__input" name="city" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].city : "" %>" minlength="3" maxlength="40">
+                            <input 
+                                id="city" 
+                                class="users-form__input" 
+                                name="city" 
+                                type="text"
+                                placeholder="Ingresá tu ciudad" 
+                                value="<%= user.address[0]  ? user.address[0].city : "" %>" 
+                                
+                                maxlength="40"
+                            >
                                 <i class="fa-solid fa-circle-check"></i>
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                    <% if (locals.errors && errors.city) { %>
-                                        <div class="text-danger">
-                                            <%= errors.city.msg %> 
-                                        </div>
-                                    <% } %>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.city) { %>
+                                    <div class="text-danger">
+                                        <%= errors.city.msg %> 
+                                    </div>
+                                <% } %>
                         </div>
                         <!--  ingresar codigo postal -->
-                        <div class="users-form__field <%= locals.errors && errors.postal_code ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_postal" class="users-form__field <%= locals.errors && errors.postal_code ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="postal_code">Codigo Postal</label>
-                            <input id="postal-code" class="users-form__input" name="postal_code" type="text"
-                                placeholder="Ingresá tu Dirección" value="<%= user.address[0]  ? user.address[0].postal_code : "" %>" minlength="3" maxlength="10">
+                            <input 
+                                id="postal-code" 
+                                class="users-form__input" 
+                                name="postal_code" 
+                                type="text"
+                                placeholder="Ingresá tu código postal" 
+                                value="<%= user.address[0]  ? user.address[0].postal_code : "" %>" 
+            
+                                maxlength="10"
+                            >
                                 <i class="fa-solid fa-circle-check"></i>
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                    <% if (locals.errors && errors.postal_code) { %>
-                                        <div class="text-danger">
-                                            <%= errors.postal_code.msg %> 
-                                        </div>
-                                    <% } %>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.postal_code) { %>
+                                    <div class="text-danger">
+                                        <%= errors.postal_code.msg %> 
+                                    </div>
+                                <% } %>
                         </div>
                         <!--  ingresar telefono -->
-                        <div class="users-form__field <%= locals.errors && errors.mobile ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_mobile" class="users-form__field <%= locals.errors && errors.mobile ? "inputFailure" : "inputSuccess" %>">
                             <label class="users-form__label" for="mobile">Telefono</label>
-                            <input id="mobile" class="users-form__input" name="mobile" type="number"
-                                placeholder="Ingresá tu telefono" value="<%= user.mobile  %>" minlength="8" maxlength="20">
+                            <input 
+                                id="mobile" 
+                                class="users-form__input" 
+                                name="mobile" 
+                                type="number"
+                                placeholder="Ingresá tu telefono" value="<%= user.mobile  %>" 
+                                maxlength="20"
+                            >
                                 <i class="fa-solid fa-circle-check"></i>
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                    <% if (locals.errors && errors.mobile) { %>
-                                        <div class="text-danger">
-                                            <%= errors.mobile.msg %> 
-                                        </div>
-                                    <% } %>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <% if (locals.errors && errors.mobile) { %>
+                                    <div class="text-danger">
+                                        <%= errors.mobile.msg %> 
+                                    </div>
+                                <% } %>
                         </div>
                         <!-- Boton de iniciar sesion -->
                         <input type="submit" value="Actualizar" class="btnStyle2">
