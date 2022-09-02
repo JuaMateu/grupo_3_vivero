@@ -1,7 +1,4 @@
 window.addEventListener("load", () => {
-  // localStorage.clear();
-
-  const body = document.querySelector("body");
   const buttons = document.querySelectorAll(".btn--plant");
 
   buttons.forEach((button) => {
@@ -29,18 +26,10 @@ window.addEventListener("load", () => {
         if (productFound) {
           localStorage.setItem("products", JSON.stringify(products));
 
-          const messageBox = document.createElement("div");
-          messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
-          messageBox.classList.add("cart__message-box");
-          body.appendChild(messageBox);
-          setTimeout(() => {
-            messageBox.remove();
-          }, 5000);
-
           button.innerText = "Añadido";
           setTimeout(() => {
             button.innerText = "Agregar Al Carrito";
-          }, 1000);
+          }, 1500);
         } else {
           localStorage.setItem(
             "products",
@@ -56,18 +45,10 @@ window.addEventListener("load", () => {
             ])
           );
 
-          const messageBox = document.createElement("div");
-          messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
-          messageBox.classList.add("cart__message-box");
-          body.appendChild(messageBox);
-          setTimeout(() => {
-            messageBox.remove();
-          }, 5000);
-
           button.innerText = "Añadido";
           setTimeout(() => {
             button.innerText = "Agregar Al Carrito";
-          }, 1000);
+          }, 1500);
         }
       } else {
         let products = [
@@ -76,18 +57,10 @@ window.addEventListener("load", () => {
 
         localStorage.setItem("products", JSON.stringify(products));
 
-        const messageBox = document.createElement("div");
-        messageBox.innerText = `${name} se ha agregado al carrito exitosamente!`;
-        messageBox.classList.add("cart__message-box");
-        body.appendChild(messageBox);
-        setTimeout(() => {
-          messageBox.remove();
-        }, 5000);
-
         button.innerText = "Añadido";
         setTimeout(() => {
           button.innerText = "Agregar Al Carrito";
-        }, 1000);
+        }, 1500);
       }
     });
   });

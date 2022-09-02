@@ -11,9 +11,9 @@
     <main>
         <section class="product-detail__section">
             <figure class="column-1-of-2 product-detail__figure">
-                <a href="" class="product-detail__previous"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#" class="product-detail__previous"><i class="fa-solid fa-angle-left"></i></a>
                 <img class="product-detail__picture" src="<%= product.img %>" alt="Imagen Del Producto">
-                <a href="" class="product-detail__next"><i class="fa-solid fa-angle-right"></i></a>
+                <a href="#" class="product-detail__next"><i class="fa-solid fa-angle-right"></i></a>
             </figure>
             <div class="column-2-of-2 product-detail__description">
                 <div class="product-detail__name"><%= product.name %></div>
@@ -21,30 +21,34 @@
                     <div class="product-detail__price--discount">$<%= (product.price * 0.7).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
                     <% } %>
                 <div class="product-detail__price--original">$<%= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+                <div class="product-detail__calification">
+                    <div class="product-detail__calification-label">Buena</div>
+                    <div class="product-detail__calification-line"></div>
+                </div>
                 <div class="product-detail__size">
                     <div class="product-detail__size-title"><strong>Size:</strong> <i>S</i></div>
                     <div class="product-detail__size-option">
                         <label for="small" class="product-detail__size-label product-detail__size-label--1">S</label>
-                        <input class="product-detail__size-input" id="small" name="product-size" type="radio">
+                        <input class="product-detail__size-input" id="small" name="product-size" type="radio" value="S">
                     </div>
                     <div class="product-detail__size-option">
                         <label for="medium" class="product-detail__size-label product-detail__size-label--2">M</label>
-                        <input class="product-detail__size-input" id="medium" name="product-size" type="radio">
+                        <input class="product-detail__size-input" id="medium" name="product-size" type="radio" value="M">
                     </div>
                     <div class="product-detail__size-option">
                         <label for="large" class="product-detail__size-label product-detail__size-label--3">L</label>
-                        <input class="product-detail__size-input" id="large" name="product-size" type="radio">
+                        <input class="product-detail__size-input" id="large" name="product-size" type="radio" value="L">
                     </div>
                     <div class="product-detail__size-option">
                         <label for="extra-large" class="product-detail__size-label product-detail__size-label--4">XL</label>
-                        <input class="product-detail__size-input" id="extra-large" name="product-size" type="radio">
+                        <input class="product-detail__size-input" id="extra-large" name="product-size" type="radio" value="XL">
                     </div>
                 </div>
                 <div class="product-detail__color">
                     <div class="product-detail__color-title"><strong>Color:</strong> <i>Blanco</i></div>
-                    <input class="product-detail__color-input product-detail__color-input--1" id="color-1" name="product-color" type="radio">
-                    <input class="product-detail__color-input product-detail__color-input--2" id="color-2" name="product-color" type="radio">
-                    <input class="product-detail__color-input product-detail__color-input--3" id="color-3" name="product-color" type="radio">
+                    <input class="product-detail__color-input product-detail__color-input--1" id="white" name="product-color" type="radio" value="Blanco">
+                    <input class="product-detail__color-input product-detail__color-input--2" id="brown" name="product-color" type="radio" value="Marron">
+                    <input class="product-detail__color-input product-detail__color-input--3" id="orange" name="product-color" type="radio" value="Naranja">
                 </div>                
                 <div class="product-detail__quantity">
                     <button class="product-detail__button" type="submit">Agregar Al Carrito</button>
@@ -55,6 +59,12 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="product-detail__features">
+            <h2 class="product-detail__heading">Características</h2>
+            <p class="product-detail__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, esse! Explicabo exercitationem non possimus, eos culpa deserunt voluptatem optio placeat aut vero consectetur atque enim corporis quam quia deleniti! Quod.</p>
+            <h2 class="product-detail__heading">Nivel De Cuidado</h2>
+            <p class="product-detail__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, esse! Explicabo exercitationem non possimus, eos culpa deserunt voluptatem optio placeat aut vero consectetur atque enim corporis quam quia deleniti! Quod.</p>
         </section>
 
         <!-- <section class="product-section">
@@ -97,5 +107,7 @@
     <!-- Footer -->
     <%- include('../partials/footer') %>
     
+    <!-- Script -->
+    <script src="/js/productDetail.js"></script>
 </body>
 </html>
