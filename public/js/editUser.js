@@ -4,6 +4,13 @@ window.addEventListener('load',function(){
     const streetInput = document.getElementById('street') 
     const firstName = document.getElementById('firstName')
     const userForm = document.querySelector('.admin-form__conteiner')
+    const addressFormAlert = addressForm.querySelector('.text-danger')  
+
+    if(addressFormAlert) {
+        addressForm.style.maxHeight = "500px"
+        showAddress.innerText = "Ocultar Dirección"
+        streetInput.scrollIntoView({ behavior: 'smooth' });
+    }
 
 
     showAddress.addEventListener('click', function (){
@@ -11,13 +18,14 @@ window.addEventListener('load',function(){
         if (!addressForm.style.maxHeight || addressForm.style.maxHeight === "0px" ) {
             addressForm.style.maxHeight = "500px";
             street.focus()
-            street.scrollIntoView({ behavior: 'smooth' });
+            streetInput.scrollIntoView({ behavior: 'smooth' });
             showAddress.innerText = "Ocultar Dirección"
           } else {
             addressForm.style.maxHeight = "0px";
             userForm.scrollIntoView({ behavior: 'smooth' });
             showAddress.innerText = "Editar dirección de entrega"
           }
+
     }
     )
 });

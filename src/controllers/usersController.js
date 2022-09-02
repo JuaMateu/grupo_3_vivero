@@ -206,16 +206,18 @@ const controller = {
 
   editAddress: async (req, res) => {
 
-    //validamos los datos recibidos
-    // const resultValidation = validationResult(req);
-    // //si hay errores devolvemos la misma vista con los errores, los datos cargados y el usuario loggeado
-    // if (resultValidation.errors.length > 0) {
-    //   return res.render("users/menu/usersMenuContact.ejs", {
-    //     errors: resultValidation.mapped(),
-    //     oldData: req.body,
-    //     user: req.params.id,
-    //   });
-    // }
+    // validamos los datos recibidos
+    const resultValidation = validationResult(req);
+
+    let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
+    //si hay errores devolvemos la misma vista con los errores, los datos cargados y el usuario loggeado
+    if (resultValidation.errors.length > 0) {
+      return res.render("../views/users/usersEdit.ejs", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        editUser: userToEdit.dataValues
+      });
+    }
 
     // Direccion a guardar
     console.log(req.body)
@@ -233,9 +235,9 @@ const controller = {
 
     // si el usuario tiene dirección guardada se actualiza, si no se crea
     if (hasAddress) {
-      Address.update(addressData, { where: { user_id: req.params.id } });
+      await Address.update(addressData, { where: { user_id: req.params.id } });
     } else {
-      Address.create(addressData);
+      await Address.create(addressData);
     }
 
     // redirigimos al edit de usuario

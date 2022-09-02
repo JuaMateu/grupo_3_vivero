@@ -12,7 +12,7 @@
             <div class="shop">
                 <section class="shop__header">
 
-                    <h1 class="shop__title">Nuestras Plantas</h1>
+                    <h1 class="heading-primary">Nuestras Plantas</h1>
 
                     <!-- <div class="flex-row space-around">
                         <form action="">
@@ -32,12 +32,11 @@
                         </div>
                     </div>
                      -->
-                        <form action="/orderBy/" method="get">
-                            <label for="orderBy">Ordenar </label>
-                            <select name="orderBy" id="orderBy" onchange='this.form.submit();' >
-                                <option hidden selected>Selecciona una opción</option>
-                                <option value="nameAsc">Orden A -> Z</option>
-                                <option value="nameDesc">Orden Z -> A</option>
+                        <form action="/orderBy/" method="get" class="order-by__form">
+                            <select name="orderBy" id="orderBy" class="order-by__input" onchange='this.form.submit();' >
+                                <option hidden selected>Ordenar por</option>
+                                <option value="nameAsc">Orden A-Z</option>
+                                <option value="nameDesc">Orden Z-A</option>
                                 <option value="priceDesc">Mayor Precio</option>
                                 <option value="priceAsc">Menor Precio</option>
                             </select>
