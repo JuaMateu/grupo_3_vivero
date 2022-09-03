@@ -7,7 +7,7 @@ const validations = [
         .isLength({min:3, max:40}).withMessage("Debes ingresar el entre 3 y 40 caracteres"),
     body('description')
         .trim()
-        .isLength({max:200}).withMessage("la descripcion no puede superar los 200 caracteres"),
+        .isLength({max:300}).withMessage("la descripcion no puede superar los 300 caracteres"),
     body("category_id")
         .notEmpty().withMessage("Debes de ingresar la categoría del producto").bail()
         .isNumeric().withMessage("el id de categoría debe ser numerico"),

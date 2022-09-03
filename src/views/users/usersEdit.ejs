@@ -100,27 +100,7 @@
                     <% } %>
                 </div>
 
-                <!-- telefono -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? " inputFailure" : "" %>">
-                    <label class="admin-form__label" for="mobile">Ingresá tu número telefónico</label>
-                    <input 
-                        class="admin__input" 
-                        name="mobile" 
-                        type="number" 
-                        id="mobile" 
-                        placeholder="Teléfono" 
-                        minlength="10"
-                        maxlength="15" 
-                        value="<%= locals.oldData ? oldData.mobile : editUser.mobile %>"
-                    >
-                
-                    <% if (locals.errors && errors.mobile) { %>
-                    <div class="text-danger">
-                        <%= errors.mobile.msg %>
-                    </div>
-                    <% } %>
-                </div>
-                
+                                
                 <!-- fecha de nacimiento -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? " inputFailure" : "" %>">
                     <label class="admin-form__label" for="birth">Ingresá tu fecha de nacimiento</label>
@@ -168,7 +148,7 @@
         </form>
 
         <!-- COMIENZA SECCION ADDRESS -->
-        <form action="/users/editAddress/<%=editUser.id%>?_method=PUT" 
+        <form  action="/users/editAddress/<%=editUser.id%>?_method=PUT" 
             method="post" class="admin__form" id="Admin-addressEdit">
 
             <!-- contenedor Grid -->
@@ -178,7 +158,7 @@
                 <h3 class="span-2" > Dirección de entrega </h3>
 
                 <!-- prueba address -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.street ? "inputFailure" : "" %>">
+                <div id="div_street" class="adminForm__inputConteiner <%= locals.errors && errors.street ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="street">Calle</label>
                     <input id="street" class="admin__input" name="street" type="text"
                         placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].street : "" %>" >
@@ -189,7 +169,7 @@
                         <% } %>
                 </div>
                 <!--  ingresar altura de calle -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.number ? "inputFailure" : "" %>">
+                <div id="div_number" class="adminForm__inputConteiner <%= locals.errors && errors.number ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="number">Número</label>
                     <input id="number" class="admin__input" name="number" type="number"
                         placeholder="Ingresá tu Dirección" value="<%= editUser.address[0] ? editUser.address[0].number : "" %>" >
@@ -200,7 +180,7 @@
                         <% } %>
                 </div>
                 <!--  ingresar estado o provincia -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.state ? "inputFailure" : "" %>">
+                <div id="div_state" class="adminForm__inputConteiner <%= locals.errors && errors.state ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="state">Provincia</label>
                     <input id="state" class="admin__input" name="state" type="text"
                         placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].state : ""  %>" >
@@ -211,7 +191,7 @@
                         <% } %>
                 </div>
                 <!--  ingresar Ciudad -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.city ? "inputFailure" : "" %>">
+                <div id="div_city" class="adminForm__inputConteiner <%= locals.errors && errors.city ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="city">Ciudad</label>
                     <input id="city" class="admin__input" name="city" type="text"
                         placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].city : "" %>" >
@@ -222,7 +202,7 @@
                         <% } %>
                 </div>
                 <!--  ingresar codigo postal -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.postal_code ? "inputFailure" : "" %>">
+                <div id="div_postal" class="adminForm__inputConteiner <%= locals.errors && errors.postal_code ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="postal_code">Codigo Postal</label>
                     <input id="postal-code" class="admin__input" name="postal_code" type="text"
                         placeholder="Ingresá tu Dirección" value="<%= editUser.address[0]  ? editUser.address[0].postal_code : "" %>" >
@@ -232,6 +212,25 @@
                             </div>
                         <% } %>
                 </div>
+                <!-- telefono -->
+                <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? " inputFailure" : "" %>">
+                    <label class="admin-form__label" for="mobile">Ingresá tu número telefónico</label>
+                    <input 
+                        class="admin__input" 
+                        name="mobile" 
+                        type="number" 
+                        id="mobile" 
+                        placeholder="Teléfono" 
+                        value="<%= locals.oldData ? oldData.mobile : editUser.mobile %>"
+                    >
+                
+                    <% if (locals.errors && errors.mobile) { %>
+                    <div class="text-danger">
+                        <%= errors.mobile.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
 
                 <div class="grid-1-start">
                     <input class="admin__buttons--input btnStyle2" type="submit" value="Editar" />
@@ -241,12 +240,9 @@
         </form>
         <button class="admin__buttons--input btnStyle2" id="showAddress"> Editar dirección de entrega</button>
 
-
-
-
-
     </div>
 </body>
 <script src="/js/editUser.js"></script>
+<!-- <script src="/js/userMenuContact.js"></script> -->
 </html>
 

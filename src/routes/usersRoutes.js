@@ -43,7 +43,7 @@ router.use('/menu/', usersMenuRoutes)
 
 // formulario de edicion de usuario
 router.get('/edit/:id', userNotLoggedMiddleware, userIsAdmin, usersController.editForm);
-router.put('/edit/:id', userNotLoggedMiddleware, userIsAdmin, userUpdateAdminValidator, uploadUser.single('img'), usersController.edit);
+router.put('/edit/:id', userNotLoggedMiddleware, userIsAdmin, uploadUser.single('img'), userUpdateAdminValidator, usersController.edit);
 router.put('/editAddress/:id', userNotLoggedMiddleware, userIsAdmin, UserContactValidator, usersController.editAddress);
 
 //accion de borrar usuario

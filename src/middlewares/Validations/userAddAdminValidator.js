@@ -19,10 +19,6 @@ const validations = [
         .trim()
         .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
         .isStrongPassword().withMessage("Tu contraseña debe tener mínimo 8 caracteres, una mayúscula, una minúscula y un símbolo"),
-    body('mobile')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar un número de teléfono").bail()
-        .isMobilePhone().withMessage("Tu número de teléfono debe ser válido"),
     body('birth')
         .trim()
         .notEmpty().withMessage("Debes de ingresar tu fecha de nacimiento").bail()

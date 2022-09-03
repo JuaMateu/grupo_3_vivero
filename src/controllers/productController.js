@@ -73,13 +73,16 @@ const controller = {
       return res.render("products/editProducts", { editProduct: product });
     });
   },
-  edit: (req, res) => {
+  edit: async (req, res) => {
     const resultValidation = validationResult(req);
+
     //Validaciones de formulario
     if (resultValidation.errors.length > 0) {
+      let ProductData = await db.Product.findByPk(req.params.id)
+      console.log(resultValidation.errors)
       return res.render("products/editProducts", {
         errors: resultValidation.mapped(),
-        editProduct: { ...req.body, id: req.params.id, img: req.query.img },
+        editProduct: ProductData ,
       });
     }
     let data = {
@@ -94,6 +97,8 @@ const controller = {
     if (req.file) {
       data.img = "/img/plantas/" + req.file.filename;
     }
+
+    console.log(`ALSKDMASLKDMALAKDSMKLASMDLKASMDALSKMDLAKSMLKSADMLKAMD${data.img}`)
 
     db.Product.update(data, { where: { id: req.params.id } }).then(
       (product) => {

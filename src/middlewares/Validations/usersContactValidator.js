@@ -15,12 +15,12 @@ const validations = [
         .trim()
         .notEmpty().withMessage("Debes agregar el estado donde vivís").bail()
         .isAlpha("es-ES",{ignore:" "}).withMessage("Debes ingresar palabras únicamente").bail() //Para casos de provincias separadas por un espacio en blanco
-        .isLength({min:3, max:30}).withMessage("Debes ingresar entre 3 y 30 caracteres"),
+        .isLength({min:3, max:45}).withMessage("Debes ingresar entre 3 y 45 caracteres"),
     body('city')
         .trim()
         .notEmpty().withMessage("Debes agregar la ciudad donde vivís").bail()
         .isAlpha("es-ES",{ignore:" "}).withMessage("Debes ingresar palabras únicamente").bail()
-        .isLength({min:3, max:30}).withMessage("Debes ingresar entre 3 y 30 caracteres"),
+        .isLength({min:3, max:45}).withMessage("Debes ingresar entre 3 y 45 caracteres"),
     body('postal_code')
         .trim()
         .notEmpty().withMessage("Debes ingresar el codigo postal donde vivís").bail()

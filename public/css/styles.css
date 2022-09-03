@@ -1959,6 +1959,10 @@ tr:hover {
     justify-content: space-around;
   }
 
+  #showAddress{
+    width: 16em;
+  }
+
   .admin__buttons--input {
     width: 11rem;
   }

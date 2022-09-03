@@ -91,23 +91,7 @@
                         </div>
                     <% } %>
                 </div>
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.mobile? "inputFailure" : "" %>">
-                    <label class="admin-form__label" for="mobile">Ingresá tu número telefónico</label>
-                    <input 
-                        class="admin__input" 
-                        name="mobile" 
-                        type="number" 
-                        id="mobile" 
-                        placeholder="Teléfono" 
-                        value="<%= locals.oldData ? oldData.mobile: null %>"
-                    >
 
-                        <% if (locals.errors && errors.mobile) { %>
-                            <div class="text-danger">
-                                <%= errors.mobile.msg %> 
-                            </div>
-                        <% } %>
-                </div>
 
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="birth">Ingresá tu fecha de nacimiento</label>
