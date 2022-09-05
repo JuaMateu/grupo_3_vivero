@@ -18,10 +18,6 @@ const validations = [
         .trim()
         .notEmpty().withMessage("Debes de ingresar tu email").bail()
         .isEmail().withMessage("Debes ingresar un formato de correo electrónico válido"),
-    body('password')
-        .trim()
-        .notEmpty().withMessage("Debes de ingresar una contraseña").bail()
-        .isStrongPassword().withMessage("Tu contraseña debe tener mínimo 8 caracteres, una mayúscula, una minúscula y un símbolo"),
     body("birth")
         .notEmpty().withMessage("Debes de ingresar tu fecha de nacimiento").bail()
         .isISO8601().withMessage("Debes ingresar una fecha con formato valido").bail()

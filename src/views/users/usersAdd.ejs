@@ -24,7 +24,8 @@
 
                 <!-- subtitulo / accion -->
                 <h3 class="span-2" >Agregá los usuarios a la base de datos</h3>
-
+                
+                <!-- Nombre -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="firstName">Ingresá tu nombre</label>
                     <input 
@@ -42,6 +43,8 @@
                         </div>
                     <% } %>
                 </div>
+
+                <!-- Apellido -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.lastName ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="lastName">Ingresá tu apellido</label>
                     <input 
@@ -59,6 +62,7 @@
                             </div>
                     <% } %>
                 </div>
+                <!-- Email -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.email ? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="email">Ingresá tu email</label>
                     <input 
@@ -76,6 +80,8 @@
                         </div>
                     <% } %>
                 </div>
+                
+                <!-- password -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.password? "inputFailure" : "" %>">
                     <label class="admin-form__label" for="password">Ingresá tu Password</label>
                     <input 
@@ -112,7 +118,7 @@
                 </div>
                 <div class="adminForm__inputConteiner">
                     <label class="admin-form__label" for="avatar-image">Seleccioná tu foto de usuario</label>
-                    <input class="admin__input" id="fieldInput" name="img" accept='.jpg, .png' type="file" id="avatar-image" accept="/image*">
+                    <input class="admin__input" id="fieldInput" name="img"  type="file" id="avatar-image" accept="/image*">
                 </div>
 
                 
@@ -128,4 +134,5 @@
         </form>
     </div>
 </body>
+<script src="/js/addUser.js"></script>
 </html>

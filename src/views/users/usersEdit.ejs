@@ -20,7 +20,7 @@
         <h1>Administrar Usuarios</h1>
 
         <form action="/users/edit/<%- editUser.id %>?_method=PUT" enctype="multipart/form-data"
-            method="post" class="admin__form">
+            method="post" id="userForm" class="admin__form">
 
             <!-- contenedor Grid -->
             <div class="admin-form__conteiner">
@@ -84,21 +84,9 @@
                     <% } %>
                 </div>
 
-                <!-- Password -->
-                <div class="adminForm__inputConteiner <%= locals.errors && errors.password ? " inputFailure" : "" %>">
-                    <label class="admin-form__label" for="password">Ingresá tu Password</label>
-                    <input 
-                        class="admin__input" 
-                        name="password" 
-                        type="password" 
-                        id="password" 
-                    >
-                    <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                        <%= errors.password.msg %>
-                    </div>
-                    <% } %>
-                </div>
+                <!-- Permisos -->
+                
+
 
                                 
                 <!-- fecha de nacimiento -->

@@ -1,5 +1,5 @@
 window.addEventListener('load',function(){
-    let formProduct = document.querySelector(".admin__form");
+    let userForm = document.querySelector(".admin__form");
 
     let name = document.querySelector("#firstName");
     let lastName = document.querySelector("#lastName");
@@ -45,7 +45,7 @@ window.addEventListener('load',function(){
     let passwordStrength = 0;
     //mensajes de error
     let Weaknesses = [];
-    //borra mensajes
+    // Se eliminan mensajes de alerta para evitar acumulacion
     deleteErrorMsg(passInput.parentElement);
 
     //condiciones, si se cumplen aumenta 1 la fz, si no agregan un mensaje de error al array
@@ -55,14 +55,21 @@ window.addEventListener('load',function(){
     (/[\W]/g).test(pass) ? passwordStrength++ : Weaknesses.push("Debe contener un símbolo");
     (/[0-9]/g).test(pass) ? passwordStrength++ : Weaknesses.push("Debe contener número");
 
+    console.log(pass)
+
     // Weaknesses.forEach(w => showMessage(password, w))
     if(Weaknesses.length < 5 && pass) { 
       Weaknesses.forEach(w => {
         let p = document.createElement("p");
-        p.classList.toggle("text-danger");
+        p.classList.add("text-danger");
         p.innerText = w;
         passInput.insertAdjacentElement("afterend", p);
-      })
+      }) 
+  } else if (!pass) {
+    let p = document.createElement("p");
+    p.classList.add("text-danger");
+    p.innerText = 'la contraseña no puede quedar vacía';
+    passInput.insertAdjacentElement("afterend", p);
   }
 
     Weaknesses.length > 0 ? inputFailure(passInput.parentElement) : "";
@@ -70,7 +77,7 @@ window.addEventListener('load',function(){
   }
 
     // Frenamos el form para validar
-    formProduct.addEventListener("submit",function(event){
+    userForm.addEventListener("submit",function(event){
         
         errorCounter = 0
 
@@ -117,6 +124,7 @@ window.addEventListener('load',function(){
           }
 
         //   falta imagen y fecha de nacimiento
+        console.log(birthDate.value)
         
           //img      
         if (img) {
