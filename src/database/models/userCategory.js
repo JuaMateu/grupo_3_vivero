@@ -20,6 +20,8 @@ module.exports = (sequelize, dataTypes) => {
   let configurations = {
     timestamps: false,
     deletedAt: false,
+    freezeTableName: true,
+    tableName: 'user_category'
   };
 
   const UserCategory = sequelize.define(alias, columns, configurations);
@@ -28,6 +30,7 @@ module.exports = (sequelize, dataTypes) => {
     UserCategory.hasMany(models.User, {
       as: "user", //no se si ponerlo en plural o no
       foreignKey: "user_category_id",
+
     });
   };
 

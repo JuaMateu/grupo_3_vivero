@@ -57,6 +57,7 @@ module.exports = (sequelize, dataTypes) => {
     User.belongsTo(models.userCategory, {
       as: "category",
       foreignKey: "user_category_id",
+
     });
 
     User.hasMany(models.Order, {

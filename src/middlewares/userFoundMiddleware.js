@@ -4,6 +4,7 @@ const Users = db.User;
 userFoundMiddleware = async (req, res, next) => {
     res.locals.userFound = false;
     res.locals.isAdmin = false
+    res.locals.isRoot = false
     let userFromCookie
 
     if (req.cookies.userId){
@@ -20,6 +21,9 @@ userFoundMiddleware = async (req, res, next) => {
         res.locals.userLogged = req.session.userLogged;
         if(req.session.userLogged.user_category_id != 3) {
             res.locals.isAdmin = true;
+        }
+        if (req.session.userLogged.user_category_id == 1) {
+            res.locals.isRoot = true;
         }
     }
     

@@ -30,7 +30,7 @@
 
                 <!-- nombre  -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.firstName ? " inputFailure" : "inputSuccess" %>">
-                    <label class="admin-form__label" for="firstName">Ingresá tu nombre</label>
+                    <label class="admin-form__label" for="firstName">Nombre de usuario</label>
                     <input 
                         class="admin__input" 
                         name="firstName" 
@@ -48,7 +48,7 @@
 
                 <!-- Apellido -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.lastName ? " inputFailure" : "" %>">
-                    <label class="admin-form__label" for="lastName">Ingresá tu apellido</label>
+                    <label class="admin-form__label" for="lastName">Apellido de usuario</label>
                     <input 
                         class="admin__input" 
                         name="lastName" 
@@ -65,9 +65,17 @@
                     <% } %>
                 </div>
 
+                <!-- imagen del usuario -->
+                
+                <div class="img-conteiner-edit--user adminForm__inputConteiner flex-column">
+                    <label for="user-img" class="admin-form__label">Imagen Del usuario</label>
+                    <img  id="user-img" class="img-edit" src="<%= editUser.img %>"
+                    alt="<%= editUser.lastName %>" />
+                </div>
+
                 <!-- Email -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.email ? " inputFailure" : "" %>">
-                    <label class="admin-form__label" for="email">Ingresá tu email</label>
+                    <label class="admin-form__label" for="email">Ingresar email</label>
                     <input 
                         class="admin__input" 
                         name="email" 
@@ -84,14 +92,14 @@
                     <% } %>
                 </div>
 
-                <!-- Permisos -->
+
                 
 
 
                                 
                 <!-- fecha de nacimiento -->
                 <div class="adminForm__inputConteiner <%= locals.errors && errors.birth? " inputFailure" : "" %>">
-                    <label class="admin-form__label" for="birth">Ingresá tu fecha de nacimiento</label>
+                    <label class="admin-form__label" for="birth">Fecha de nacimiento</label>
                     <input 
                         class="admin__input" 
                         name="birth" 
@@ -109,21 +117,42 @@
                     </div>
                     <% } %>
                 </div>
-
+                
                 <!-- Subir imagen -->
                 <div class="adminForm__inputConteiner">
-                    <label class="admin-form__label" for="avatar-image">Seleccioná tu foto de usuario</label>
+                    <label class="admin-form__label" for="img">Cambiar foto de usuario</label>
                     <input 
                         class="admin__input" 
-                        id="fieldInput" 
                         name="img" 
-                        accept='.jpg, .png' 
                         type="file" 
-                        id="avatar-image"
+                        id="img"
                         accept="/image*"
                     >
                 </div>
 
+                <!-- Permisos -->
+                <% if (editUser.category.id > 1) { %>
+                 
+                    <div class="adminForm__inputConteiner <%= locals.errors && errors.category ? " inputFailure" : "" %>">
+                        <label class="admin-form__label" for="category_id">Editar permisos del usuario</label>
+                        <select class="admin__input" name="category_id" id="category_id">
+                            <% if (locals.isRoot) { %>
+                                <option <%= locals.editUser && editUser.category.id == 1 ? "selected" : ""%> value="1">Administrador</option>
+                            <% } %>
+                            <option <%= locals.editUser && editUser.category.id == 2 ? "selected" : ""%> value="2">Editor</option>
+                            <option <%= locals.editUser && editUser.category.id == 3 ? "selected" : ""%> value="3">Usuario</option>
+                        </select>
+    
+                    
+                        <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger">
+                            <%= errors.category.msg %>
+                        </div>
+                        <% } %>
+                    </div>
+                <% } %>
+
+                <!-- boton submit  -->
                 <div class="grid-1-start">
                     <input class="admin__buttons--input btnStyle2" type="submit" value="Editar" />
                 </div>

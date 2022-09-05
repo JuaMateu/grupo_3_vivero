@@ -10,7 +10,7 @@ window.addEventListener('load',function(){
     let lastName = document.querySelector("#lastName");
     let email = document.querySelector("#email");
     let birthDate = document.querySelector("#birth");
-    let img = document.getElementById("category_id");
+    let img = document.getElementById("img");
 
     // RegExp para validar mail
     const isEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -82,10 +82,10 @@ window.addEventListener('load',function(){
 
 
         //   falta imagen y fecha de nacimiento
-        console.log(birthDate.value)
+        console.log(img.value == '')
         
           //img      
-        if (img) {
+        if (img.value != '') {
             let imgExtention = img.value.split(".")[1]
             if (imgExtention != "jpg" 
             && imgExtention != "gif"

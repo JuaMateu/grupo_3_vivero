@@ -1125,7 +1125,7 @@ textarea:focus,
   text-align: left;
   display: block;
   align-self: flex-start;
-  /* padding: 0.5rem; */
+  padding-bottom: 0.5rem;
 }
 
 #Admin-addressEdit {
@@ -1532,6 +1532,12 @@ tr:hover {
   align-items: center;
   justify-content: center;
   grid-area: 2/2/4/-1;
+}
+.img-conteiner-edit--user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 2/2/5/-1;
 }
 
 .img-edit {

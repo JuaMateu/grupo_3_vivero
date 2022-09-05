@@ -111,7 +111,7 @@ const controller = {
 
   // 1 Listar usuarios
   list: (req, res) => {
-    Users.findAll().then((users) => {
+    Users.findAll({ include: ["category"] }).then((users) => {
       return res.render("users/usersList", { users });
     });
   },
@@ -163,9 +163,8 @@ const controller = {
   // 3 - editar Usuario
   editForm: async (req, res) => {
     // READ
-    let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
-    console.log(userToEdit.dataValues)
-    console.log(userToEdit.address)
+    let userToEdit = await Users.findByPk(req.params.id, { include: ["address", "category"] });
+
     return res.render("../views/users/usersEdit.ejs", {
       editUser: userToEdit.dataValues,
       
@@ -173,7 +172,7 @@ const controller = {
   },
   edit: async (req, res) => {
     const resultValidation = validationResult(req);
-    let userToEdit = await Users.findByPk(req.params.id, { include: ["address"] });
+    let userToEdit = await Users.findByPk(req.params.id, { include: ["address", "category"] });
     if (resultValidation.errors.length > 0) {
       return res.render("../views/users/usersEdit.ejs", {
         errors: resultValidation.mapped(),
@@ -191,7 +190,7 @@ const controller = {
       // password: bcryptjs.hashSync(req.body.password,10),
       // se asigna la imagen por defecto
       date_of_birth: req.body.birth,
-      user_category_id: req.body.category,
+      user_category_id: req.body.category_id,
     };
 
 
