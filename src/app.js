@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 const cookies = require('cookie-parser');
 
-const port = 3000
+const port = process.env.PORT
 
 // .ENV
 require('dotenv').config();
