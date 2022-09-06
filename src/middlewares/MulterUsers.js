@@ -1,15 +1,15 @@
-const path = require('path');
-const multer = require('multer');
+import { join, extname } from 'path';
+import multer, { diskStorage } from 'multer';
 
-const usersStorage = multer.diskStorage({
+const usersStorage = diskStorage({
     destination: (req,file,cb) => {
-        cb(null,path.join(__dirname,'../../public/img/users/avatar/'));
+        cb(null,join(__dirname,'../../public/img/users/avatar/'));
     },
     filename: (req,file,cb) => {
-        cb(null,'user-'+ Date.now()+path.extname(file.originalname));
+        cb(null,'user-'+ Date.now()+extname(file.originalname));
     }
 });
 
 const uploadUser = multer({storage:usersStorage});
 
-module.exports = uploadUser
+export default uploadUser

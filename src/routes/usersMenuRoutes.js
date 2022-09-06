@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //! probar si funciona este middleware
-const uploadUser = require('../middlewares/multerUsers') 
+const uploadUser = require('../middlewares/multerUsers').default 
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const userNotLoggedMiddleware = require('../middlewares/userNotLoggedMiddleware');
 const usersMenuController = require('../controllers/usersMenuController');
