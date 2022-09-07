@@ -5,19 +5,14 @@ window.addEventListener("load", () => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
 
-      const previousSibling = button.previousElementSibling;
-      const children = previousSibling.children;
-      const name = children[1].innerText;
-      const price = children[2].innerText;
-      const package = children[0];
-      const image = package.children[0].src;
+      const id = button.parentElement.getAttribute("data-id");
 
       if (localStorage.getItem("products")) {
         let products = JSON.parse(localStorage.getItem("products"));
         let productFound = false;
 
         products.forEach((product) => {
-          if (product.name === name) {
+          if (product.id === id) {
             product.quantity++;
             productFound = true;
           }
@@ -36,11 +31,8 @@ window.addEventListener("load", () => {
             JSON.stringify([
               ...products,
               {
-                id: products[products.length - 1].id + 1,
-                name: name,
-                price: price,
+                id: id,
                 quantity: 1,
-                image: image,
               },
             ])
           );
@@ -51,9 +43,7 @@ window.addEventListener("load", () => {
           }, 1500);
         }
       } else {
-        let products = [
-          { id: 1, name: name, price: price, image: image, quantity: 1 },
-        ];
+        let products = [{ id: id, quantity: 1 }];
 
         localStorage.setItem("products", JSON.stringify(products));
 
