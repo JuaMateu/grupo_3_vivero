@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
   const buttons = document.querySelectorAll(".btn--plant");
-  const SearchInput = document.querySelector('.search-bar')
+  const cardWrapper = document.getElementById('cardWrapper')
   const orderBy = document.querySelector('.order-by__form')
   let OrderByValue = document.querySelector('#orderBy')
   let careLvl = document.getElementById('careLvl')
@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
 
-      const previousSibling = button.previousElementSibling;
+      const previousSibling = button.previousElementSibling.previousElementSibling ;
       const children = previousSibling.children;
       const id = button.parentElement.getAttribute("data-id");
       const name = children[1].innerText;
