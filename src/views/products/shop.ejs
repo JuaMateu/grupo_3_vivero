@@ -18,52 +18,55 @@
                 <section class="shop__header">
 
                     <h1 class="heading-primary">Nuestras Plantas</h1>
+                        <div></div>
 
-                    <!-- <div class="flex-row space-around">
-                        <form action="">
-                            <button class="shop__btn" for="filters">Filtrar</button>
-                        </form> -->
-                        <!--                   
-                    <div class="menu-shadow">
-                        <div class="shop__filter">
-                            <ul>
-                                <li class="no-list-style">Categoría</li>
-                                <li class="no-list-style">Tamaño</li>
-                                <li class="no-list-style">Por iluminación</li>
-                                <li class="no-list-style">Por Humedad</li>
-                                <li class="no-list-style">nivel de Ciudados</li>
-                                <li class="no-list-style">pet friendly</li>
-                            </ul>
-                        </div>
-                    </div>
-                     -->
 
-                        <form action="/orderBy/" method="get" class="order-by__form">
-                            <select name="orderBy" id="orderBy" class="order-by__input" onchange='this.form.submit();' >
-                                <option hidden selected>Ordenar por</option>
-                                <option value="nameAsc">Orden A-Z</option>
-                                <option value="nameDesc">Orden Z-A</option>
-                                <option value="priceDesc">Mayor Precio</option>
-                                <option value="priceAsc">Menor Precio</option>
-                            </select>
-                        </form>
 
-                        <!--                     
-                    <div class="shop__sort">
-                        <ul>
-                            <li class="no-list-style">Precio</li>
-                            <li class="no-list-style">Nombre</li>
-                            <li class="no-list-style">En oferta</li>
+                    <form action="/products/shop" method="get" class="order-by__form">
+                        <select name="orderBy" id="orderBy" class="order-by__input"  >
+                            <option hidden selected>Ordenar por</option>
+                            <option value="nameAsc">Orden A-Z</option>
+                            <option value="nameDesc">Orden Z-A</option>
+                            <option value="priceDesc">Mayor Precio</option>
+                            <option value="priceAsc">Menor Precio</option>
+                        </select>
+                    </form>
+
+
+                </section>
+                <div class="shop-flex">
+                    <div class="shop-filters">
+                        <ul class="no-list-style shop-filters__list">
+                            <li><a href="/products/shop">Todas las Plantas</a></li>
+                            <li><a href="/products/shop?easyCare=Básico">Facil cuidado</a></li>
+                            <li><a href="/products/shop?offer=1">plantas de oferta</a></li>
+                            <li><a href="/products/shop?category=1">florales</a></li>
+                            <li><a href="/products/shop?category=2">arbustos</a></li>
+                        </ul>
+                        <hr style="color:white">
+                        <h5>filtrar por:</h5>
+                        <ul class="no-list-style shop-filters__list">
+                            <p id="carelvlTitle">nivel de cuidados:</p>
+                            <form action="">
+                                <ul class="no-list-style" id="careLvl">
+                                    <li><input type="checkbox" name="Facil" id="">
+                                        <label for="Facil">Fácil cuidado</label></li>
+                                    <li><input type="checkbox" name="med" id="">
+                                        <label for="med">Intermedio</label></li>
+                                    <li><input type="checkbox" name="high" id="">
+                                        <label for="high">Requieren mucho amor</label></li>
+                                </ul>
+                            </form>
+                            <li>Tipo de planta</li>
+
                         </ul>
                     </div>
-                </div> -->
-
-                </section>
-                <section class="shop-wrapper">
-                    <% products.forEach(prod=> { %>
-                        <%- include('../partials/PlantCard.ejs', { data : prod }) %>
-                            <% }); %>
-                </section>
+                    <section class="shop-wrapper">
+                        <% products.forEach(prod=> { %>
+                            <%- include('../partials/PlantCard.ejs', { data : prod }) %>
+                                <% }); %>
+                    </section>
+                </div>
             </div>
             </div>
         </main>
