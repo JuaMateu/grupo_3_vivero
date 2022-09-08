@@ -55,6 +55,9 @@ window.addEventListener("load", () => {
 
   // Cart
 
+  const id = document
+    .querySelector(".product-detail__section")
+    .getAttribute("data-id");
   const image =
     "http://localhost:3000" +
     document.querySelector(".product-detail__picture").getAttribute("src");
@@ -76,7 +79,7 @@ window.addEventListener("load", () => {
 
     if (products) {
       products.forEach((product) => {
-        if (product.name == name) {
+        if (product.id == id) {
           product.quantity += quantity;
           productFound = true;
         }
@@ -96,7 +99,7 @@ window.addEventListener("load", () => {
           JSON.stringify([
             ...products,
             {
-              id: products[products.length - 1].id + 1,
+              id: id,
               name: name,
               price: price,
               quantity: quantity,
@@ -112,7 +115,7 @@ window.addEventListener("load", () => {
       }
     } else {
       let products = [
-        { id: 1, name: name, price: price, image: image, quantity: quantity },
+        { id: id, name: name, price: price, image: image, quantity: quantity },
       ];
 
       localStorage.setItem("products", JSON.stringify(products));
