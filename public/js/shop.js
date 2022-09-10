@@ -1,14 +1,17 @@
 window.addEventListener("load", () => {
   const buttons = document.querySelectorAll(".btn--plant");
+  const pageLinks = document.querySelectorAll(".shop-pages__link");
   const cardWrapper = document.getElementById('cardWrapper')
   const orderBy = document.querySelector('.order-by__form')
   let OrderByValue = document.querySelector('#orderBy')
   let careLvl = document.getElementById('careLvl')
   let carelvlTitle = document.getElementById('carelvlTitle')
+  let params = new URLSearchParams(window.location.search)
 
   careLvl.style.maxHeight = 0;
   careLvl.style.overflow = 'hidden';
 
+  //muestra y oculta filtros
   carelvlTitle.addEventListener('click', (e) =>{
     careLvl.style.overflow = 'hidden';
     if (!careLvl.style.maxHeight || careLvl.style.maxHeight === "0px" ) {
@@ -19,19 +22,41 @@ window.addEventListener("load", () => {
   })
 
 
-
+  //ordena el listado preservando query string actuales
   orderBy.addEventListener("change", (e) =>{
     let value = OrderByValue.value
 
-    let params = new URLSearchParams(window.location.search)
-    let searchedValue = (params.get('searched'))
+    params.set('orderBy', value)
+    let queryStrings = params.toString();
 
-    if(params.has('searched')) {
-      window.location.href = `http://localhost:3000/products/shop?orderBy=${value}&searched=${searchedValue}`
+    
+    // let searchedValue = (params.get('searched'))
+    window.location.href = `http://localhost:3000/products/shop?${queryStrings}`
+    // if(params.has('searched')) {
+    //   window.location.href = `http://localhost:3000/products/shop?orderBy=${value}&searched=${searchedValue}`
+    // } else {
+    //   window.location.href = `http://localhost:3000/products/shop?orderBy=${value}`
+    // }
+
+  })
+
+  pageLinks.forEach((link) => {
+    let value = link.innerText
+
+    if ( params.has("page") ) {
+      value == params.get("page") ? link.classList.add('shop-pages__link--active') : ''
     } else {
-      window.location.href = `http://localhost:3000/products/shop?orderBy=${value}`
+      value == 1 ? link.classList.add('shop-pages__link--active') : ''
     }
+    
+    link.addEventListener("click", (event) => { 
+      value = link.innerText
 
+      params.set('page', value)
+      let queryStrings = params.toString();
+      window.location.href = `http://localhost:3000/products/shop?${queryStrings}`
+
+    })
   })
 
   buttons.forEach((button) => {

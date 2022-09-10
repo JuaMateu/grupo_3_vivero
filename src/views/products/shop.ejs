@@ -58,21 +58,31 @@
                                 </ul>
                             </form>
                             <li>Tipo de planta</li>
-
                         </ul>
                     </div>
                     <section class="shop-wrapper">
                         <% products.forEach(prod=> { %>
                             <%- include('../partials/PlantCard.ejs', { data : prod }) %>
-                                <% }); %>
+                        <% }); %>
+                                <% if (pagesCant > 0) { %>
+                                    <ul class="no-list-style shop-pages">
+                                        <span>&lt</span>
+                                        <% for( let i = 1; i <= pagesCant; i++ ) { %>
+                                            <li class="shop-pages__link"> <%=i%> </li>
+                                        <% } %>
+                                        <span>&gt</span>
+                                    </ul>
+                                 
+                                <% } %>
                     </section>
+
                 </div>
-            </div>
+                
             </div>
         </main>
 
-        <!-- Footer -->
-        <%- include('../partials/footer') %>
-        <script src="/js/shop.js"></script>
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
+    <script src="/js/shop.js"></script>
 </body>
 </html>

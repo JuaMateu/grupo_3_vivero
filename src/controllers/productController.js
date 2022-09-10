@@ -12,7 +12,9 @@ const controller = {
     let careLvl = '%';
     let category = '%';
     let discount = '%';
+    let productPage = 0
 
+    req.query.page ? productPage = ( req.query.page -1 ) * 12 : "";
     req.query.searched ? search = req.query.searched : "";
     req.query.easyCare ? careLvl = req.query.easyCare : "";
     req.query.offer ? discount = req.query.offer : "";
@@ -44,7 +46,7 @@ const controller = {
       }
     }
     
-    let products = await Products.findAll({
+    let { count, rows } = await Products.findAndCountAll({
       where: {
         name: { [db.Sequelize.Op.like]: `%${search}%` },
         care_level: {[db.Sequelize.Op.like]: `%${careLvl}%`},
@@ -52,9 +54,15 @@ const controller = {
         discount_id: {[db.Sequelize.Op.like]: `%${discount}%`}
       },
       order: [[atribute, order]],
+      limit: 12,
+      offset: productPage,
     });
 
-    return res.render("products/shop", { products });
+
+
+    let pagesCant = Math.ceil( count / 12 );
+
+    return res.render("products/shop", { products : rows , pagesCant });
 
 
     // READ

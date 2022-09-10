@@ -1940,6 +1940,23 @@ tr:hover {
     color: var(--secondary-light-green);
   }
 
+  .shop-pages {
+    display: flex;
+    grid-column: span 4;
+    justify-content: center;
+  }
+
+  .shop-pages__link {
+    cursor: pointer;
+    margin: 0 1rem;
+  }
+
+  .shop-pages__link--active {
+    color: var(--highlight-Orange);
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
   /* Shop Cart */
 
   .cart {
