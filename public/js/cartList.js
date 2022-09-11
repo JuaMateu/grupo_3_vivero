@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   let products = JSON.parse(localStorage.getItem("products"));
   const cart = document.querySelector(".cart");
+  const form = document.querySelector(".cart__form");
   const totalPlaceholder = document.querySelector(".cart__total-placeholder");
 
   // Price
@@ -41,7 +42,7 @@ window.addEventListener("load", () => {
       );
 
       const myProduct = document.createElement("div");
-      cart.insertBefore(myProduct, totalPlaceholder);
+      cart.insertBefore(myProduct, form);
       myProduct.setAttribute("data-id", product.id);
       myProduct.classList.add("cart__product");
 
@@ -58,6 +59,10 @@ window.addEventListener("load", () => {
       image.setAttribute("src", product.image.substring(22));
       image.setAttribute("alt", "Imagen Del Producto");
 
+      const name = document.createElement("div");
+      detail.append(name);
+      name.innerText = product.name;
+
       const price = document.createElement("div");
       myProduct.appendChild(price);
       price.innerText = product.price;
@@ -71,6 +76,7 @@ window.addEventListener("load", () => {
       quantity.appendChild(minus);
       minus.classList.add("fa-solid");
       minus.classList.add("fa-minus");
+      minus.classList.add("minus-icon");
       minus.setAttribute("id", "minus");
 
       const number = document.createElement("div");
@@ -83,18 +89,8 @@ window.addEventListener("load", () => {
       quantity.appendChild(plus);
       plus.classList.add("fa-solid");
       plus.classList.add("fa-plus");
+      plus.classList.add("plus-icon");
       plus.setAttribute("id", "plus");
-
-      const deleteButton = document.createElement("a");
-      myProduct.appendChild(deleteButton);
-      deleteButton.setAttribute("id", "delete-button");
-      deleteButton.setAttribute("href", "");
-
-      const trash = document.createElement("i");
-      deleteButton.appendChild(trash);
-      trash.classList.add("icon");
-      trash.classList.add("trash-icon");
-      trash.setAttribute("id", "trash");
 
       const total = document.createElement("div");
       myProduct.appendChild(total);
@@ -105,10 +101,21 @@ window.addEventListener("load", () => {
           .replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
         ".00";
       total.classList.add("cart__product-total");
+
+      const deleteButton = document.createElement("a");
+      myProduct.appendChild(deleteButton);
+      deleteButton.setAttribute("id", "delete-button");
+      deleteButton.setAttribute("href", "");
+
+      const trash = document.createElement("i");
+      deleteButton.appendChild(trash);
+      trash.classList.add("fa-solid");
+      trash.classList.add("fa-trash");
+      trash.classList.add("trash-icon");
     });
   } else {
     const message = document.createElement("div");
-    cart.insertBefore(message, totalPlaceholder);
+    cart.insertBefore(message, form);
     message.innerHTML =
       "<div>Tu carrito esta vacio.</div><a href='/products/shop'>¡Hace click acá para ver los productos que tenemos disponibles!<a/>";
     message.classList.add("cart__message");
@@ -130,8 +137,8 @@ window.addEventListener("load", () => {
 
           const quantity = plusButton.parentElement;
           const price = quantity.previousSibling;
-          const trash = quantity.nextSibling;
-          const total = trash.nextSibling;
+          const total = quantity.nextSibling;
+          const trash = total.nextSibling;
           let subtotal =
             Number(
               price.innerText
@@ -195,8 +202,8 @@ window.addEventListener("load", () => {
 
           const quantity = minusButton.parentElement;
           const price = quantity.previousSibling;
-          const trash = quantity.nextSibling;
-          const total = trash.nextSibling;
+          const total = quantity.nextSibling;
+          const trash = total.nextSibling;
           let subtotal =
             Number(
               price.innerText
@@ -281,7 +288,7 @@ window.addEventListener("load", () => {
           localStorage.clear();
 
           let message = document.createElement("div");
-          cart.insertBefore(message, totalPlaceholder);
+          cart.insertBefore(message, form);
           message.innerHTML =
             "<div>Tu carrito esta vacio.</div><a href='/products/shop'>¡Hace click acá para ver los productos que tenemos disponibles!<a/>";
           message.classList.add("cart__message");
@@ -290,4 +297,10 @@ window.addEventListener("load", () => {
       });
     });
   }
+
+  const returnButton = document.querySelector(".cart__return-button");
+  returnButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    location.href = "/";
+  });
 });

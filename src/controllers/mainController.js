@@ -43,7 +43,6 @@ const controller = {
   // orderBy: async (req, res) => {
   //   let search = "";
 
-
   //   if (req.query.searched) {
   //     search = req.query.searched;
   //   }

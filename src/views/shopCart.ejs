@@ -12,62 +12,44 @@
     <main>
       <section class="cart" data-user="<%= user.id %>">
         <div class="cart__title">
-          <div>Listado De Productos</div>
+          <div>Carrito De Compras</div>
         </div>
-
         <div class="cart__header">
-          <div class="cart__column cart__column--1">Producto</div>
-          <div class="cart__column">Precio</div>
-          <div class="cart__column">Cantidad</div>
-          <div class="cart__column">Subtotal</div>
+          <div class="cart__header-column--1">Producto</div>
+          <div class="cart__header-column--2">Precio</div>
+          <div class="cart__header-column--3">Cantidad</div>
+          <div class="cart__header-column--4">Subtotal</div>
         </div>
-
-        <!--
-        <div class="cart__product">
-          <div class="cart__product-detail">
-            <div class="cart__product-image">
-              <img src="/img/plantas/Aglaonema.png" alt="Imagen Del Producto" />
-            </div>
-          </div>
-          <div class="cart__product-price">$999.99</div>
-          <div class="cart__product-quantity">
-            <input type="number" value="1" min="1" max="100" />
-          </div>
-          <div class="cart__product-total">$999.99</div>
-        </div>
-        <div class="cart__product">
-          <div class="cart__product-detail">
-            <div class="cart__product-image">
-              <img src="/img/plantas/Aglaonema.png" alt="Imagen Del Producto" />
-            </div>
-          </div>
-          <div class="cart__product-price">$999.99</div>
-          <div class="cart__product-quantity">
-            <input type="number" value="1" min="1" max="100" />
-          </div>
-          <div class="cart__product-total">$999.99</div>
-        </div>
-        -->
-
-        <div class="cart__total-placeholder"></div>
         <form
           id="cart-form"
           name="cart-form"
-          class="cart__buttons"
+          class="cart__form"
           action="/api/products/purchase"
           method="POST"
         >
-          <a
-            href="/products/shop"
-            class="cart__button btnStyle2 cart__return-button"
-            >Volver</a
-          >
-          <button
-            type="submit"
-            class="cart__button btnStyle2 cart__proceed-button"
-          >
-            Proceder
-          </button>
+          <div class="cart__form-left-column">
+            <select
+              name="payment-method"
+              type="text"
+              class="cart__payment-method"
+            >
+              <option value="cash">Efectivo</option>
+              <option value="credit-card">Tarjeta De Crédito</option>
+              <option value="debit-card">Tarjeta De Débito</option>
+            </select>
+            <i class="fa-solid fa-chevron-down cart__payment-method-icon"></i>
+          </div>
+          <div class="cart__form-right-column">
+            <div class="cart__total-placeholder"></div>
+            <div class="cart__form-button-section">
+              <button type="button" class="cart__button cart__return-button">
+                Volver
+              </button>
+              <button type="submit" class="cart__button cart__proceed-button">
+                Proceder
+              </button>
+            </div>
+          </div>
         </form>
       </section>
     </main>

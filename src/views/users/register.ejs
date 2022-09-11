@@ -11,11 +11,11 @@
         <section class="flex-column media-flex-row">
             <div class="auto-flex users-header">
                 <!-- Aqui va el texto principal de la pagina -->
-                <h1 class="users__title">Crear Cuenta</h1>
+                <h1 class="users__title">Crear Una Cuenta</h1>
                 <!-- Seccion de pregunta de sign up -->
                 <div class="users__subtitle">
                     <h4>¿Ya tenés cuenta?</h4>
-                    <a href="/users/login" class="users__link">Iniciá sesión</a>
+                    <a href="/users/login" class="users__link">Iniciá Sesión</a>
                 </div>
             </div>
             <div class="auto-flex users-form-conteiner">
@@ -61,7 +61,7 @@
                     </div>
                     <!-- Ingresar el correo electrónico -->
                     <div id="div-3" class="users-form__field <%= locals.errors && errors.email ? "inputFailure" : "" %>">
-                        <label class="users-form__label" for="email"> Correo electrónico</label>
+                        <label class="users-form__label" for="email"> Correo Electrónico</label>
                         <input 
                             id = "email" 
                             class = "users-form__input"  
@@ -98,7 +98,7 @@
                     </div>
                     <!-- Repetir la contraseña -->
                     <div id="div-5" class="users-form__field <%= locals.errors && errors.passwordCheck ? "inputFailure" : "" %>">
-                        <label class="users-form__label" for="passwordCheck">Repeti tu contraseña</label>
+                        <label class="users-form__label" for="passwordCheck">Repetir Contraseña</label>
                         <input 
                             id = "passwordCheck" 
                             class = "users-form__input"  
@@ -116,7 +116,7 @@
                     </div>
                     <!-- Boton de iniciar sesion -->
                     <div class="user-menu__confirmation-button">
-                        <input type="submit" value="Actualizar" class="btnStyle2">
+                        <input type="submit" value="Crear" class="btnStyle2">
                     </div>
                 </form>
             </div>
