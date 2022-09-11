@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../../partials/head') %>
-        <title>Menu usuario</title>
-    </head>
-<body>
+  <head>
+    <!-- Head -->
+    <%- include('../../partials/head') %>
+
+    <title>Menu De Usuario</title>
+  </head>
+  <body>
+    <!-- Header -->
     <%- include('../../partials/header') %>
-    <!-- Aca va el cuerpo la pagina -->
+
+    <!-- Main -->
     <main>
-        <div class="user-menu-header">
+      <div class="user-menu__placeholder">
+        <!-- Left Column -->
+        <%- include("../../partials/userMenuLeftColumn") %>
+
+        <div class="right-column">
+          <h2 class="user-menu__orders-title">Historial De Compras</h2>
+          <p class="user-menu__orders-message">
+            ¡Bienvenido de nuevo <strong><%= user.first_name %></strong>! Aún no
+            has realizado ninguna compra con nosotros.
+          </p>
+          <div href="/products/shop" class="user-menu__button">
+            Ir a la tienda
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="user-menu-header">
             <img src="<%- user.img %> " alt="imagen de usuario" class="user-menu__img">
-            <!-- Aqui va el texto principal de la pagina -->
             <h1 class="user-menu__title">Bienvenido <%- user.first_name + " " + user.last_name %> </h1>
         </div>
         <div class='flex-column-to-RowDekstop'>
-
-            <%- include('../../partials/userMenuNav.ejs') %>
-
                 <div class="user-menu__info">
                     <p><span class="bold">Nombre Completo:</span>  <%- user.first_name + " " + user.last_name %></p>
                     <p><span class="bold">Email:</span> <%- user.email %></p>
@@ -30,10 +46,13 @@
                         <p><span class="bold">Fecha de Nacimiento:</span> <%- user.date_of_birth %></p>
                     <% } %> 
                 </div>
-
-    </div>
+        </div> -->
     </main>
-    <!-- aca arranca el footer -->
+
+    <!-- Footer -->
     <%- include('../../partials/footer') %>
-</body>
+
+    <!-- Script -->
+    <script src="/js/userMenu.js"></script>
+  </body>
 </html>

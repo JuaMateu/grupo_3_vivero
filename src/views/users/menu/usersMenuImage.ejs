@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../../partials/head') %>
-        <title>Menu usuario</title>
-    </head>
-<body>
+  <head>
+    <!-- Head -->
+    <%- include('../../partials/head') %>
+
+    <title>Menu De Usuario</title>
+  </head>
+  <body>
+    <!-- Header -->
     <%- include('../../partials/header') %>
-    <!-- Aca va el cuerpo la pagina -->
+
+    <!-- Main -->
     <main>
-        <div class="user-menu-header">
-            <img src="<%- user.img %> " alt="imagen de usuario" class="user-menu__img">
-            <!-- Aqui va el texto principal de la pagina -->
-            <h1 class="user-menu__title">Bienvenido <%- user.first_name + " " + user.last_name %> </h1>
+      <div class="user-menu__placeholder">
+        <!-- Left Column -->
+        <%- include("../../partials/userMenuLeftColumn") %>
+
+        <div class="right-column">
+          <div class="auto-flex">
+            <!-- Form -->
+            <form
+              action="/users/menu/avatar/?_method=PUT "
+              method="POST"
+              enctype="multipart/form-data"
+              class="users-form"
+            >
+              <h2 class="user-menu__title">Imagen De Perfil</h2>
+              <div class="user-menu__avatar-placeholder">
+                <img src="<%= currentUser.img %>" alt="Imagen De Perfil" class="user-menu__avatar"/>
+              </div>
+              <!-- Avatar -->
+              <div class="users-form__field">
+                <label class="users-form__label" for="img"
+                  >Imagen De Perfil</label
+                >
+                <input
+                  class="users-form__input"
+                  accept=".jpg, .png"
+                  name="img"
+                  type="file"
+                  placeholder="Subi tu avatar"
+                  required
+                />
+              </div>
+              <!-- Confirmation Button -->
+              <div class="user-menu__confirmation-button">
+                <input type="submit" value="Actualizar" class="btnStyle2" />
+              </div>
+            </form>
+          </div>
         </div>
-
-        <div class='flex-column-to-RowDekstop'>
-
-            <%- include('../../partials/userMenuNav.ejs') %>
-            <div class="auto-flex">
-                <!-- Iniciamos el formulario de sign up -->
-                <form action="/users/menu/avatar/?_method=PUT " method="POST" enctype="multipart/form-data" class="users-form">
-                    <!-- Ingresar el nombre -->
-                    <div class="users-form__field">
-                        <label class="users-form__label" for="img">Subi tu foto</label>
-                        <input class="users-form__input" accept='.jpg, .png' name="img" type="file"
-                            placeholder="Subi tu avatar"  required>
-                    </div>
-                   
-                    <!-- Boton de iniciar sesion -->
-                    <input type="submit" value="Actualizar" class="btnStyle2">
-                </form>
-
-
-            </div>
-    </div>
-    
+      </div>
     </main>
 
-    <!-- aca arranca el footer -->
+    <!-- Footer -->
     <%- include('../../partials/footer') %>
-</body>
+  </body>
 </html>

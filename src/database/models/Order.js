@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     Order.belongsTo(models.PaymentMethod, {
-      as: "payment_method",
+      as: "paymentMethod",
       foreignKey: "payment_method_id",
     });
 
