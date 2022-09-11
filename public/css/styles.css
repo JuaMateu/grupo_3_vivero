@@ -1821,12 +1821,22 @@ tr:hover {
   .section-menu__list {
     display: flex;
   }
-
+  
   .section-menu li {
     list-style: none;
-    padding: 1rem 1.5rem;
+    padding: 0rem 1.5rem;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    transition: 0.5s background-color;
   }
-
+  .section-menu li:hover {
+    background-color: var(--secondary-light-green);
+  }
+  .section-menu__list--active {
+    border-bottom: 3px solid var(--highlight-Orange);
+  }
+  
   /* logo a la izquierda con flexbox */
 
   .header__logo {

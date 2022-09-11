@@ -1,4 +1,17 @@
 window.addEventListener("load", () => {
+  const navItems = document.querySelectorAll(".section-menu__list li")
+  const url = window.location.href
+
+  console.log(window.location.href )
+  console.log(window.location)
+
+  navItems.forEach( (element) =>{
+    let link = element.querySelector(".nav-item").href
+    if(link == url){
+      element.classList.add('section-menu__list--active');
+    }
+  })
+
   setInterval(() => {
     const products = JSON.parse(localStorage.getItem("products"));
     let productsTotal = 0;
