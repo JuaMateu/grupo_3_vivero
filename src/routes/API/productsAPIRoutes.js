@@ -5,7 +5,7 @@ const router = express.Router();
 const productAPIController = require("../../controllers/API/productAPIController");
 
 // Listado De Productos
-router.get("/:id", productAPIController.list);
-router.get("/checkout", productAPIController.checkout);
+router.get("/:id", productAPIController.detail);
+router.post("/purchase", productAPIController.purchase);
 
 module.exports = router;

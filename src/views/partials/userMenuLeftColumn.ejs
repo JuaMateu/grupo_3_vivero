@@ -1,0 +1,42 @@
+<div class="left-column">
+  <h2 class="user-menu__title">¡Hola, <%= user.first_name %>!</h2>
+  <div class="user-menu__email"><%= user.email %></div>
+  <div class="user-menu__logout">
+    ¿No eres <%= user.first_name %>?<a
+      href="/users/logout"
+      class="user-menu__logout-button"
+      >Cerrar sesión</a
+    >
+  </div>
+  <section class="user-menu__selection">
+    <div class="user-menu__directory">Favoritos</div>
+    <a class="user-menu__information">Información De Usuario</a>
+    <ul class="user-menu__information-list">
+      <li class="user-menu__information-item information-item--password">
+        Contraseña
+      </li>
+      <li class="user-menu__information-item information-item--address">
+        Dirección
+      </li>
+      <li class="user-menu__information-item information-item--avatar">
+        Imagen De Perfil
+      </li>
+      <li class="user-menu__information-item information-item--user">
+        Información De Usuario
+      </li>
+    </ul>
+    <div class="user-menu__orders">Mis Compras</div>
+  </section>
+  <section class="user-menu__contact">
+    <div class="user-menu__contact-message">¿Necesitas Ayuda?</div>
+    <ul class="user-menu__contact-list">
+      <li class="user-menu__email-reference">Email</li>
+      <li class="user-menu__email-contact">ayuda@plantasusi.com</li>
+      <li class="user-menu__telephone-reference">Teléfono</li>
+      <li class="user-menu__telephone-contact">+54 911 5884-1543</li>
+    </ul>
+  </section>
+</div>
+
+<!-- Script -->
+<script src="/js/userMenuLeftColumn.js"></script>

@@ -10,7 +10,7 @@
 
     <!-- Main -->
     <main>
-      <section class="cart">
+      <section class="cart" data-user="<%= user.id %>">
         <div class="cart__title">
           <div>Listado De Productos</div>
         </div>
@@ -50,9 +50,24 @@
         -->
 
         <div class="cart__total-placeholder"></div>
-        <form id="cart-form" name="cart-form" class="cart__buttons">
-          <button type="button" class="cart__btn btnStyle2">Volver</button>
-          <button type="submit" class="cart__btn btnStyle2">Proceder</button>
+        <form
+          id="cart-form"
+          name="cart-form"
+          class="cart__buttons"
+          action="/api/products/purchase"
+          method="POST"
+        >
+          <a
+            href="/products/shop"
+            class="cart__button btnStyle2 cart__return-button"
+            >Volver</a
+          >
+          <button
+            type="submit"
+            class="cart__button btnStyle2 cart__proceed-button"
+          >
+            Proceder
+          </button>
         </form>
       </section>
     </main>
@@ -61,6 +76,7 @@
     <%- include('./partials/footer') %>
 
     <!-- Script -->
-    <script src="/js/shopCart.js"></script>
+    <script src="/js/cartList.js"></script>
+    <script src="/js/cartPurchase.js"></script>
   </body>
 </html>

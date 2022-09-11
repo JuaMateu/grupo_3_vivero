@@ -1,14 +1,15 @@
 const db = require("../../database/models");
 
 const controller = {
-  list: async (req, res) => {
+  detail: async (req, res) => {
     let product = await db.Product.findByPk(req.params.id);
     return res.json(product);
   },
 
-  checkout: async function (req, res) {
+  purchase: async function (req, res) {
     let order = await db.Order.create(
-      { ...req.body, userId: req.session.userLogged.id },
+      { ...req.body },
+      // { ...req.body, user: req.session.userLogged.id },
       {
         include: db.Order.OrderToProduct,
       }

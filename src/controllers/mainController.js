@@ -20,8 +20,9 @@ const controller = {
         );
       });
   },
-  cart: (req, res) => {
-    return res.render("shopCart");
+  cart: async (req, res) => {
+    let user = await db.User.findByPk(req.session.userLogged.id);
+    return res.render("shopCart", { user });
   },
   about: (req, res) => {
     return res.render("about");
