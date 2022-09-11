@@ -51,7 +51,7 @@ const controller = {
         name: { [db.Sequelize.Op.like]: `%${search}%` },
         care_level: {[db.Sequelize.Op.like]: `%${careLvl}%`},
         category_id: {[db.Sequelize.Op.like]: `%${category}%`},
-        discount_id: {[db.Sequelize.Op.like]: `%${discount}%`}
+        discount_id: {[db.Sequelize.Op.like]: `${discount}`}
       },
       order: [[atribute, order]],
       limit: 12,
