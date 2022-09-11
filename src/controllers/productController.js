@@ -1,9 +1,70 @@
 const { response } = require("express");
 const db = require("../database/models");
+let Products = db.Product;
 const { validationResult } = require("express-validator");
 
 const controller = {
-  shop: (req, res) => {
+  shop: async (req, res) => {
+
+    let search = "%";
+    let atribute = "name";
+    let order = "DESC";
+    let careLvl = '%';
+    let category = '%';
+    let discount = '%';
+    let productPage = 0
+
+    req.query.page ? productPage = ( req.query.page -1 ) * 12 : "";
+    req.query.searched ? search = req.query.searched : "";
+    req.query.easyCare ? careLvl = req.query.easyCare : "";
+    req.query.offer ? discount = req.query.offer : "";
+    req.query.category ? category = req.query.category : "";
+
+    if (req.query.orderBy) {
+      let orderBy = req.query.orderBy;
+
+      switch (orderBy) {
+        case "nameAsc":
+          console.log("nombre ascendente");
+          atribute = "name";
+          order = "ASC";
+          break;
+        case "nameDesc":
+          atribute = "name";
+          order = "DESC";
+          break;
+        case "priceAsc":
+          atribute = "price";
+          order = "ASC";
+          break;
+        case "priceDesc":
+          atribute = "price";
+          order = "DESC";
+          break;
+        default:
+          break;
+      }
+    }
+    
+    let { count, rows } = await Products.findAndCountAll({
+      where: {
+        name: { [db.Sequelize.Op.like]: `%${search}%` },
+        care_level: {[db.Sequelize.Op.like]: `%${careLvl}%`},
+        category_id: {[db.Sequelize.Op.like]: `%${category}%`},
+        discount_id: {[db.Sequelize.Op.like]: `%${discount}%`}
+      },
+      order: [[atribute, order]],
+      limit: 12,
+      offset: productPage,
+    });
+
+
+
+    let pagesCant = Math.ceil( count / 12 );
+
+    return res.render("products/shop", { products : rows , pagesCant });
+
+
     // READ
     db.Product.findAll().then((products) => {
       res.render("products/shop", { products });
@@ -93,6 +154,7 @@ const controller = {
       stock: req.body.stock,
       price: req.body.price,
       label: req.body.label,
+      discount_id: req.body.discount_id,
     };
     if (req.file) {
       data.img = "/img/plantas/" + req.file.filename;

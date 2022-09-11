@@ -127,6 +127,19 @@
                             </div>
                         <% } %>
                     </div>
+                    <!-- en oferta -->
+                    <div class="adminForm__inputConteiner">
+                        <label class="admin-form__label" for="discount_id"> Oferta </label>
+                        <select class="admin__input" name="discount_id" id="discount_id" >
+                            <option <%= locals.editProduct && editProduct.discount_id === 1 ? "selected" : ""%> value="1">None</option>
+                            <option <%= locals.editProduct && editProduct.discount_id === 2 ? "selected" : ""%> value="2">Seleccion Primavera</option>
+                        </select>
+                        <% if (locals.errors && errors.label) { %>
+                            <div class="text-danger">
+                                <%= errors.label.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
 
                     <!-- boton de editar producto -->
                     <div class="grid-1-start">
