@@ -640,7 +640,7 @@ textarea:focus,
   right: -0.7rem;
   padding: 0.2rem 0.45rem;
   border-radius: 50%;
-  background-color: rgba(46, 204, 113, 0.9);
+  background-color: rgb(255, 148, 68, 0.8);
   font-size: 8px;
 }
 
