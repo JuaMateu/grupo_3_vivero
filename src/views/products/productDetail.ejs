@@ -20,7 +20,7 @@
                     <% } %>
                 <div class="product-detail__price--original">$<%= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
                 <div class="product-detail__calification">
-                    <div class="product-detail__calification-label">Buena</div>
+                    <div class="product-detail__calification-label"><%= product.care_level %></div>
                     <div class="product-detail__calification-line"></div>
                 </div>
                 <div class="product-detail__size">
@@ -82,7 +82,7 @@
         </section> -->
 
         <!-- Trending -->
-        <h1 class="heading-primary">Mas vendidos</h2>
+        <h1 class="heading-primary">Más Vendidos</h2>
             <section class="most-selled">
                 <% for (i = 0 ; i < 4 ; i++) { %>
                         <%- include('../partials/PlantCard.ejs', { data : products[i] }) %>
