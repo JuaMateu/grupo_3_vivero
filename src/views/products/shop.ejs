@@ -66,18 +66,15 @@
                         <% }); %>
                                 <% if (pagesCant > 0) { %>
                                     <ul class="no-list-style shop-pages">
-                                        <span>&lt</span>
+                                        <span><i class="fa-solid fa-chevron-left shop-pages__left-arrow"></i></span>
                                         <% for( let i = 1; i <= pagesCant; i++ ) { %>
                                             <li class="shop-pages__link"> <%=i%> </li>
                                         <% } %>
-                                        <span>&gt</span>
+                                        <span><i class="fa-solid fa-chevron-right shop-pages__right-arrow"></i></span>
                                     </ul>
-                                 
                                 <% } %>
                     </section>
-
                 </div>
-                
             </div>
         </main>
 
