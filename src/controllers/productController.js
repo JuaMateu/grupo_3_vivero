@@ -17,7 +17,7 @@ const controller = {
 
     req.query.page ? productPage = ( req.query.page -1 ) * 12 : "";
     req.query.searched ? search = req.query.searched : "";
-    req.query.easyCare ? careLvl = req.query.easyCare : "";
+    req.query.care_level ? careLvl = req.query.care_level : "";
     req.query.offer ? discount = req.query.offer : "";
     req.query.category ? category = req.query.category : "";
     req.query.label ? label = req.query.label : "";
