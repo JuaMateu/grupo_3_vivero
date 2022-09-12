@@ -402,6 +402,11 @@ header {
   color: var(--primary-green);
 }
 
+.home__brand-name {
+  display: inline-block;
+  color: var(--primary-green);
+}
+
 /* 1.3.D - Login/Register */
 
 .users__title {
@@ -2535,17 +2540,16 @@ tr:hover {
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  
+
   .shop-filters__sale:hover,
   .shop-filters__most-selled:hover {
     color: var(--highlight-Orange);
   }
-  
+
   .shop-filters__sale:visited,
   .shop-filters__most-selled {
     color: var(--secondary-light-green);
   }
-
 
   .shop-filters__title {
     font-size: 15px;
