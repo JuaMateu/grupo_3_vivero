@@ -15,10 +15,10 @@
             </figure>
             <div class="column-2-of-2 product-detail__description">
                 <div class="product-detail__name"><%= product.name %></div>
-                <% if (product.discount_id == 1) { %>
-                    <div class="product-detail__price--discount">$<%= (product.price * 0.7).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
-                    <% } %>
                 <div class="product-detail__price--original">$<%= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+                <% if (product.discount_id == 2) { %>
+                    <div class="product-detail__price--discount">$<%= (product.price * 1.15).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+                    <% } %>
                 <div class="product-detail__calification">
                     <div class="product-detail__calification-label">Buena</div>
                     <div class="product-detail__calification-line"></div>

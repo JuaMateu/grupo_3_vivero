@@ -847,7 +847,7 @@ textarea:focus,
 }
 
 .product-detail__figure {
-  border: solid 1px var(--highlight-Orange);
+  border: solid 1px var(--secondary-light-green);
   border-radius: 30% 0.1rem 30% 0.1rem;
   height: 15rem;
   width: 15rem;
@@ -857,7 +857,7 @@ textarea:focus,
 }
 
 .product-detail__figure:hover {
-  border: solid 1rem var(--highlight-Orange);
+  border: solid 1rem var(--secondary-light-green);
   transform: scale(1.5);
 }
 
@@ -878,15 +878,16 @@ textarea:focus,
 }
 
 .product-detail__price--discount {
-  font-size: 26px;
+  font-size: 14px;
   letter-spacing: 0.1rem;
-  margin-top: -0.5rem;
+  margin-top: -1.5rem;
+
+  text-decoration: line-through;
 }
 
 .product-detail__price--original {
-  font-size: 14px;
-  text-decoration: line-through;
-  margin-top: -1.5rem;
+  font-size: 26px;
+  margin-top: -0.5rem;
   letter-spacing: 0.1rem;
 }
 
