@@ -873,12 +873,16 @@ textarea:focus,
 }
 
 .product-detail__name {
-  font-size: 36px;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 
 .product-detail__price--discount {
+<<<<<<< HEAD
+  font-size: 1.75rem;
+=======
   font-size: 14px;
+>>>>>>> 80aa12d23206a3f13eabe3a474401f9a31532803
   letter-spacing: 0.1rem;
   margin-top: -1.5rem;
 
@@ -899,11 +903,12 @@ textarea:focus,
 
 .product-detail__calification-line {
   height: 0.3rem;
-  width: 70%;
+  width: 0%;
   display: inline-block;
   background-color: var(--highlight-Orange);
   border-radius: 1rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 1);
+  transition: all 1.5s ease;
 }
 
 .product-detail__calification-label {
@@ -1052,6 +1057,7 @@ textarea:focus,
 
 .product-detail__care-level {
   color: var(--highlight-Orange);
+  text-transform: uppercase;
 }
 
 /* .product-section {
@@ -1688,19 +1694,16 @@ tr:hover {
   margin-bottom: 3rem;
 }
 
-.about-us__heading--1,
-.about-us__heading--2,
-.about-us__heading--3 {
-  font-size: 35px;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(
-    to right,
-    var(--primary-green),
-    var(--primary-green-soft)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.about-us__section--2 {
+  margin-bottom: 5rem;
+}
+
+.about-us__left-column,
+.about-us__right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-us__image-placeholder {
@@ -1717,31 +1720,9 @@ tr:hover {
   height: 20rem;
 }
 
-.about-us__section--2 {
-  margin-bottom: 5rem;
-}
-
-.about-us__heading--2 {
-  text-align: center;
-}
-
-.about-us__heading--3,
-.paragraph-primary--3 {
-  text-align: end;
-}
-
-.about-us__heading--3 {
-  margin-bottom: 0;
-}
-
-.paragraph-primary--3 {
-  font-size: 18px;
-  font-style: italic;
-}
-
 .about-us__start-quote,
 .about-us__end-quote {
-  font-size: 30px;
+  font-size: 1.5rem;
   width: 100%;
 }
 
@@ -1755,20 +1736,42 @@ tr:hover {
 }
 
 .heading-primary {
-  font-size: 40px;
+  font-size: 1.75rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  background: linear-gradient(
-    to right,
-    var(--primary-green),
-    var(--primary-green-soft)
-  );
+  background-color: var(--primary-green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.paragraph-primary {
+.about-us__heading--1,
+.about-us__heading--2,
+.about-us__heading--3 {
+  font-size: 1.75rem;
   margin-bottom: 1.5rem;
+  background-color: var(--primary-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-us__heading--1,
+.paragraph-primary--1 {
+  align-self: flex-start;
+  text-align: start;
+}
+
+.about-us__heading--2 {
+  text-align: center;
+}
+
+.about-us__heading--3,
+.paragraph-primary--3 {
+  align-self: flex-end;
+  text-align: end;
+}
+
+.paragraph-primary--3 {
+  font-style: italic;
 }
 
 .principles {
@@ -1833,7 +1836,7 @@ tr:hover {
 }
 
 .card__side--back {
-  background-color: var(--primary-green-soft);
+  background-color: rgba(1, 53, 38, 0.9);
   transform: rotateY(-180deg);
   z-index: 0;
   display: flex;

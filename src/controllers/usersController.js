@@ -9,7 +9,7 @@ const Users = db.User;
 const Address = db.Address;
 
 const controller = {
-  // register form
+  // Register Form
   register: (req, res) => {
     return res.render("users/register");
   },
@@ -18,17 +18,17 @@ const controller = {
     return res.render("users/login");
   },
 
-  // Proceso de Registro
+  // Register Process
   processRegister: async function (req, res) {
     const resultValidation = validationResult(req);
-    //Validaciones de formulario
+    // Validations
     if (resultValidation.errors.length > 0) {
       return res.render("users/register", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
-    // objeto data para guardar usuario
+    // Data Object
     let data = {
       first_name: req.body.firstName,
       last_name: req.body.lastName,
@@ -38,25 +38,25 @@ const controller = {
       user_category_id: 3,
     };
 
-    //guarda el usuario en base de datos
+    // Save User
     let newUser = await Users.create(data);
 
-    // SE LOGEA EN SESSION
+    // Session
     req.session.userLogged = newUser;
 
-    //redirigimos a menu de usuario
+    // Redirect
     return res.redirect(`/users/menu/contact/`);
   },
 
-  //Proceso de logeo
+  // Login Process
   processLogin: (req, res) => {
-    //buscamos el usuario a logearse en la base de datos
+    // FindByPk
     Users.findOne({
       where: {
         email: req.body.email,
       },
     }).then((userToLogin) => {
-      //controlamos password de usuario
+      // Password Check
       if (userToLogin) {
         let passwordControlPoint = bcryptjs.compareSync(
           req.body.password,

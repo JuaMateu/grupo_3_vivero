@@ -4,19 +4,15 @@ window.addEventListener("load", () => {
   const label = document.querySelector(".product-detail__calification-label");
   const line = document.querySelector(".product-detail__calification-line");
 
-  if (label.innerText == "MUY MALA") {
-    line.style.width = "10%";
-  } else if (label.innerText == "MALA") {
-    line.style.width = "30%";
-  } else if (label.innerText == "NORMAL") {
-    line.style.width = "50%";
-  } else if (label.innerText == "BUENA") {
-    line.style.width = "70%";
-  } else if (label.innerText == "MUY BUENA") {
-    line.style.width = "90%";
-  } else if (label.innerText == "EXCELENTE") {
-    line.style.width = "100%";
-  }
+  setTimeout(() => {
+    if (label.innerText == "BÁSICO") {
+      line.style.width = "25%";
+    } else if (label.innerText == "INTERMEDIO") {
+      line.style.width = "50%";
+    } else if (label.innerText == "EXPERTO") {
+      line.style.width = "99.2%";
+    }
+  }, 100);
 
   // Size
 
