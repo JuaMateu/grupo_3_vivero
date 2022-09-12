@@ -219,7 +219,7 @@ const controller = {
     // validamos los datos recibidos
     const resultValidation = validationResult(req);
 
-    let userToEdit = await Users.findByPk(req.params.id, { include: ["address", "category"] });
+    let userToEdit = await Users.findByPk(req.params.id, { include: ["address","category"] });
     //si hay errores devolvemos la misma vista con los errores, los datos cargados y el usuario loggeado
     if (resultValidation.errors.length > 0) {
       return res.render("../views/users/usersEdit.ejs", {
