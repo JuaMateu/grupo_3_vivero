@@ -1,23 +1,21 @@
-<article class="plant-Card" data-id="<%= data.id %>">
-    <a id="cardWrapper" class="link--primarycolor" href="/products/detail/<%= data.id %>">
-        <div class="img plant-Card__img-conteiner">
-            <img class="plant-card__img"  src= <%= data.img %>  alt=<%= data.name %>>
-            <div class="plant-Card__background"></div>
-
-            <% if (data.label == 'Mas Vendida') { %>
-                <div class="plant-card__label"> <%= data.label %> </div>
-                <% } else if (data.discount_id == 2) { %>
-                <div class="plant-card__label"> Oferta </div>
-                <% } %> 
-        </div>
-        <h4><%= data.name %></h4>
-        <p class="subtitle">$<%= data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></p>
-        <% if (data.discount_id == 2) { %>
-            <% let descuento = data.price*1.15 %> 
-            <p class="discount">$<%= descuento.toFixed(2) %></p>
+<article class="plant-card" data-id="<%= data.id %>">
+    <section class="plant-card__section-top">
+        <% if (data.label == "Mas Vendida") { %>
+            <div class="plant-card__discount-label"><%= data.label %></div>
+        <% } else if (data.discount_id == 2) { %>
+            <div class="plant-card__discount-label">En Oferta</div>
         <% } %>
-    </a>
-    <hr class="green">
-    <button class="btn btn--plant">Agregar</button>
-    <!-- <button class="Button-Agregar-Carrito">Agregar al Carrito</button> -->
+        <div class="plant-card__picture-placeholder">
+            <img src="<%= data.img %>" alt="<%= data.name %>" class="plant-card__picture">
+        </div>
+    </section>
+    <section class="plant-card__section-bottom">
+        <div class="plant-card__name"><%= data.name %></div>
+        <div class="plant-card__price">Desde $<%= data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+        <% if (data.discount_id == 2) { %>
+            <% let discount = data.price * 1.15 %>
+            <div class="plant-card__discount-price">$<%= discount.toFixed(2) %></div>
+        <% } %>
+        <a href="/products/detail/<%= data.id %>" class="plant-card__button">Ver Producto</a>
+    </section>
 </article>

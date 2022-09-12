@@ -1,4 +1,14 @@
 window.addEventListener("load", () => {
+  // Left Column
+
+  const list = document.querySelector(".user-menu__information-list");
+  list.classList.add("user-menu__information-list-toggle");
+
+  const userContact = document.querySelector(".user-menu__contact");
+  userContact.classList.toggle("user-menu__contact-toggle");
+
+  // Form
+
   const form = document.querySelector("#users-form");
 
   const street = document.querySelector("#street");
@@ -15,12 +25,12 @@ window.addEventListener("load", () => {
   const divStreet = document.querySelector("#div_street");
 
   let errorCounter = 0;
-  
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    
+
     // Street
-    
+
     if (!document.getElementById("street-error")) {
       if (!street.value || street.value.length < 2) {
         const paragraph = document.createElement("p");
@@ -58,7 +68,10 @@ window.addEventListener("load", () => {
         number.insertAdjacentElement("afterend", paragraph);
         errorCounter += 1;
       }
-    } else if (document.getElementById("number-error")&&number.value.length>=1) {
+    } else if (
+      document.getElementById("number-error") &&
+      number.value.length >= 1
+    ) {
       const paragraph = document.getElementById("number-error");
       paragraph.remove();
       divNumber.classList.remove("inputFailure");
@@ -130,7 +143,10 @@ window.addEventListener("load", () => {
         postalCode.insertAdjacentElement("afterend", paragraph);
         errorCounter += 1;
       }
-    } else if (document.getElementById("postal-code-error") && postalCode.value.length>=1) {
+    } else if (
+      document.getElementById("postal-code-error") &&
+      postalCode.value.length >= 1
+    ) {
       const paragraph = document.getElementById("postal-code-error");
       paragraph.remove();
       divPostal.classList.remove("inputFailure");
@@ -162,7 +178,7 @@ window.addEventListener("load", () => {
       divMobile.classList.add("inputSuccess");
       errorCounter -= 1;
     }
-    
+
     if (errorCounter === 0) {
       form.submit();
     }

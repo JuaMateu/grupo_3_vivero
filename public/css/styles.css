@@ -1,41 +1,37 @@
-/*================
-  1*0  TABLE CONTENT
-=================*/
+/*==================
+    Table Content
+====================*/
 /*
-
-    1-1 GLOBAL
-
-    1-2 FONTS
-
-    1-3 LAYOUT
-        1-3.a HEADER
-        1-3.b FOOTER
-        1-3.c HOME
-        1-3.d LOGIN AND REGISTER
-        1-3.e PASSWORD RECOVERY
-        1-3.f CART
-        1-3.g SHOP 
-        1-3.h PRODUCT DETAIL
-        1-3.i ADMINISTRATOR
-        1-3.j ERROR PAGE 
-        1-3.k USER MENU
-        1-3.l ABOUT
-
-        1-4 LIBRERY
-
-    1-5 Components
-
-    1-6 MEDIA QUERIES
+    1.1 - Global
+    1.2 - Fonts
+    1.3 - Layout
+        1.3.A - Header
+        1.3.B - Footer
+        1.3.C - Home
+        1.3.D - Login/Register
+        1.3.E - Password Recovery
+        1.3.F - Cart
+        1.3.G - Shop 
+        1.3.H - Product Detail
+        1.3.I - Administrator
+        1.3.J - Error Page
+        1.3.K - User Menu
+        1.3.L - About     
+    1.4 - Librery
+    1.5 - Components
+    1.6 - Media Queries
 
 */
-/*==============
-  1-1  GLOBAL 
-=================*/
+/*=================
+    1.1 - Global 
+===================*/
 
-/* importa fuentes poppins */
+/* Font Family (Poppins) */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
 
-/*  VARIABLES */
+/*  Variables */
+
 :root {
   --primary-green: rgb(1, 53, 38);
   --primary-green-soft: rgba(1, 73, 52, 0.8);
@@ -77,7 +73,8 @@ img {
   object-fit: cover;
 }
 
-/* clase icon para agregarle a los iconos locales  */
+/* Icons  */
+
 .icon {
   display: inline-block;
   cursor: pointer;
@@ -91,9 +88,9 @@ article {
   margin-bottom: 10px;
 }
 
-/* =========
-1.2 Fonts 
-===========*/
+/*================
+    1.2 - Fonts 
+==================*/
 
 .footer__title {
   font-size: 1.4rem;
@@ -124,11 +121,11 @@ article {
   text-align: start;
 }
 
-/* =========
-   1.3 LAYOUT 
-    =======*/
+/*================
+   1.3 - Layout
+==================*/
 
-/* 1-3.a HEADER */
+/* 1.3.A - Header */
 
 header {
   position: fixed;
@@ -205,7 +202,8 @@ header {
   text-decoration: none;
 }
 
-/* search bar */
+/* Search Bar */
+
 .search-bar {
   --size: 30px;
   border: 2px solid var(--primary-green);
@@ -305,7 +303,7 @@ header {
   padding: 1rem 0;
 }
 
-/* links ocultos en mobile */
+/* Hidden Links (Mobile) */
 
 .section-menu {
   display: none;
@@ -316,7 +314,7 @@ header {
   gap: 1rem;
 }
 
-/*  1-3.b     FOOTER        */
+/* 1.3.B - Footer */
 
 .footer {
   position: absolute;
@@ -328,8 +326,6 @@ header {
   color: var(--secondary-light-green);
   font-size: 0.9rem;
 }
-
-/* display flex en linea para el footer */
 
 .footer__nav {
   display: flex;
@@ -345,7 +341,7 @@ header {
   font-size: 0.5rem;
 }
 
-/*   1-3.c    HOME       */
+/* 1.3.C - Home */
 
 /* Banners */
 
@@ -379,7 +375,25 @@ header {
   align-self: flex-end;
 }
 
-/*        1-3.d LOGIN AND REGISTER      */
+.home__button {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  width: 50%;
+  transition: all 0.2s ease;
+}
+
+.home__button:hover {
+  background-color: var(--highlight-Orange);
+  color: var(--primary-green);
+}
+
+/* 1.3.D - Login/Register */
 
 .users__title {
   font-weight: 700;
@@ -411,7 +425,7 @@ header {
   color: var(--highlight-Orange);
 }
 
-/* Formulario de Login */
+/* Login Form */
 
 .users-form {
   padding: 10px 20px;
@@ -448,6 +462,7 @@ input:focus {
 .inputSuccess select {
   border-color: var(--success-green);
 }
+
 .inputSuccess input:focus,
 textarea:focus,
 .inputSuccess select:focus {
@@ -460,6 +475,7 @@ textarea:focus,
 .inputFailure textarea {
   border-color: var(--failure);
 }
+
 .inputFailure input:focus,
 .inputFailure textarea:focus {
   outline: none;
@@ -506,7 +522,7 @@ textarea:focus,
   justify-content: center;
 }
 
-/*   1-3.e PASSWORD RECOVERY */
+/* 1.3.E - Password Recovery */
 
 .users__forgotten {
   margin-bottom: 15px;
@@ -528,7 +544,11 @@ textarea:focus,
   color: var(--primary-green-soft);
 }
 
-/* 1-3.f CART */
+.user-recovery__form {
+  margin-top: 3.5rem;
+}
+
+/* 1.3.F - Cart */
 
 /* 2nd Version */
 
@@ -746,7 +766,7 @@ textarea:focus,
 }
 */
 
-/*   1-3.g SHOP */
+/* 1.3.G - Shop */
 
 .shop {
   display: flex;
@@ -804,7 +824,7 @@ textarea:focus,
   text-transform: uppercase;
 }
 
-/* = 1-3.h PRODUCT DETAIL */
+/* 1.3.H - Product Detail */
 
 .product-detail__section {
   display: grid;
@@ -829,9 +849,10 @@ textarea:focus,
 .product-detail__figure {
   border: solid 1px var(--highlight-Orange);
   border-radius: 30% 0.1rem 30% 0.1rem;
-  height: 10rem;
-  width: 10rem;
-  margin: 5rem 7.5rem;
+  height: 15rem;
+  width: 15rem;
+  margin: 5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
 }
 
@@ -844,32 +865,6 @@ textarea:focus,
   object-fit: contain;
 }
 
-.product-detail__previous,
-.product-detail__next {
-  background-color: var(--primary-green-soft);
-  border-radius: 0.1rem;
-  color: rgba(255, 255, 255, 1);
-  padding: 0.3rem 0.7rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-out;
-}
-
-.product-detail__previous {
-  margin-right: 1rem;
-}
-
-.product-detail__next {
-  margin-left: 1rem;
-}
-
-.product-detail__previous:hover,
-.product-detail__next:hover {
-  background-color: var(--highlight-Orange);
-}
-
 .product-detail__description {
   display: flex;
   flex-direction: column;
@@ -878,22 +873,21 @@ textarea:focus,
 }
 
 .product-detail__name {
-  font-size: 3rem;
+  font-size: 36px;
   font-weight: bold;
-  letter-spacing: 0.2rem;
-  border-bottom: solid 3px var(--primary-green);
 }
 
 .product-detail__price--discount {
-  font-size: 30px;
-  letter-spacing: 0.2rem;
+  font-size: 26px;
+  letter-spacing: 0.1rem;
+  margin-top: -0.5rem;
 }
 
 .product-detail__price--original {
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: line-through;
-  letter-spacing: 0.1rem;
   margin-top: -1.5rem;
+  letter-spacing: 0.1rem;
 }
 
 .product-detail__calification {
@@ -907,16 +901,20 @@ textarea:focus,
   width: 70%;
   display: inline-block;
   background-color: var(--highlight-Orange);
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 1);
 }
 
 .product-detail__calification-label {
   align-self: flex-end;
   color: var(--highlight-Orange);
+  font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.25rem;
 }
 
 .product-detail__size-title {
+  font-size: 16px;
   margin-bottom: 0.3rem;
 }
 
@@ -927,7 +925,7 @@ textarea:focus,
   border-radius: 50%;
   background-color: var(--primary-green);
   color: rgba(255, 255, 255, 1);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   transition: all 0.2s ease;
 }
@@ -942,6 +940,7 @@ textarea:focus,
 }
 
 .product-detail__color {
+  font-size: 16px;
   margin-top: -0.5rem;
 }
 
@@ -978,15 +977,15 @@ textarea:focus,
 }
 
 .product-detail__button {
-  width: 80%;
-  font-size: 18px;
+  width: 50%;
+  font-size: 16px;
   font-weight: bold;
-  text-transform: uppercase;
   background-color: var(--primary-green);
   color: rgba(255, 255, 255, 1);
   border: 0;
   border-radius: 1.5rem;
   padding: 0.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   transition: all 0.2 ease;
 }
 
@@ -996,7 +995,7 @@ textarea:focus,
 }
 
 .product-detail__quantity-selector {
-  width: 30%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1004,12 +1003,16 @@ textarea:focus,
   border: solid 1px var(--primary-green);
   border-radius: 1.5rem;
   color: var(--primary-green);
+  font-size: 16px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  width: 25%;
 }
 
 .product-detail__less-button,
 .product-detail__plus-button {
   background-color: transparent;
   border: none;
+  font-size: 12px;
   transition: all 0.1s ease;
 }
 
@@ -1028,9 +1031,7 @@ textarea:focus,
 }
 
 .product-detail__heading {
-  font-size: 30px;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  font-size: 36px;
   background: linear-gradient(
     to right,
     var(--primary-green),
@@ -1041,9 +1042,15 @@ textarea:focus,
   margin-top: 0.5rem;
 }
 
-.product-detail__paragraph {
-  font-size: 16px;
-  margin-top: -0.7rem;
+.product-detail__paragraph,
+.product-detail__care-level {
+  font-size: 18px;
+  margin-top: -0.75rem;
+  width: 75%;
+}
+
+.product-detail__care-level {
+  color: var(--highlight-Orange);
 }
 
 /* .product-section {
@@ -1119,9 +1126,10 @@ textarea:focus,
   min-height: 20rem;
 } */
 
-/* 1-3.i ADMINISTRATOR */
+/* 1.3.I - Administrator */
 
-/*      SIDEBAR      */
+/* Sidebar */
+
 .admin__sidebar {
   display: flex;
   justify-content: space-around;
@@ -1160,7 +1168,7 @@ textarea:focus,
   background-color: var(--highlight-Orange);
 }
 
-/*      PAGE CONTENT      */
+/* Page Content */
 
 .admin {
   /* width: calc(100%-3rem); */
@@ -1180,6 +1188,7 @@ textarea:focus,
   border: 1px solid #014934;
   padding: 0 auto;
 }
+
 .admin__nav a {
   color: #014934;
   width: 100%;
@@ -1256,14 +1265,16 @@ textarea:focus,
   border: 1px solid var(--highlight-Orange);
   box-shadow: 0 0 5px var(--highlight-Orange);
 }
+
 .admin__buttons--input {
   margin-top: 2rem;
 }
+
 .admin__input--img {
   text-align: left;
 }
 
-/* PRODUCT LIST */
+/* Product List */
 
 /* .admin__itemList{
     border: red 1px solid;
@@ -1288,19 +1299,24 @@ th,
 td {
   border: 1px solid;
 }
+
 th {
   background-color: var(--primary-green-soft);
   color: white;
 }
+
 tr {
   max-height: 2rem;
 }
+
 tr:nth-child(even) {
   background-color: var(--third-light-green-soft);
 }
+
 tr:hover {
   background-color: var(--third-light-green-soft);
 }
+
 .table-btn {
   color: #014934;
 }
@@ -1311,11 +1327,13 @@ tr:hover {
   border-collapse: collapse;
   font-size: 1rem;
 }
+
 .list-table__img-conteiner {
   width: 3rem;
   height: 3rem;
   margin: 0 auto;
 }
+
 .list-table__img-conteiner img {
   width: 3rem;
   height: 3rem;
@@ -1323,7 +1341,7 @@ tr:hover {
   border-radius: 1.5rem;
 }
 
-/* 1-3.j ERROR PAGE */
+/* 1.3.J - Error Page */
 
 .error-menu {
   display: flex;
@@ -1356,7 +1374,7 @@ tr:hover {
   border-radius: 25px;
 }
 
-/* 1-3.k USER MENU */
+/* 1.3.K - User Menu */
 
 /* 2nd Version */
 
@@ -1444,7 +1462,7 @@ tr:hover {
   list-style: none;
   width: 70%;
   margin-left: 3rem;
-  transition: all 2s ease;
+  transition: all 1ms ease;
 }
 
 .user-menu__information-list-toggle {
@@ -1540,7 +1558,7 @@ tr:hover {
   height: 17rem;
   width: 17rem;
   border: solid 1px var(--highlight-Orange);
-  border-radius: 0.1rem;
+  border-radius: 40% 0.1rem 40% 0.1rem;
   overflow: hidden;
   margin: 5rem auto;
   padding: 1rem;
@@ -1556,7 +1574,7 @@ tr:hover {
 .user-menu__avatar {
   width: 100%;
   height: 100%;
-  border-radius: 0.1rem;
+  border-radius: 40% 0.1rem 40% 0.1rem;
   transition: all 0.2s ease;
 }
 
@@ -1615,7 +1633,7 @@ tr:hover {
   color: #ffffff;
 }
 
-/* adress form */
+/* Address Form */
 
 .address-form {
   display: grid;
@@ -1645,18 +1663,21 @@ tr:hover {
 .adminForm__inputConteiner--desc {
   grid-area: 2/2/4/3;
 }
+
 .adminForm__inputConteiner--big {
   grid-row-end: span 2;
 }
+
 .span-2 {
   grid-column-end: span 2;
 }
+
 .address-form input:last-child {
   grid-column-start: 1;
   grid-column-end: span 2;
 }
 
-/* 1-3.l - ABOUT */
+/* 1.3.L - About */
 
 .about-us__section--1,
 .about-us__section--3 {
@@ -1692,6 +1713,7 @@ tr:hover {
   border-radius: 20% 0.1rem 20% 0.1rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
   margin: 0 auto;
+  height: 20rem;
 }
 
 .about-us__section--2 {
@@ -1734,7 +1756,6 @@ tr:hover {
 .heading-primary {
   font-size: 40px;
   text-align: center;
-  text-transform: uppercase;
   margin-bottom: 1.5rem;
   background: linear-gradient(
     to right,
@@ -1861,11 +1882,12 @@ tr:hover {
   padding: 0.25rem 0;
 }
 
-/*==========
+/*===============
    1-4 LIBRERY
-===========*/
+=================*/
 
-/* Flex */
+/* Flexbox */
+
 .flex-row {
   display: flex;
 }
@@ -1947,9 +1969,9 @@ tr:hover {
   /* margin-top: -5rem; */
 }
 
-/* =============
+/* ==================
   1-5  Componentes
- =============== */
+ ====================*/
 
 .icon {
   display: inline-block;
@@ -1959,7 +1981,8 @@ tr:hover {
   background-size: 1.2rem 1.2rem;
 }
 
-/* iconos de redes sociales - footer  */
+/* Social Media  */
+
 .icon--footer {
   background-size: 1.6rem 1.6rem;
   margin: 0 1.5rem 0 0;
@@ -1967,7 +1990,7 @@ tr:hover {
   height: 1.6rem;
 }
 
-/*  Buttons */
+/* Buttons */
 
 .btn {
   background-color: var(--third-light-green);
@@ -1995,9 +2018,8 @@ tr:hover {
   background-color: var(--primary-green);
   border-radius: 1.5rem;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  text-transform: uppercase;
   padding: 0.4rem 0;
   transition: all 0.2s;
   margin: 0.3rem 0;
@@ -2027,8 +2049,6 @@ tr:hover {
   color: var(--primary-green);
 }
 
-/* contador de product detail */
-
 .counter {
   display: flex;
 }
@@ -2056,25 +2076,117 @@ tr:hover {
   margin: 0;
 }
 
-/* plant card  */
+/* Card */
+
+/* 2nd Version */
+
+.plant-card {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.1rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  position: relative;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.plant-card__section-top {
+  padding: 1rem;
+  height: 70%;
+}
+
+.plant-card__picture-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.plant-card__picture {
+  object-fit: cover;
+  max-height: 12rem;
+}
+
+.plant-card__discount-label {
+  background-color: var(--primary-green);
+  border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+  color: white;
+  margin: 0.75rem 0.5rem;
+  padding: 0 1rem;
+}
+
+.plant-card__section-bottom {
+  background-color: rgba(1, 53, 38, 0.8);
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  color: white;
+  text-align: center;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.plant-card__name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0.6rem 0;
+}
+
+.plant-card__price {
+  font-size: 14px;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+.plant-card__button {
+  background-color: var(--primary-green);
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 0.25rem;
+  padding: 0.25rem 1.75rem;
+  width: 70%;
+  transition: all 0.2s ease;
+}
+
+.plant-card__button:hover {
+  background-color: var(--highlight-Orange);
+  color: var(--primary-green);
+}
+
+/* 1st Version  */
 
 .plant-Card {
   display: flex;
   flex-direction: column;
   position: relative;
   border: solid 1px rgba(0, 0, 0, 0.3);
-  border-radius: 0.3rem;
+  border-radius: 0.1rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  height: 15rem;
   margin: 0.3rem;
-  padding: 1rem;
   transition: all 0.2s;
 }
+
 .discount {
   text-decoration: line-through;
 }
 
 .plant-Card:hover {
-  border-radius: 0.3rem;
   transform: scale(1.1);
 }
 
@@ -2089,9 +2201,11 @@ tr:hover {
 
 .plant-Card__background {
   position: absolute;
-  bottom: 10%;
-  width: 100%;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
   height: 60%;
+  width: 90%;
   background-color: var(--third-light-green-soft);
   opacity: 0.4;
   z-index: -1;
@@ -2099,39 +2213,43 @@ tr:hover {
 }
 
 .plant-card__label {
-  background-color: rgba(255, 148, 68, 0.5);
+  background-color: var(--highlight-Orange);
   position: absolute;
   top: 5px;
   right: 10px;
-  font-size: small;
+  font-size: 14px;
   color: black;
-  /* width: 6em; */
   text-align: right;
   padding-right: 1em;
   padding-left: 1em;
   clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
 }
+
 .green {
   color: var(--primary-green);
 }
+
 .plant-Card p {
   display: inline;
-  font-size: 0.8rem;
+  font-size: 14px;
   margin: 0.2rem 0;
 }
 
 .plant-Card h4 {
-  font-size: 18px;
-  margin: 0.3rem 0;
+  font-size: 16px;
+  /* margin: 0.3rem 0; */
 }
 
 .most-selled {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  grid-auto-rows: minmax(100px, 22rem);
+  width: 80%;
+  margin-left: 6.5rem;
 }
 
-/* ICONOS LOCALES  */
+/* Icons  */
 
 #search {
   background-image: url(../img/icons/icon-search.svg);
@@ -2171,9 +2289,9 @@ tr:hover {
   background-image: url(../img/icons/icon-trash.svg);
 }
 
-/*=================
-    1-6 MEDIA QUERIES
-================= */
+/*========================
+    1.6 - Media Queries
+==========================*/
 
 @media (min-width: 769px) {
   html {
@@ -2188,7 +2306,7 @@ tr:hover {
     flex-direction: row;
   }
 
-  /* desaparece burguer menu y aparecen los links de navegacion */
+  /* Navigation Links */
 
   .burger-menu {
     display: none;
@@ -2210,14 +2328,12 @@ tr:hover {
     line-height: 90px;
     transition: 0.5s background-color;
   }
-  .section-menu li:hover {
-    background-color: var(--secondary-light-green);
-  }
+
   .section-menu__list--active {
-    border-bottom: 3px solid var(--highlight-Orange);
+    border-bottom: 0.3rem solid var(--highlight-Orange);
   }
 
-  /* logo a la izquierda con flexbox */
+  /* Logo */
 
   .header__logo {
     order: -1;
@@ -2234,7 +2350,7 @@ tr:hover {
     color: #014934;
   }
 
-  /* banner home */
+  /* Banner */
 
   .banner-section {
     display: grid;
@@ -2269,6 +2385,10 @@ tr:hover {
     height: 250px;
   }
 
+  .banner__img img {
+    border-radius: 0.1rem;
+  }
+
   .plant-Card__img-conteiner {
     height: 13rem;
   }
@@ -2297,6 +2417,7 @@ tr:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    row-gap: 3rem;
   }
 
   .shop-flex {
@@ -2316,9 +2437,11 @@ tr:hover {
     padding: 1rem 20px 20px 20px;
     color: var(--secondary-light-green);
   }
+
   .shop-filters h5 {
     margin-top: 1rem;
   }
+
   .shop-filters__list li {
     font-weight: 400;
     margin-top: 0.5rem;
@@ -2374,8 +2497,9 @@ tr:hover {
     width: 13rem;
   }
 
-  /* ADMINISTRATOR */
-  /* Admin sidebar */
+  /* --- ADMINISTRATOR --- */
+
+  /* Administrator Sidebar */
 
   .admin__sidebar {
     position: fixed;
@@ -2437,7 +2561,7 @@ tr:hover {
     border-radius: 30px 0 0 30px;
   }
 
-  /* Admin Page Content */
+  /* Administator Page Content */
 
   .admin {
     color: var(--primary-green);
@@ -2479,8 +2603,7 @@ tr:hover {
     visibility: hidden;
   }
 
-  /* adress form user menu */
-  /* adress form */
+  /* Address */
 
   .address-form {
     display: grid;
@@ -2491,10 +2614,12 @@ tr:hover {
   .address-form .users-form__field {
     grid-column-end: span 2;
   }
+
   .address-form input:last-child {
     grid-column-start: 2;
     grid-column-end: span 2;
   }
+
   .user-menu__title {
     line-height: 200px;
     margin: 0 auto;
@@ -2506,6 +2631,7 @@ tr:hover {
     justify-content: space-around;
     margin-left: 50px;
   }
+
   .user-menu__info > p {
     margin-top: 5px;
   }
@@ -2523,6 +2649,7 @@ tr:hover {
 
   .users-form-conteiner {
     width: 50%;
+    margin-top: 3rem;
   }
 
   .admin-form__conteiner {
