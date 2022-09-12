@@ -6,7 +6,7 @@ En **Vivero Susi** trabajamos con una selección de plantas que se adaptan a los
 ### Integrantes 🤜🤛
 * **Bruno Secchiari** (https://github.com/BrunoSecchiari): Nacidos en el '95, estudió Licenciatura en Economia en la Facultad de Ciencias Economicas y actualmente trabaja como Software Developer. Su lenguage de programacion por exelencia al dia de hoy es Python, pero tiene la intención de incluir HTML, CSS y JavaScript en ese mismo podio.
 
-* **Irving Orlando Ayala Iturbe** (https://github.com/ioai2610): Nacido en el '96, estudió Licenciatura en Física y Matemática, es candidato paraa una Maestría en Ciencias Fisiomatemáticas y actualmente se desempeña como profesor de Física y Matemática de forma independiente. En su tiempo libre, le gusta cocinar, jugar videojuegos, aprender idiomas y viajar.
+* **Irving Orlando Ayala Iturbe** (https://github.com/ioai2610): Nacido en el '96, estudió Licenciatura en Física y Matemática, estudiante de Maestría en Ciencias Fisiomatemáticas y actualmente se desempeña como profesor de Física y Matemática de forma independiente. En su tiempo libre, le gusta cocinar, jugar videojuegos, aprender idiomas y viajar.
 
 * **Juan M. Mateu Arroyo** (https://github.com/JuaMateu/): Nacido en el '88, estudió Gastronomia y actualmente trabaja dentro del area de Administración de Empresas. Gran amante de la tecnología, el deporte y los videojuegos.
 
