@@ -26,7 +26,7 @@
                     <h2 class="user-menu__title-contact">Dirección</h2>
                     <!-- Street -->
                     <div class="address-form">
-                        <div id="div_street" class="users-form__field <%= locals.errors && errors.street ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_street" class="users-form__field <%= locals.errors && errors.street ? "inputFailure" : "" %>">
                             <label class="users-form__label" for="street">Calle</label>
                             <input 
                                 id="street" 
@@ -34,7 +34,7 @@
                                 name="street" 
                                 type="text"
                                 placeholder="Ingresá tu calle" 
-                                value="<%= locals.oldData ? oldData.street : null %>" 
+                                value="<%= user.address[0].street ? user.address[0].street : null %>" 
                                 
                                 maxlength="100"
                             >
@@ -47,7 +47,7 @@
                             <% } %>
                         </div>
                         <!-- Number -->
-                        <div id="div_number" class="users-form__field <%= locals.errors && errors.number ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_number" class="users-form__field <%= locals.errors && errors.number ? "inputFailure" : "" %>">
                             <label class="users-form__label" for="number">Número</label>
                             <input 
                                 id="number" 
@@ -55,8 +55,7 @@
                                 name="number" 
                                 type="number"
                                 placeholder="Ingresá el número de la calle" 
-                                value="<%= locals.oldData? oldData.number : null %>" 
-                                
+                                value="<%= user.address[0].number ? user.address[0].number : null %>"                                 
                                 max="9999999999"
                             >
                                 <i class="fa-solid fa-circle-check"></i>
@@ -68,7 +67,7 @@
                                 <% } %>
                         </div>
                         <!-- State -->
-                        <div id="div_state" class="users-form__field <%= locals.errors && errors.state ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_state" class="users-form__field <%= locals.errors && errors.state ? "inputFailure" : "" %>">
                             <label class="users-form__label" for="state">Provincia</label>
                             <input 
                                 id="state" 
@@ -76,7 +75,7 @@
                                 name="state" 
                                 type="text"
                                 placeholder="Ingresá tu estado o provincia" 
-                                value="<%= locals.oldData  ? oldData.state : null %>" 
+                                value="<%= user.address[0].state ? user.address[0].state : null %>" 
                         
                                 maxlength="40"
                             >
@@ -89,7 +88,7 @@
                                 <% } %>
                         </div>
                         <!-- City -->
-                        <div id="div_city" class="users-form__field <%= locals.errors && errors.city ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_city" class="users-form__field <%= locals.errors && errors.city ? "inputFailure" : "" %>">
                             <label class="users-form__label" for="city">Ciudad</label>
                             <input 
                                 id="city" 
@@ -97,7 +96,7 @@
                                 name="city" 
                                 type="text"
                                 placeholder="Ingresá tu ciudad" 
-                                value="<%= locals.oldData ? oldData.city : null%>" 
+                                value="<%= user.address[0].city ? user.address[0].city : null %>" 
                                 
                                 maxlength="40"
                             >
@@ -110,7 +109,7 @@
                                 <% } %>
                         </div>
                         <!-- Postal Code -->
-                        <div id="div_postal" class="users-form__field <%= locals.errors && errors.postal_code ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_postal" class="users-form__field <%= locals.errors && errors.postal_code ? "inputFailure" : "" %>">
                             <label class="users-form__label" for="postal_code">Codigo Postal</label>
                             <input 
                                 id="postal-code" 
@@ -118,7 +117,7 @@
                                 name="postal_code" 
                                 type="text"
                                 placeholder="Ingresá tu código postal" 
-                                value="<%= locals.oldData ? oldData.postal_code : "" %>" 
+                                value="<%= user.address[0].postal_code ? user.address[0].postal_code : null %>" 
             
                                 maxlength="10"
                             >
@@ -131,7 +130,7 @@
                                 <% } %>
                         </div>
                         <!-- Mobile -->
-                        <div id="div_mobile" class="users-form__field <%= locals.errors && errors.mobile ? "inputFailure" : "inputSuccess" %>">
+                        <div id="div_mobile" class="users-form__field <%= locals.errors && errors.mobile ? "inputFailure" : "" %>">
                             <label class="users-form__label" for="mobile">Telefono</label>
                             <input 
                                 id="mobile" 
@@ -139,7 +138,7 @@
                                 name="mobile" 
                                 type="number"
                                 placeholder="Ingresá tu telefono" 
-                                value="<%= locals.oldData ? oldData.mobile : null  %>" 
+                                value="<%= user.mobile ? user.mobile : null %>" 
                                 maxlength="20"
                             >
                                 <i class="fa-solid fa-circle-check"></i>
