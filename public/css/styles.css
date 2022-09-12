@@ -819,6 +819,11 @@ textarea:focus,
   gap: 1rem;
 }
 
+.shop-pages {
+  display: flex;
+  justify-content: space-between;
+}
+
 .order-by__form {
   display: flex;
   flex-direction: column;
@@ -827,11 +832,16 @@ textarea:focus,
 }
 
 .order-by__input {
+<<<<<<< HEAD
   background-color: var(--primary-green);
   border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
   color: white;
   width: 13%;
   margin-bottom: -0.5rem;
+=======
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+>>>>>>> fe0dcac73130222b7b74b94490583bc4d64e01c3
   margin-left: auto;
   padding: 0.5rem;
   font-size: 14px;
@@ -2192,7 +2202,7 @@ tr:hover {
   border: none;
   border-radius: 1.5rem;
   color: white;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   margin-top: 0.25rem;
   padding: 0.25rem 1.75rem;
@@ -2282,8 +2292,8 @@ tr:hover {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   grid-auto-rows: minmax(100px, 22rem);
-  width: 80%;
-  margin-left: 6.5rem;
+  /* width: 80%;
+  margin-left: 1.5rem; */
 }
 
 /* Icons  */
@@ -2432,6 +2442,11 @@ tr:hover {
 
   .most-selled {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, 22rem);
+    width: 80%;
+    margin-left: 6.5rem;
   }
 
   .product-section {
@@ -2557,7 +2572,27 @@ tr:hover {
   .shop-pages__right-arrow:hover {
     color: var(--highlight-Orange);
   }
+  .plant-card__button {
+    background-color: var(--primary-green);
+    border: none;
+    border-radius: 1.5rem;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0.25rem;
+    padding: 0.25rem 1.75rem;
+    width: 70%;
+    transition: all 0.2s ease;
+  }
 
+  .order-by__input {
+    width: 13%;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    margin-left: auto;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
   /* Shop Cart */
 
   /*
