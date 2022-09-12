@@ -77,9 +77,13 @@ const controller = {
     });
   },
 
-  detail: (req, res) => {
-    let productPromise = db.Product.findByPk(req.params.id);
-    let productsPromise = db.Product.findAll();
+  detail: async (req, res) => {
+    let productPromise = db.Product.findByPk(req.params.id, { include: ["category"] });
+    let productsPromise = db.Product.findAll({
+      where: {
+        label: "Mas Vendida",
+      },
+    });
     Promise.all([productPromise, productsPromise])
       .then(([product, products]) => {
         return res.render("products/productDetail", { product, products });

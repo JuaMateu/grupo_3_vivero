@@ -908,7 +908,7 @@ textarea:focus,
 .product-detail__calification {
   display: flex;
   flex-direction: column;
-  margin-top: -1.3rem;
+  margin-top: -0.5rem;
 }
 
 .product-detail__calification-line {
@@ -2241,7 +2241,7 @@ tr:hover {
   background-color: var(--third-light-green-soft);
   opacity: 0.4;
   z-index: -1;
-  border-radius: 70% 0rem 60% 0.1rem;
+  border-radius: 90% 0rem 60% 0.1rem;
 }
 
 .plant-card__label {
