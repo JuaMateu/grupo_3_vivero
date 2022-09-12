@@ -878,11 +878,7 @@ textarea:focus,
 }
 
 .product-detail__price--discount {
-<<<<<<< HEAD
-  font-size: 1.75rem;
-=======
   font-size: 14px;
->>>>>>> 80aa12d23206a3f13eabe3a474401f9a31532803
   letter-spacing: 0.1rem;
   margin-top: -1.5rem;
 
@@ -898,7 +894,7 @@ textarea:focus,
 .product-detail__calification {
   display: flex;
   flex-direction: column;
-  margin-top: -1.3rem;
+  margin-top: -0.5rem;
 }
 
 .product-detail__calification-line {
@@ -2219,7 +2215,7 @@ tr:hover {
   background-color: var(--third-light-green-soft);
   opacity: 0.4;
   z-index: -1;
-  border-radius: 70% 0rem 60% 0.1rem;
+  border-radius: 90% 0rem 60% 0.1rem;
 }
 
 .plant-card__label {

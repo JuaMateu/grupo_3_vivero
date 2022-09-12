@@ -118,7 +118,6 @@
                         <label class="admin-form__label" for="label"> Etiqueta del producto</label>
                         <select class="admin__input" name="label" id="label" >
                             <option <%= locals.editProduct && editProduct.label ==="none"        ? "selected" : ""%> value="none">None</option>
-                            <option <%= locals.editProduct && editProduct.label ==="Oferta"      ? "selected" : ""%> value="Oferta">Oferta</option>
                             <option <%= locals.editProduct && editProduct.label ==="Mas vendida" ? "selected" : ""%> value="Mas vendida">Mas vendida</option>
                         </select>
                         <% if (locals.errors && errors.label) { %>

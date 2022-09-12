@@ -20,6 +20,7 @@
                     <div class="product-detail__price--discount">$<%= (product.price * 1.15).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
                     <% } %>
                 <div class="product-detail__calification">
+                    <div class="product-detail__size-title"><strong>Nivel de cuidados:</strong></div>
                     <div class="product-detail__calification-label"><%= product.care_level %></div>
                     <div class="product-detail__calification-line"></div>
                 </div>
@@ -52,7 +53,6 @@
             <p class="product-detail__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, esse! Explicabo exercitationem non possimus, eos culpa deserunt voluptatem optio placeat aut vero consectetur atque enim corporis quam quia deleniti! Quod.</p>
             <h2 class="product-detail__heading">Tipo de planta: <%= product.category.name %> </h2>
             <p class="product-detail__paragraph"> <%= product.category.description  %>  </p>
-            <h2 class="product-detail__heading">Nivel De Cuidado: <%= product.care_level %></h2>
 
         </section>
 
