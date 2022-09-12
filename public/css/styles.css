@@ -1760,7 +1760,7 @@ tr:hover {
 .principle {
   width: 25%;
   text-align: center;
-  background-color: var(--success-green);
+  background-color: var(--third-light-green-soft);
   border-radius: 40% 0.1rem 40% 0.1rem;
   font-size: 16px;
   padding: 2.25rem;
@@ -2095,7 +2095,7 @@ tr:hover {
   background-color: var(--third-light-green-soft);
   opacity: 0.4;
   z-index: -1;
-  border-radius: 40% 0.1rem 40% 0.1rem;
+  border-radius: 60% 0rem 60% 0.1rem;
 }
 
 .plant-card__label {
