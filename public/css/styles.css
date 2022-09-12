@@ -832,16 +832,11 @@ textarea:focus,
 }
 
 .order-by__input {
-<<<<<<< HEAD
   background-color: var(--primary-green);
   border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
   color: white;
   width: 13%;
   margin-bottom: -0.5rem;
-=======
-  padding: 0.3rem;
-  border-radius: 0.3rem;
->>>>>>> fe0dcac73130222b7b74b94490583bc4d64e01c3
   margin-left: auto;
   padding: 0.5rem;
   font-size: 14px;
