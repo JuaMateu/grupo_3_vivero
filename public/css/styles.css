@@ -827,12 +827,17 @@ textarea:focus,
 }
 
 .order-by__input {
+  background-color: var(--primary-green);
+  border-radius: 1.5rem 0.1rem 1.5rem 0.1rem;
+  color: white;
   width: 13%;
-  padding: 0.3rem;
-  border-radius: 0.3rem;
+  margin-bottom: -0.5rem;
   margin-left: auto;
+  padding: 0.5rem;
   font-size: 14px;
-  text-transform: uppercase;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 /* 1.3.H - Product Detail */
@@ -2464,25 +2469,63 @@ tr:hover {
     min-width: 180px;
     height: 60vh;
     background-color: var(--primary-green);
-    border-radius: 50px 0 50px 0;
+    border-radius: 50px 0.1rem 50px 0.1rem;
     margin-right: 20px;
-    padding: 1rem 20px 20px 20px;
+    padding: 2.25rem 20px 20px 20px;
     color: var(--secondary-light-green);
+  }
+
+  .shop-filters__sale,
+  .shop-filters__most-selled {
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .shop-filters__sale:hover,
+  .shop-filters__most-selled:hover {
+    color: var(--highlight-Orange);
+  }
+
+  .shop-filters__title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0.25rem 0;
+  }
+
+  .shop-filters__title--1 {
+    margin-top: 1rem;
+  }
+
+  .shop-filters__list-item,
+  .shop-filters__list-link {
+    font-size: 14px;
+    margin: 0.25rem 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .shop-filters__list li:last-child {
+    margin-bottom: 1.5rem;
+  }
+
+  .shop-filters__list-item:hover,
+  .shop-filters__list-link:hover {
+    color: var(--highlight-Orange);
+    cursor: pointer;
   }
 
   .shop-filters h5 {
     margin-top: 1rem;
   }
 
-  .shop-filters__list li {
-    font-weight: 400;
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-  }
-
   .shop-filters__list a {
     color: var(--secondary-light-green);
+  }
+
+  .shop-filters__all-plants {
+    font-weight: bold;
   }
 
   .shop-pages {

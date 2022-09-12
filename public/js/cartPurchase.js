@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
 
     const data = {
       orderToProduct: productsFiltered,
-      payment_method_id: 1,
+      payment_method_id: form.payment - method.value,
       user_id: id,
       total: totalPrice,
     };
