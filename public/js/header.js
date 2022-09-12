@@ -1,10 +1,11 @@
 window.addEventListener("load", () => {
   const navItems = document.querySelectorAll(".section-menu__list li");
   const url = window.location.href;
-
+  const originPath = window.location.origin + window.location.pathname
+  
   navItems.forEach((element) => {
     let link = element.querySelector(".nav-item").href;
-    if (link == url) {
+    if (link == url ) {
       element.classList.add("section-menu__list--active");
     }
   });
