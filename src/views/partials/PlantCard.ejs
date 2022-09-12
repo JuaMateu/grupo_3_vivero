@@ -7,15 +7,18 @@
         <% } %>
         <div class="plant-card__picture-placeholder">
             <img src="<%= data.img %>" alt="<%= data.name %>" class="plant-card__picture">
+            <div class="plant-Card__background"></div>
         </div>
     </section>
     <section class="plant-card__section-bottom">
         <div class="plant-card__name"><%= data.name %></div>
-        <div class="plant-card__price">Desde $<%= data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
-        <% if (data.discount_id == 2) { %>
-            <% let discount = data.price * 1.15 %>
-            <div class="plant-card__discount-price">$<%= discount.toFixed(2) %></div>
-        <% } %>
+        <div>
+            <div class="plant-card__price">Desde $<%= data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00" %></div>
+            <% if (data.discount_id == 2) { %>
+                <% let discount = data.price * 1.15 %>
+                <div class="plant-card__discount-price">$<%= discount.toFixed(2) %></div>
+                <% } %>
+        </div>
         <a href="/products/detail/<%= data.id %>" class="plant-card__button">Ver Producto</a>
     </section>
 </article>
