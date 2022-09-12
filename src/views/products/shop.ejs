@@ -27,21 +27,21 @@
         </section>
         <div class="shop-flex">
           <div class="shop-filters">
-            <div><a class="shop-filters__sale">En Oferta</a></div>
-            <div><a class="shop-filters__most-selled">Más Vendidos</a></div>
+            <div><a class="shop-filters__sale" href="/products/shop?offer=2">En Oferta</a></div>
+            <div><a class="shop-filters__most-selled" href="/products/shop?label=mas+vendida">Más Vendidos</a></div>
             <div class="shop-filters__title shop-filters__title--1">Nivel De Cuidado</div>
             <ul class="no-list-style shop-filters__list">
                 <li><a class="shop-filters__list-item" href="/products/shop?care_level=1">Básico</a></li>
-                <li><a class="shop-filters__list-item" href="/products/shop?care_level=1">Intermedio</a></li>
-                <li><a class="shop-filters__list-item" href="/products/shop?care_level=1">Experto</a></li>
+                <li><a class="shop-filters__list-item" href="/products/shop?care_level=2">Intermedio</a></li>
+                <li><a class="shop-filters__list-item" href="/products/shop?care_level=3">Experto</a></li>
             </ul>
             <div class="shop-filters__title">Tipo De Planta</div>
             <ul class="no-list-style shop-filters__list">
-                <li><a class="shop-filters__list-item" href="/products/shop?category=2">Arbustos</a></li>
-                <li><a class="shop-filters__list-item" href="/products/shop?category=2">Aromáticas</a></li>
                 <li><a class="shop-filters__list-item" href="/products/shop?category=1">Florales</a></li>
-                <li><a class="shop-filters__list-item" href="/products/shop?category=2">Frutales</a></li>
-                <li><a class="shop-filters__list-item" href="/products/shop?category=2">Suculentas</a></li>
+                <li><a class="shop-filters__list-item" href="/products/shop?category=2">Aromáticas</a></li>
+                <li><a class="shop-filters__list-item" href="/products/shop?category=3">Arbustos</a></li>
+                <li><a class="shop-filters__list-item" href="/products/shop?category=4">Suculentas</a></li>
+                <li><a class="shop-filters__list-item" href="/products/shop?category=5">Frutales </a></li>
             </ul>
 
               <!-- <li>
@@ -78,21 +78,16 @@
           <section class="shop-wrapper">
             <% products.forEach(prod=> { %> <%-
             include('../partials/PlantCard.ejs', { data : prod }) %> <% }); %>
-            <% if (pagesCant > 0) { %>
-            <ul class="no-list-style shop-pages">
-              <span
-                ><i class="fa-solid fa-chevron-left shop-pages__left-arrow"></i
-              ></span>
-              <% for( let i = 1; i <= pagesCant; i++ ) { %>
-              <li class="shop-pages__link"><%=i%></li>
+                <% if (pagesCant > 0) { %>
+                  <ul class="no-list-style shop-pages">
+                      <span><i class="fa-solid fa-chevron-left shop-pages__left-arrow"></i></span>
+                      <% for( let i = 1; i <= pagesCant; i++ ) { %>
+                          <li class="shop-pages__link"> <%=i%> </li>
+                      <% } %>
+                      <span><i class="fa-solid fa-chevron-right shop-pages__right-arrow"></i></span>
+                  </ul>
+                
               <% } %>
-              <span
-                ><i
-                  class="fa-solid fa-chevron-right shop-pages__right-arrow"
-                ></i
-              ></span>
-            </ul>
-            <% } %>
           </section>
         </div>
       </div>

@@ -13,12 +13,14 @@ const controller = {
     let category = '%';
     let discount = '%';
     let productPage = 0
+    let label = "%";
 
     req.query.page ? productPage = ( req.query.page -1 ) * 12 : "";
     req.query.searched ? search = req.query.searched : "";
     req.query.easyCare ? careLvl = req.query.easyCare : "";
     req.query.offer ? discount = req.query.offer : "";
     req.query.category ? category = req.query.category : "";
+    req.query.label ? label = req.query.label : "";
 
     if (req.query.orderBy) {
       let orderBy = req.query.orderBy;
@@ -51,7 +53,8 @@ const controller = {
         name: { [db.Sequelize.Op.like]: `%${search}%` },
         care_level: {[db.Sequelize.Op.like]: `%${careLvl}%`},
         category_id: {[db.Sequelize.Op.like]: `%${category}%`},
-        discount_id: {[db.Sequelize.Op.like]: `${discount}`}
+        discount_id: {[db.Sequelize.Op.like]: `${discount}`},
+        label: {[db.Sequelize.Op.like]: `${label}`},
       },
       order: [[atribute, order]],
       limit: 12,

@@ -8,18 +8,8 @@ window.addEventListener("load", () => {
   let carelvlTitle = document.getElementById("carelvlTitle");
   let params = new URLSearchParams(window.location.search);
 
-  careLvl.style.maxHeight = 0;
-  careLvl.style.overflow = "hidden";
 
-  // Filtros
-  carelvlTitle.addEventListener("click", (e) => {
-    careLvl.style.overflow = "hidden";
-    if (!careLvl.style.maxHeight || careLvl.style.maxHeight === "0px") {
-      careLvl.style.maxHeight = "500px";
-    } else {
-      careLvl.style.maxHeight = "0px";
-    }
-  });
+
 
   //ordena el listado preservando query string actuales
   orderBy.addEventListener("change", (e) => {
